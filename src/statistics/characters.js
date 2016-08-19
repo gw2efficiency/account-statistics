@@ -1,27 +1,22 @@
 export default function (accountData) {
-  if (!accountData.characters) {
-    return {
-      playtime: null,
-      playtimePerDay: null,
-      characterCount: null,
-      maxLevelCharacterCount: null,
-      deathCount: null,
-      deathCountPerHour: null
-    }
+  let playtime = null
+  let playtimePerDay = null
+  let characterCount = null
+  let maxLevelCharacterCount = null
+  let deathCount =  null
+  let deathCountPerHour =  null
+  
+  if (accountData.characters) {
+    playtime = characters.map(x => x.age).reduce((a, b) => a + b, 0)
+    playtimePerDay = daysSinceCreation > 1 ? round(playtime / daysSinceCreation) : null
+    
+    characterCount = characters.length || null
+    maxLevelCharacterCount = characters.filter(x => x.level === 80).length || null
+  
+    deathCount = characters.map(x => x.deaths).reduce((a, b) => a + b, 0)
+    const playtimeInHours = playtime / 60 / 60
+    deathCountPerHour = playtimeInHours > 1 ? round(deathCount / playtimeInHours) : null
   }
-
-  const characters = accountData.characters
-  const daysSinceCreation = getDaysSinceCreation(characters)
-
-  const characterCount = characters.length
-  const maxLevelCharacterCount = characters.filter(x => x.level === 80).length
-
-  const playtime = characters.map(x => x.age).reduce((a, b) => a + b, 0)
-  const playtimePerDay = daysSinceCreation > 1 ? round(playtime / daysSinceCreation) : null
-
-  const deathCount = characters.map(x => x.deaths).reduce((a, b) => a + b, 0)
-  const playtimeInHours = playtime / 60 / 60
-  const deathCountPerHour = playtimeInHours > 1 ? round(deathCount / playtimeInHours) : null
 
   return {
     playtime,
