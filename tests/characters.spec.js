@@ -1,5 +1,6 @@
 /* eslint-env node, mocha */
 const expect = require('chai').expect
+const mockdate = require('mockdate')
 import charactersStatistics from '../src/statistics/characters'
 
 describe('statistics > characters', () => {
@@ -39,13 +40,14 @@ describe('statistics > characters', () => {
       }
     ]
 
+    mockdate.set('1/1/2016')
     expect(charactersStatistics({characters: data})).to.deep.equal({
       characterCount: 3,
       deathCount: 3942,
       deathCountPerHour: 1.34,
       maxLevelCharacterCount: 2,
       playtime: 10603345,
-      playtimePerDay: 9974.92
+      playtimePerDay: 12744.41
     })
   })
 
