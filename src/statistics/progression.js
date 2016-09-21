@@ -3,7 +3,7 @@ export default function (accountData) {
     achievementCount: achievementCount(accountData),
     fractalLevel: fractalLevel(accountData),
     salvagedItems: salvagedItems(accountData),
-    wvwPlayerKills: wvwPlayerKills(accountData)
+    ...wvwAchievements(accountData)
   }
 }
 
@@ -47,18 +47,41 @@ function salvagedItems (accountData) {
   return (achievement.repeated || 0) * 200 + achievement.current
 }
 
-// How many people the player killed in wvw
-function wvwPlayerKills (accountData) {
+// How many people the player killed in wvw, how many supply he spent, ...
+function wvwAchievements (accountData) {
+  const achievements = {
+    wvwPlayerKills: 283,
+    wvwSupplyCaravansKilled: 288,
+    wvwSupplyCaravansEscorted: 285,
+    wvwSupplySpentOnRepairs: 306,
+    wvwCapturedObjectives: 303,
+    wvwCapturedSupplyCamps: 291,
+    wvwCapturedTowers: 297,
+    wvwCapturedKeeps: 300,
+    wvwCapturedCastles: 294,
+    wvwDefendedObjectives: 319,
+    wvwDefendedSupplyCamps: 310,
+    wvwDefendedTowers: 322,
+    wvwDefendedKeeps: 316,
+    wvwDefendedCastles: 313
+  }
+
+  // The achievement data is missing, return nulls for everything!
   if (!accountData.achievements) {
-    return null
+    return Object.keys(achievements).reduce((obj, key) => {
+      obj[key] = null
+      return obj
+    }, {})
   }
 
-  // Find the "Realm Avenger" achievement
-  const achievement = accountData.achievements.find(x => x.id === 283)
+  // Go through all the achievements and give them the same treatment
+  let result = {}
+  Object.keys(achievements).map(key => {
+    let id = achievements[key]
+    let achievement = accountData.achievements.find(x => x.id === id)
 
-  if (!achievement) {
-    return 0
-  }
+    result[key] = achievement ? achievement.current : 0
+  })
 
-  return achievement.current
+  return result
 }

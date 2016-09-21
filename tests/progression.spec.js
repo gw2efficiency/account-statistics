@@ -35,7 +35,7 @@ describe('statistics > progression', () => {
     }).salvagedItems).to.equal(158462)
   })
 
-  it('can calculate the wvw killed players', () => {
+  it('can calculate the wvw statistics out of achievements', () => {
     expect(progressionStatistics({}).wvwPlayerKills).to.equal(null)
     expect(progressionStatistics({achievements: []}).wvwPlayerKills).to.equal(0)
     expect(progressionStatistics({
