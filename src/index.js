@@ -6,9 +6,10 @@ import progressionStatistics from './statistics/progression'
 import pvpStatistics from './statistics/pvp'
 import unlocksStatistics from './statistics/unlocks'
 import walletStatistics from './statistics/wallet'
+import accumulatedStatistics from './statistics/accumulated'
 
 export default function (accountData) {
-  return {
+  let baseStatistics = {
     ...accountStatistics(accountData),
     ...charactersStatistics(accountData),
     ...commerceStatistics(accountData),
@@ -18,4 +19,6 @@ export default function (accountData) {
     ...unlocksStatistics(accountData),
     ...walletStatistics(accountData)
   }
+
+  return {...baseStatistics, ...accumulatedStatistics(baseStatistics)}
 }
