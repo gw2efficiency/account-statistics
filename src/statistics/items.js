@@ -13,9 +13,9 @@ export default function (accountData) {
 
   return {
     legendaryItems: legendaryItems(items),
-    fractalTonics: fractalTonics(items),
-    legendaryInsights: legendaryInsights(items),
-    whiteMantlePortalDevices: whiteMantlePortalDevices(items)
+    fractalTonics: countItem(items, 49277),
+    legendaryInsights: countItem(items, 77302),
+    whiteMantlePortalDevices: countItem(items, 78978)
   }
 }
 
@@ -45,26 +45,10 @@ function legendaryItems (items) {
     .reduce((a, b) => a + b, 0)
 }
 
-// Count how many fractal tonics the user has
-function fractalTonics (items) {
+// Count how many of an item the user has
+function countItem (items, id) {
   return items
-    .filter(x => x.id === 49277)
-    .map(x => x.count)
-    .reduce((a, b) => a + b, 0)
-}
-
-// Count how many legendary insights the user has
-function legendaryInsights (items) {
-  return items
-    .filter(x => x.id === 77302)
-    .map(x => x.count)
-    .reduce((a, b) => a + b, 0)
-}
-
-// Count how many white mantle portal devices the user has
-function whiteMantlePortalDevices (items) {
-  return items
-    .filter(x => x.id === 78978)
+    .filter(x => x.id === id)
     .map(x => x.count)
     .reduce((a, b) => a + b, 0)
 }
