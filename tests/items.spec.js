@@ -18,9 +18,15 @@ const generateAccount = (items) => {
 describe('statistics > items', () => {
   it('exits out when one of the permissions is missing', () => {
     const emptyObject = {
-      legendaryItems: null,
+      baubleInfusions: null,
+      brokenSpoons: null,
+      chakEggSacks: null,
       fractalTonics: null,
+      ghostlyInfusions: null,
       legendaryInsights: null,
+      legendaryItems: null,
+      luminescentRefractors: null,
+      preservedQueenBees: null,
       whiteMantlePortalDevices: null
     }
 
@@ -72,5 +78,65 @@ describe('statistics > items', () => {
       {id: 78978, count: 1},
       {id: 78978, count: 1}
     ])).whiteMantlePortalDevices).to.equal(3)
+  })
+
+  it('can calculate chak egg sack count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 72021, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 72021, count: 1},
+      {id: 72021, count: 1}
+    ])).chakEggSacks).to.equal(3)
+  })
+
+  it('can calculate preserved queen bee count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 68440, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 68440, count: 1},
+      {id: 68440, count: 1}
+    ])).preservedQueenBees).to.equal(3)
+  })
+
+  it('can calculate ghostly infusion count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 77303, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 77316, count: 1},
+      {id: 77394, count: 1}
+    ])).ghostlyInfusions).to.equal(3)
+  })
+
+  it('can calculate bauble infusion count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78079, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 78028, count: 1},
+      {id: 78097, count: 1}
+    ])).baubleInfusions).to.equal(3)
+  })
+
+  it('can calculate luminescent refractor count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 67375, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 67370, count: 1},
+      {id: 67372, count: 1}
+    ])).luminescentRefractors).to.equal(3)
+  })
+
+  it('can calculate broken spoon count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 74996, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 74996, count: 1},
+      {id: 74996, count: 1}
+    ])).brokenSpoons).to.equal(3)
   })
 })
