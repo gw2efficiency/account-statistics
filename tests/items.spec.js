@@ -66,6 +66,6 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 78978, count: 1},
       {id: 78978, count: 1}
-    ])).whiteMantlePortalDevice).to.equal(3)
+    ])).whiteMantlePortalDevices).to.equal(3)
   })
 })
