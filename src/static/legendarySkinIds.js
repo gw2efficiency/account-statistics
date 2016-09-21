@@ -25,5 +25,6 @@ export default [
   6344, // Ad Infinitum
   6506, // Astralaria
   6561, // The Ascension
-  6717 // Chuka and Champawat
+  6717, // Chuka and Champawat
+  6966 // Eureka
 ]

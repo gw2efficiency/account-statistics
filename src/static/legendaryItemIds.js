@@ -1,30 +1,31 @@
 export default [
-  30686,
-  30703,
-  30688,
-  30693,
-  30696,
-  30698,
-  30687,
-  30685,
-  30702,
-  30694,
-  30684,
-  30704,
-  30690,
-  30697,
-  30699,
-  30701,
-  30700,
-  30691,
-  30695,
-  30689,
-  30692,
-  45017,
-  71383,
-  72713,
-  74155,
-  76158,
-  77474,
-  78556
+  30684, // Frostfang
+  30685, // Kudzu
+  30686, // The Dreamer
+  30687, // Incinerator
+  30688, // The Minstrel
+  30689, // Eternity
+  30690, // The Juggernaut
+  30691, // Kamohoali'i Kotaki
+  30692, // The Moot
+  30693, // Quip
+  30694, // The Predator
+  30695, // Meteorlogicus
+  30696, // The Flameseeker Prophecies
+  30697, // Frenzy
+  30698, // The Bifrost
+  30699, // Bolt
+  30700, // Rodgort
+  30701, // Kraitkin
+  30702, // Howler
+  30703, // Sunrise
+  30704, // Twilight
+  45017, // Quip
+  71383, // Nevermore
+  72713, // HOPE
+  74155, // Ad Infinitum
+  76158, // Astralaria
+  77474, // The Ascension
+  78556, // Chuka and Champawat
+  79562 // Eureka
 ]
