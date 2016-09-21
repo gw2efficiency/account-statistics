@@ -33,6 +33,12 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({outfits: [1, 2, 7, 9, 2]}).outfitCount).to.equal(5)
   })
 
+  it('can calculate title count', () => {
+    expect(unlocksStatistics({}).titleCount).to.equal(null)
+    expect(unlocksStatistics({titles: []}).titleCount).to.equal(0)
+    expect(unlocksStatistics({titles: [1, 2, 7, 9, 2]}).titleCount).to.equal(5)
+  })
+
   it('can calculate legendary skin count', () => {
     expect(unlocksStatistics({}).legendarySkins).to.equal(null)
     expect(unlocksStatistics({skins: []}).legendarySkins).to.equal(0)
