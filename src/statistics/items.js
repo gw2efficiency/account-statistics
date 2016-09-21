@@ -3,6 +3,7 @@ import {materialsItems} from 'gw2e-account-value/build/materials'
 import {charactersItems} from 'gw2e-account-value/build/characters'
 import {sharedInventoryItems} from 'gw2e-account-value/build/shared'
 import legendaryItemIds from '../static/legendaryItemIds'
+import permanentToolIds from '../static/permanentToolIds'
 
 export default function (accountData) {
   const items = allItems(accountData)
@@ -26,7 +27,8 @@ export default function (accountData) {
     blackLionClaimTickets: blackLionClaimTickets(items),
     instruments: countItems(items, [
       43526, 42973, 44883, 66323, 42888, 36174, 38129, 68361
-    ])
+    ]),
+    permanentTools: countItems(items, permanentToolIds)
   }
 }
 

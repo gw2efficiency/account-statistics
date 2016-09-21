@@ -27,6 +27,7 @@ describe('statistics > items', () => {
       legendaryItems: null,
       luminescentRefractors: null,
       preservedQueenBees: null,
+      permanentTools: null,
       whiteMantlePortalDevices: null,
       blackLionClaimTickets: null,
       instruments: null
@@ -160,5 +161,15 @@ describe('statistics > items', () => {
       {id: 38129, count: 1},
       {id: 43526, count: 1}
     ])).instruments).to.equal(3)
+  })
+
+  it('can calculate permanent tool count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78806, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 38129, count: 1},
+      {id: 47897, count: 1}
+    ])).permanentTools).to.equal(2)
   })
 })
