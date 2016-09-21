@@ -18,6 +18,7 @@ export default {
   magnetiteShards: 28,
   wvwClaimTickets: 26,
   proofOfHeroics: 31,
+  pvpLeagueTickets: 30,
   provisionerTokens: 29,
   ascalonianTears: 5,
   sealsOfBeetletun: 9,
