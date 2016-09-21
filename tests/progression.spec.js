@@ -35,6 +35,54 @@ describe('statistics > progression', () => {
     }).salvagedItems).to.equal(158462)
   })
 
+  it('can calculate the completed keg brawl rounds', () => {
+    expect(progressionStatistics({}).kegBrawlRounds).to.equal(null)
+    expect(progressionStatistics({achievements: []}).kegBrawlRounds).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 753, current: 5, max: 30, done: false}]
+    }).kegBrawlRounds).to.equal(5)
+
+    expect(progressionStatistics({
+      achievements: [{id: 753, current: 5, max: 30, done: false, repeated: 2}]
+    }).kegBrawlRounds).to.equal(65)
+  })
+
+  it('can calculate the completed sanctum sprint rounds', () => {
+    expect(progressionStatistics({}).sanctumSprintRounds).to.equal(null)
+    expect(progressionStatistics({achievements: []}).sanctumSprintRounds).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 728, current: 5, max: 15, done: false}]
+    }).sanctumSprintRounds).to.equal(5)
+
+    expect(progressionStatistics({
+      achievements: [{id: 728, current: 5, max: 15, done: false, repeated: 2}]
+    }).sanctumSprintRounds).to.equal(35)
+  })
+
+  it('can calculate the completed southsun survival rounds', () => {
+    expect(progressionStatistics({}).southsunSurvivalRounds).to.equal(null)
+    expect(progressionStatistics({achievements: []}).southsunSurvivalRounds).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 752, current: 5, max: 6, done: false}]
+    }).southsunSurvivalRounds).to.equal(5)
+
+    expect(progressionStatistics({
+      achievements: [{id: 752, current: 5, max: 6, done: false, repeated: 2}]
+    }).southsunSurvivalRounds).to.equal(17)
+  })
+
+  it('can calculate the completed crab toss rounds', () => {
+    expect(progressionStatistics({}).crabTossRounds).to.equal(null)
+    expect(progressionStatistics({achievements: []}).crabTossRounds).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 757, current: 5, max: 12, done: false}]
+    }).crabTossRounds).to.equal(5)
+
+    expect(progressionStatistics({
+      achievements: [{id: 757, current: 5, max: 12, done: false, repeated: 2}]
+    }).crabTossRounds).to.equal(29)
+  })
+
   it('can calculate the completed dungeons', () => {
     expect(progressionStatistics({}).completedDungeons).to.equal(null)
     expect(progressionStatistics({achievements: []}).completedDungeons).to.equal(0)
