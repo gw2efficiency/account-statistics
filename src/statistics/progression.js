@@ -2,9 +2,22 @@ export default function (accountData) {
   return {
     achievementCount: achievementCount(accountData),
     fractalLevel: fractalLevel(accountData),
-    salvagedItems: salvagedItems(accountData),
-    completedDungeons: completedDungeons(accountData),
-    ...wvwAchievements(accountData)
+    salvagedItems: achievementCurrent(accountData, 129, 200),
+    completedDungeons: achievementCurrent(accountData, 123, 5),
+    wvwPlayerKills: achievementCurrent(accountData, 283),
+    wvwSupplyCaravansKilled: achievementCurrent(accountData, 288),
+    wvwSupplyCaravansEscorted: achievementCurrent(accountData, 285),
+    wvwSupplySpentOnRepairs: achievementCurrent(accountData, 306),
+    wvwCapturedObjectives: achievementCurrent(accountData, 303),
+    wvwCapturedSupplyCamps: achievementCurrent(accountData, 291),
+    wvwCapturedTowers: achievementCurrent(accountData, 297),
+    wvwCapturedKeeps: achievementCurrent(accountData, 300),
+    wvwCapturedCastles: achievementCurrent(accountData, 294),
+    wvwDefendedObjectives: achievementCurrent(accountData, 319),
+    wvwDefendedSupplyCamps: achievementCurrent(accountData, 310),
+    wvwDefendedTowers: achievementCurrent(accountData, 322),
+    wvwDefendedKeeps: achievementCurrent(accountData, 316),
+    wvwDefendedCastles: achievementCurrent(accountData, 313)
   }
 }
 
@@ -32,73 +45,20 @@ function fractalLevel (accountData) {
   return accountData.account.fractal_level
 }
 
-// How many times the user salvaged an item
-function salvagedItems (accountData) {
+// How high the accumulated value of an achievement is
+function achievementCurrent (accountData, id, pointsPerRepeat = 0) {
   if (!accountData.achievements) {
     return null
   }
 
-  // Find the "Agent of Entropy" achievement
-  const achievement = accountData.achievements.find(x => x.id === 129)
+  // Find the achievement
+  const achievement = accountData.achievements.find(x => x.id === id)
 
+  // The achievement does not exist, so the user did not start it
   if (!achievement) {
     return 0
   }
 
-  return (achievement.repeated || 0) * 200 + achievement.current
-}
-
-// How many times the user completed a dungeon
-function completedDungeons (accountData) {
-  if (!accountData.achievements) {
-    return null
-  }
-
-  // Find the "Hobby Dungeon Explorer" achievement
-  const achievement = accountData.achievements.find(x => x.id === 123)
-
-  if (!achievement) {
-    return 0
-  }
-
-  return (achievement.repeated || 0) * 5 + achievement.current
-}
-
-// How many people the player killed in wvw, how many supply he spent, ...
-function wvwAchievements (accountData) {
-  const achievements = {
-    wvwPlayerKills: 283,
-    wvwSupplyCaravansKilled: 288,
-    wvwSupplyCaravansEscorted: 285,
-    wvwSupplySpentOnRepairs: 306,
-    wvwCapturedObjectives: 303,
-    wvwCapturedSupplyCamps: 291,
-    wvwCapturedTowers: 297,
-    wvwCapturedKeeps: 300,
-    wvwCapturedCastles: 294,
-    wvwDefendedObjectives: 319,
-    wvwDefendedSupplyCamps: 310,
-    wvwDefendedTowers: 322,
-    wvwDefendedKeeps: 316,
-    wvwDefendedCastles: 313
-  }
-
-  // The achievement data is missing, return nulls for everything!
-  if (!accountData.achievements) {
-    return Object.keys(achievements).reduce((obj, key) => {
-      obj[key] = null
-      return obj
-    }, {})
-  }
-
-  // Go through all the achievements and give them the same treatment
-  let result = {}
-  Object.keys(achievements).map(key => {
-    let id = achievements[key]
-    let achievement = accountData.achievements.find(x => x.id === id)
-
-    result[key] = achievement ? achievement.current : 0
-  })
-
-  return result
+  // Sum up the total value of the achievement
+  return (achievement.repeated || 0) * pointsPerRepeat + achievement.current
 }
