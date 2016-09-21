@@ -11,7 +11,9 @@ export default function (accountData) {
     titleCount: titleCount(accountData),
     recipeCount: recipeCount(accountData),
     legendarySkins: legendarySkins(accountData),
-    fractalSkins: fractalSkins(accountData)
+    fractalSkins: fractalSkins(accountData),
+    wintersPresence: skinExists(accountData, 6577),
+    nightfury: skinExists(accountData, 6161)
   }
 }
 
@@ -100,4 +102,17 @@ function fractalSkins (accountData) {
   return accountData.skins
     .filter(x => fractalSkinIds.indexOf(x) !== -1)
     .length
+}
+
+// Check if a skin exists on the account
+function skinExists (accountData, id) {
+  if (!accountData.skins) {
+    return null
+  }
+
+  let unlocked = accountData.skins
+    .filter(x => x === id)
+    .length
+
+  return unlocked > 0 ? 1 : 0
 }

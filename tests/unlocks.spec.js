@@ -65,4 +65,18 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).fractalSkins).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 4500, 6234]}).fractalSkins).to.equal(2)
   })
+
+  it('can calculate the winters presence unlock', () => {
+    expect(unlocksStatistics({}).wintersPresence).to.equal(null)
+    expect(unlocksStatistics({skins: []}).wintersPresence).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).wintersPresence).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 6577, 6577]}).wintersPresence).to.equal(1)
+  })
+
+  it('can calculate the nightfury unlock', () => {
+    expect(unlocksStatistics({}).nightfury).to.equal(null)
+    expect(unlocksStatistics({skins: []}).nightfury).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).nightfury).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 6161, 6161]}).nightfury).to.equal(1)
+  })
 })
