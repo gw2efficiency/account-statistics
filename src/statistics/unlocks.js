@@ -6,6 +6,7 @@ export default function (accountData) {
     skinCount: skinCount(accountData),
     miniCount: miniCount(accountData),
     finisherCount: finisherCount(accountData),
+    outfitCount: outfitCount(accountData),
     legendarySkins: legendarySkins(accountData)
   }
 }
@@ -44,6 +45,15 @@ function finisherCount (accountData) {
   }
 
   return accountData.finishers.length
+}
+
+// The unlocked outfits on the account
+function outfitCount (accountData) {
+  if (!accountData.outfits) {
+    return null
+  }
+
+  return accountData.outfits.length
 }
 
 // The legendary skins unlocked on the account
