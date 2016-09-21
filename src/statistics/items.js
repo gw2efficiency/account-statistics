@@ -12,7 +12,8 @@ export default function (accountData) {
 
   return {
     legendaryItems: legendaryItems(items),
-    fractalTonics: fractalTonics(items)
+    fractalTonics: fractalTonics(items),
+    legendaryInsights: legendaryInsights(items)
   }
 }
 
@@ -45,4 +46,12 @@ function fractalTonics (items) {
   return items
     .filter(x => x.id === 49277)
     .length
+}
+
+// Count how many legendary insights the user has
+function legendaryInsights (items) {
+  return items
+    .filter(x => x.id === 77302)
+    .map(x => x.count)
+    .reduce((a, b) => a + b, 0)
 }

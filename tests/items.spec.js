@@ -48,4 +48,14 @@ describe('statistics > items', () => {
       {id: 49277}
     ])).fractalTonics).to.equal(3)
   })
+
+  it('can calculate legendary insight count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 77302, count: 50},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 77302, count: 1},
+      {id: 77302, count: 4}
+    ])).legendaryInsights).to.equal(55)
+  })
 })
