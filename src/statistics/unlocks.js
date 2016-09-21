@@ -1,4 +1,5 @@
 import legendarySkinIds from '../static/legendarySkinIds'
+import fractalSkinIds from '../static/fractalSkinIds'
 
 export default function (accountData) {
   return {
@@ -9,7 +10,8 @@ export default function (accountData) {
     outfitCount: outfitCount(accountData),
     titleCount: titleCount(accountData),
     recipeCount: recipeCount(accountData),
-    legendarySkins: legendarySkins(accountData)
+    legendarySkins: legendarySkins(accountData),
+    fractalSkins: fractalSkins(accountData)
   }
 }
 
@@ -86,5 +88,16 @@ function legendarySkins (accountData) {
 
   return accountData.skins
     .filter(x => legendarySkinIds.indexOf(x) !== -1)
+    .length
+}
+
+// The fractal skins unlocked on the account
+function fractalSkins (accountData) {
+  if (!accountData.skins) {
+    return null
+  }
+
+  return accountData.skins
+    .filter(x => fractalSkinIds.indexOf(x) !== -1)
     .length
 }

@@ -58,4 +58,11 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).legendarySkins).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 4680, 6561]}).legendarySkins).to.equal(2)
   })
+
+  it('can calculate fractal skin count', () => {
+    expect(unlocksStatistics({}).fractalSkins).to.equal(null)
+    expect(unlocksStatistics({skins: []}).fractalSkins).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).fractalSkins).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 4500, 6234]}).fractalSkins).to.equal(2)
+  })
 })
