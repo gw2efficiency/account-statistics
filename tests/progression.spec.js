@@ -35,11 +35,115 @@ describe('statistics > progression', () => {
     }).salvagedItems).to.equal(158462)
   })
 
-  it('can calculate the wvw statistics out of achievements', () => {
+  it('can calculate the wvw player kills', () => {
     expect(progressionStatistics({}).wvwPlayerKills).to.equal(null)
     expect(progressionStatistics({achievements: []}).wvwPlayerKills).to.equal(0)
     expect(progressionStatistics({
       achievements: [{id: 283, current: 486100, max: 250000, done: true}]
     }).wvwPlayerKills).to.equal(486100)
+  })
+
+  it('can calculate the wvw supply caravan kills', () => {
+    expect(progressionStatistics({}).wvwSupplyCaravansKilled).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwSupplyCaravansKilled).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 288, current: 486100, max: 250000, done: true}]
+    }).wvwSupplyCaravansKilled).to.equal(486100)
+  })
+
+  it('can calculate the wvw supply caravan escorts', () => {
+    expect(progressionStatistics({}).wvwSupplyCaravansEscorted).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwSupplyCaravansEscorted).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 285, current: 486100, max: 250000, done: true}]
+    }).wvwSupplyCaravansEscorted).to.equal(486100)
+  })
+
+  it('can calculate the wvw supply spent on repairs', () => {
+    expect(progressionStatistics({}).wvwSupplySpentOnRepairs).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwSupplySpentOnRepairs).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 306, current: 486100, max: 250000, done: true}]
+    }).wvwSupplySpentOnRepairs).to.equal(486100)
+  })
+
+  it('can calculate the wvw captured objectives', () => {
+    expect(progressionStatistics({}).wvwCapturedObjectives).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwCapturedObjectives).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 303, current: 486100, max: 250000, done: true}]
+    }).wvwCapturedObjectives).to.equal(486100)
+  })
+
+  it('can calculate the wvw defended objectives', () => {
+    expect(progressionStatistics({}).wvwDefendedObjectives).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwDefendedObjectives).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 319, current: 486100, max: 250000, done: true}]
+    }).wvwDefendedObjectives).to.equal(486100)
+  })
+
+  it('can calculate the wvw captured supply camps', () => {
+    expect(progressionStatistics({}).wvwCapturedSupplyCamps).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwCapturedSupplyCamps).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 291, current: 486100, max: 250000, done: true}]
+    }).wvwCapturedSupplyCamps).to.equal(486100)
+  })
+
+  it('can calculate the wvw defended supply camps', () => {
+    expect(progressionStatistics({}).wvwDefendedSupplyCamps).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwDefendedSupplyCamps).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 310, current: 486100, max: 250000, done: true}]
+    }).wvwDefendedSupplyCamps).to.equal(486100)
+  })
+
+  it('can calculate the wvw captured towers', () => {
+    expect(progressionStatistics({}).wvwCapturedTowers).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwCapturedTowers).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 297, current: 486100, max: 250000, done: true}]
+    }).wvwCapturedTowers).to.equal(486100)
+  })
+
+  it('can calculate the wvw defended towers', () => {
+    expect(progressionStatistics({}).wvwDefendedTowers).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwDefendedTowers).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 322, current: 486100, max: 250000, done: true}]
+    }).wvwDefendedTowers).to.equal(486100)
+  })
+
+  it('can calculate the wvw captured keeps', () => {
+    expect(progressionStatistics({}).wvwCapturedKeeps).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwCapturedKeeps).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 300, current: 486100, max: 250000, done: true}]
+    }).wvwCapturedKeeps).to.equal(486100)
+  })
+
+  it('can calculate the wvw defended keeps', () => {
+    expect(progressionStatistics({}).wvwDefendedKeeps).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwDefendedKeeps).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 316, current: 486100, max: 250000, done: true}]
+    }).wvwDefendedKeeps).to.equal(486100)
+  })
+
+  it('can calculate the wvw captured castles', () => {
+    expect(progressionStatistics({}).wvwCapturedCastles).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwCapturedCastles).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 294, current: 486100, max: 250000, done: true}]
+    }).wvwCapturedCastles).to.equal(486100)
+  })
+
+  it('can calculate the wvw defended castles', () => {
+    expect(progressionStatistics({}).wvwDefendedCastles).to.equal(null)
+    expect(progressionStatistics({achievements: []}).wvwDefendedCastles).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 313, current: 486100, max: 250000, done: true}]
+    }).wvwDefendedCastles).to.equal(486100)
   })
 })
