@@ -7,20 +7,11 @@ import legendaryItemIds from '../static/legendaryItemIds'
 export default function (accountData) {
   const items = allItems(accountData)
 
-  if (items.length === 0) {
-    return {
-      legendaryItems: null,
-      fractalTonics: null,
-      legendaryInsights: null,
-      whiteMantlePortalDevices: null
-    }
-  }
-
   return {
-    legendaryItems: legendaryItems(items),
-    fractalTonics: countItem(items, 49277),
-    legendaryInsights: countItem(items, 77302),
-    whiteMantlePortalDevices: countItem(items, 78978)
+    legendaryItems: countItems(items, legendaryItemIds),
+    fractalTonics: countItems(items, 49277),
+    legendaryInsights: countItems(items, 77302),
+    whiteMantlePortalDevices: countItems(items, 78978)
   }
 }
 
@@ -42,18 +33,18 @@ export function allItems (accountData) {
   return items.reduce((a, b) => a.concat(b), [])
 }
 
-// Count how many legendary items the user has
-function legendaryItems (items) {
-  return items
-    .filter(x => legendaryItemIds.indexOf(x.id) !== -1)
-    .map(x => x.count)
-    .reduce((a, b) => a + b, 0)
-}
+// Count how many of a list of items the user has
+function countItems (items, ids) {
+  if (items.length === 0) {
+    return null
+  }
 
-// Count how many of an item the user has
-function countItem (items, id) {
+  // Make sure we always use an array
+  ids = [].concat(ids)
+
+  // Go through the items and count occurrences!
   return items
-    .filter(x => x.id === id)
+    .filter(x => ids.indexOf(x.id) !== -1)
     .map(x => x.count)
     .reduce((a, b) => a + b, 0)
 }
