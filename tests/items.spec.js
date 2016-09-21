@@ -31,21 +31,21 @@ describe('statistics > items', () => {
 
   it('can calculate legendary count', () => {
     expect(itemsStatistics(generateAccount([
-      {id: 123},
-      {id: 30687},
-      {id: 71383},
-      {id: 1},
-      {id: 7}
+      {id: 123, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 1, count: 1},
+      {id: 7, count: 1}
     ])).legendaryItems).to.equal(2)
   })
 
   it('can calculate fractal tonic count', () => {
     expect(itemsStatistics(generateAccount([
-      {id: 49277},
-      {id: 30687},
-      {id: 71383},
-      {id: 49277},
-      {id: 49277}
+      {id: 49277, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 49277, count: 1},
+      {id: 49277, count: 1}
     ])).fractalTonics).to.equal(3)
   })
 
@@ -57,5 +57,15 @@ describe('statistics > items', () => {
       {id: 77302, count: 1},
       {id: 77302, count: 4}
     ])).legendaryInsights).to.equal(55)
+  })
+
+  it('can calculate white mantle portal device count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78978, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 78978, count: 1},
+      {id: 78978, count: 1}
+    ])).whiteMantlePortalDevice).to.equal(3)
   })
 })

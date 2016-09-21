@@ -1,6 +1,7 @@
 import {bankItems} from 'gw2e-account-value/build/bank'
 import {materialsItems} from 'gw2e-account-value/build/materials'
 import {charactersItems} from 'gw2e-account-value/build/characters'
+import {sharedInventoryItems} from 'gw2e-account-value/build/shared'
 import legendaryItemIds from '../static/legendaryItemIds'
 
 export default function (accountData) {
@@ -13,7 +14,8 @@ export default function (accountData) {
   return {
     legendaryItems: legendaryItems(items),
     fractalTonics: fractalTonics(items),
-    legendaryInsights: legendaryInsights(items)
+    legendaryInsights: legendaryInsights(items),
+    whiteMantlePortalDevice: whiteMantlePortalDevice(items)
   }
 }
 
@@ -22,7 +24,8 @@ export function allItems (accountData) {
   const items = [
     charactersItems(accountData),
     bankItems(accountData),
-    materialsItems(accountData)
+    materialsItems(accountData),
+    sharedInventoryItems(accountData)
   ]
 
   // The "characters" permission is probably missing, in which case
@@ -38,20 +41,30 @@ export function allItems (accountData) {
 function legendaryItems (items) {
   return items
     .filter(x => legendaryItemIds.indexOf(x.id) !== -1)
-    .length
+    .map(x => x.count)
+    .reduce((a, b) => a + b, 0)
 }
 
 // Count how many fractal tonics the user has
 function fractalTonics (items) {
   return items
     .filter(x => x.id === 49277)
-    .length
+    .map(x => x.count)
+    .reduce((a, b) => a + b, 0)
 }
 
 // Count how many legendary insights the user has
 function legendaryInsights (items) {
   return items
     .filter(x => x.id === 77302)
+    .map(x => x.count)
+    .reduce((a, b) => a + b, 0)
+}
+
+// Count how many white mantle portal devices the user has
+function whiteMantlePortalDevice (items) {
+  return items
+    .filter(x => x.id === 78978)
     .map(x => x.count)
     .reduce((a, b) => a + b, 0)
 }
