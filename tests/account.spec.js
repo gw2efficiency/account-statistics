@@ -8,4 +8,10 @@ describe('statistics > account', () => {
     expect(accountStatistics({account: {}}).guildCount).to.equal(null)
     expect(accountStatistics({account: {guilds: ['uuid-1', 'uuid-2']}}).guildCount).to.equal(2)
   })
+
+  it('can calculate the wvw rank', () => {
+    expect(accountStatistics({}).wvwRank).to.equal(null)
+    expect(accountStatistics({account: {}}).wvwRank).to.equal(null)
+    expect(accountStatistics({account: {wvw_rank: 123}}).wvwRank).to.equal(123)
+  })
 })

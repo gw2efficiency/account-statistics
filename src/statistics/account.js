@@ -1,6 +1,7 @@
 export default function (accountData) {
   return {
-    guildCount: guildCount(accountData)
+    guildCount: guildCount(accountData),
+    wvwRank: wvwRank(accountData)
   }
 }
 
@@ -15,4 +16,17 @@ function guildCount (accountData) {
   }
 
   return accountData.account.guilds.length
+}
+
+// The wvw rank
+function wvwRank (accountData) {
+  if (!accountData.account) {
+    return null
+  }
+
+  if (typeof accountData.account.wvw_rank === 'undefined') {
+    return null
+  }
+
+  return accountData.account.wvw_rank
 }
