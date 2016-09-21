@@ -17,7 +17,12 @@ const generateAccount = (items) => {
 
 describe('statistics > items', () => {
   it('exits out when one of the permissions is missing', () => {
-    const emptyObject = {legendaryItems: null, fractalTonics: null}
+    const emptyObject = {
+      legendaryItems: null,
+      fractalTonics: null,
+      legendaryInsights: null,
+      whiteMantlePortalDevices: null
+    }
 
     const bothPermissions = {bank: null, characters: null}
     expect(itemsStatistics(bothPermissions)).to.deep.equal(emptyObject)

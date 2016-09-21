@@ -8,7 +8,12 @@ export default function (accountData) {
   const items = allItems(accountData)
 
   if (items.length === 0) {
-    return {legendaryItems: null, fractalTonics: null}
+    return {
+      legendaryItems: null,
+      fractalTonics: null,
+      legendaryInsights: null,
+      whiteMantlePortalDevices: null
+    }
   }
 
   return {
