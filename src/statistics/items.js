@@ -18,12 +18,15 @@ export default function (accountData) {
       77366, 77274, 77303, 77310, 77316, 77394
     ]),
     baubleInfusions: countItems(items, [
-      78012, 78052, 78054, 78079, 78086, 78090,
-      78016, 78028, 78030, 78031, 78057, 78097
+      78012, 78052, 78054, 78079, 78086, 78090, 78016, 78028,
+      78030, 78031, 78057, 78097
     ]),
     luminescentRefractors: countItems(items, [67375, 67370, 67372]),
     brokenSpoons: countItems(items, 74996),
-    blackLionClaimTickets: blackLionClaimTickets(items)
+    blackLionClaimTickets: blackLionClaimTickets(items),
+    instruments: countItems(items, [
+      43526, 42973, 44883, 66323, 42888, 36174, 38129, 68361
+    ])
   }
 }
 

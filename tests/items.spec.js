@@ -28,7 +28,8 @@ describe('statistics > items', () => {
       luminescentRefractors: null,
       preservedQueenBees: null,
       whiteMantlePortalDevices: null,
-      blackLionClaimTickets: null
+      blackLionClaimTickets: null,
+      instruments: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -149,5 +150,15 @@ describe('statistics > items', () => {
       {id: 43998, count: 3},
       {id: 43998, count: 1}
     ])).blackLionClaimTickets).to.equal(1.4)
+  })
+
+  it('can calculate instrument count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 66323, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 38129, count: 1},
+      {id: 43526, count: 1}
+    ])).instruments).to.equal(3)
   })
 })
