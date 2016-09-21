@@ -46,7 +46,9 @@ function finisherCount (accountData) {
     return null
   }
 
-  return accountData.finishers.length
+  return accountData.finishers
+    .filter(x => x.permanent)
+    .length
 }
 
 // The unlocked outfits on the account
