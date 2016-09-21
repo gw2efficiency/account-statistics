@@ -5,6 +5,7 @@ export default function (accountData) {
     dyeCount: dyeCount(accountData),
     skinCount: skinCount(accountData),
     miniCount: miniCount(accountData),
+    finisherCount: finisherCount(accountData),
     legendarySkins: legendarySkins(accountData)
   }
 }
@@ -34,6 +35,15 @@ function miniCount (accountData) {
   }
 
   return accountData.minis.length
+}
+
+// The unlocked finishers on the account
+function finisherCount (accountData) {
+  if (!accountData.finishers) {
+    return null
+  }
+
+  return accountData.finishers.length
 }
 
 // The legendary skins unlocked on the account

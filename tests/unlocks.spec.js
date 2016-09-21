@@ -21,6 +21,12 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({minis: [1, 2, 7, 9, 2]}).miniCount).to.equal(5)
   })
 
+  it('can calculate finisher count', () => {
+    expect(unlocksStatistics({}).finisherCount).to.equal(null)
+    expect(unlocksStatistics({finishers: []}).finisherCount).to.equal(0)
+    expect(unlocksStatistics({finishers: [1, 2, 7, 9, 2]}).finisherCount).to.equal(5)
+  })
+
   it('can calculate legendary skin count', () => {
     expect(unlocksStatistics({}).legendarySkins).to.equal(null)
     expect(unlocksStatistics({skins: []}).legendarySkins).to.equal(0)
