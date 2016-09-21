@@ -8,6 +8,7 @@ export default function (accountData) {
     finisherCount: finisherCount(accountData),
     outfitCount: outfitCount(accountData),
     titleCount: titleCount(accountData),
+    recipeCount: recipeCount(accountData),
     legendarySkins: legendarySkins(accountData)
   }
 }
@@ -57,13 +58,22 @@ function outfitCount (accountData) {
   return accountData.outfits.length
 }
 
-// The unlocked outfits on the account
+// The unlocked titles on the account
 function titleCount (accountData) {
   if (!accountData.titles) {
     return null
   }
 
   return accountData.titles.length
+}
+
+// The unlocked recipes on the account
+function recipeCount (accountData) {
+  if (!accountData.recipes) {
+    return null
+  }
+
+  return accountData.recipes.length
 }
 
 // The legendary skins unlocked on the account
