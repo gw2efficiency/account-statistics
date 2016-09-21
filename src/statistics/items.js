@@ -22,7 +22,8 @@ export default function (accountData) {
       78016, 78028, 78030, 78031, 78057, 78097
     ]),
     luminescentRefractors: countItems(items, [67375, 67370, 67372]),
-    brokenSpoons: countItems(items, 74996)
+    brokenSpoons: countItems(items, 74996),
+    blackLionClaimTickets: blackLionClaimTickets(items)
   }
 }
 
@@ -58,4 +59,15 @@ function countItems (items, ids) {
     .filter(x => ids.indexOf(x.id) !== -1)
     .map(x => x.count)
     .reduce((a, b) => a + b, 0)
+}
+
+// See how many black lion tickets the user has
+function blackLionClaimTickets (items) {
+  if (items.length === 0) {
+    return null
+  }
+
+  let tickets = countItems(items, 43992)
+  let scraps = countItems(items, 43998)
+  return tickets + scraps * 0.1
 }

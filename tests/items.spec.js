@@ -27,7 +27,8 @@ describe('statistics > items', () => {
       legendaryItems: null,
       luminescentRefractors: null,
       preservedQueenBees: null,
-      whiteMantlePortalDevices: null
+      whiteMantlePortalDevices: null,
+      blackLionClaimTickets: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -138,5 +139,15 @@ describe('statistics > items', () => {
       {id: 74996, count: 1},
       {id: 74996, count: 1}
     ])).brokenSpoons).to.equal(3)
+  })
+
+  it('can calculate black lion ticket count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 43992, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 43998, count: 3},
+      {id: 43998, count: 1}
+    ])).blackLionClaimTickets).to.equal(1.4)
   })
 })
