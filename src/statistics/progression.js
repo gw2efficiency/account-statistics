@@ -3,6 +3,7 @@ export default function (accountData) {
     achievementCount: achievementCount(accountData),
     fractalLevel: fractalLevel(accountData),
     salvagedItems: salvagedItems(accountData),
+    completedDungeons: completedDungeons(accountData),
     ...wvwAchievements(accountData)
   }
 }
@@ -45,6 +46,22 @@ function salvagedItems (accountData) {
   }
 
   return (achievement.repeated || 0) * 200 + achievement.current
+}
+
+// How many times the user completed a dungeon
+function completedDungeons (accountData) {
+  if (!accountData.achievements) {
+    return null
+  }
+
+  // Find the "Hobby Dungeon Explorer" achievement
+  const achievement = accountData.achievements.find(x => x.id === 123)
+
+  if (!achievement) {
+    return 0
+  }
+
+  return (achievement.repeated || 0) * 5 + achievement.current
 }
 
 // How many people the player killed in wvw, how many supply he spent, ...

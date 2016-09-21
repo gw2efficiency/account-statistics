@@ -35,6 +35,18 @@ describe('statistics > progression', () => {
     }).salvagedItems).to.equal(158462)
   })
 
+  it('can calculate the completed dungeons', () => {
+    expect(progressionStatistics({}).completedDungeons).to.equal(null)
+    expect(progressionStatistics({achievements: []}).completedDungeons).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 123, current: 3, max: 5, done: false}]
+    }).completedDungeons).to.equal(3)
+
+    expect(progressionStatistics({
+      achievements: [{id: 123, current: 3, max: 5, done: false, repeated: 350}]
+    }).completedDungeons).to.equal(1753)
+  })
+
   it('can calculate the wvw player kills', () => {
     expect(progressionStatistics({}).wvwPlayerKills).to.equal(null)
     expect(progressionStatistics({achievements: []}).wvwPlayerKills).to.equal(0)
