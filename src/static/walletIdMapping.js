@@ -17,6 +17,7 @@ export default {
   unboundMagic: 32,
   magnetiteShards: 28,
   wvwClaimTickets: 26,
+  proofOfHeroics: 31,
   provisionerTokens: 29,
   ascalonianTears: 5,
   sealsOfBeetletun: 9,
