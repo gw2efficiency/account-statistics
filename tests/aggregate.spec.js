@@ -1,12 +1,12 @@
 /* eslint-env node, mocha */
 const expect = require('chai').expect
-import accumulatedStatistics from '../src/statistics/accumulated'
+import aggregateStatistics from '../src/statistics/aggregate'
 
-describe('statistics > accumulated', () => {
+describe('statistics > aggregate', () => {
   it('can calculate total auras count', () => {
-    expect(accumulatedStatistics({}).totalAuras).to.equal(null)
-    expect(accumulatedStatistics({nightfury: 1}).totalAuras).to.equal(null)
-    expect(accumulatedStatistics({
+    expect(aggregateStatistics({}).totalAuras).to.equal(null)
+    expect(aggregateStatistics({nightfury: 1}).totalAuras).to.equal(null)
+    expect(aggregateStatistics({
       chakEggSacks: 1,
       preservedQueenBees: 5,
       ghostlyInfusions: 2,

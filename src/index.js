@@ -6,7 +6,7 @@ import progressionStatistics from './statistics/progression'
 import pvpStatistics from './statistics/pvp'
 import unlocksStatistics from './statistics/unlocks'
 import walletStatistics from './statistics/wallet'
-import accumulatedStatistics from './statistics/accumulated'
+import aggregateStatistics from './statistics/aggregate'
 
 export default function (accountData) {
   let baseStatistics = {
@@ -20,5 +20,5 @@ export default function (accountData) {
     ...walletStatistics(accountData)
   }
 
-  return {...baseStatistics, ...accumulatedStatistics(baseStatistics)}
+  return {...baseStatistics, ...aggregateStatistics(baseStatistics)}
 }
