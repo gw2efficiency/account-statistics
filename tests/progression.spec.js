@@ -206,4 +206,20 @@ describe('statistics > progression', () => {
       achievements: [{id: 313, current: 486100, max: 250000, done: true}]
     }).wvwDefendedCastles).to.equal(486100)
   })
+
+  it('can calculate the pvp killed players', () => {
+    expect(progressionStatistics({}).pvpKilledPlayers).to.equal(null)
+    expect(progressionStatistics({achievements: []}).pvpKilledPlayers).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 239, current: 41200, max: 10000, done: true}]
+    }).pvpKilledPlayers).to.equal(41200)
+  })
+
+  it('can calculate the pvp killed players in ranked', () => {
+    expect(progressionStatistics({}).pvpKilledPlayersRanked).to.equal(null)
+    expect(progressionStatistics({achievements: []}).pvpKilledPlayersRanked).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 240, current: 41200, max: 10000, done: true}]
+    }).pvpKilledPlayersRanked).to.equal(41200)
+  })
 })

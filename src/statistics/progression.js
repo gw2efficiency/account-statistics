@@ -21,7 +21,9 @@ export default function (accountData) {
     wvwDefendedSupplyCamps: achievementCurrent(accountData, 310),
     wvwDefendedTowers: achievementCurrent(accountData, 322),
     wvwDefendedKeeps: achievementCurrent(accountData, 316),
-    wvwDefendedCastles: achievementCurrent(accountData, 313)
+    wvwDefendedCastles: achievementCurrent(accountData, 313),
+    pvpKilledPlayers: achievementCurrent(accountData, 239),
+    pvpKilledPlayersRanked: achievementCurrent(accountData, 240)
   }
 }
 
