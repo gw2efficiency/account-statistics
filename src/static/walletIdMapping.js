@@ -14,6 +14,7 @@ export default {
   airshipParts: 19,
   lumpsOfAurillium: 22,
   leyLineCrystals: 20,
+  unboundMagic: 32,
   magnetiteShards: 28,
   wvwClaimTickets: 26,
   provisionerTokens: 29,
