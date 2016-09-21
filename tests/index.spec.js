@@ -4,7 +4,7 @@ import accountStatistics from '../src/index'
 
 describe('statistics', () => {
   it('can calculate all statistics', () => {
-    const keys = Object.keys(accountStatistics({}))
-    expect(keys.length).to.be.above(0)
+    const statistics = accountStatistics({})
+    expect(statistics).to.contain.all.keys(['brokenSpoons', 'totalAuras'])
   })
 })
