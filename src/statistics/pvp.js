@@ -47,9 +47,17 @@ export default function (accountData) {
 }
 
 function getWins (aggregate) {
+  if (!aggregate) {
+    return 0
+  }
+
   return aggregate.wins + aggregate.byes
 }
 
 function getGames (aggregate) {
+  if (!aggregate) {
+    return 0
+  }
+
   return aggregate.wins + aggregate.losses + aggregate.desertions + aggregate.byes + aggregate.forfeits
 }

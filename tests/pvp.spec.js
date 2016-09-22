@@ -99,41 +99,6 @@ describe('statistics > pvp', () => {
         forfeits: 0
       },
       ladders: {
-        none: {
-          wins: 0,
-          losses: 0,
-          desertions: 0,
-          byes: 0,
-          forfeits: 0
-        },
-        ranked: {
-          wins: 0,
-          losses: 0,
-          desertions: 0,
-          byes: 0,
-          forfeits: 0
-        },
-        soloarenarated: {
-          wins: 0,
-          losses: 0,
-          desertions: 0,
-          byes: 0,
-          forfeits: 0
-        },
-        teamarenarated: {
-          wins: 0,
-          losses: 0,
-          desertions: 0,
-          byes: 0,
-          forfeits: 0
-        },
-        unranked: {
-          wins: 0,
-          losses: 0,
-          desertions: 0,
-          byes: 0,
-          forfeits: 0
-        }
       }
     }
 
