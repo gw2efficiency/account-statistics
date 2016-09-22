@@ -30,7 +30,10 @@ describe('statistics > items', () => {
       permanentTools: null,
       whiteMantlePortalDevices: null,
       blackLionClaimTickets: null,
-      instruments: null
+      instruments: null,
+      chakEggs: null,
+      fossilizedInsects: null,
+      reclaimedMetalPlates: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -171,5 +174,35 @@ describe('statistics > items', () => {
       {id: 38129, count: 1},
       {id: 47897, count: 1}
     ])).permanentTools).to.equal(2)
+  })
+
+  it('can calculate chak egg count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 72205, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 72205, count: 1},
+      {id: 72205, count: 1}
+    ])).chakEggs).to.equal(3)
+  })
+
+  it('can calculate reclaimed metal plate count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 74356, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 74356, count: 1},
+      {id: 74356, count: 1}
+    ])).reclaimedMetalPlates).to.equal(3)
+  })
+
+  it('can calculate fossilized insects count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 66655, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 66646, count: 1},
+      {id: 66642, count: 1}
+    ])).fossilizedInsects).to.equal(3)
   })
 })

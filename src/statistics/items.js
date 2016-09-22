@@ -28,7 +28,14 @@ export default function (accountData) {
     instruments: countItems(items, [
       43526, 42973, 44883, 66323, 42888, 36174, 38129, 68361
     ]),
-    permanentTools: countItems(items, permanentToolIds)
+    permanentTools: countItems(items, permanentToolIds),
+    chakEggs: countItems(items, 72205),
+    reclaimedMetalPlates: countItems(items, 74356),
+    fossilizedInsects: countItems(items, [
+      66766, 66655, 66653, 66640, 66636, 66652,
+      66649, 66654, 66646, 66644, 66647, 66648,
+      66657, 66645, 66656, 66651, 66642
+    ])
   }
 }
 
