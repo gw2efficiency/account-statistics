@@ -32,6 +32,6 @@
     "parser": "babel-eslint"
   },
   "dependencies": {
-    "gw2e-account-value": "^2.0.3"
+    "gw2e-account-value": "^3.0.0"
   }
 }
