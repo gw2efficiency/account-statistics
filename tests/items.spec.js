@@ -34,7 +34,9 @@ describe('statistics > items', () => {
       chakEggs: null,
       fossilizedInsects: null,
       reclaimedMetalPlates: null,
-      championBags: null
+      championBags: null,
+      tripleTroubleChests: null,
+      tequatlChests: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -215,5 +217,25 @@ describe('statistics > items', () => {
       {id: 44226, count: 1},
       {id: 44199, count: 250}
     ])).championBags).to.equal(252)
+  })
+
+  it('can calculate triple trouble chest count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 49664, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 49664, count: 1},
+      {id: 49664, count: 250}
+    ])).tripleTroubleChests).to.equal(252)
+  })
+
+  it('can calculate champion bag count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 47836, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 47836, count: 1},
+      {id: 47836, count: 250}
+    ])).tequatlChests).to.equal(252)
   })
 })

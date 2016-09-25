@@ -37,7 +37,9 @@ export default function (accountData) {
       66649, 66654, 66646, 66644, 66647, 66648,
       66657, 66645, 66656, 66651, 66642
     ]),
-    championBags: countItems(items, championBags)
+    championBags: countItems(items, championBags),
+    tripleTroubleChests: countItems(items, 49664),
+    tequatlChests: countItems(items, 47836)
   }
 }
 
