@@ -33,7 +33,8 @@ describe('statistics > items', () => {
       instruments: null,
       chakEggs: null,
       fossilizedInsects: null,
-      reclaimedMetalPlates: null
+      reclaimedMetalPlates: null,
+      championBags: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -204,5 +205,15 @@ describe('statistics > items', () => {
       {id: 66646, count: 1},
       {id: 66642, count: 1}
     ])).fossilizedInsects).to.equal(3)
+  })
+
+  it('can calculate champion bag count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 44216, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 44226, count: 1},
+      {id: 44199, count: 250}
+    ])).championBags).to.equal(252)
   })
 })

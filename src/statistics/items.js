@@ -4,6 +4,7 @@ import {charactersItems} from 'gw2e-account-value/build/characters'
 import {sharedInventoryItems} from 'gw2e-account-value/build/shared'
 import legendaryItemIds from '../static/legendaryItemIds'
 import permanentToolIds from '../static/permanentToolIds'
+import championBags from '../static/championBags'
 
 export default function (accountData) {
   const items = allItems(accountData)
@@ -35,7 +36,8 @@ export default function (accountData) {
       66766, 66655, 66653, 66640, 66636, 66652,
       66649, 66654, 66646, 66644, 66647, 66648,
       66657, 66645, 66656, 66651, 66642
-    ])
+    ]),
+    championBags: countItems(items, championBags)
   }
 }
 
