@@ -1,10 +1,12 @@
+import uniq from 'uniq'
 import {bankItems} from 'gw2e-account-value/build/bank'
 import {materialsItems} from 'gw2e-account-value/build/materials'
 import {charactersItems} from 'gw2e-account-value/build/characters'
 import {sharedInventoryItems} from 'gw2e-account-value/build/shared'
 import legendaryItemIds from '../static/legendaryItemIds'
 import permanentToolIds from '../static/permanentToolIds'
-import championBags from '../static/championBags'
+import championBagIds from '../static/championBagIds'
+import tonicIds from '../static/tonicIds'
 
 export default function (accountData) {
   const items = allItems(accountData)
@@ -37,9 +39,10 @@ export default function (accountData) {
       66649, 66654, 66646, 66644, 66647, 66648,
       66657, 66645, 66656, 66651, 66642
     ]),
-    championBags: countItems(items, championBags),
+    championBags: countItems(items, championBagIds),
     tripleTroubleChests: countItems(items, 49664),
-    tequatlChests: countItems(items, 47836)
+    tequatlChests: countItems(items, 47836),
+    uniqueTonics: countItems(items, tonicIds, true)
   }
 }
 
@@ -62,19 +65,38 @@ export function allItems (accountData) {
 }
 
 // Count how many of a list of items the user has
-function countItems (items, ids) {
+function countItems (items, ids, unique = false) {
   if (items.length === 0) {
     return null
   }
 
-  // Make sure we always use an array
+  // Make sure we always use an array with all ids
   ids = [].concat(ids)
+  const idNumbers = ids.reduce((a, b) => a.concat(b), [])
 
-  // Go through the items and count occurrences!
-  return items
-    .filter(x => ids.indexOf(x.id) !== -1)
-    .map(x => x.count)
-    .reduce((a, b) => a + b, 0)
+  // Find the items matching our search ids
+  items = items.filter(x => idNumbers.indexOf(x.id) !== -1)
+
+  // Add up the amount of items the user has
+  if (!unique) {
+    return items.map(x => x.count).reduce((a, b) => a + b, 0)
+  }
+
+  // See how many unique items the user has
+  items = items.map(x => x.id)
+  uniq(items)
+
+  // Filter arrays of ids that unlock the same thing, see if they
+  // appear in the items and then make sure that they only appear once
+  ids
+    .filter(id => typeof id !== 'number')
+    .filter(id => items.find(x => id.indexOf(x) !== -1) !== undefined)
+    .map(id => {
+      items = items.filter(x => id.indexOf(x) === -1)
+      items.push(id[0])
+    })
+
+  return items.length
 }
 
 // See how many black lion tickets the user has

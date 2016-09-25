@@ -36,7 +36,8 @@ describe('statistics > items', () => {
       reclaimedMetalPlates: null,
       championBags: null,
       tripleTroubleChests: null,
-      tequatlChests: null
+      tequatlChests: null,
+      uniqueTonics: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -237,5 +238,16 @@ describe('statistics > items', () => {
       {id: 47836, count: 1},
       {id: 47836, count: 250}
     ])).tequatlChests).to.equal(252)
+  })
+
+  it('can calculate unique tonic count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 68046, count: 3},
+      {id: 2, count: 1},
+      {id: 66768, count: 1},
+      {id: 66926, count: 1},
+      {id: 5, count: 250},
+      {id: 68046, count: 100}
+    ])).uniqueTonics).to.equal(2)
   })
 })
