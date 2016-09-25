@@ -78,7 +78,8 @@ describe('statistics > pvp', () => {
       pvpWinRate50: 52.5,
       pvpWinRate250: 52.5,
       pvpWinRate500: 52.5,
-      pvpWinRate1000: 52.5
+      pvpWinRate1000: 52.5,
+      pvpWinRateRanked: 51.62
     }
 
     expect(pvpStatistics({pvp: input})).to.deep.equal(output)
@@ -112,7 +113,8 @@ describe('statistics > pvp', () => {
       pvpWinRate50: null,
       pvpWinRate250: null,
       pvpWinRate500: null,
-      pvpWinRate1000: null
+      pvpWinRate1000: null,
+      pvpWinRateRanked: null
     }
 
     expect(pvpStatistics({pvp: input})).to.deep.equal(output)

@@ -1,3 +1,5 @@
+import round from 'round-to'
+
 export default function (accountData) {
   if (!accountData.pvp) {
     return {
@@ -30,6 +32,7 @@ export default function (accountData) {
   const l = accountData.pvp.ladders
   const pvpGameCountRanked = getGames(l.ranked) + getGames(l.soloarenarated) + getGames(l.teamarenarated)
   const pvpWinCountRanked = getWins(l.ranked) + getWins(l.soloarenarated) + getWins(l.teamarenarated)
+  const pvpWinRateRanked = pvpGameCountRanked > 50 ? (pvpWinCountRanked / pvpGameCountRanked) * 100 : null
 
   // Return everything!
   return {
@@ -38,11 +41,12 @@ export default function (accountData) {
     pvpWinCount,
     pvpWinCountRanked,
     pvpRank,
-    pvpWinRate,
-    pvpWinRate50,
-    pvpWinRate250,
-    pvpWinRate500,
-    pvpWinRate1000
+    pvpWinRate: roundWinrate(pvpWinRate),
+    pvpWinRate50: roundWinrate(pvpWinRate50),
+    pvpWinRate250: roundWinrate(pvpWinRate250),
+    pvpWinRate500: roundWinrate(pvpWinRate500),
+    pvpWinRate1000: roundWinrate(pvpWinRate1000),
+    pvpWinRateRanked: roundWinrate(pvpWinRateRanked)
   }
 }
 
@@ -60,4 +64,8 @@ function getGames (aggregate) {
   }
 
   return aggregate.wins + aggregate.losses + aggregate.desertions + aggregate.byes + aggregate.forfeits
+}
+
+function roundWinrate (winrate) {
+  return winrate ? round(winrate, 2) : null
 }
