@@ -2,7 +2,9 @@ import walletIdMapping from '../static/walletIdMapping'
 
 // Create the default values to return when the wallet data is not set
 let defaultValues = {dungeonTokenCount: null}
-Object.keys(walletIdMapping).map(x => defaultValues[x] = null)
+Object.keys(walletIdMapping).map(x => {
+  defaultValues[x] = null
+})
 
 export default function (accountData) {
   if (!accountData.wallet) {
@@ -27,7 +29,9 @@ export default function (accountData) {
 // Convert the wallet into a map of id => value
 function convertToMap (array) {
   let map = {}
-  array.map(x => map[x.id] = x.value)
+  array.map(x => {
+    map[x.id] = x.value
+  })
   return map
 }
 
