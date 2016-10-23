@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-const expect = require('chai').expect
+import {expect} from 'chai'
 import pvpStatistics from '../src/statistics/pvp'
 const defaultValues = {
   pvpGameCount: null,

@@ -1,6 +1,6 @@
 /* eslint-env node, mocha */
-const expect = require('chai').expect
-const mockdate = require('mockdate')
+import {expect} from 'chai'
+import mockdate from 'mockdate'
 import charactersStatistics from '../src/statistics/characters'
 
 describe('statistics > characters', () => {
