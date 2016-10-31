@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "abc-environment": "^1.0.8",
-    "mockdate": "^1.0.4"
+    "mockdate": "^2.0.0"
   },
   "dependencies": {
     "gw2e-account-value": "^3.0.0",
