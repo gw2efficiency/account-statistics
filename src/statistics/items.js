@@ -28,9 +28,7 @@ export default function (accountData) {
     luminescentRefractors: countItems(items, [67375, 67370, 67372]),
     brokenSpoons: countItems(items, 74996),
     blackLionClaimTickets: blackLionClaimTickets(items),
-    instruments: countItems(items, [
-      43526, 42973, 44883, 66323, 42888, 36174, 38129, 68361
-    ]),
+    instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
     permanentTools: countItems(items, permanentToolIds),
     chakEggs: countItems(items, 72205),
     reclaimedMetalPlates: countItems(items, 74356),
@@ -42,7 +40,11 @@ export default function (accountData) {
     championBags: countItems(items, championBagIds),
     tripleTroubleChests: countItems(items, 49664),
     tequatlChests: countItems(items, 47836),
-    uniqueTonics: countItems(items, tonicIds, true)
+    uniqueTonics: countItems(items, tonicIds, true),
+    bloodRubies: countItems(items, 79280),
+    petrifiedWood: countItems(items, 79469),
+    tomesOfKnowledge: countItems(items, [43741, 43766]),
+    permanentContracts: countItems(items, [35984, 38507, 35985, 35986, 49501])
   }
 }
 

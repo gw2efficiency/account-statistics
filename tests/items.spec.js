@@ -37,7 +37,11 @@ describe('statistics > items', () => {
       championBags: null,
       tripleTroubleChests: null,
       tequatlChests: null,
-      uniqueTonics: null
+      uniqueTonics: null,
+      bloodRubies: null,
+      petrifiedWood: null,
+      tomesOfKnowledge: null,
+      permanentContracts: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -167,7 +171,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 38129, count: 1},
       {id: 43526, count: 1}
-    ])).instruments).to.equal(3)
+    ])).instruments).to.equal(2)
   })
 
   it('can calculate permanent tool count', () => {
@@ -230,7 +234,7 @@ describe('statistics > items', () => {
     ])).tripleTroubleChests).to.equal(252)
   })
 
-  it('can calculate champion bag count', () => {
+  it('can calculate tequatl chest count', () => {
     expect(itemsStatistics(generateAccount([
       {id: 47836, count: 1},
       {id: 30687, count: 1},
@@ -249,5 +253,45 @@ describe('statistics > items', () => {
       {id: 5, count: 250},
       {id: 68046, count: 100}
     ])).uniqueTonics).to.equal(2)
+  })
+
+  it('can calculate blood ruby count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 79280, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 79280, count: 1},
+      {id: 79280, count: 250}
+    ])).bloodRubies).to.equal(252)
+  })
+
+  it('can calculate petrified wood count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 79469, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 79469, count: 1},
+      {id: 79469, count: 250}
+    ])).petrifiedWood).to.equal(252)
+  })
+
+  it('can calculate tomes of knowledge count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 43741, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 43741, count: 1},
+      {id: 43766, count: 250}
+    ])).tomesOfKnowledge).to.equal(252)
+  })
+
+  it('can calculate permanent contract count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 35985, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 35984, count: 1},
+      {id: 49501, count: 1}
+    ])).permanentContracts).to.equal(3)
   })
 })
