@@ -44,7 +44,10 @@ export default function (accountData) {
     bloodRubies: countItems(items, 79280),
     petrifiedWood: countItems(items, 79469),
     tomesOfKnowledge: countItems(items, [43741, 43766]),
-    permanentContracts: countItems(items, [35984, 38507, 35985, 35986, 49501])
+    permanentContracts: countItems(items, [
+      35984, 38507, 35985, 35986, 49501,
+      35978, 35977, 35976, 38506
+    ])
   }
 }
 
