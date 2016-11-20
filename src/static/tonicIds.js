@@ -18,14 +18,12 @@ export default [
   68046, // Endless Skritt Burglar Tonic
   [67783, 67805], // Endless Arid Devourer Tonic
   [68512, 68530], // Endless Mordrem Teragriff Tonic
-  [68064, 68065], // Endless Mordrem Thrasher Tonic
   35749, // Endless Charged Potion
   35747, // Endless Cold Potion
   35748, // Endless Hard Potion
   35750, // Endless Warm Potion
   36727, // Endless Karka Tonic
   [70619, 73150], // Endless Exalted Bastion Tonic
-  [66768, 66926], // Endless Monkey King Tonic
   20319, // Endless Mystery Tonic (beast)
   20321, // Endless Mystery Tonic (forest)
   20320, // Endless Mystery Tonic (furniture)
@@ -65,5 +63,17 @@ export default [
   50040, // Endless Mystery Quaggan Tonic
   66214, // Endless Dolyak Calf Tonic
   69651, // Endless Interface Crafter Golem Tonic
-  36105 // Endless Multicolored Ooze Tonic
+  36105, // Endless Multicolored Ooze Tonic
+  [72894, 73663], // Endless Chak Drone Tonic
+  [71683, 75615], // Endless Chak Slinger Tonic
+  [72203, 74594], // Endless Chak Zapper Tonic
+  79650, // Endless Gargoyle Tonic
+  79668, // Endless Hellfire Skeleton Tonic
+  79664, // Endless Ignited Wraith Tonic
+  79583, // Endless Jade Construct Tonic
+  [79034, 79042], // Endless Ley-Line Anomaly Tonic
+  [73194, 77167], // Endless Nuhoch Crusher Tonic
+  79657, // Endless Shadow Raven Tonic
+  74186, // Endless Spotted Beetle Tonic
+  72495 // Wolf Totem (gizmo)
 ]
