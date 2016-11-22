@@ -27,5 +27,6 @@ export default [
   76158, // Astralaria
   77474, // The Ascension
   78556, // Chuka and Champawat
-  79562 // Eureka
+  79562, // Eureka
+  79802 // Shooshadoo
 ]
