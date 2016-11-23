@@ -1,7 +1,7 @@
 import round from 'round-to'
 
 export default function (accountData) {
-  if (!accountData.pvp) {
+  if (!accountData.pvp || !accountData.pvp.stats) {
     return {
       pvpGameCount: null,
       pvpGameCountRanked: null,
@@ -16,12 +16,14 @@ export default function (accountData) {
     }
   }
 
+  const stats = accountData.pvp.stats
+
   // Calculate the real pvp rank
-  const pvpRank = accountData.pvp.pvp_rank + accountData.pvp.pvp_rank_rollovers
+  const pvpRank = stats.pvp_rank + stats.pvp_rank_rollovers
 
   // Count the games and wins for all games
-  const pvpGameCount = getGames(accountData.pvp.aggregate)
-  const pvpWinCount = getWins(accountData.pvp.aggregate)
+  const pvpGameCount = getGames(stats.aggregate)
+  const pvpWinCount = getWins(stats.aggregate)
   const pvpWinRate = pvpGameCount > 0 ? (pvpWinCount / pvpGameCount) * 100 : null
   const pvpWinRate50 = pvpGameCount > 50 ? (pvpWinCount / pvpGameCount) * 100 : null
   const pvpWinRate250 = pvpGameCount > 250 ? (pvpWinCount / pvpGameCount) * 100 : null
@@ -29,7 +31,7 @@ export default function (accountData) {
   const pvpWinRate1000 = pvpGameCount > 1000 ? (pvpWinCount / pvpGameCount) * 100 : null
 
   // Count the games and wins for ranked games
-  const l = accountData.pvp.ladders
+  const l = stats.ladders
   const pvpGameCountRanked = getGames(l.ranked) + getGames(l.soloarenarated) + getGames(l.teamarenarated)
   const pvpWinCountRanked = getWins(l.ranked) + getWins(l.soloarenarated) + getWins(l.teamarenarated)
   const pvpWinRateRanked = pvpGameCountRanked > 50 ? (pvpWinCountRanked / pvpGameCountRanked) * 100 : null

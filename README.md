@@ -24,6 +24,7 @@ import accountStatistics from 'gw2e-account-statistics'
 
 // An object containing all the account data available for the API key
 const accountData = {
+  account: /* ... */,
   characters: /* ... */,
   bank: /* ... */,
   materials: /* ... */,
@@ -43,7 +44,10 @@ const accountData = {
 
   titles: /* ... */,
   achievements: /* ... */,
-  pvp: /* ... */
+  pvp: {
+    stats: /* ... */,
+    // ...
+  }
 }
 
 // Calculate everything!

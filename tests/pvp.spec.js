@@ -17,6 +17,8 @@ const defaultValues = {
 describe('statistics > pvp', () => {
   it('can calculate pvp statistics', () => {
     expect(pvpStatistics({})).to.deep.equal(defaultValues)
+    expect(pvpStatistics({pvp: null})).to.deep.equal(defaultValues)
+    expect(pvpStatistics({pvp: {stats: null}})).to.deep.equal(defaultValues)
 
     const input = {
       pvp_rank: 80,
@@ -82,12 +84,10 @@ describe('statistics > pvp', () => {
       pvpWinRateRanked: 51.62
     }
 
-    expect(pvpStatistics({pvp: input})).to.deep.equal(output)
+    expect(pvpStatistics({pvp: {stats: input}})).to.deep.equal(output)
   })
 
   it('can calculate pvp statistics if no games are played', () => {
-    expect(pvpStatistics({})).to.deep.equal(defaultValues)
-
     const input = {
       pvp_rank: 80,
       pvp_rank_points: 793506,
@@ -117,6 +117,6 @@ describe('statistics > pvp', () => {
       pvpWinRateRanked: null
     }
 
-    expect(pvpStatistics({pvp: input})).to.deep.equal(output)
+    expect(pvpStatistics({pvp: {stats: input}})).to.deep.equal(output)
   })
 })
