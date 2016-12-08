@@ -41,7 +41,8 @@ describe('statistics > items', () => {
       bloodRubies: null,
       petrifiedWood: null,
       tomesOfKnowledge: null,
-      permanentContracts: null
+      permanentContracts: null,
+      freshWinterberries: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -293,5 +294,15 @@ describe('statistics > items', () => {
       {id: 35984, count: 1},
       {id: 49501, count: 1}
     ])).permanentContracts).to.equal(3)
+  })
+
+  it('can calculate fresh winterberry count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 79899, count: 2},
+      {id: 30687, count: 1},
+      {id: 79899, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).freshWinterberries).to.equal(4)
   })
 })
