@@ -19,9 +19,9 @@
     "mockdate": "^2.0.0"
   },
   "dependencies": {
+    "array-unique": "^0.3.2",
     "gw2e-account-value": "^3.0.0",
     "lodash.sum": "^4.0.2",
-    "round-to": "^1.1.0",
-    "uniq": "^1.0.1"
+    "round-to": "^1.1.0"
   }
 }

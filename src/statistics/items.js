@@ -1,4 +1,4 @@
-import uniq from 'uniq'
+import unique from 'array-unique'
 import round from 'round-to'
 import {bankItems} from 'gw2e-account-value/build/bank'
 import {materialsItems} from 'gw2e-account-value/build/materials'
@@ -72,7 +72,7 @@ export function allItems (accountData) {
 }
 
 // Count how many of a list of items the user has
-function countItems (items, ids, unique = false) {
+function countItems (items, ids, uniqueItems = false) {
   if (items.length === 0) {
     return null
   }
@@ -85,13 +85,12 @@ function countItems (items, ids, unique = false) {
   items = items.filter(x => idNumbers.indexOf(x.id) !== -1)
 
   // Add up the amount of items the user has
-  if (!unique) {
+  if (!uniqueItems) {
     return items.map(x => x.count).reduce((a, b) => a + b, 0)
   }
 
   // See how many unique items the user has
-  items = items.map(x => x.id)
-  uniq(items)
+  items = unique(items.map(x => x.id))
 
   // Filter arrays of ids that unlock the same thing, see if they
   // appear in the items and then make sure that they only appear once
