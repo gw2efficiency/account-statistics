@@ -111,7 +111,9 @@ function blackLionClaimTickets (items) {
     return null
   }
 
-  let tickets = countItems(items, 43992)
-  let scraps = countItems(items, 43998)
-  return tickets + scraps * 0.1
+  const tickets = countItems(items, 43992)
+  const scraps = countItems(items, 43998)
+  const totalTickets = tickets + scraps * 0.1
+
+  return Math.round(totalTickets * 100) / 100
 }

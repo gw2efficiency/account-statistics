@@ -155,7 +155,7 @@ describe('statistics > items', () => {
     ])).brokenSpoons).to.equal(3)
   })
 
-  it('can calculate black lion ticket count', () => {
+  it('can calculate black lion claim ticket count', () => {
     expect(itemsStatistics(generateAccount([
       {id: 43992, count: 1},
       {id: 30687, count: 1},
@@ -163,6 +163,12 @@ describe('statistics > items', () => {
       {id: 43998, count: 3},
       {id: 43998, count: 1}
     ])).blackLionClaimTickets).to.equal(1.4)
+
+    expect(itemsStatistics(generateAccount([
+      {id: 43992, count: 3},
+      {id: 30687, count: 1},
+      {id: 43998, count: 164}
+    ])).blackLionClaimTickets).to.equal(19.4)
   })
 
   it('can calculate instrument count', () => {
