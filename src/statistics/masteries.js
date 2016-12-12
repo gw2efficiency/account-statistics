@@ -15,13 +15,13 @@ export default function (accountData, calcData) {
     const masteryProgress = mastery.level
     const masteryData = calcData.masteries[mastery.id]
 
-    // Skip masteries the account has no progress in or we don't have data for
-    if (masteryProgress === 0 || !masteryData) {
+    // Skip masteries we don't have data for
+    if (!masteryData) {
       return
     }
 
     // Calculate how many mastery points the account spent
-    const spentPoints = _sum(masteryData.point_costs.slice(0, masteryProgress))
+    const spentPoints = _sum(masteryData.point_costs.slice(0, masteryProgress + 1))
     spentMasteryPoints[masteryData.region] = (spentMasteryPoints[masteryData.region] || 0) + spentPoints
   })
 

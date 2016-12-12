@@ -26,10 +26,9 @@ describe('statistics > masteries', () => {
     }
 
     expect(masteriesStatistics({masteries: [
-      {id: 1, level: 3},
-      {id: 2, level: 6},
-      {id: 5, level: 0},
-      {id: 6, level: 2},
+      {id: 1, level: 2},
+      {id: 2, level: 5},
+      {id: 6, level: 1},
       {id: 99, level: 99}
     ]}, {masteries: calcData})).to.deep.equal({
       masteryPoints: ((1 + 2 + 3) + (1 + 2 + 3 + 5 + 8 + 12)) + (1 + 3),
@@ -38,8 +37,7 @@ describe('statistics > masteries', () => {
     })
 
     expect(masteriesStatistics({masteries: [
-      {id: 1, level: 0},
-      {id: 2, level: 1}
+      {id: 2, level: 0}
     ]}, {masteries: calcData})).to.deep.equal({
       masteryPoints: 1,
       masteryPointsTyria: 0,
