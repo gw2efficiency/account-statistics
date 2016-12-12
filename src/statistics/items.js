@@ -1,4 +1,5 @@
 import uniq from 'uniq'
+import round from 'round-to'
 import {bankItems} from 'gw2e-account-value/build/bank'
 import {materialsItems} from 'gw2e-account-value/build/materials'
 import {charactersItems} from 'gw2e-account-value/build/characters'
@@ -115,5 +116,5 @@ function blackLionClaimTickets (items) {
   const scraps = countItems(items, 43998)
   const totalTickets = tickets + scraps * 0.1
 
-  return Math.round(totalTickets * 100) / 100
+  return round(totalTickets, 2)
 }

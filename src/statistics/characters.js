@@ -1,3 +1,5 @@
+import round from 'round-to'
+
 export default function (accountData) {
   if (!accountData.characters) {
     return {
@@ -17,11 +19,11 @@ export default function (accountData) {
   const maxLevelCharacterCount = characters.filter(x => x.level === 80).length
 
   const playtime = characters.map(x => x.age).reduce((a, b) => a + b, 0)
-  const playtimePerDay = daysSinceCreation > 1 ? round(playtime / daysSinceCreation) : null
+  const playtimePerDay = daysSinceCreation > 1 ? round(playtime / daysSinceCreation, 2) : null
 
   const deathCount = characters.map(x => x.deaths).reduce((a, b) => a + b, 0)
   const playtimeInHours = playtime / 60 / 60
-  const deathCountPerHour = playtimeInHours > 1 ? round(deathCount / playtimeInHours) : null
+  const deathCountPerHour = playtimeInHours > 1 ? round(deathCount / playtimeInHours, 2) : null
 
   return {
     playtime,
@@ -31,11 +33,6 @@ export default function (accountData) {
     deathCount,
     deathCountPerHour
   }
-}
-
-// Round a floating point number to 2 decimals
-function round (float) {
-  return Math.round(float * 100) / 100
 }
 
 // Get the account age in days based on the oldest character
