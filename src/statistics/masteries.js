@@ -1,4 +1,4 @@
-import _sum from 'lodash.sum'
+import _sum from 'sum-by'
 
 export default function (accountData, calcData) {
   if (!accountData.masteries || !calcData) {
