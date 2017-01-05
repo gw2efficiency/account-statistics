@@ -1,13 +1,15 @@
 import round from 'round-to'
+const currentSeasonId = 'A54849B7-7DBD-4958-91EF-72E18CD659BA'
 
 export default function (accountData) {
-  if (!accountData.pvp || !accountData.pvp.stats) {
+  if (!accountData.pvp || !accountData.pvp.stats || !accountData.pvp.standings) {
     return {
       pvpGameCount: null,
       pvpGameCountRanked: null,
       pvpWinCount: null,
       pvpWinCountRanked: null,
       pvpRank: null,
+      pvpLeagueRating: null,
       pvpWinRate: null,
       pvpWinRate50: null,
       pvpWinRate250: null,
@@ -17,6 +19,13 @@ export default function (accountData) {
   }
 
   const stats = accountData.pvp.stats
+  const standings = accountData.pvp.standings
+
+  // Get the current league rating
+  const currentLeague = standings.find(x => x.season_id === currentSeasonId)
+  const pvpLeagueRating = currentLeague && currentLeague.current.rating > 0
+    ? currentLeague.current.rating
+    : null
 
   // Calculate the real pvp rank
   const pvpRank = stats.pvp_rank + stats.pvp_rank_rollovers
@@ -43,6 +52,7 @@ export default function (accountData) {
     pvpWinCount,
     pvpWinCountRanked,
     pvpRank,
+    pvpLeagueRating,
     pvpWinRate: roundWinrate(pvpWinRate),
     pvpWinRate50: roundWinrate(pvpWinRate50),
     pvpWinRate250: roundWinrate(pvpWinRate250),
