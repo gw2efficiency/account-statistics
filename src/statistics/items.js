@@ -18,7 +18,7 @@ export default function (accountData) {
     legendaryInsights: countItems(items, 77302),
     whiteMantlePortalDevices: countItems(items, 78978),
     chakEggSacks: countItems(items, 72021),
-    preservedQueenBees: countItems(items, 68440),
+    preservedQueenBees: countItems(items, [68440, 77594]),
     ghostlyInfusions: countItems(items, [
       77366, 77274, 77303, 77310, 77316, 77394
     ]),
