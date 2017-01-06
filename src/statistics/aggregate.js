@@ -13,7 +13,10 @@ function totalAuras (accountStatistics) {
     'baubleInfusions',
     'luminescentRefractors',
     'wintersPresence',
-    'nightfury'
+    'nightfury',
+    'wintersHeartInfusions',
+    'kodasWarmthEnrichment',
+    'phospholuminescentInfusions'
   ]
 
   // All keys have to be set

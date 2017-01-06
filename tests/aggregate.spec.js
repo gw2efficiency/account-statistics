@@ -13,7 +13,10 @@ describe('statistics > aggregate', () => {
       baubleInfusions: 3,
       luminescentRefractors: 0,
       wintersPresence: 1,
-      nightfury: 0
-    }).totalAuras).to.equal(12)
+      nightfury: 0,
+      wintersHeartInfusions: 3,
+      kodasWarmthEnrichment: 1,
+      phospholuminescentInfusions: 2
+    }).totalAuras).to.equal(18)
   })
 })

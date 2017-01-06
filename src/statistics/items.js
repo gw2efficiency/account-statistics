@@ -1,13 +1,14 @@
 import unique from 'array-unique'
 import round from 'round-to'
-import {bankItems} from 'gw2e-account-value/build/bank'
-import {materialsItems} from 'gw2e-account-value/build/materials'
-import {charactersItems} from 'gw2e-account-value/build/characters'
-import {sharedInventoryItems} from 'gw2e-account-value/build/shared'
+import { bankItems } from 'gw2e-account-value/build/bank'
+import { materialsItems } from 'gw2e-account-value/build/materials'
+import { charactersItems } from 'gw2e-account-value/build/characters'
+import { sharedInventoryItems } from 'gw2e-account-value/build/shared'
 import legendaryItemIds from '../static/legendaryItemIds'
 import permanentToolIds from '../static/permanentToolIds'
 import championBagIds from '../static/championBagIds'
 import tonicIds from '../static/tonicIds'
+import gemstoreToyIds from '../static/gemstoreToyIds'
 
 export default function (accountData) {
   const items = allItems(accountData)
@@ -49,7 +50,15 @@ export default function (accountData) {
       35984, 38507, 35985, 35986, 49501,
       35978, 35977, 35976, 38506
     ]),
-    freshWinterberries: countItems(items, 79899)
+    freshWinterberries: countItems(items, 79899),
+    wintersHeartInfusions: countItems(items, [
+      79959, 79957, 79978, 79994, 79943, 80063
+    ]),
+    kodasWarmthEnrichment: countItems(items, 79926),
+    phospholuminescentInfusions: countItems(items, [
+      79665, 79674, 79639, 79653, 79661, 79669
+    ]),
+    gemstoreToys: countItems(items, gemstoreToyIds)
   }
 }
 

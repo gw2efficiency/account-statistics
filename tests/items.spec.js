@@ -42,7 +42,11 @@ describe('statistics > items', () => {
       petrifiedWood: null,
       tomesOfKnowledge: null,
       permanentContracts: null,
-      freshWinterberries: null
+      freshWinterberries: null,
+      wintersHeartInfusions: null,
+      kodasWarmthEnrichment: null,
+      phospholuminescentInfusions: null,
+      gemstoreToys: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -310,5 +314,45 @@ describe('statistics > items', () => {
       {id: 79899, count: 1},
       {id: 49501, count: 1}
     ])).freshWinterberries).to.equal(4)
+  })
+
+  it('can calculate winter\' heart infusion count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 79899, count: 2},
+      {id: 79994, count: 1},
+      {id: 79959, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).wintersHeartInfusions).to.equal(2)
+  })
+
+  it('can calculate kodas warmth enrichment count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 79899, count: 2},
+      {id: 30687, count: 1},
+      {id: 79926, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).kodasWarmthEnrichment).to.equal(1)
+  })
+
+  it('can calculate phospholuminescent infusions count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 79899, count: 2},
+      {id: 30687, count: 1},
+      {id: 79653, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).phospholuminescentInfusions).to.equal(1)
+  })
+
+  it('can calculate gemstore toys count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 79899, count: 2},
+      {id: 30687, count: 1},
+      {id: 49939, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).gemstoreToys).to.equal(1)
   })
 })
