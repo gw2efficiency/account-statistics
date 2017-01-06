@@ -1,5 +1,7 @@
 export default [
-  67881, // Aviator's Memory Box
+  67356, // Magic Carpet
+  49948, // Sonic Tunneling Tool
+  42664, // Sonic Tunneling Tool
   49941, // Bloody Prince's Staff Toy
   43092, // Bloody Prince's Staff Toy
   39133, // Bouquet of Roses
@@ -24,6 +26,5 @@ export default [
   36361, // Scepter of Thorn
   49943, // Scepter of Thorn
   43487, // Sun Kite
-  66342, // Water Fight Balloon Bucket
   43076 // Wind Kite
 ]
