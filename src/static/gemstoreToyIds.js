@@ -26,5 +26,8 @@ export default [
   36361, // Scepter of Thorn
   49943, // Scepter of Thorn
   43487, // Sun Kite
-  43076 // Wind Kite
+  43076, // Wind Kite
+  67881, // Aviator's Memory Box
+  36172, // Bobblehead Laboratory
+  66342 // Water Fight Balloon Bucket
 ]
