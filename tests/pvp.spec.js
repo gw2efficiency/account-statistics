@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-import {expect} from 'chai'
+import { expect } from 'chai'
 import pvpStatistics from '../src/statistics/pvp'
 const defaultValues = {
   pvpGameCount: null,
@@ -107,8 +107,7 @@ describe('statistics > pvp', () => {
         byes: 0,
         forfeits: 0
       },
-      ladders: {
-      }
+      ladders: {}
     }
 
     const standings = [

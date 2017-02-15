@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-import {expect} from 'chai'
+import { expect } from 'chai'
 import unlocksStatistics from '../src/statistics/unlocks'
 
 describe('statistics > unlocks', () => {
@@ -22,16 +22,18 @@ describe('statistics > unlocks', () => {
   })
 
   it('can calculate finisher count', () => {
-    expect(unlocksStatistics({}).finisherCount).to.equal(null)
-    expect(unlocksStatistics({finishers: []}).finisherCount).to.equal(0)
-    expect(unlocksStatistics({finishers: [
+    const finishers = [
       {id: 1, permanent: true},
       {id: 2, permanent: true},
       {id: 7, permanent: true},
       {id: 9, permanent: true},
       {id: 10, permanent: true},
       {id: 11, permanent: false}
-    ]}).finisherCount).to.equal(5)
+    ]
+
+    expect(unlocksStatistics({}).finisherCount).to.equal(null)
+    expect(unlocksStatistics({finishers: []}).finisherCount).to.equal(0)
+    expect(unlocksStatistics({finishers}).finisherCount).to.equal(5)
   })
 
   it('can calculate outfit count', () => {

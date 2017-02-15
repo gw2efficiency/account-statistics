@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-import {expect} from 'chai'
+import { expect } from 'chai'
 import walletStatistics from '../src/statistics/wallet'
 
 describe('statistics > wallet', () => {

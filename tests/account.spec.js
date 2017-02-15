@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-import {expect} from 'chai'
+import { expect } from 'chai'
 import mockdate from 'mockdate'
 import accountStatistics from '../src/statistics/account'
 
