@@ -1,17 +1,13 @@
 /* eslint-env node, mocha */
 import {expect} from 'chai'
-import mockdate from 'mockdate'
 import charactersStatistics from '../src/statistics/characters'
 
 describe('statistics > characters', () => {
   it('can handle no characters', () => {
     expect(charactersStatistics({})).to.deep.equal({
-      playtime: null,
-      playtimePerDay: null,
       characterCount: null,
       maxLevelCharacterCount: null,
-      deathCount: null,
-      deathCountPerHour: null
+      deathCount: null
     })
   })
 
@@ -40,27 +36,18 @@ describe('statistics > characters', () => {
       }
     ]
 
-    mockdate.set('1/1/2016')
     expect(charactersStatistics({characters: data})).to.deep.equal({
       characterCount: 3,
       deathCount: 3942,
-      deathCountPerHour: 1.34,
-      maxLevelCharacterCount: 2,
-      playtime: 10603345,
-      playtimePerDay: 12744.41
+      maxLevelCharacterCount: 2
     })
   })
 
   it('can handle a fresh account', () => {
-    const data = []
-
-    expect(charactersStatistics({characters: data})).to.deep.equal({
+    expect(charactersStatistics({characters: []})).to.deep.equal({
       characterCount: 0,
       deathCount: 0,
-      deathCountPerHour: null,
-      maxLevelCharacterCount: 0,
-      playtime: 0,
-      playtimePerDay: null
+      maxLevelCharacterCount: 0
     })
   })
 })

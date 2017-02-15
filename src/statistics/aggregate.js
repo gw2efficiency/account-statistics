@@ -1,7 +1,22 @@
+import round from 'round-to'
+
 export default function (accountStatistics) {
   return {
-    totalAuras: totalAuras(accountStatistics)
+    totalAuras: totalAuras(accountStatistics),
+    deathCountPerHour: deathCountPerHour(accountStatistics)
   }
+}
+
+// Get the death count per hour playtime
+function deathCountPerHour (accountStatistics) {
+  if (!accountStatistics.deathCount || !accountStatistics.playtime) {
+    return null
+  }
+
+  const deathCount = accountStatistics.deathCount
+  const playtimeInHours = accountStatistics.playtime / (60 * 60)
+
+  return playtimeInHours > 1 ? round(deathCount / playtimeInHours, 2) : null
 }
 
 // Get the total number of auras

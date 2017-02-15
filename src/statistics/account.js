@@ -1,7 +1,11 @@
+import round from 'round-to'
+
 export default function (accountData) {
   return {
     guildCount: guildCount(accountData),
-    wvwRank: wvwRank(accountData)
+    wvwRank: wvwRank(accountData),
+    playtime: playtime(accountData),
+    playtimePerDay: playtimePerDay(accountData)
   }
 }
 
@@ -29,4 +33,35 @@ function wvwRank (accountData) {
   }
 
   return accountData.account.wvw_rank
+}
+
+// The amount of seconds played on this account
+function playtime (accountData) {
+  if (!accountData.account) {
+    return null
+  }
+
+  if (!accountData.account.age) {
+    return null
+  }
+
+  return accountData.account.age
+}
+
+// The amount of seconds played on this account per day
+function playtimePerDay (accountData) {
+  if (!accountData.account) {
+    return null
+  }
+
+  if (!accountData.account.age || !accountData.account.created) {
+    return null
+  }
+
+  const playtime = accountData.account.age
+  const now = (new Date()).getTime()
+  const creation = (new Date(accountData.account.created)).getTime()
+  const daysSinceCreation = Math.ceil((now - creation) / (1000 * 60 * 60 * 24))
+
+  return daysSinceCreation > 1 ? round(playtime / daysSinceCreation, 2) : null
 }

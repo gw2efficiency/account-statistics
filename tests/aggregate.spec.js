@@ -19,4 +19,14 @@ describe('statistics > aggregate', () => {
       phospholuminescentInfusions: 2
     }).totalAuras).to.equal(18)
   })
+
+  it('can calculate death count per hour', () => {
+    expect(aggregateStatistics({}).deathCountPerHour).to.equal(null)
+    expect(aggregateStatistics({playtime: 123}).deathCountPerHour).to.equal(null)
+    expect(aggregateStatistics({playtime: 1500, deathCount: 15}).deathCountPerHour).to.equal(null)
+    expect(aggregateStatistics({
+      playtime: 10603345,
+      deathCount: 3942
+    }).deathCountPerHour).to.equal(1.34)
+  })
 })
