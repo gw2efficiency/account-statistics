@@ -46,7 +46,8 @@ describe('statistics > items', () => {
       wintersHeartInfusions: null,
       kodasWarmthEnrichment: null,
       phospholuminescentInfusions: null,
-      gemstoreToys: null
+      gemstoreToys: null,
+      blackLionMiniatureClaimTickets: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -354,5 +355,15 @@ describe('statistics > items', () => {
       {id: 79899, count: 1},
       {id: 49501, count: 1}
     ])).gemstoreToys).to.equal(1)
+  })
+
+  it('can calculate black lion miniature claim tickets count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 2},
+      {id: 30687, count: 1},
+      {id: 78474, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).blackLionMiniatureClaimTickets).to.equal(3)
   })
 })

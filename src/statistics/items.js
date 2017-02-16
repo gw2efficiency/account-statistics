@@ -58,7 +58,8 @@ export default function (accountData) {
     phospholuminescentInfusions: countItems(items, [
       79665, 79674, 79639, 79653, 79661, 79669
     ]),
-    gemstoreToys: countItems(items, gemstoreToyIds)
+    gemstoreToys: countItems(items, gemstoreToyIds),
+    blackLionMiniatureClaimTickets: countItems(items, 78474)
   }
 }
 
