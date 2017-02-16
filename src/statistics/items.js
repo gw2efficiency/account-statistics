@@ -4,7 +4,7 @@ import { bankItems } from 'gw2e-account-value/build/bank'
 import { materialsItems } from 'gw2e-account-value/build/materials'
 import { charactersItems } from 'gw2e-account-value/build/characters'
 import { sharedInventoryItems } from 'gw2e-account-value/build/shared'
-import legendaryItemIds from '../static/legendaryItemIds'
+import legendaries from 'gw2e-static-data/build/legendaries'
 import permanentToolIds from '../static/permanentToolIds'
 import championBagIds from '../static/championBagIds'
 import tonicIds from '../static/tonicIds'
@@ -14,7 +14,7 @@ export default function (accountData) {
   const items = allItems(accountData)
 
   return {
-    legendaryItems: countItems(items, legendaryItemIds),
+    legendaryItems: countItems(items, legendaries.map(x => x.id)),
     fractalTonics: countItems(items, 49277),
     legendaryInsights: countItems(items, 77302),
     whiteMantlePortalDevices: countItems(items, 78978),

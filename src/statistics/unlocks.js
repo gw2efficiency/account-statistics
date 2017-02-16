@@ -1,4 +1,4 @@
-import legendarySkinIds from '../static/legendarySkinIds'
+import legendaries from 'gw2e-static-data/build/legendaries'
 import fractalSkinIds from '../static/fractalSkinIds'
 
 export default function (accountData) {
@@ -87,6 +87,8 @@ function legendarySkins (accountData) {
   if (!accountData.skins) {
     return null
   }
+
+  const legendarySkinIds = legendaries.map(x => x.skin)
 
   return accountData.skins
     .filter(x => legendarySkinIds.indexOf(x) !== -1)
