@@ -47,7 +47,8 @@ describe('statistics > items', () => {
       kodasWarmthEnrichment: null,
       phospholuminescentInfusions: null,
       gemstoreToys: null,
-      blackLionMiniatureClaimTickets: null
+      blackLionMiniatureClaimTickets: null,
+      jadeShards: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -365,5 +366,15 @@ describe('statistics > items', () => {
       {id: 79899, count: 1},
       {id: 49501, count: 1}
     ])).blackLionMiniatureClaimTickets).to.equal(3)
+  })
+
+  it('can calculate jade shards count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 80332, count: 2},
+      {id: 78474, count: 2},
+      {id: 78474, count: 1},
+      {id: 80332, count: 1},
+      {id: 49501, count: 1}
+    ])).jadeShards).to.equal(3)
   })
 })

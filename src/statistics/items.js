@@ -59,7 +59,8 @@ export default function (accountData) {
       79665, 79674, 79639, 79653, 79661, 79669
     ]),
     gemstoreToys: countItems(items, gemstoreToyIds),
-    blackLionMiniatureClaimTickets: countItems(items, 78474)
+    blackLionMiniatureClaimTickets: countItems(items, 78474),
+    jadeShards: countItems(items, 80332)
   }
 }
 
