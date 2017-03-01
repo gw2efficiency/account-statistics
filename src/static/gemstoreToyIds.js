@@ -29,5 +29,6 @@ export default [
   43076, // Wind Kite
   67881, // Aviator's Memory Box
   36172, // Bobblehead Laboratory
-  66342 // Water Fight Balloon Bucket
+  66342, // Water Fight Balloon Bucket
+  80854 // Bloodstone Ascender
 ]
