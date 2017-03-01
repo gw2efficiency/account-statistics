@@ -60,7 +60,8 @@ export default function (accountData) {
     ]),
     gemstoreToys: countItems(items, gemstoreToyIds),
     blackLionMiniatureClaimTickets: countItems(items, 78474),
-    jadeShards: countItems(items, 80332)
+    jadeShards: countItems(items, 80332),
+    giftsOfExploration: countItems(items, 19677)
   }
 }
 

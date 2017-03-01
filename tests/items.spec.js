@@ -48,7 +48,8 @@ describe('statistics > items', () => {
       phospholuminescentInfusions: null,
       gemstoreToys: null,
       blackLionMiniatureClaimTickets: null,
-      jadeShards: null
+      jadeShards: null,
+      giftsOfExploration: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -376,5 +377,15 @@ describe('statistics > items', () => {
       {id: 80332, count: 1},
       {id: 49501, count: 1}
     ])).jadeShards).to.equal(3)
+  })
+
+  it('can calculate gifts of exploration count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 19677, count: 2},
+      {id: 78474, count: 2},
+      {id: 78474, count: 1},
+      {id: 19677, count: 1},
+      {id: 49501, count: 1}
+    ])).giftsOfExploration).to.equal(3)
   })
 })
