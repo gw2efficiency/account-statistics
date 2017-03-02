@@ -54,7 +54,9 @@ describe('statistics > items', () => {
       bloodstoneDust: null,
       empyrealFragments: null,
       crystallineOre: null,
-      airshipOil: null
+      airshipOil: null,
+      auricDust: null,
+      leyLineSparks: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -439,8 +441,28 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 46682, count: 22},
       {id: 78474, count: 1},
-      {id: 19677, count: 1},
+      {id: 76933, count: 1},
       {id: 69434, count: 4}
-    ])).airshipOil).to.equal(4)
+    ])).airshipOil).to.equal(5)
+  })
+
+  it('can calculate auric dust count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 69432, count: 22},
+      {id: 73537, count: 1},
+      {id: 76933, count: 1},
+      {id: 69434, count: 4}
+    ])).auricDust).to.equal(53)
+  })
+
+  it('can calculate ley line sparks count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 69392, count: 22},
+      {id: 76933, count: 1},
+      {id: 74042, count: 1},
+      {id: 69434, count: 4}
+    ])).leyLineSparks).to.equal(24)
   })
 })

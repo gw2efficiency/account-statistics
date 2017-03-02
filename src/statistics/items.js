@@ -66,7 +66,9 @@ export default function (accountData) {
     bloodstoneDust: weightedCountItems(items, {46731: 1, 46730: 100}),
     empyrealFragments: weightedCountItems(items, {46735: 1, 46734: 100}),
     crystallineOre: countItems(items, [46682, 46683]),
-    airshipOil: countItems(items, 69434)
+    airshipOil: countItems(items, [69434, 76933]),
+    auricDust: weightedCountItems(items, {69432: 1, 76933: 1, 73537: 30}),
+    leyLineSparks: countItems(items, [69392, 76933, 74042])
   }
 }
 
