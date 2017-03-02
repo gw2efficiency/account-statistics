@@ -29,7 +29,7 @@ export default function (accountData) {
     ]),
     luminescentRefractors: countItems(items, [67375, 67370, 67372]),
     brokenSpoons: countItems(items, 74996),
-    blackLionClaimTickets: blackLionClaimTickets(items),
+    blackLionClaimTickets: combinedCountItems(items, {43992: 1, 43998: 0.1}),
     instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
     permanentTools: countItems(items, permanentToolIds),
     chakEggs: countItems(items, 72205),
@@ -117,15 +117,18 @@ function countItems (items, ids, uniqueItems = false) {
   return items.length
 }
 
-// See how many black lion tickets the user has
-function blackLionClaimTickets (items) {
+// Combined item counts
+function combinedCountItems (items, itemList) {
   if (items.length === 0) {
     return null
   }
 
-  const tickets = countItems(items, 43992)
-  const scraps = countItems(items, 43998)
-  const totalTickets = tickets + scraps * 0.1
+  let itemIds = Object.keys(itemList)
+  let count = 0
 
-  return round(totalTickets, 2)
+  itemIds.map(id => {
+    count += itemList[id] * countItems(items, parseInt(id, 10))
+  })
+
+  return round(count, 2)
 }
