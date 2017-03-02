@@ -222,4 +222,34 @@ describe('statistics > progression', () => {
       achievements: [{id: 240, current: 41200, max: 10000, done: true}]
     }).pvpKilledPlayersRanked).to.equal(41200)
   })
+
+  it('can calculate the count of unlocked cats in the home instance', () => {
+    const cats = [
+      {id: 1, hint: 'chicken'},
+      {id: 2, hint: 'grilled_chicken'},
+      {id: 20, hint: 'necromancer'},
+      {id: 24, hint: 'snow_leopard'}
+    ]
+
+    expect(progressionStatistics({}).homeCats).to.equal(null)
+    expect(progressionStatistics({home: {}}).homeCats).to.equal(null)
+    expect(progressionStatistics({home: {cats}}).homeCats).to.equal(4)
+  })
+
+  it('can calculate the count of unlocked nodes in the home instance', () => {
+    const nodes = [
+      'quartz_node',
+      'sprocket_generator',
+      'wintersday_tree',
+      'bandit_chest',
+      'aurilium_node',
+      'exalted_chest',
+      'airship_cargo',
+      'crystallized_supply_cache'
+    ]
+
+    expect(progressionStatistics({}).homeNodes).to.equal(null)
+    expect(progressionStatistics({home: {}}).homeNodes).to.equal(null)
+    expect(progressionStatistics({home: {nodes}}).homeNodes).to.equal(8)
+  })
 })

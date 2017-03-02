@@ -23,7 +23,9 @@ export default function (accountData) {
     wvwDefendedKeeps: achievementCurrent(accountData, 316),
     wvwDefendedCastles: achievementCurrent(accountData, 313),
     pvpKilledPlayers: achievementCurrent(accountData, 239),
-    pvpKilledPlayersRanked: achievementCurrent(accountData, 240)
+    pvpKilledPlayersRanked: achievementCurrent(accountData, 240),
+    homeCats: homeCats(accountData),
+    homeNodes: homeNodes(accountData)
   }
 }
 
@@ -67,4 +69,30 @@ function achievementCurrent (accountData, id, pointsPerRepeat = 0) {
 
   // Sum up the total value of the achievement
   return (achievement.repeated || 0) * pointsPerRepeat + achievement.current
+}
+
+// The unlocked home instance cats
+function homeCats (accountData) {
+  if (!accountData.home) {
+    return null
+  }
+
+  if (!accountData.home.cats) {
+    return null
+  }
+
+  return accountData.home.cats.length
+}
+
+// The unlocked home instance nodes
+function homeNodes (accountData) {
+  if (!accountData.home) {
+    return null
+  }
+
+  if (!accountData.home.nodes) {
+    return null
+  }
+
+  return accountData.home.nodes.length
 }
