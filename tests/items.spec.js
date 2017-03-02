@@ -7,9 +7,9 @@ const generateAccount = (items) => {
     bank: items.slice(0, 1),
     characters: [{
       name: 'Holds items',
-      equipment: items.slice(1, 2),
+      equipment: [],
       bags: [
-        {inventory: items.slice(2)}
+        {inventory: items.slice(1)}
       ]
     }]
   }
@@ -49,7 +49,12 @@ describe('statistics > items', () => {
       gemstoreToys: null,
       blackLionMiniatureClaimTickets: null,
       jadeShards: null,
-      giftsOfExploration: null
+      giftsOfExploration: null,
+      dragoniteOre: null,
+      bloodstoneDust: null,
+      empyrealFragments: null,
+      crystallineOre: null,
+      airshipOil: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -387,5 +392,55 @@ describe('statistics > items', () => {
       {id: 19677, count: 1},
       {id: 49501, count: 1}
     ])).giftsOfExploration).to.equal(3)
+  })
+
+  it('can calculate dragonite ore count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 46733, count: 22},
+      {id: 78474, count: 1},
+      {id: 19677, count: 1},
+      {id: 46732, count: 4}
+    ])).dragoniteOre).to.equal(422)
+  })
+
+  it('can calculate bloodstone dust count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 46731, count: 22},
+      {id: 78474, count: 1},
+      {id: 19677, count: 1},
+      {id: 46730, count: 4}
+    ])).bloodstoneDust).to.equal(422)
+  })
+
+  it('can calculate empyreal fragments count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 46735, count: 22},
+      {id: 78474, count: 1},
+      {id: 19677, count: 1},
+      {id: 46734, count: 4}
+    ])).empyrealFragments).to.equal(422)
+  })
+
+  it('can calculate crystalline ore count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 46682, count: 22},
+      {id: 78474, count: 1},
+      {id: 19677, count: 1},
+      {id: 46683, count: 4}
+    ])).crystallineOre).to.equal(26)
+  })
+
+  it('can calculate airship oil count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 46682, count: 22},
+      {id: 78474, count: 1},
+      {id: 19677, count: 1},
+      {id: 69434, count: 4}
+    ])).airshipOil).to.equal(4)
   })
 })

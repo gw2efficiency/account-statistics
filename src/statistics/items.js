@@ -29,7 +29,7 @@ export default function (accountData) {
     ]),
     luminescentRefractors: countItems(items, [67375, 67370, 67372]),
     brokenSpoons: countItems(items, 74996),
-    blackLionClaimTickets: combinedCountItems(items, {43992: 1, 43998: 0.1}),
+    blackLionClaimTickets: weightedCountItems(items, {43992: 1, 43998: 0.1}),
     instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
     permanentTools: countItems(items, permanentToolIds),
     chakEggs: countItems(items, 72205),
@@ -61,7 +61,12 @@ export default function (accountData) {
     gemstoreToys: countItems(items, gemstoreToyIds),
     blackLionMiniatureClaimTickets: countItems(items, 78474),
     jadeShards: countItems(items, 80332),
-    giftsOfExploration: countItems(items, 19677)
+    giftsOfExploration: countItems(items, 19677),
+    dragoniteOre: weightedCountItems(items, {46733: 1, 46732: 100}),
+    bloodstoneDust: weightedCountItems(items, {46731: 1, 46730: 100}),
+    empyrealFragments: weightedCountItems(items, {46735: 1, 46734: 100}),
+    crystallineOre: countItems(items, [46682, 46683]),
+    airshipOil: countItems(items, 69434)
   }
 }
 
@@ -117,8 +122,8 @@ function countItems (items, ids, uniqueItems = false) {
   return items.length
 }
 
-// Combined item counts
-function combinedCountItems (items, itemList) {
+// Weighted item counts
+function weightedCountItems (items, itemList) {
   if (items.length === 0) {
     return null
   }
