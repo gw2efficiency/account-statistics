@@ -1,5 +1,5 @@
 import round from 'round-to'
-const currentSeasonId = 'A54849B7-7DBD-4958-91EF-72E18CD659BA'
+const currentSeasonId = '14E58A5B-9139-4B9B-A0B7-D2B79E303332'
 
 export default function (accountData) {
   if (!accountData.pvp || !accountData.pvp.stats || !accountData.pvp.standings) {

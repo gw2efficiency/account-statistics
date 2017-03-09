@@ -74,7 +74,7 @@ describe('statistics > pvp', () => {
     }
 
     const standings = [
-      {season_id: 'A54849B7-7DBD-4958-91EF-72E18CD659BA', current: {rating: 1234}}
+      {season_id: '14E58A5B-9139-4B9B-A0B7-D2B79E303332', current: {rating: 1234}}
     ]
 
     const output = {
@@ -111,7 +111,7 @@ describe('statistics > pvp', () => {
     }
 
     const standings = [
-      {season_id: 'A54849B7-7DBD-4958-91EF-72E18CD659BA', current: {rating: 0}}
+      {season_id: '14E58A5B-9139-4B9B-A0B7-D2B79E303332', current: {rating: 0}}
     ]
 
     const output = {
