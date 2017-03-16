@@ -36,7 +36,7 @@ function achievementCount (accountData) {
   }
 
   return accountData.achievements
-    .filter(x => x.done === true || x.repeated && x.repeated > 0)
+    .filter(x => x.done === true || (x.repeated && x.repeated > 0))
     .length
 }
 

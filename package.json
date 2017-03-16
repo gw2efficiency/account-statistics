@@ -15,7 +15,7 @@
     "url": "https://github.com/gw2efficiency/account-statistics"
   },
   "devDependencies": {
-    "abc-environment": "^1.0.8",
+    "abc-environment": "^2.0.0",
     "mockdate": "^2.0.0"
   },
   "dependencies": {
