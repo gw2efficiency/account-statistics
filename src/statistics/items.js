@@ -56,7 +56,7 @@ export default function (accountData) {
     ]),
     kodasWarmthEnrichment: countItems(items, 79926),
     phospholuminescentInfusions: countItems(items, [
-      79665, 79674, 79639, 79653, 79661, 79669
+      79665, 79674, 79639, 79653, 79661, 79669, 67370
     ]),
     gemstoreToys: countItems(items, gemstoreToyIds),
     blackLionMiniatureClaimTickets: countItems(items, 78474),
