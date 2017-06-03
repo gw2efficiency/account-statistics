@@ -42,5 +42,8 @@ export default [
   48934, // Jack-in-the-Box Scythe
   44876, // Jack-in-the-Box Scythe
   78724, // Focused Solar Logging Tool
-  80067 // Celestial Rooster Harvesting Tool
+  80067, // Celestial Rooster Harvesting Tool
+  80979, // Unbound-Magic-Logging-Pulse
+  80987, // Unbound-Magic-Harvesting-Blast
+  80977 // Unbound-Magic-Mining-Beam
 ]
