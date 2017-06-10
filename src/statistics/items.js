@@ -15,6 +15,9 @@ export default function (accountData) {
 
   return {
     legendaryItems: countItems(items, legendaries.map(x => x.id)),
+    legendaryItemsWeapon: countItems(items, legendaries.filter(x => x.type === 'weapon').map(x => x.id)),
+    legendaryItemsArmor: countItems(items, legendaries.filter(x => x.type === 'armor').map(x => x.id)),
+    legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
     fractalTonics: countItems(items, 49277),
     legendaryInsights: countItems(items, 77302),
     whiteMantlePortalDevices: countItems(items, 78978),

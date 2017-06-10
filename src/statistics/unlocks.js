@@ -11,6 +11,9 @@ export default function (accountData) {
     titleCount: titleCount(accountData),
     recipeCount: recipeCount(accountData),
     legendarySkins: legendarySkins(accountData),
+    legendarySkinsWeapon: legendarySkins(accountData, 'weapon'),
+    legendarySkinsArmor: legendarySkins(accountData, 'armor'),
+    legendarySkinsBack: legendarySkins(accountData, 'back'),
     fractalSkins: fractalSkins(accountData),
     wintersPresence: skinExists(accountData, 6577),
     nightfury: skinExists(accountData, 6161)
@@ -83,12 +86,16 @@ function recipeCount (accountData) {
 }
 
 // The legendary skins unlocked on the account
-function legendarySkins (accountData) {
+function legendarySkins (accountData, type) {
   if (!accountData.skins) {
     return null
   }
 
-  const legendarySkinIds = legendaries.map(x => x.skin)
+  const filteredLegendaries = type
+    ? legendaries.filter(x => x.type === type)
+    : legendaries
+
+  const legendarySkinIds = filteredLegendaries.map(x => x.skin)
 
   return accountData.skins
     .filter(x => legendarySkinIds.indexOf(x) !== -1)

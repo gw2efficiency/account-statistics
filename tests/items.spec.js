@@ -25,6 +25,9 @@ describe('statistics > items', () => {
       ghostlyInfusions: null,
       legendaryInsights: null,
       legendaryItems: null,
+      legendaryItemsWeapon: null,
+      legendaryItemsArmor: null,
+      legendaryItemsBack: null,
       luminescentRefractors: null,
       preservedQueenBees: null,
       permanentTools: null,
@@ -77,8 +80,42 @@ describe('statistics > items', () => {
       {id: 30687, count: 1},
       {id: 71383, count: 1},
       {id: 1, count: 1},
-      {id: 7, count: 1}
-    ])).legendaryItems).to.equal(2)
+      {id: 80205, count: 1},
+      {id: 77474, count: 1}
+    ])).legendaryItems).to.equal(4)
+  })
+
+  it('can calculate legendary weapon count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 123, count: 1},
+      {id: 30687, count: 1},
+      {id: 71383, count: 1},
+      {id: 1, count: 1},
+      {id: 7, count: 1},
+      {id: 77474, count: 1}
+    ])).legendaryItemsWeapon).to.equal(2)
+  })
+
+  it('can calculate legendary armor count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 123, count: 1},
+      {id: 80254, count: 1},
+      {id: 80277, count: 1},
+      {id: 1, count: 1},
+      {id: 7, count: 1},
+      {id: 77474, count: 1}
+    ])).legendaryItemsArmor).to.equal(2)
+  })
+
+  it('can calculate legendary back count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 123, count: 1},
+      {id: 74155, count: 1},
+      {id: 80277, count: 1},
+      {id: 1, count: 1},
+      {id: 30704, count: 1},
+      {id: 77474, count: 1}
+    ])).legendaryItemsBack).to.equal(2)
   })
 
   it('can calculate fractal tonic count', () => {

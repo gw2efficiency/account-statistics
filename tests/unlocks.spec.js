@@ -58,7 +58,28 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({}).legendarySkins).to.equal(null)
     expect(unlocksStatistics({skins: []}).legendarySkins).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).legendarySkins).to.equal(0)
-    expect(unlocksStatistics({skins: [1, 2, 4680, 6561]}).legendarySkins).to.equal(2)
+    expect(unlocksStatistics({skins: [1, 2, 4680, 6561, 7130]}).legendarySkins).to.equal(3)
+  })
+
+  it('can calculate legendary skin weapon count', () => {
+    expect(unlocksStatistics({}).legendarySkinsWeapon).to.equal(null)
+    expect(unlocksStatistics({skins: []}).legendarySkinsWeapon).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).legendarySkinsWeapon).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 4680, 7206]}).legendarySkinsWeapon).to.equal(2)
+  })
+
+  it('can calculate legendary skin armor count', () => {
+    expect(unlocksStatistics({}).legendarySkinsArmor).to.equal(null)
+    expect(unlocksStatistics({skins: []}).legendarySkinsArmor).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).legendarySkinsArmor).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7142, 7107]}).legendarySkinsArmor).to.equal(2)
+  })
+
+  it('can calculate legendary skin back count', () => {
+    expect(unlocksStatistics({}).legendarySkinsBack).to.equal(null)
+    expect(unlocksStatistics({skins: []}).legendarySkinsBack).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).legendarySkinsBack).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 6344, 6561]}).legendarySkinsBack).to.equal(2)
   })
 
   it('can calculate fractal skin count', () => {
