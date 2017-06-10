@@ -62,6 +62,7 @@ export default function (accountData) {
     blackLionMiniatureClaimTickets: countItems(items, 78474),
     jadeShards: countItems(items, 80332),
     giftsOfExploration: countItems(items, 19677),
+    giftsOfBattle: countItems(items, 19678),
     dragoniteOre: weightedCountItems(items, {46733: 1, 46732: 100}),
     bloodstoneDust: weightedCountItems(items, {46731: 1, 46730: 100}),
     empyrealFragments: weightedCountItems(items, {46735: 1, 46734: 100}),

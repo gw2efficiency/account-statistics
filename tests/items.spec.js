@@ -50,6 +50,7 @@ describe('statistics > items', () => {
       blackLionMiniatureClaimTickets: null,
       jadeShards: null,
       giftsOfExploration: null,
+      giftsOfBattle: null,
       dragoniteOre: null,
       bloodstoneDust: null,
       empyrealFragments: null,
@@ -395,6 +396,16 @@ describe('statistics > items', () => {
       {id: 19677, count: 1},
       {id: 49501, count: 1}
     ])).giftsOfExploration).to.equal(3)
+  })
+
+  it('can calculate gifts of battle count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 19678, count: 2},
+      {id: 78474, count: 2},
+      {id: 78474, count: 1},
+      {id: 19678, count: 1},
+      {id: 49501, count: 1}
+    ])).giftsOfBattle).to.equal(3)
   })
 
   it('can calculate dragonite ore count', () => {
