@@ -21,7 +21,7 @@
   "dependencies": {
     "array-unique": "^0.3.2",
     "gw2e-account-value": "^3.0.0",
-    "gw2e-static-data": "^0.3.0",
+    "gw2e-static-data": "^0.4.0",
     "round-to": "^2.0.0",
     "sum-by": "^1.0.0"
   }
