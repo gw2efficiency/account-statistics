@@ -68,7 +68,8 @@ export default function (accountData) {
     crystallineOre: countItems(items, [46682, 46683]),
     airshipOil: countItems(items, [69434, 76933]),
     auricDust: weightedCountItems(items, {69432: 1, 76933: 1, 73537: 30}),
-    leyLineSparks: countItems(items, [69392, 76933, 74042])
+    leyLineSparks: countItems(items, [69392, 76933, 74042]),
+    legendarySpikes: countItems(items, 81296)
   }
 }
 

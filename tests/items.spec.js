@@ -56,7 +56,8 @@ describe('statistics > items', () => {
       crystallineOre: null,
       airshipOil: null,
       auricDust: null,
-      leyLineSparks: null
+      leyLineSparks: null,
+      legendarySpikes: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -464,5 +465,15 @@ describe('statistics > items', () => {
       {id: 74042, count: 1},
       {id: 69434, count: 4}
     ])).leyLineSparks).to.equal(24)
+  })
+
+  it('can calculate legendary spikes count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 81296, count: 22},
+      {id: 76933, count: 1},
+      {id: 74042, count: 1},
+      {id: 69434, count: 4}
+    ])).legendarySpikes).to.equal(22)
   })
 })
