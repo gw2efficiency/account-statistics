@@ -9,6 +9,7 @@ export default function (accountData) {
     finisherCount: finisherCount(accountData),
     outfitCount: outfitCount(accountData),
     pvpHeroCount: pvpHeroCount(accountData),
+    mailcarrierCount: mailcarrierCount(accountData),
     titleCount: titleCount(accountData),
     recipeCount: recipeCount(accountData),
     legendarySkins: legendarySkins(accountData),
@@ -66,6 +67,15 @@ function outfitCount (accountData) {
   }
 
   return accountData.outfits.length
+}
+
+// The unlocked mailcarriers on the account
+function mailcarrierCount (accountData) {
+  if (!accountData.mailcarriers) {
+    return null
+  }
+
+  return accountData.mailcarriers.length
 }
 
 // The unlocked pvp heroes on the account

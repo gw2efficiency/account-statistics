@@ -42,6 +42,12 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({outfits: [1, 2, 7, 9, 10]}).outfitCount).to.equal(5)
   })
 
+  it('can calculate mailcarrier count', () => {
+    expect(unlocksStatistics({}).mailcarrierCount).to.equal(null)
+    expect(unlocksStatistics({mailcarriers: []}).mailcarrierCount).to.equal(0)
+    expect(unlocksStatistics({mailcarriers: [1, 2, 7, 9, 10]}).mailcarrierCount).to.equal(5)
+  })
+
   it('can calculate pvp hero count', () => {
     expect(unlocksStatistics({}).pvpHeroCount).to.equal(null)
     expect(unlocksStatistics({pvp: {}}).pvpHeroCount).to.equal(null)
