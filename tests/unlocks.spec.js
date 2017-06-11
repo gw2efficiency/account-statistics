@@ -42,6 +42,13 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({outfits: [1, 2, 7, 9, 10]}).outfitCount).to.equal(5)
   })
 
+  it('can calculate pvp hero count', () => {
+    expect(unlocksStatistics({}).pvpHeroCount).to.equal(null)
+    expect(unlocksStatistics({pvp: {}}).pvpHeroCount).to.equal(null)
+    expect(unlocksStatistics({pvp: {heroes: []}}).pvpHeroCount).to.equal(0)
+    expect(unlocksStatistics({pvp: {heroes: [1, 2, 7, 9, 10]}}).pvpHeroCount).to.equal(5)
+  })
+
   it('can calculate title count', () => {
     expect(unlocksStatistics({}).titleCount).to.equal(null)
     expect(unlocksStatistics({titles: []}).titleCount).to.equal(0)

@@ -8,6 +8,7 @@ export default function (accountData) {
     miniCount: miniCount(accountData),
     finisherCount: finisherCount(accountData),
     outfitCount: outfitCount(accountData),
+    pvpHeroCount: pvpHeroCount(accountData),
     titleCount: titleCount(accountData),
     recipeCount: recipeCount(accountData),
     legendarySkins: legendarySkins(accountData),
@@ -65,6 +66,15 @@ function outfitCount (accountData) {
   }
 
   return accountData.outfits.length
+}
+
+// The unlocked pvp heroes on the account
+function pvpHeroCount (accountData) {
+  if (!accountData.pvp || !accountData.pvp.heroes) {
+    return null
+  }
+
+  return accountData.pvp.heroes.length
 }
 
 // The unlocked titles on the account
