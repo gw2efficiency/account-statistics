@@ -10,6 +10,7 @@ export default function (accountData) {
     outfitCount: outfitCount(accountData),
     pvpHeroCount: pvpHeroCount(accountData),
     mailcarrierCount: mailcarrierCount(accountData),
+    gliderCount: gliderCount(accountData),
     titleCount: titleCount(accountData),
     recipeCount: recipeCount(accountData),
     legendarySkins: legendarySkins(accountData),
@@ -76,6 +77,15 @@ function mailcarrierCount (accountData) {
   }
 
   return accountData.mailcarriers.length
+}
+
+// The unlocked gliders on the account
+function gliderCount (accountData) {
+  if (!accountData.gliders) {
+    return null
+  }
+
+  return accountData.gliders.length
 }
 
 // The unlocked pvp heroes on the account

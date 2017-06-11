@@ -48,6 +48,12 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({mailcarriers: [1, 2, 7, 9, 10]}).mailcarrierCount).to.equal(5)
   })
 
+  it('can calculate glider count', () => {
+    expect(unlocksStatistics({}).gliderCount).to.equal(null)
+    expect(unlocksStatistics({gliders: []}).gliderCount).to.equal(0)
+    expect(unlocksStatistics({gliders: [1, 2, 7, 9, 10]}).gliderCount).to.equal(5)
+  })
+
   it('can calculate pvp hero count', () => {
     expect(unlocksStatistics({}).pvpHeroCount).to.equal(null)
     expect(unlocksStatistics({pvp: {}}).pvpHeroCount).to.equal(null)
