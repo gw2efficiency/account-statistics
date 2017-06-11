@@ -1,5 +1,6 @@
 import legendaries from 'gw2e-static-data/build/legendaries'
 import fractalSkinIds from '../static/fractalSkinIds'
+import immortalSkinIds from '../static/immortalSkinIds'
 
 export default function (accountData) {
   return {
@@ -18,6 +19,7 @@ export default function (accountData) {
     legendarySkinsArmor: legendarySkins(accountData, 'armor'),
     legendarySkinsBack: legendarySkins(accountData, 'back'),
     fractalSkins: fractalSkins(accountData),
+    immortalSkins: immortalSkins(accountData),
     wintersPresence: skinExists(accountData, 6577),
     nightfury: skinExists(accountData, 6161)
   }
@@ -140,6 +142,17 @@ function fractalSkins (accountData) {
 
   return accountData.skins
     .filter(x => fractalSkinIds.indexOf(x) !== -1)
+    .length
+}
+
+// The immportal weapon skins unlocked on the account
+function immortalSkins (accountData) {
+  if (!accountData.skins) {
+    return null
+  }
+
+  return accountData.skins
+    .filter(x => immortalSkinIds.indexOf(x) !== -1)
     .length
 }
 

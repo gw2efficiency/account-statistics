@@ -108,6 +108,13 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({skins: [1, 2, 4500, 6234]}).fractalSkins).to.equal(2)
   })
 
+  it('can calculate immportal weapon skin count', () => {
+    expect(unlocksStatistics({}).immortalSkins).to.equal(null)
+    expect(unlocksStatistics({skins: []}).immortalSkins).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).immortalSkins).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 6111, 6087]}).immortalSkins).to.equal(2)
+  })
+
   it('can calculate the winters presence unlock', () => {
     expect(unlocksStatistics({}).wintersPresence).to.equal(null)
     expect(unlocksStatistics({skins: []}).wintersPresence).to.equal(0)
