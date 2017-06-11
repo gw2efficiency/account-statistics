@@ -30,7 +30,7 @@ export default function (accountData) {
       78012, 78052, 78054, 78079, 78086, 78090, 78016, 78028,
       78030, 78031, 78057, 78097
     ]),
-    luminescentRefractors: countItems(items, [67375, 67370, 67372]),
+    luminescentRefractors: countItems(items, [67375, 67370, 67372, 79647]),
     brokenSpoons: countItems(items, 74996),
     blackLionClaimTickets: weightedCountItems(items, {43992: 1, 43998: 0.1}),
     instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
@@ -59,7 +59,7 @@ export default function (accountData) {
     ]),
     kodasWarmthEnrichment: countItems(items, 79926),
     phospholuminescentInfusions: countItems(items, [
-      79665, 79674, 79639, 79653, 79661, 79669, 67370
+      79665, 79674, 79639, 79653, 79661, 79669
     ]),
     gemstoreToys: countItems(items, gemstoreToyIds),
     blackLionMiniatureClaimTickets: countItems(items, 78474),
