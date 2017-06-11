@@ -1,7 +1,7 @@
 import _sum from 'sum-by'
 
-export default function (accountData, calcData) {
-  if (!accountData.masteries || !calcData) {
+export default function (accountData) {
+  if (!accountData.mastery || !accountData.mastery.points) {
     return {
       masteryPoints: null,
       masteryPointsTyria: null,
@@ -9,25 +9,17 @@ export default function (accountData, calcData) {
     }
   }
 
-  let spentMasteryPoints = {}
+  const totalPoints = accountData.mastery.points.totals
 
-  accountData.masteries.map(mastery => {
-    const masteryProgress = mastery.level
-    const masteryData = calcData.masteries[mastery.id]
-
-    // Skip masteries we don't have data for
-    if (!masteryData) {
-      return
-    }
-
-    // Calculate how many mastery points the account spent
-    const spentPoints = _sum(masteryData.point_costs.slice(0, masteryProgress + 1))
-    spentMasteryPoints[masteryData.region] = (spentMasteryPoints[masteryData.region] || 0) + spentPoints
+  // Map through all the totals and create a Region => Points hashmap
+  let earnedMasteryPoints = {}
+  totalPoints.map(total => {
+    earnedMasteryPoints[total.region] = total.earned
   })
 
   return {
-    masteryPoints: _sum(Object.values(spentMasteryPoints)),
-    masteryPointsTyria: spentMasteryPoints['Tyria'] || 0,
-    masteryPointsMaguuma: spentMasteryPoints['Maguuma'] || 0
+    masteryPoints: _sum(Object.values(earnedMasteryPoints)),
+    masteryPointsTyria: earnedMasteryPoints['Tyria'] || 0,
+    masteryPointsMaguuma: earnedMasteryPoints['Maguuma'] || 0
   }
 }

@@ -50,18 +50,8 @@ const accountData = {
   }
 }
 
-// Some data needed for calculation
-const calcData = {
-  masteries: {
-    1: {region: 'Maguuma', point_costs: [1, 2, 3, 5, 8]},
-    2: {region: 'Maguuma', point_costs: [1, 2, 3, 5, 8, 12]},
-    5: {region: 'Tyria', point_costs: [1, 2, 3, 5]},
-    // ...
-  }
-}
-
 // Calculate everything!
-accountStatistics(accountData, calcData)
+accountStatistics(accountData)
 // -> Object with all statistics calculated
 ```
 
