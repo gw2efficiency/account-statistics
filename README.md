@@ -50,8 +50,13 @@ const accountData = {
   }
 }
 
+// Extra information for context-dependent statistics
+const extraInformation = {
+  pvp: {currentSeason: 'SEASON-ID'}
+}
+
 // Calculate everything!
-accountStatistics(accountData)
+accountStatistics(accountData, extraInformation)
 // -> Object with all statistics calculated
 ```
 

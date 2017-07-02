@@ -9,18 +9,18 @@ import walletStatistics from './statistics/wallet'
 import masteriesStatistics from './statistics/masteries'
 import aggregateStatistics from './statistics/aggregate'
 
-export default function (accountData) {
+export default function (accountData, extraInformation) {
   let baseStatistics = {
-    ...accountStatistics(accountData),
-    ...charactersStatistics(accountData),
-    ...commerceStatistics(accountData),
-    ...itemsStatistics(accountData),
-    ...progressionStatistics(accountData),
-    ...pvpStatistics(accountData),
-    ...unlocksStatistics(accountData),
-    ...walletStatistics(accountData),
-    ...masteriesStatistics(accountData)
+    ...accountStatistics(accountData, extraInformation),
+    ...charactersStatistics(accountData, extraInformation),
+    ...commerceStatistics(accountData, extraInformation),
+    ...itemsStatistics(accountData, extraInformation),
+    ...progressionStatistics(accountData, extraInformation),
+    ...pvpStatistics(accountData, extraInformation),
+    ...unlocksStatistics(accountData, extraInformation),
+    ...walletStatistics(accountData, extraInformation),
+    ...masteriesStatistics(accountData, extraInformation)
   }
 
-  return {...baseStatistics, ...aggregateStatistics(baseStatistics)}
+  return {...baseStatistics, ...aggregateStatistics(baseStatistics, extraInformation)}
 }

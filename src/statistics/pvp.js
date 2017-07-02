@@ -1,7 +1,6 @@
 import round from 'round-to'
-const currentSeasonId = '14E58A5B-9139-4B9B-A0B7-D2B79E303332'
 
-export default function (accountData) {
+export default function (accountData, extraInformation) {
   if (!accountData.pvp || !accountData.pvp.stats || !accountData.pvp.standings) {
     return {
       pvpGameCount: null,
@@ -22,7 +21,7 @@ export default function (accountData) {
   const standings = accountData.pvp.standings
 
   // Get the current league rating
-  const currentLeague = standings.find(x => x.season_id === currentSeasonId)
+  const currentLeague = standings.find(x => x.season_id === extraInformation.pvp.currentSeason)
   const pvpLeagueRating = currentLeague && currentLeague.current.rating > 0
     ? currentLeague.current.rating
     : null

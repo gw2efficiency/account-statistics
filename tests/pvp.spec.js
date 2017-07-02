@@ -74,7 +74,7 @@ describe('statistics > pvp', () => {
     }
 
     const standings = [
-      {season_id: '14E58A5B-9139-4B9B-A0B7-D2B79E303332', current: {rating: 1234}}
+      {season_id: 'SOME-SEASON-ID', current: {rating: 1234}}
     ]
 
     const output = {
@@ -92,7 +92,7 @@ describe('statistics > pvp', () => {
       pvpWinRateRanked: 51.62
     }
 
-    expect(pvpStatistics({pvp: {stats, standings}})).to.deep.equal(output)
+    expect(pvpStatistics({pvp: {stats, standings}}, {pvp: {currentSeason: 'SOME-SEASON-ID'}})).to.deep.equal(output)
   })
 
   it('can calculate pvp statistics if no games are played', () => {
@@ -111,7 +111,7 @@ describe('statistics > pvp', () => {
     }
 
     const standings = [
-      {season_id: '14E58A5B-9139-4B9B-A0B7-D2B79E303332', current: {rating: 0}}
+      {season_id: 'SOME-SEASON-ID', current: {rating: 0}}
     ]
 
     const output = {
@@ -129,6 +129,6 @@ describe('statistics > pvp', () => {
       pvpWinRateRanked: null
     }
 
-    expect(pvpStatistics({pvp: {stats, standings}})).to.deep.equal(output)
+    expect(pvpStatistics({pvp: {stats, standings}}, {pvp: {currentSeason: 'SOME-SEASON-ID'}})).to.deep.equal(output)
   })
 })
