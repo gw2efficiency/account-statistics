@@ -20,3 +20,7 @@ node_modules/
 # Operating System
 .DS_Store
 Thumbs.db
+
+# NPM and Yarn Locks
+package-lock.json
+yarn.lock
