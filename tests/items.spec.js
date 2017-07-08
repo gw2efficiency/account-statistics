@@ -131,11 +131,12 @@ describe('statistics > items', () => {
 
   it('can calculate legendary insight count', () => {
     expect(itemsStatistics(generateAccount([
-      {id: 80281, count: 3}, // Perfected
-      {id: 80387, count: 2}, // Refined
+      {id: 80281, count: 3}, // Perfected multi
+      {id: 80161, count: 1}, // Perfected single
+      {id: 80387, count: 2}, // Refined multi
+      {id: 80366, count: 1}, // Refined single
       {id: 80516, count: 3}, // Envoy Insignia
       {id: 78989, count: 1}, // Gift of Prowess
-      {id: 80161, count: 1}, // Perfected
       {id: 77302, count: 7}  // Legendary Insight
     ])).legendaryInsights).to.equal(282)
   })

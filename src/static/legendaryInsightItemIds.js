@@ -1,5 +1,5 @@
 export default {
-  'refinedIds': [
+  refinedIds: [
     80648, // Refined Envoy Breastplate
     80264, // Refined Envoy Mantle
     80127, // Refined Envoy Greaves
@@ -19,7 +19,7 @@ export default {
     80583, // Refined Envoy Shoes
     80236  // Refined Envoy Pauldrons
   ],
-  'perfectedIds': [
+  perfectedIds: [
     80281, // Perfected Envoy Boots
     80254, // Perfected Envoy Breastplate
     80131, // Perfected Envoy Mantle
@@ -39,7 +39,7 @@ export default {
     80399, // Perfected Envoy Shoes
     80435  // Perfected Envoy Pauldrons
   ],
-  'envoyInsignia': 80516,
-  'giftOfProwess': 78989,
-  'legendaryInsight': 77302
+  envoyInsignia: 80516,
+  giftOfProwess: 78989,
+  legendaryInsight: 77302
 }

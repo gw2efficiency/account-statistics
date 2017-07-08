@@ -20,7 +20,7 @@ export default function (accountData) {
     legendaryItemsArmor: countItems(items, legendaries.filter(x => x.type === 'armor').map(x => x.id)),
     legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
     fractalTonics: countItems(items, 49277),
-    legendaryInsights: countLegendaryInsights(items, legendaryInsightItemIds),
+    legendaryInsights: countLegendaryInsights(items),
     whiteMantlePortalDevices: countItems(items, 78978),
     chakEggSacks: countItems(items, 72021),
     preservedQueenBees: countItems(items, [68440, 77594]),
@@ -147,26 +147,25 @@ function weightedCountItems (items, itemList) {
   return round(count, 2)
 }
 
-function countLegendaryInsights (items, itemList) {
+function countLegendaryInsights (items) {
   if (!items.length) {
     return null
   }
 
-  let {refinedIds, perfectedIds, envoyInsignia, giftOfProwess, legendaryInsight} = itemList
+  let {refinedIds, perfectedIds, envoyInsignia, giftOfProwess, legendaryInsight} = legendaryInsightItemIds
   let count = 0
-  let temp = 0
 
   refinedIds.map(id => {
-    temp = countItems(items, id)
-    count += (temp ? (temp - 1) * 25 : 0)
+    let itemCount = countItems(items, id)
+    count += (itemCount ? (itemCount - 1) * 25 : 0)
   })
 
   perfectedIds.map(id => {
-    temp = countItems(items, id)
-    count += (temp ? (temp * 50) - 25 : 0)
+    let itemCount = countItems(items, id)
+    count += (itemCount ? (itemCount * 50) - 25 : 0)
   })
 
-  count += (countItems(items, [envoyInsignia, giftOfProwess]) * 25)
+  count += countItems(items, [envoyInsignia, giftOfProwess]) * 25
   count += countItems(items, legendaryInsight)
 
   return count
