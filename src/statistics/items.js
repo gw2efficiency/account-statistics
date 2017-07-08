@@ -9,6 +9,7 @@ import permanentToolIds from '../static/permanentToolIds'
 import championBagIds from '../static/championBagIds'
 import tonicIds from '../static/tonicIds'
 import gemstoreToyIds from '../static/gemstoreToyIds'
+import legendaryInsightItemIds from '../static/legendaryInsightItemIds'
 
 export default function (accountData) {
   const items = allItems(accountData)
@@ -19,7 +20,7 @@ export default function (accountData) {
     legendaryItemsArmor: countItems(items, legendaries.filter(x => x.type === 'armor').map(x => x.id)),
     legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
     fractalTonics: countItems(items, 49277),
-    legendaryInsights: countItems(items, 77302),
+    legendaryInsights: countLegendaryInsights(items, legendaryInsightItemIds),
     whiteMantlePortalDevices: countItems(items, 78978),
     chakEggSacks: countItems(items, 72021),
     preservedQueenBees: countItems(items, [68440, 77594]),
@@ -144,4 +145,29 @@ function weightedCountItems (items, itemList) {
   })
 
   return round(count, 2)
+}
+
+function countLegendaryInsights (items, itemList) {
+  if (!items.length) {
+    return null
+  }
+
+  let {refinedIds, perfectedIds, envoyInsignia, giftOfProwess, legendaryInsight} = itemList
+  let count = 0
+  let temp = 0
+
+  refinedIds.map(id => {
+    temp = countItems(items, id)
+    count += (temp ? (temp - 1) * 25 : 0)
+  })
+
+  perfectedIds.map(id => {
+    temp = countItems(items, id)
+    count += (temp ? (temp * 50) - 25 : 0)
+  })
+
+  count += (countItems(items, [envoyInsignia, giftOfProwess]) * 25)
+  count += countItems(items, legendaryInsight)
+
+  return count
 }

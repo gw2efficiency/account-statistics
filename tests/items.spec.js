@@ -131,12 +131,13 @@ describe('statistics > items', () => {
 
   it('can calculate legendary insight count', () => {
     expect(itemsStatistics(generateAccount([
-      {id: 77302, count: 50},
-      {id: 30687, count: 1},
-      {id: 71383, count: 1},
-      {id: 77302, count: 1},
-      {id: 77302, count: 4}
-    ])).legendaryInsights).to.equal(55)
+      {id: 80281, count: 3}, // Perfected
+      {id: 80387, count: 2}, // Refined
+      {id: 80516, count: 3}, // Envoy Insignia
+      {id: 78989, count: 1}, // Gift of Prowess
+      {id: 80161, count: 1}, // Perfected
+      {id: 77302, count: 7}  // Legendary Insight
+    ])).legendaryInsights).to.equal(282)
   })
 
   it('can calculate white mantle portal device count', () => {
