@@ -61,6 +61,7 @@ describe('statistics > items', () => {
       airshipOil: null,
       auricDust: null,
       leyLineSparks: null,
+      luckIds: null,
       legendarySpikes: null,
       fireOrchidBlossoms: null
     }
