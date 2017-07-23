@@ -84,5 +84,11 @@ export default [
   44226, // Thorny Seed Pouch
   44211, // Travelers Sack
   44204, // Tribal Satchel
-  44206 // Utility Backpack
+  44206, // Utility Backpack
+  72871, // Half-Eaten Backpack
+  73442, // Half-Eaten Backpack
+  73878, // Half-Eaten Backpack
+  77192, // Half-Eaten Backpack
+  77199, // Half-Eaten Backpack
+  66403 // Tootsie's Speed Pack
 ]
