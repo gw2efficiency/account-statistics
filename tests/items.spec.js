@@ -536,4 +536,19 @@ describe('statistics > items', () => {
       {id: 81127, count: 4}
     ])).fireOrchidBlossoms).to.equal(5)
   })
+
+  it('can calculate luck', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 45175, count: 1}, // 10
+      {id: 45175, count: 5}, // 50
+      {id: 45176, count: 1}, // 50
+      {id: 45176, count: 8}, // 400
+      {id: 45177, count: 1}, // 100
+      {id: 45177, count: 4}, // 400
+      {id: 45178, count: 1}, // 200
+      {id: 45178, count: 3}, // 600
+      {id: 45179, count: 1}, // 500
+      {id: 45179, count: 7}  // 3500
+    ])).luck).to.equal(5810)
+  })
 })
