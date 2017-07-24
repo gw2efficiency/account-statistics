@@ -62,6 +62,9 @@ export default [
   50043, // Endless Pink Quaggan Tonic
   50040, // Endless Mystery Quaggan Tonic
   66214, // Endless Dolyak Calf Tonic
+  80172, // Endless Miniature Tonic
+  79849, // Endless Kodan Tonic
+  80989, // Endless Embiggening Tonic
   69651, // Endless Interface Crafter Golem Tonic
   36105, // Endless Multicolored Ooze Tonic
   [72894, 73663], // Endless Chak Drone Tonic
@@ -74,6 +77,5 @@ export default [
   [79034, 79042], // Endless Ley-Line Anomaly Tonic
   [73194, 77167], // Endless Nuhoch Crusher Tonic
   79657, // Endless Shadow Raven Tonic
-  74186, // Endless Spotted Beetle Tonic
-  72495 // Wolf Totem (gizmo)
+  74186 // Endless Spotted Beetle Tonic
 ]
