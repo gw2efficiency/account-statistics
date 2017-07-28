@@ -23,8 +23,8 @@ export default function (accountData) {
     fractalTonics: countItems(items, 49277),
     legendaryInsights: countLegendaryInsights(items),
     whiteMantlePortalDevices: countItems(items, 78978),
-    chakEggSacks: countItems(items, 72021),
-    preservedQueenBees: countItems(items, [68440, 77594]),
+    chakEggSacks: countItems(items, [72021, 81825]),
+    preservedQueenBees: countItems(items, [68440, 77594, 81663]),
     ghostlyInfusions: countItems(items, [
       77366, 77274, 77303, 77310, 77316, 77394
     ]),
@@ -32,7 +32,10 @@ export default function (accountData) {
       78012, 78052, 78054, 78079, 78086, 78090, 78016, 78028,
       78030, 78031, 78057, 78097
     ]),
-    luminescentRefractors: countItems(items, [67375, 67370, 67372, 79647]),
+    luminescentRefractors: countItems(items, [
+      67375, 67370, 67372, 79647, 82013, 81810, 81877, 82055,
+      81678, 81809, 81864, 81847, 81930, 81777, 81653
+    ]),
     brokenSpoons: countItems(items, 74996),
     blackLionClaimTickets: weightedCountItems(items, {43992: 1, 43998: 0.1}),
     instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
