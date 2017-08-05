@@ -23,19 +23,6 @@ export default function (accountData) {
     fractalTonics: countItems(items, 49277),
     legendaryInsights: countLegendaryInsights(items),
     whiteMantlePortalDevices: countItems(items, 78978),
-    chakEggSacks: countItems(items, [72021, 81825]),
-    preservedQueenBees: countItems(items, [68440, 77594, 81663]),
-    ghostlyInfusions: countItems(items, [
-      77366, 77274, 77303, 77310, 77316, 77394
-    ]),
-    baubleInfusions: countItems(items, [
-      78012, 78052, 78054, 78079, 78086, 78090, 78016, 78028,
-      78030, 78031, 78057, 78097
-    ]),
-    luminescentRefractors: countItems(items, [
-      67375, 67370, 67372, 79647, 82013, 81810, 81877, 82055,
-      81678, 81809, 81864, 81847, 81930, 81777, 81653
-    ]),
     brokenSpoons: countItems(items, 74996),
     blackLionClaimTickets: weightedCountItems(items, {43992: 1, 43998: 0.1}),
     instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
@@ -59,13 +46,6 @@ export default function (accountData) {
       35978, 35977, 35976, 38506, 78217, 78455
     ]),
     freshWinterberries: countItems(items, 79899),
-    wintersHeartInfusions: countItems(items, [
-      79959, 79957, 79978, 79994, 79943, 80063
-    ]),
-    kodasWarmthEnrichment: countItems(items, 79926),
-    phospholuminescentInfusions: countItems(items, [
-      79665, 79674, 79639, 79653, 79661, 79669
-    ]),
     gemstoreToys: countItems(items, gemstoreToyIds),
     blackLionMiniatureClaimTickets: countItems(items, 78474),
     jadeShards: countItems(items, 80332),
@@ -80,7 +60,29 @@ export default function (accountData) {
     leyLineSparks: countItems(items, [69392, 76933, 74042]),
     legendarySpikes: countItems(items, 81296),
     fireOrchidBlossoms: countItems(items, 81127),
-    luck: weightedCountItems(items, luckItemIds)
+    luck: weightedCountItems(items, luckItemIds),
+
+    // Aura items
+    chakEggSacks: countItems(items, [72021, 81825]),
+    preservedQueenBees: countItems(items, [68440, 77594, 81663]),
+    ghostlyInfusions: countItems(items, [
+      77366, 77274, 77303, 77310, 77316, 77394
+    ]),
+    baubleInfusions: countItems(items, [
+      78012, 78052, 78054, 78079, 78086, 78090, 78016, 78028,
+      78030, 78031, 78057, 78097
+    ]),
+    luminescentRefractors: countItems(items, [
+      67375, 67370, 67372, 79647, 82013, 81810, 81877, 82055,
+      81678, 81809, 81864, 81847, 81930, 81777, 81653
+    ]),
+    wintersHeartInfusions: countItems(items, [
+      79959, 79957, 79978, 79994, 79943, 80063
+    ]),
+    kodasWarmthEnrichment: countItems(items, 79926),
+    phospholuminescentInfusions: countItems(items, [
+      79665, 79674, 79639, 79653, 79661, 79669
+    ])
   }
 }
 
