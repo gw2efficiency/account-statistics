@@ -16,8 +16,11 @@ describe('statistics > aggregate', () => {
       nightfury: 0,
       wintersHeartInfusions: 3,
       kodasWarmthEnrichment: 1,
-      phospholuminescentInfusions: 2
-    }).totalAuras).to.equal(18)
+      phospholuminescentInfusions: 2,
+      legendaryItemsTrinket: 1,
+      liquidAurillium: 1,
+      celestialInfusion: 2
+    }).totalAuras).to.equal(22)
   })
 
   it('can calculate death count per hour', () => {

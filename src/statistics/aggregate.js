@@ -22,16 +22,20 @@ function deathCountPerHour (accountStatistics) {
 // Get the total number of auras
 function totalAuras (accountStatistics) {
   let keys = [
+    'wintersPresence',
+    'nightfury',
+
     'chakEggSacks',
     'preservedQueenBees',
     'ghostlyInfusions',
     'baubleInfusions',
     'luminescentRefractors',
-    'wintersPresence',
-    'nightfury',
     'wintersHeartInfusions',
     'kodasWarmthEnrichment',
-    'phospholuminescentInfusions'
+    'phospholuminescentInfusions',
+    'legendaryItemsTrinket',
+    'liquidAurillium',
+    'celestialInfusion'
   ]
 
   // All keys have to be set

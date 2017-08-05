@@ -20,6 +20,7 @@ export default function (accountData) {
     legendaryItemsWeapon: countItems(items, legendaries.filter(x => x.type === 'weapon').map(x => x.id)),
     legendaryItemsArmor: countItems(items, legendaries.filter(x => x.type === 'armor').map(x => x.id)),
     legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
+    legendaryItemsTrinket: countItems(items, legendaries.filter(x => x.type === 'trinket').map(x => x.id)),
     fractalTonics: countItems(items, 49277),
     legendaryInsights: countLegendaryInsights(items),
     whiteMantlePortalDevices: countItems(items, 78978),
@@ -63,18 +64,22 @@ export default function (accountData) {
     luck: weightedCountItems(items, luckItemIds),
 
     // Aura items
-    chakEggSacks: countItems(items, [72021, 81825]),
-    preservedQueenBees: countItems(items, [68440, 77594, 81663]),
+    chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044]),
+    preservedQueenBees: countItems(items, [
+      68440, 77594, 81663, 81638, 81679, 81701, 81818, 81897
+    ]),
     ghostlyInfusions: countItems(items, [
       77366, 77274, 77303, 77310, 77316, 77394
     ]),
     baubleInfusions: countItems(items, [
-      78012, 78052, 78054, 78079, 78086, 78090, 78016, 78028,
-      78030, 78031, 78057, 78097
+      78012, 78052, 78054, 78079, 78086, 78090,
+      78016, 78028, 78030, 78031, 78057, 78097
     ]),
     luminescentRefractors: countItems(items, [
-      67375, 67370, 67372, 79647, 82013, 81810, 81877, 82055,
-      81678, 81809, 81864, 81847, 81930, 81777, 81653
+      67375, 81810, 81877, 82013, 81624, 81709, 82039,
+      67370, 81678, 82055, 81612, 81727, 81948, 81988,
+      67372, 81809, 81847, 81864, 81930, 81881, 81911,
+      79647, 81653, 81777, 81641, 81655, 81858, 81959
     ]),
     wintersHeartInfusions: countItems(items, [
       79959, 79957, 79978, 79994, 79943, 80063
@@ -82,6 +87,11 @@ export default function (accountData) {
     kodasWarmthEnrichment: countItems(items, 79926),
     phospholuminescentInfusions: countItems(items, [
       79665, 79674, 79639, 79653, 79661, 79669
+    ]),
+    liquidAurillium: countItems(items, [76063, 81715, 82006]),
+    celestialInfusion: countItems(items, [
+      81761, 81779, 81811, 81919, 81991, 81878,
+      81783, 81814, 81927
     ])
   }
 }

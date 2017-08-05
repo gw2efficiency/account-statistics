@@ -28,6 +28,7 @@ describe('statistics > items', () => {
       legendaryItemsWeapon: null,
       legendaryItemsArmor: null,
       legendaryItemsBack: null,
+      legendaryItemsTrinket: null,
       luminescentRefractors: null,
       preservedQueenBees: null,
       permanentTools: null,
@@ -63,7 +64,9 @@ describe('statistics > items', () => {
       leyLineSparks: null,
       luck: null,
       legendarySpikes: null,
-      fireOrchidBlossoms: null
+      fireOrchidBlossoms: null,
+      liquidAurillium: null,
+      celestialInfusion: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -118,6 +121,17 @@ describe('statistics > items', () => {
       {id: 30704, count: 1},
       {id: 77474, count: 1}
     ])).legendaryItemsBack).to.equal(2)
+  })
+
+  it('can calculate legendary trinket count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 123, count: 1},
+      {id: 74155, count: 1},
+      {id: 80277, count: 1},
+      {id: 1, count: 1},
+      {id: 81908, count: 1},
+      {id: 77474, count: 1}
+    ])).legendaryItemsTrinket).to.equal(1)
   })
 
   it('can calculate fractal tonic count', () => {
@@ -397,6 +411,26 @@ describe('statistics > items', () => {
       {id: 79899, count: 1},
       {id: 49501, count: 1}
     ])).phospholuminescentInfusions).to.equal(1)
+  })
+
+  it('can calculate liquid aurillium count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 76063, count: 2},
+      {id: 81715, count: 1},
+      {id: 79653, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).liquidAurillium).to.equal(3)
+  })
+
+  it('can calculate celestial infusion count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 81811, count: 2},
+      {id: 81927, count: 1},
+      {id: 79653, count: 1},
+      {id: 79899, count: 1},
+      {id: 49501, count: 1}
+    ])).celestialInfusion).to.equal(3)
   })
 
   it('can calculate gemstore toys count', () => {
