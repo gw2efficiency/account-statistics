@@ -88,7 +88,10 @@ export default function (accountData) {
     phospholuminescentInfusions: countItems(items, [
       79665, 79674, 79639, 79653, 79661, 79669
     ]),
-    liquidAurillium: countItems(items, [76063, 81715, 82006]),
+    liquidAurillium: countItems(items, [
+      76063,
+      81715, 82006, 81875, 81889, 81918, 81975
+    ]),
     celestialInfusion: countItems(items, [
       81761, 81779, 81811, 81919, 81991, 81878,
       81783, 81814, 81927
