@@ -65,6 +65,7 @@ describe('statistics > items', () => {
       luck: null,
       legendarySpikes: null,
       fireOrchidBlossoms: null,
+      orrianPearls: null,
       liquidAurillium: null,
       celestialInfusion: null
     }
@@ -571,6 +572,16 @@ describe('statistics > items', () => {
       {id: 74042, count: 1},
       {id: 81127, count: 4}
     ])).fireOrchidBlossoms).to.equal(5)
+  })
+
+  it('can calculate orrian peal count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 78474, count: 1},
+      {id: 81296, count: 22},
+      {id: 81706, count: 1},
+      {id: 74042, count: 1},
+      {id: 81706, count: 4}
+    ])).orrianPearls).to.equal(5)
   })
 
   it('can calculate luck', () => {

@@ -61,6 +61,7 @@ export default function (accountData) {
     leyLineSparks: countItems(items, [69392, 76933, 74042]),
     legendarySpikes: countItems(items, 81296),
     fireOrchidBlossoms: countItems(items, 81127),
+    orrianPearls: countItems(items, 81706),
     luck: weightedCountItems(items, luckItemIds),
 
     // Aura items
