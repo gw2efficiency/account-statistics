@@ -65,7 +65,7 @@ export default function (accountData) {
     luck: weightedCountItems(items, luckItemIds),
 
     // Aura items
-    chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044]),
+    chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044, 81677, 81840]),
     preservedQueenBees: countItems(items, [
       68440, 77594, 81663, 81638, 81679, 81701, 81818, 81897
     ]),
