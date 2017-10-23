@@ -282,14 +282,11 @@ describe('statistics > items', () => {
       items.PerfectedEnvoyMask, items.PerfectedEnvoyShoulderpads, items.PerfectedEnvoyJerkin,
       items.PerfectedEnvoyVambraces, items.PerfectedEnvoyLeggings, items.PerfectedEnvoyBoots,
 
-      items.PerfectedEnvoyMask, items.PerfectedEnvoyShoulderpads, items.PerfectedEnvoyJerkin,
-      items.PerfectedEnvoyVambraces, items.PerfectedEnvoyLeggings, items.PerfectedEnvoyBoots,
-
       items.PerfectedEnvoyCowl, items.PerfectedEnvoyMantle, items.PerfectedEnvoyVestments,
       items.PerfectedEnvoyGloves, items.PerfectedEnvoyPants, items.PerfectedEnvoyShoes,
 
       items.RefinedEnvoyHelmet, items.RefinedEnvoyCowl, // extra refined items
-      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyCowl, // extra perfected items
+      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyCowl // extra perfected items
     ]
     expect(countFromList(allLegendarySets), 'allLegendarySets').to.equal(
       6 * 25 + // First set, where the precursor was free

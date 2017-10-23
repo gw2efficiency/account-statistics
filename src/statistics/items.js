@@ -170,20 +170,14 @@ function countLegendaryInsights (items) {
   }
 
   let {refinedIds, perfectedIds, envoyInsignia, giftOfProwess, legendaryInsight} = legendaryInsightItemIds
-  let count = 0
 
-  refinedIds.map(id => {
-    let itemCount = countItems(items, id)
-    count += (itemCount ? (itemCount - 1) * 25 : 0)
-  })
+  const refinedCount = refinedIds.reduce((sum, id) => sum + countItems(items, id), 0)
+  const perfectedCount = perfectedIds.reduce((sum, id) => sum + countItems(items, id), 0)
 
-  perfectedIds.map(id => {
-    let itemCount = countItems(items, id)
-    count += (itemCount ? (itemCount * 50) - 25 : 0)
-  })
-
-  count += countItems(items, [envoyInsignia, giftOfProwess]) * 25
-  count += countItems(items, legendaryInsight)
-
-  return count
+  let li = 0
+  li += Math.max(Math.min(perfectedCount, 6) + refinedCount - 6, 0) * 25
+  li += Math.min(perfectedCount, 6) * 25 + Math.max(perfectedCount - 6, 0) * 50
+  li += countItems(items, [envoyInsignia, giftOfProwess]) * 25
+  li += countItems(items, legendaryInsight)
+  return li
 }
