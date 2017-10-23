@@ -146,15 +146,155 @@ describe('statistics > items', () => {
   })
 
   it('can calculate legendary insight count', () => {
+    const items = {
+      // Heavy Ascended
+      RefinedEnvoyHelmet: 80387,
+      RefinedEnvoyPauldrons: 80236,
+      RefinedEnvoyBreastplate: 80648,
+      RefinedEnvoyGauntlets: 80673,
+      RefinedEnvoyTassets: 80427,
+      RefinedEnvoyGreaves: 80127,
+
+      // Medium Ascended
+      RefinedEnvoyMask: 80634,
+      RefinedEnvoyShoulderpads: 80366,
+      RefinedEnvoyJerkin: 80607,
+      RefinedEnvoyVambraces: 80658,
+      RefinedEnvoyLeggings: 80675,
+      RefinedEnvoyBoots: 80177,
+
+      // Light Ascended
+      RefinedEnvoyCowl: 80441,
+      RefinedEnvoyMantle: 80264,
+      RefinedEnvoyVestments: 80120,
+      RefinedEnvoyGloves: 80460,
+      RefinedEnvoyPants: 80275,
+      RefinedEnvoyShoes: 80583,
+
+      // Heavy Legendary
+      PerfectedEnvoyHelmet: 80384,
+      PerfectedEnvoyPauldrons: 80435,
+      PerfectedEnvoyBreastplate: 80254,
+      PerfectedEnvoyGauntlets: 80205,
+      PerfectedEnvoyTassets: 80277,
+      PerfectedEnvoyGreaves: 80557,
+
+      // Medium Legendary
+      PerfectedEnvoyMask: 80296,
+      PerfectedEnvoyShoulderpads: 80145,
+      PerfectedEnvoyJerkin: 80578,
+      PerfectedEnvoyVambraces: 80161,
+      PerfectedEnvoyLeggings: 80252,
+      PerfectedEnvoyBoots: 80281,
+
+      // Light Legendary
+      PerfectedEnvoyCowl: 80248,
+      PerfectedEnvoyMantle: 80131,
+      PerfectedEnvoyVestments: 80190,
+      PerfectedEnvoyGloves: 80111,
+      PerfectedEnvoyPants: 80356,
+      PerfectedEnvoyShoes: 80399
+    }
+
+    function countFromList (itemList) {
+      const account = generateAccount(itemList.map(id => ({id, count: 1})))
+      return itemsStatistics(account).legendaryInsights
+    }
+
+    // Count the basic items
     expect(itemsStatistics(generateAccount([
-      {id: 80281, count: 3}, // Perfected multi
-      {id: 80161, count: 1}, // Perfected single
-      {id: 80387, count: 2}, // Refined multi
-      {id: 80366, count: 1}, // Refined single
-      {id: 80516, count: 3}, // Envoy Insignia
-      {id: 78989, count: 1}, // Gift of Prowess
-      {id: 77302, count: 7}  // Legendary Insight
-    ])).legendaryInsights).to.equal(282)
+      {id: 80516, count: 3}, // Envoy Insignia => 25 each
+      {id: 78989, count: 1}, // Gift of Prowess => 25 each
+      {id: 77302, count: 7}  // Legendary Insight => 1 each
+    ])).legendaryInsights, 'basic items').to.equal(3 * 25 + 25 + 7)
+
+    // Count the full first ascended set (from the achievement, so no LI spent)
+    const oneWeightAscendedSet = [
+      items.RefinedEnvoyHelmet, items.RefinedEnvoyPauldrons, items.RefinedEnvoyBreastplate,
+      items.RefinedEnvoyGauntlets, items.RefinedEnvoyTassets, items.RefinedEnvoyGreaves
+    ]
+    expect(countFromList(oneWeightAscendedSet), 'oneWeightAscendedSet')
+      .to.equal(0)
+
+    // Count the full first ascended set (from the achievement, so no LI spent)
+    // and some extra ascended items that got crafted via 25 LI insignias
+    const oneWeightAscendedSetPlusExtra = [
+      items.RefinedEnvoyHelmet, items.RefinedEnvoyPauldrons, items.RefinedEnvoyBreastplate,
+      items.RefinedEnvoyGauntlets, items.RefinedEnvoyTassets, items.RefinedEnvoyGreaves,
+      items.RefinedEnvoyHelmet, items.RefinedEnvoyCowl // one of the same weight, one in a different one
+    ]
+    expect(countFromList(oneWeightAscendedSetPlusExtra), 'oneWeightAscendedSetPlusExtra')
+      .to.equal(25 + 25)
+
+    // Count all first ascended sets (one from the achievement, so no LI spent and two for 25/each)
+    const allAscendedSets = [
+      items.RefinedEnvoyHelmet, items.RefinedEnvoyPauldrons, items.RefinedEnvoyBreastplate,
+      items.RefinedEnvoyGauntlets, items.RefinedEnvoyTassets, items.RefinedEnvoyGreaves,
+
+      items.RefinedEnvoyMask, items.RefinedEnvoyShoulderpads, items.RefinedEnvoyJerkin,
+      items.RefinedEnvoyVambraces, items.RefinedEnvoyLeggings, items.RefinedEnvoyBoots,
+
+      items.RefinedEnvoyCowl, items.RefinedEnvoyMantle, items.RefinedEnvoyVestments,
+      items.RefinedEnvoyGloves, items.RefinedEnvoyPants, items.RefinedEnvoyShoes
+    ]
+    expect(countFromList(allAscendedSets), 'allAscendedSets')
+      .to.equal(2 * 6 * 25)
+
+    // Count the full first legendary set (the precursor was from the achievement, so no LI spent)
+    // but the ascended -> legendary conversion costs 25
+    const oneWeightLegendarySet = [
+      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyPauldrons, items.PerfectedEnvoyBreastplate,
+      items.PerfectedEnvoyGauntlets, items.PerfectedEnvoyTassets, items.PerfectedEnvoyGreaves
+    ]
+    expect(countFromList(oneWeightLegendarySet), 'oneWeightLegendarySet')
+      .to.equal(6 * 25)
+
+    // Count the full first legendary set (the precursor was from the achievement, so no LI spent)
+    // but the ascended -> legendary conversion costs 25 and some extra ascended items that got crafted via 25 LI insignias
+    const oneWeightLegendarySetSetPlusExtraAscended = [
+      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyPauldrons, items.PerfectedEnvoyBreastplate,
+      items.PerfectedEnvoyGauntlets, items.PerfectedEnvoyTassets, items.PerfectedEnvoyGreaves,
+      items.RefinedEnvoyHelmet, items.RefinedEnvoyCowl // one of the same weight, one in a different one
+    ]
+    expect(countFromList(oneWeightLegendarySetSetPlusExtraAscended), 'oneWeightLegendarySetSetPlusExtraAscended')
+      .to.equal(6 * 25 + 25 + 25)
+
+    // Count the full first legendary set (the precursor was from the achievement, so no LI spent)
+    // but the ascended -> legendary conversion costs 25 and some extra ascended items that got crafted via 25 LI insignias
+    // and some extra legendary items that got crafted (25 for the precursor and 25 for the conversion)
+    const oneWeightLegendarySetPlusExtraLegendary = [
+      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyPauldrons, items.PerfectedEnvoyBreastplate,
+      items.PerfectedEnvoyGauntlets, items.PerfectedEnvoyTassets, items.PerfectedEnvoyGreaves,
+      items.RefinedEnvoyHelmet, items.RefinedEnvoyCowl, // one of the same weight, one in a different one
+      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyCowl // one of the same weight, one in a different one
+    ]
+    expect(countFromList(oneWeightLegendarySetPlusExtraLegendary), 'oneWeightLegendarySetPlusExtraLegendary').to.equal(
+      6 * 25 + // First set, where the precursor was free
+      25 + 25 + // Extra refined items, 25 each
+      50 + 50 // Extra perfected items, 50 each
+    )
+
+    // Count the full first legendary set (one of the precursor sets was from the achievement, so no LI spent)
+    // but the ascended -> legendary conversion costs 25 and the second set costs 25 extra for the precursor
+    const allLegendarySets = [
+      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyPauldrons, items.PerfectedEnvoyBreastplate,
+      items.PerfectedEnvoyGauntlets, items.PerfectedEnvoyTassets, items.PerfectedEnvoyGreaves,
+
+      items.PerfectedEnvoyMask, items.PerfectedEnvoyShoulderpads, items.PerfectedEnvoyJerkin,
+      items.PerfectedEnvoyVambraces, items.PerfectedEnvoyLeggings, items.PerfectedEnvoyBoots,
+
+      items.PerfectedEnvoyCowl, items.PerfectedEnvoyMantle, items.PerfectedEnvoyVestments,
+      items.PerfectedEnvoyGloves, items.PerfectedEnvoyPants, items.PerfectedEnvoyShoes,
+
+      items.RefinedEnvoyHelmet, items.RefinedEnvoyCowl, // extra refined items
+      items.PerfectedEnvoyHelmet, items.PerfectedEnvoyCowl // extra perfected items
+    ]
+    expect(countFromList(allLegendarySets), 'allLegendarySets').to.equal(
+      6 * 25 + // First set, where the precursor was free
+      2 * 6 * (25 + 25) + // Second and third set, where the precursor was 25 LI
+      25 + 25 + // Extra refined items, 25 each
+      50 + 50 // Extra perfected items, 50 each
+    )
   })
 
   it('can calculate white mantle portal device count', () => {
