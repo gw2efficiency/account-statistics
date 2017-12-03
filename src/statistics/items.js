@@ -63,6 +63,8 @@ export default function (accountData) {
     fireOrchidBlossoms: countItems(items, 81127),
     orrianPearls: countItems(items, 81706),
     luck: weightedCountItems(items, luckItemIds),
+    unstableCosmicEssences: countItems(items, 81743),
+    festiveConfettiInfusions: countItems(items, [84970, 84871, 84882]),
 
     // Aura items
     chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044, 81677, 81840]),

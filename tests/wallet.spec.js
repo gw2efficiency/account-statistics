@@ -38,7 +38,9 @@ describe('statistics > wallet', () => {
       ascendedShardsOfGlory: null,
       tradeContract: null,
       elegyMosaic: null,
-      testimonyOfHeroics: null
+      testimonyOfHeroics: null,
+      gaetingCrystals: null,
+      volatileMagic: null
     })
   })
 
@@ -76,7 +78,9 @@ describe('statistics > wallet', () => {
       {id: 33, value: 45}, // Ascended Shards of Glory
       {id: 34, value: 465}, // Trade Contract
       {id: 35, value: 98}, // Elegy Mosaic
-      {id: 36, value: 645} // Testimony of Heroics
+      {id: 36, value: 645}, // Testimony of Heroics
+      {id: 39, value: 561}, // Gaeting Crystals
+      {id: 45, value: 980} // Volatile Magic
     ]
 
     expect(walletStatistics({wallet})).to.deep.equal({
@@ -113,7 +117,9 @@ describe('statistics > wallet', () => {
       ascendedShardsOfGlory: 45,
       tradeContract: 465,
       elegyMosaic: 98,
-      testimonyOfHeroics: 645
+      testimonyOfHeroics: 645,
+      gaetingCrystals: 561,
+      volatileMagic: 980
     })
   })
 })

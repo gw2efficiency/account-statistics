@@ -31,5 +31,7 @@ export default {
   ascendedShardsOfGlory: 33,
   tradeContract: 34,
   elegyMosaic: 35,
-  testimonyOfHeroics: 36
+  testimonyOfHeroics: 36,
+  gaetingCrystals: 39,
+  volatileMagic: 45
 }

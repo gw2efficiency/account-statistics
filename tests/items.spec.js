@@ -67,7 +67,9 @@ describe('statistics > items', () => {
       fireOrchidBlossoms: null,
       orrianPearls: null,
       liquidAurillium: null,
-      celestialInfusion: null
+      celestialInfusion: null,
+      unstableCosmicEssences: null,
+      festiveConfettiInfusions: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -737,5 +739,35 @@ describe('statistics > items', () => {
       {id: 45179, count: 1}, // 500
       {id: 45179, count: 7}  // 3500
     ])).luck).to.equal(5810)
+  })
+
+  it('can calculate unstable cosmic essences', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 45175, count: 1},
+      {id: 45175, count: 5},
+      {id: 81743, count: 3},
+      {id: 45176, count: 8},
+      {id: 45177, count: 1},
+      {id: 45177, count: 4},
+      {id: 81743, count: 9},
+      {id: 45178, count: 3},
+      {id: 45179, count: 1},
+      {id: 45179, count: 7}
+    ])).unstableCosmicEssences).to.equal(12)
+  })
+
+  it('can calculate festive confetti infusions', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 45175, count: 1},
+      {id: 45175, count: 1},
+      {id: 84970, count: 1},
+      {id: 45176, count: 1},
+      {id: 45177, count: 1},
+      {id: 84871, count: 1},
+      {id: 81743, count: 1},
+      {id: 45178, count: 1},
+      {id: 84882, count: 1},
+      {id: 84882, count: 1}
+    ])).festiveConfettiInfusions).to.equal(4)
   })
 })
