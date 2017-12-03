@@ -35,7 +35,8 @@ function totalAuras (accountStatistics) {
     'phospholuminescentInfusions',
     'legendaryItemsTrinket',
     'liquidAurillium',
-    'celestialInfusion'
+    'celestialInfusion',
+    'festiveConfettiInfusions'
   ]
 
   // All keys have to be set
