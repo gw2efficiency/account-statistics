@@ -64,7 +64,6 @@ export default function (accountData) {
     orrianPearls: countItems(items, 81706),
     luck: weightedCountItems(items, luckItemIds),
     unstableCosmicEssences: countItems(items, 81743),
-    festiveConfettiInfusions: countItems(items, [84970, 84871, 84882]),
 
     // Aura items
     chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044, 81677, 81840]),
@@ -96,9 +95,11 @@ export default function (accountData) {
       81715, 82006, 81875, 81889, 81918, 81975
     ]),
     celestialInfusion: countItems(items, [
-      81761, 81779, 81811, 81919, 81991, 81878,
-      81783, 81814, 81927
-    ])
+      81761, 81779, 81783, 81792, 81811, 81814,
+      81878, 81919, 81927, 81991, 82062, 82070,
+      85646, 85833, 85989, 86347
+    ]),
+    festiveConfettiInfusions: countItems(items, [84970, 84871, 84882])
   }
 }
 
