@@ -64,6 +64,7 @@ export default function (accountData) {
     orrianPearls: countItems(items, 81706),
     luck: weightedCountItems(items, luckItemIds),
     unstableCosmicEssences: countItems(items, 81743),
+    kralkatiteOre: countItems(items, 86069),
 
     // Aura items
     chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044, 81677, 81840]),

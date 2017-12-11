@@ -69,7 +69,8 @@ describe('statistics > items', () => {
       liquidAurillium: null,
       celestialInfusion: null,
       unstableCosmicEssences: null,
-      festiveConfettiInfusions: null
+      festiveConfettiInfusions: null,
+      kralkatiteOre: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -754,6 +755,21 @@ describe('statistics > items', () => {
       {id: 45179, count: 1},
       {id: 45179, count: 7}
     ])).unstableCosmicEssences).to.equal(12)
+  })
+
+  it('can calculate kralkatite ore', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 45175, count: 1},
+      {id: 45175, count: 5},
+      {id: 81743, count: 3},
+      {id: 45176, count: 8},
+      {id: 45177, count: 1},
+      {id: 86069, count: 4},
+      {id: 81743, count: 9},
+      {id: 45178, count: 3},
+      {id: 86069, count: 1},
+      {id: 45179, count: 7}
+    ])).kralkatiteOre).to.equal(5)
   })
 
   it('can calculate festive confetti infusions', () => {
