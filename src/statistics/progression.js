@@ -8,6 +8,7 @@ export default function (accountData) {
     sanctumSprintRounds: achievementCurrent(accountData, 728, 15),
     southsunSurvivalRounds: achievementCurrent(accountData, 752, 6),
     crabTossRounds: achievementCurrent(accountData, 757, 12),
+    winterWonderlandCompletions: winterWonderlandCompletions(accountData),
     wvwPlayerKills: achievementCurrent(accountData, 283),
     wvwSupplyCaravansKilled: achievementCurrent(accountData, 288),
     wvwSupplyCaravansEscorted: achievementCurrent(accountData, 285),
@@ -69,6 +70,26 @@ function achievementCurrent (accountData, id, pointsPerRepeat = 0) {
 
   // Sum up the total value of the achievement
   return (achievement.repeated || 0) * pointsPerRepeat + achievement.current
+}
+
+function winterWonderlandCompletions (accountData) {
+  if (!accountData.achievements) {
+    return null
+  }
+
+  const achievements = [
+    {id: 2764, perRepeat: 15},
+    {id: 1255, perRepeat: 20},
+    {id: 2038, perRepeat: 15},
+    {id: 4049, perRepeat: 3}
+  ]
+
+  let sum = 0
+  achievements.forEach((achievement) => {
+    sum += achievementCurrent(accountData, achievement.id, achievement.perRepeat)
+  })
+
+  return sum
 }
 
 // The unlocked home instance cats

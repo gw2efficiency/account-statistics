@@ -83,6 +83,17 @@ describe('statistics > progression', () => {
     }).crabTossRounds).to.equal(29)
   })
 
+  it('can calculate the completed winter wonderland jps', () => {
+    expect(progressionStatistics({}).winterWonderlandCompletions).to.equal(null)
+    expect(progressionStatistics({achievements: []}).winterWonderlandCompletions).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [
+        {id: 2764, current: 0, max: 15, done: true, repeated: 534},
+        {id: 4049, current: 1, max: 3, done: true, repeated: 94}
+      ]
+    }).winterWonderlandCompletions).to.equal(8293)
+  })
+
   it('can calculate the completed dungeons', () => {
     expect(progressionStatistics({}).completedDungeons).to.equal(null)
     expect(progressionStatistics({achievements: []}).completedDungeons).to.equal(0)
