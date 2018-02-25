@@ -27,6 +27,7 @@ export default function (accountData) {
     brokenSpoons: countItems(items, 74996),
     blackLionClaimTickets: weightedCountItems(items, {43992: 1, 43998: 0.1}),
     instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
+    musicBoxes: countItems(items, [82432, 82286, 83826, 84566, 83444]),
     permanentTools: countItems(items, permanentToolIds),
     chakEggs: countItems(items, 72205),
     reclaimedMetalPlates: countItems(items, 74356),

@@ -35,6 +35,7 @@ describe('statistics > items', () => {
       whiteMantlePortalDevices: null,
       blackLionClaimTickets: null,
       instruments: null,
+      musicBoxes: null,
       chakEggs: null,
       fossilizedInsects: null,
       reclaimedMetalPlates: null,
@@ -394,6 +395,16 @@ describe('statistics > items', () => {
       {id: 38129, count: 1},
       {id: 43526, count: 1}
     ])).instruments).to.equal(2)
+  })
+
+  it('can calculate music box count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 66323, count: 1},
+      {id: 30687, count: 1},
+      {id: 82432, count: 1},
+      {id: 38129, count: 1},
+      {id: 83826, count: 1}
+    ])).musicBoxes).to.equal(2)
   })
 
   it('can calculate permanent tool count', () => {
