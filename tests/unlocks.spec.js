@@ -128,4 +128,18 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}).nightfury).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 6161, 6161]}).nightfury).to.equal(1)
   })
+
+  it('can calculate fractal relics used for titles', () => {
+    expect(unlocksStatistics({})._fractalRelicsFromTitles).to.equal(null)
+    expect(unlocksStatistics({titles: []})._fractalRelicsFromTitles).to.equal(0)
+    expect(unlocksStatistics({titles: [1, 2, 7, 9, 10]})._fractalRelicsFromTitles).to.equal(0)
+    expect(unlocksStatistics({titles: [1, 2, 299, 297, 296, 298]})._fractalRelicsFromTitles).to.equal(160000)
+  })
+
+  it('can calculate pristine fractal relics used for titles', () => {
+    expect(unlocksStatistics({})._pristineFractalRelicsFromTitles).to.equal(null)
+    expect(unlocksStatistics({titles: []})._pristineFractalRelicsFromTitles).to.equal(0)
+    expect(unlocksStatistics({titles: [1, 2, 7, 9, 10]})._pristineFractalRelicsFromTitles).to.equal(0)
+    expect(unlocksStatistics({titles: [1, 2, 299, 297, 296, 298]})._pristineFractalRelicsFromTitles).to.equal(3200)
+  })
 })

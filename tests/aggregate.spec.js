@@ -33,4 +33,42 @@ describe('statistics > aggregate', () => {
       deathCount: 3942
     }).deathCountPerHour).to.equal(1.34)
   })
+
+  it('can calculate fractal relic sum', () => {
+    expect(aggregateStatistics({}).fractalRelics).to.equal(null)
+
+    expect(aggregateStatistics({
+      _fractalRelicsFromWallet: 1,
+      _fractalRelicsFromTitles: null
+    }).fractalRelics).to.equal(null)
+
+    expect(aggregateStatistics({
+      _fractalRelicsFromWallet: null,
+      _fractalRelicsFromTitles: 1
+    }).fractalRelics).to.equal(null)
+
+    expect(aggregateStatistics({
+      _fractalRelicsFromWallet: 1651,
+      _fractalRelicsFromTitles: 60000
+    }).fractalRelics).to.equal(61651)
+  })
+
+  it('can calculate pristine fractal relic sum', () => {
+    expect(aggregateStatistics({}).pristineFractalRelics).to.equal(null)
+
+    expect(aggregateStatistics({
+      _pristineFractalRelicsFromWallet: 1,
+      _pristineFractalRelicsFromTitles: null
+    }).pristineFractalRelics).to.equal(null)
+
+    expect(aggregateStatistics({
+      _pristineFractalRelicsFromWallet: null,
+      _pristineFractalRelicsFromTitles: 1
+    }).pristineFractalRelics).to.equal(null)
+
+    expect(aggregateStatistics({
+      _pristineFractalRelicsFromWallet: 65,
+      _pristineFractalRelicsFromTitles: 1200
+    }).pristineFractalRelics).to.equal(1265)
+  })
 })

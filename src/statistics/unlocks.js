@@ -21,7 +21,9 @@ export default function (accountData) {
     fractalSkins: fractalSkins(accountData),
     immortalSkins: immortalSkins(accountData),
     wintersPresence: skinExists(accountData, 6577),
-    nightfury: skinExists(accountData, 6161)
+    nightfury: skinExists(accountData, 6161),
+    _fractalRelicsFromTitles: fractalRelicsFromTitles(accountData),
+    _pristineFractalRelicsFromTitles: pristineFractalRelicsFromTitles(accountData)
   }
 }
 
@@ -167,4 +169,42 @@ function skinExists (accountData, id) {
     .length
 
   return unlocked > 0 ? 1 : 0
+}
+
+// The unlocked titles bought with fractal relics
+function fractalRelicsFromTitles (accountData) {
+  if (!accountData.titles) {
+    return null
+  }
+
+  const titleValueMap = {
+    299: 25000, // Fractal Savant
+    297: 35000, // Fractal Prodigy
+    296: 45000, // Fractal Champion
+    298: 55000 // Fractal God
+  }
+
+  return Object.keys(titleValueMap)
+    .map(id => parseInt(id, 10))
+    .filter(id => accountData.titles.includes(id))
+    .reduce((sum, id) => sum + titleValueMap[id], 0)
+}
+
+// The unlocked titles bought with pristine fractal relics
+function pristineFractalRelicsFromTitles (accountData) {
+  if (!accountData.titles) {
+    return null
+  }
+
+  const titleValueMap = {
+    299: 0, // Fractal Savant
+    297: 1200, // Fractal Prodigy
+    296: 0, // Fractal Champion
+    298: 2000 // Fractal God
+  }
+
+  return Object.keys(titleValueMap)
+    .map(id => parseInt(id, 10))
+    .filter(id => accountData.titles.includes(id))
+    .reduce((sum, id) => sum + titleValueMap[id], 0)
 }

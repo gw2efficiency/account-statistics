@@ -3,7 +3,9 @@ import round from 'round-to'
 export default function (accountStatistics) {
   return {
     totalAuras: totalAuras(accountStatistics),
-    deathCountPerHour: deathCountPerHour(accountStatistics)
+    deathCountPerHour: deathCountPerHour(accountStatistics),
+    fractalRelics: fractalRelics(accountStatistics),
+    pristineFractalRelics: pristineFractalRelics(accountStatistics)
   }
 }
 
@@ -54,4 +56,30 @@ function totalAuras (accountStatistics) {
   })
 
   return sum
+}
+
+// Sum up fractal relics from different sources
+function fractalRelics (accountStatistics) {
+  if (
+    accountStatistics._fractalRelicsFromWallet == null ||
+    accountStatistics._fractalRelicsFromTitles == null
+  ) {
+    return null
+  }
+
+  return accountStatistics._fractalRelicsFromWallet +
+    accountStatistics._fractalRelicsFromTitles
+}
+
+// Sum up pristine fractal relics from different sources
+function pristineFractalRelics (accountStatistics) {
+  if (
+    accountStatistics._pristineFractalRelicsFromWallet == null ||
+    accountStatistics._pristineFractalRelicsFromTitles == null
+  ) {
+    return null
+  }
+
+  return accountStatistics._pristineFractalRelicsFromWallet +
+    accountStatistics._pristineFractalRelicsFromTitles
 }
