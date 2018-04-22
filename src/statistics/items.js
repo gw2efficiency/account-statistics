@@ -45,7 +45,8 @@ export default function (accountData) {
     tomesOfKnowledge: countItems(items, [43741, 43766]),
     permanentContracts: countItems(items, [
       35984, 38507, 35985, 35986, 49501,
-      35978, 35977, 35976, 38506, 78217, 78455
+      35978, 35977, 35976, 38506, 78217, 78455,
+      86549, 86497
     ]),
     freshWinterberries: countItems(items, 79899),
     gemstoreToys: countItems(items, gemstoreToyIds),
