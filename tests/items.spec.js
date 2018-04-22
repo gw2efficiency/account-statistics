@@ -71,7 +71,10 @@ describe('statistics > items', () => {
       celestialInfusion: null,
       unstableCosmicEssences: null,
       festiveConfettiInfusions: null,
-      kralkatiteOre: null
+      kralkatiteOre: null,
+      potionOfPvpRewards: null,
+      potionOfWvwRewards: null,
+      skirmishChests: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -796,5 +799,50 @@ describe('statistics > items', () => {
       {id: 84882, count: 1},
       {id: 84882, count: 1}
     ])).festiveConfettiInfusions).to.equal(4)
+  })
+
+  it('can calculate potions of pvp reward', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 45175, count: 1},
+      {id: 45175, count: 1},
+      {id: 68110, count: 1},
+      {id: 45176, count: 1},
+      {id: 45177, count: 1},
+      {id: 68110, count: 1},
+      {id: 81743, count: 1},
+      {id: 45178, count: 1},
+      {id: 84882, count: 1},
+      {id: 84882, count: 1}
+    ])).potionOfPvpRewards).to.equal(2)
+  })
+
+  it('can calculate potions of wvw reward', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 45175, count: 1},
+      {id: 45175, count: 1},
+      {id: 68110, count: 1},
+      {id: 78600, count: 1},
+      {id: 45177, count: 1},
+      {id: 68110, count: 1},
+      {id: 81743, count: 1},
+      {id: 78600, count: 1},
+      {id: 84882, count: 1},
+      {id: 84882, count: 1}
+    ])).potionOfWvwRewards).to.equal(2)
+  })
+
+  it('can calculate skirmish chests', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 45175, count: 1},
+      {id: 84966, count: 1},
+      {id: 68110, count: 1},
+      {id: 78600, count: 1},
+      {id: 45177, count: 1},
+      {id: 68110, count: 1},
+      {id: 81743, count: 1},
+      {id: 81324, count: 1},
+      {id: 84882, count: 1},
+      {id: 84882, count: 1}
+    ])).skirmishChests).to.equal(2)
   })
 })
