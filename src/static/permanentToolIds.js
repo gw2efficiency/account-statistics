@@ -33,6 +33,10 @@ export default [
   80979, // Unbound Magic Logging Pulse
   87443, // Unbound Magic Mining Beam
   80977, // Unbound Magic Mining Beam
+  87701, // Volatile Magic Harvesting Tool
+  87954, // Volatile Magic Logging Tool
+  87841, // Volatile Magic Mining Tool
+  87554, // Choya Harvesting Tool
   78909, // Glitter Bomb Harvesting Tool
   48930, // Consortium Harvesting Sickle
   42594, // Consortium Harvesting Sickle
@@ -41,6 +45,7 @@ export default [
   80067, // Celestial Rooster Harvesting Tool
   86943, // Lucky Dog Harvesting Tool
   87397, // Lucky Dog Harvesting Tool
+  87530, // Choya Logging Tool
   48955, // Dreamcleaver Logging Axe
   48825, // Frost Wasp Logging Tool
   78724, // Focused Solar Logging Tool
