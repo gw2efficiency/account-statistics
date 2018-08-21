@@ -98,7 +98,7 @@ export default function (accountData) {
     ]),
     liquidAurillium: countItems(items, [
       76063,
-      81715, 82006, 81875, 81889, 81918, 81975
+      81715, 81875, 81889, 81918, 81975, 82006, 86275, 86291
     ]),
     celestialInfusion: countItems(items, [
       81761, 81779, 81783, 81792, 81811, 81814,
