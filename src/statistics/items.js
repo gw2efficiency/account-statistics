@@ -70,6 +70,7 @@ export default function (accountData) {
     potionOfPvpRewards: countItems(items, 68110),
     potionOfWvwRewards: countItems(items, 78600),
     skirmishChests: countItems(items, [84966, 81324]),
+    difluoriteCrystals: countItems(items, 86977),
 
     // Aura items
     chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044, 81677, 81840]),
