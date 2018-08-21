@@ -105,7 +105,10 @@ export default function (accountData) {
       81878, 81919, 81927, 81991, 82062, 82070,
       85646, 85833, 85989, 86347
     ]),
-    festiveConfettiInfusions: countItems(items, [84970, 84871, 84882])
+    festiveConfettiInfusions: countItems(items, [84970, 84871, 84882]),
+    snowDiamondInfusion: countItems(items, [
+      86401, 86405, 86407, 86537, 86597, 86665, 86666, 86704
+    ])
   }
 }
 
