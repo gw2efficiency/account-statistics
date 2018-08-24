@@ -39,7 +39,7 @@ function totalAuras (accountStatistics) {
     'liquidAurillium',
     'celestialInfusion',
     'festiveConfettiInfusions',
-    'snowDiamondInfusion'
+    'snowDiamondInfusions'
   ]
 
   // All keys have to be set

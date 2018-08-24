@@ -71,6 +71,27 @@ export default function (accountData) {
     potionOfWvwRewards: countItems(items, 78600),
     skirmishChests: countItems(items, [84966, 81324]),
     difluoriteCrystals: countItems(items, 86977),
+    kites: countItems(items, [
+      43930, // Guild Kite
+      42967, // Lightning Kite
+      43487, // Sun Kite
+      43076, // Wind Kite
+      66898, // Crystal Shard Kite
+      66897, // Prosperity Mine Kite
+      66900, // Ventari Follower Kite
+      84916, // Sand Shark Kite
+      85315, // Watermelon Sand Shark Kite
+      85240, // Skimmer Kite
+      85173, // Zebra Skimmer Kite
+      85302, // Green Choya Kite
+      85100, // Blue Choya Kite
+      84950, // Red Choya Kite
+      88124, // Embellished Kite
+      88131, // Mark of Peace Kite
+      88216, // Ornamental Kite
+      44638, // Hot Air Balloon Souvenir
+      68614 // Red Lantern
+    ]),
 
     // Aura items
     chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044, 81677, 81840]),
@@ -107,7 +128,7 @@ export default function (accountData) {
       85646, 85833, 85989, 86347
     ]),
     festiveConfettiInfusions: countItems(items, [84970, 84871, 84882]),
-    snowDiamondInfusion: countItems(items, [
+    snowDiamondInfusions: countItems(items, [
       86401, 86405, 86407, 86537, 86597, 86665, 86666, 86704
     ])
   }
