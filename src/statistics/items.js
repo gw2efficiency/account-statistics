@@ -5,9 +5,9 @@ import { materialsItems } from 'gw2e-account-value/build/materials'
 import { charactersItems } from 'gw2e-account-value/build/characters'
 import { sharedInventoryItems } from 'gw2e-account-value/build/shared'
 import legendaries from 'gw2e-static-data/build/legendaries'
+import tonics from 'gw2e-static-data/build/legacy/tonics'
 import permanentToolIds from '../static/permanentToolIds'
 import championBagIds from '../static/championBagIds'
-import tonicIds from '../static/tonicIds'
 import gemstoreToyIds from '../static/gemstoreToyIds'
 import luckItemIds from '../static/luckIds'
 import legendaryInsightItemIds from '../static/legendaryInsightItemIds'
@@ -39,7 +39,7 @@ export default function (accountData) {
     championBags: countItems(items, championBagIds),
     tripleTroubleChests: countItems(items, 49664),
     tequatlChests: countItems(items, 47836),
-    uniqueTonics: countItems(items, tonicIds, true),
+    uniqueTonics: countItems(items, tonics.filter(x => x.permanent).map(x => x.ids), true),
     bloodRubies: countItems(items, 79280),
     petrifiedWood: countItems(items, 79469),
     tomesOfKnowledge: countItems(items, [43741, 43766]),
