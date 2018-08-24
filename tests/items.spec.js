@@ -74,7 +74,10 @@ describe('statistics > items', () => {
       kralkatiteOre: null,
       potionOfPvpRewards: null,
       potionOfWvwRewards: null,
-      skirmishChests: null
+      skirmishChests: null,
+      difluoriteCrystals: null,
+      kites: null,
+      snowDiamondInfusions: null
     }
 
     const bothPermissions = {bank: null, characters: null}
