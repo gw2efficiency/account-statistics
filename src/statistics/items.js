@@ -26,15 +26,55 @@ export default function (accountData) {
     whiteMantlePortalDevices: countItems(items, 78978),
     brokenSpoons: countItems(items, 74996),
     blackLionClaimTickets: weightedCountItems(items, {43992: 1, 43998: 0.1}),
-    instruments: countItems(items, [43526, 42973, 44883, 66323, 42888, 36174, 68361]),
-    musicBoxes: countItems(items, [82432, 82286, 83826, 84566, 83444]),
+    instruments: countItems(items, [
+      36174, // Musical Bass Guitar
+      38129, // Unbreakable Choir Bell
+      42888, // Marriner's Horn
+      42973, // Flute
+      43008, // Flute
+      43526, // Musical Frame Drum
+      44883, // Musical Harp
+      46500, // World 1 Super Boom Box
+      46501, // World 1 Super Boom Box
+      46504, // World 2 Super Boom Box
+      66323, // Musical Lute
+      67391, // Haunted Gramophone
+      68361, // Magnanimous Choir Bell
+      80932, // Duskk's World 2 Super Boom Box
+      80972, // Duskk's World 1 Super Boom Box
+      88004, // Musical Minstrel
+      88066, // Musical Verdarach
+      88385 // Unbreakable Choir Bell
+    ]),
+    musicBoxes: countItems(items, [
+      67391, // Haunted Gramophone
+      71747, // Zephyrites Music Box
+      82286, // Hafez's Music Box
+      82432, // Ghiwane's  Music Box
+      83444, // Tinari's Music Box
+      83826, // Khadiri's Music Box
+      84566 // Nightingale's Music Box
+    ]),
     permanentTools: countItems(items, permanentToolIds),
     chakEggs: countItems(items, 72205),
     reclaimedMetalPlates: countItems(items, 74356),
     fossilizedInsects: countItems(items, [
-      66766, 66655, 66653, 66640, 66636, 66652,
-      66649, 66654, 66646, 66644, 66647, 66648,
-      66657, 66645, 66656, 66651, 66642
+      66636, // Ambrite Fossilized Centipede
+      66640, // Ambrite Fossilized Butterfly
+      66642, // Ambrite Fossilized Termite
+      66644, // Ambrite Fossilized Firefly
+      66645, // Ambrite Fossilized Millipede
+      66646, // Ambrite Fossilized Dragonfly
+      66647, // Ambrite Fossilized Grub
+      66648, // Ambrite Fossilized Hornet
+      66649, // Ambrite Fossilized Cricket
+      66651, // Ambrite Fossilized Spider
+      66652, // Ambrite Fossilized Cockroach
+      66653, // Ambrite Fossilized Beetle
+      66654, // Ambrite Fossilized Devourer
+      66655, // Ambrite Fossilized Bee
+      66656, // Ambrite Fossilized Mosquito
+      66657 // Ambrite Fossilized Mantis
     ]),
     championBags: countItems(items, championBagIds),
     tripleTroubleChests: countItems(items, 49664),
@@ -44,9 +84,19 @@ export default function (accountData) {
     petrifiedWood: countItems(items, 79469),
     tomesOfKnowledge: countItems(items, [43741, 43766]),
     permanentContracts: countItems(items, [
-      35984, 38507, 35985, 35986, 49501,
-      35978, 35977, 35976, 38506, 78217, 78455,
-      86549, 86497
+      35976, // Personal Trader Express
+      35977, // Personal Merchant Express
+      35978, // Permanent Bank Access Express
+      35984, // Permanent Bank Access Contract
+      35985, // Permanent Black Lion Merchant Contract
+      35986, // Permanent Trading Post Express Contract
+      38506, // Permanent Self-Style Hair Kit
+      38507, // Permanent Hair Stylist Contract
+      49501, // Tarrktun Personal Delivery Portal
+      78217, // Endless Repair Canister
+      78455, // Endless Repair Contract
+      86497, // Endless Upgrade Extractor Contract
+      86549 // Endless Upgrade Extractor
     ]),
     freshWinterberries: countItems(items, 79899),
     gemstoreToys: countItems(items, gemstoreToyIds),
@@ -72,64 +122,185 @@ export default function (accountData) {
     skirmishChests: countItems(items, [84966, 81324]),
     difluoriteCrystals: countItems(items, 86977),
     kites: countItems(items, [
-      43930, // Guild Kite
       42967, // Lightning Kite
-      43487, // Sun Kite
       43076, // Wind Kite
-      66898, // Crystal Shard Kite
+      43487, // Sun Kite
+      43930, // Guild Kite
+      44638, // Hot Air Balloon Souvenir
       66897, // Prosperity Mine Kite
+      66898, // Crystal Shard Kite
       66900, // Ventari Follower Kite
+      68614, // Red Lantern
       84916, // Sand Shark Kite
-      85315, // Watermelon Sand Shark Kite
-      85240, // Skimmer Kite
-      85173, // Zebra Skimmer Kite
-      85302, // Green Choya Kite
-      85100, // Blue Choya Kite
       84950, // Red Choya Kite
+      85100, // Blue Choya Kite
+      85173, // Zebra Skimmer Kite
+      85240, // Skimmer Kite
+      85302, // Green Choya Kite
+      85315, // Watermelon Sand Shark Kite
       88124, // Embellished Kite
       88131, // Mark of Peace Kite
-      88216, // Ornamental Kite
-      44638, // Hot Air Balloon Souvenir
-      68614 // Red Lantern
+      88216 // Ornamental Kite
     ]),
 
     // Aura items
-    chakEggSacks: countItems(items, [72021, 81825, 81616, 81807, 82044, 81677, 81840]),
+    chakEggSacks: countItems(items, [
+      72021, // Chak Egg Sac
+      81616, // Chak Infusion
+      81677, // Chak Infusion
+      81807, // Chak Infusion
+      81825, // Chak Infusion
+      81840, // Chak Infusion
+      82044, // Chak Infusion
+      85668, // Chak Infusion
+      86251 // Chak Infusion
+    ]),
     preservedQueenBees: countItems(items, [
-      68440, 77594, 81663, 81638, 81679, 81701, 81818, 81897
+      68440, // Preserved Queen Bee
+      77594, // Preserved Queen Bee
+      81638, // Queen Bee Infusion
+      81663, // Queen Bee Infusion
+      81679, // Queen Bee Infusion
+      81701, // Queen Bee Infusion
+      81818, // Queen Bee Infusion
+      81897, // Queen Bee Infusion
+      86055, // Queen Bee Infusion
+      86303 // Queen Bee Infusion
     ]),
     ghostlyInfusions: countItems(items, [
-      77366, 77274, 77303, 77310, 77316, 77394
+      77274, // Ghostly Infusion
+      77303, // Ghostly Infusion
+      77310, // Ghostly Infusion
+      77316, // Ghostly Infusion
+      77366, // Ghostly Infusion
+      77394, // Ghostly Infusion
+      85644, // Ghostly Infusion
+      85945 // Ghostly Infusion
     ]),
     baubleInfusions: countItems(items, [
-      78012, 78052, 78054, 78079, 78086, 78090,
-      78016, 78028, 78030, 78031, 78057, 78097
+      78012, // Moto's Unstable Bauble Infusion: Blue
+      78016, // Moto's Unstable Bauble Infusion: Red
+      78028, // Moto's Unstable Bauble Infusion: Red
+      78030, // Moto's Unstable Bauble Infusion: Red
+      78031, // Moto's Unstable Bauble Infusion: Red
+      78052, // Moto's Unstable Bauble Infusion: Blue
+      78054, // Moto's Unstable Bauble Infusion: Blue
+      78057, // Moto's Unstable Bauble Infusion: Red
+      78079, // Moto's Unstable Bauble Infusion: Blue
+      78086, // Moto's Unstable Bauble Infusion: Blue
+      78090, // Moto's Unstable Bauble Infusion: Blue
+      78097, // Moto's Unstable Bauble Infusion: Red
+      86446, // Moto's Unstable Bauble Infusion: Red
+      86453, // Moto's Unstable Bauble Infusion: Red
+      86552, // Moto's Unstable Bauble Infusion: Blue
+      86571 // Moto's Unstable Bauble Infusion: Blue
     ]),
     luminescentRefractors: countItems(items, [
-      67375, 81810, 81877, 82013, 81624, 81709, 82039,
-      67370, 81678, 82055, 81612, 81727, 81948, 81988,
-      67372, 81809, 81847, 81864, 81930, 81881, 81911,
-      79647, 81653, 81777, 81641, 81655, 81858, 81959
+      67370, // Poly-luminescent Undulating Refractor (Green)
+      67372, // Poly-luminescent Undulating Refractor (Orange)
+      67375, // Poly-luminescent Undulating Refractor (Black)
+      79647, // Poly-luminescent Undulating Refractor (Teal)
+      81612, // Poly-luminescent Undulating Infusion (Green)
+      81624, // Poly-luminescent Undulating Infusion (Black)
+      81641, // Poly-luminescent Undulating Infusion (Teal)
+      81653, // Poly-luminescent Undulating Infusion (Teal)
+      81655, // Poly-luminescent Undulating Infusion (Teal)
+      81678, // Poly-luminescent Undulating Infusion (Green)
+      81709, // Poly-luminescent Undulating Infusion (Black)
+      81727, // Poly-luminescent Undulating Infusion (Green)
+      81777, // Poly-luminescent Undulating Infusion (Teal)
+      81809, // Poly-luminescent Undulating Infusion (Orange)
+      81810, // Poly-luminescent Undulating Infusion (Black)
+      81847, // Poly-luminescent Undulating Infusion (Orange)
+      81858, // Poly-luminescent Undulating Infusion (Teal)
+      81864, // Poly-luminescent Undulating Infusion (Orange)
+      81877, // Poly-luminescent Undulating Infusion (Black)
+      81881, // Poly-luminescent Undulating Infusion (Orange)
+      81911, // Poly-luminescent Undulating Infusion (Orange)
+      81930, // Poly-luminescent Undulating Infusion (Orange)
+      81948, // Poly-luminescent Undulating Infusion (Green)
+      81959, // Poly-luminescent Undulating Infusion (Teal)
+      81988, // Poly-luminescent Undulating Infusion (Green)
+      82013, // Poly-luminescent Undulating Infusion (Black)
+      82039, // Poly-luminescent Undulating Infusion (Black)
+      82055, // Poly-luminescent Undulating Infusion (Green)
+      85682, // Poly-luminescent Undulating Infusion (Green)
+      85694, // Poly-luminescent Undulating Infusion (Orange)
+      85974, // Poly-luminescent Undulating Infusion (Black)
+      86068, // Poly-luminescent Undulating Infusion (Teal)
+      86183, // Poly-luminescent Undulating Infusion (Green)
+      86248, // Poly-luminescent Undulating Infusion (Black)
+      86310, // Poly-luminescent Undulating Infusion (Orange)
+      86312 // Poly-luminescent Undulating Infusion (Teal)
     ]),
     wintersHeartInfusions: countItems(items, [
-      79959, 79957, 79978, 79994, 79943, 80063
+      79943, // Winter's Heart Infusion
+      79957, // Winter's Heart Infusion
+      79959, // Winter's Heart Infusion
+      79978, // Winter's Heart Infusion
+      79994, // Winter's Heart Infusion
+      80063, // Winter's Heart Infusion
+      85718, // Winter's Heart Infusion
+      85734 // Winter's Heart Infusion
     ]),
     kodasWarmthEnrichment: countItems(items, 79926),
     phospholuminescentInfusions: countItems(items, [
-      79665, 79674, 79639, 79653, 79661, 79669
+      79639, // Phospholuminescent Infusion
+      79653, // Phospholuminescent Infusion
+      79661, // Phospholuminescent Infusion
+      79665, // Phospholuminescent Infusion
+      79669, // Phospholuminescent Infusion
+      79674, // Phospholuminescent Infusion
+      85863, // Phospholuminescent Infusion
+      85885 // Phospholuminescent Infusion
     ]),
     liquidAurillium: countItems(items, [
-      76063,
-      81715, 81875, 81889, 81918, 81975, 82006, 86275, 86291
+      76063, // Vial of Liquid Aurillium
+      81715, // Liquid Aurillium Infusion
+      81875, // Liquid Aurillium Infusion
+      81889, // Liquid Aurillium Infusion
+      81918, // Liquid Aurillium Infusion
+      81975, // Liquid Aurillium Infusion
+      82006, // Liquid Aurillium Infusion
+      86275, // Liquid Aurillium Infusion
+      86291 // Liquid Aurillium Infusion
     ]),
     celestialInfusion: countItems(items, [
-      81761, 81779, 81783, 81792, 81811, 81814,
-      81878, 81919, 81927, 81991, 82062, 82070,
-      85646, 85833, 85989, 86347
+      81761, // Celestial Infusion (Blue)
+      81779, // Celestial Infusion (Blue)
+      81783, // Celestial Infusion (Red)
+      81792, // Celestial Infusion (Red)
+      81811, // Celestial Infusion (Blue)
+      81814, // Celestial Infusion (Red)
+      81878, // Celestial Infusion (Blue)
+      81919, // Celestial Infusion (Blue)
+      81927, // Celestial Infusion (Red)
+      81991, // Celestial Infusion (Blue)
+      82062, // Celestial Infusion (Red)
+      82070, // Celestial Infusion (Red)
+      85646, // Celestial Infusion (Red)
+      85833, // Celestial Infusion (Red)
+      85989, // Celestial Infusion (Blue)
+      86347 // Celestial Infusion (Blue)
     ]),
-    festiveConfettiInfusions: countItems(items, [84970, 84871, 84882]),
+    festiveConfettiInfusions: countItems(items, [
+      84871, // Festive Confetti Infusion
+      84882, // Festive Confetti Infusion
+      84937, // Festive Confetti Infusion
+      84959, // Festive Confetti Infusion
+      84970, // Festive Confetti Infusion
+      85900, // Festive Confetti Infusion
+      85996 // Festive Confetti Infusion
+    ]),
     snowDiamondInfusions: countItems(items, [
-      86401, 86405, 86407, 86537, 86597, 86665, 86666, 86704
+      86401, // Snow Diamond Infusion
+      86405, // Snow Diamond Infusion
+      86407, // Snow Diamond Infusion
+      86537, // Snow Diamond Infusion
+      86597, // Snow Diamond Infusion
+      86665, // Snow Diamond Infusion
+      86666, // Snow Diamond Infusion
+      86704 // Snow Diamond Infusion
     ])
   }
 }

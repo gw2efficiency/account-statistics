@@ -400,7 +400,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 38129, count: 1},
       {id: 43526, count: 1}
-    ])).instruments).to.equal(2)
+    ])).instruments).to.equal(3)
   })
 
   it('can calculate music box count', () => {
