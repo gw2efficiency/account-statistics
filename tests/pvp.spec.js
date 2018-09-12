@@ -1,18 +1,24 @@
 /* eslint-env node, mocha */
 import { expect } from 'chai'
 import pvpStatistics from '../src/statistics/pvp'
+
 const defaultValues = {
+  pvpRank: null,
+  pvpLeagueRating: null,
   pvpGameCount: null,
   pvpGameCountRanked: null,
   pvpWinCount: null,
   pvpWinCountRanked: null,
-  pvpRank: null,
-  pvpLeagueRating: null,
-  pvpWinRate: null,
+
   pvpWinRate50: null,
   pvpWinRate250: null,
   pvpWinRate500: null,
-  pvpWinRate1000: null
+  pvpWinRate1000: null,
+
+  pvpWinRateRanked: null,
+  pvpWinRateRanked250: null,
+  pvpWinRateRanked500: null,
+  pvpWinRateRanked1000: null
 }
 
 describe('statistics > pvp', () => {
@@ -78,18 +84,22 @@ describe('statistics > pvp', () => {
     ]
 
     const output = {
-      pvpGameCount: 1360,
-      pvpGameCountRanked: 1238,
       pvpRank: 145,
       pvpLeagueRating: 1234,
+      pvpGameCount: 1360,
+      pvpGameCountRanked: 1238,
       pvpWinCount: 714,
       pvpWinCountRanked: 639,
-      pvpWinRate: 52.5,
+
       pvpWinRate50: 52.5,
       pvpWinRate250: 52.5,
       pvpWinRate500: 52.5,
       pvpWinRate1000: 52.5,
-      pvpWinRateRanked: 51.62
+
+      pvpWinRateRanked: 51.62,
+      pvpWinRateRanked250: 51.62,
+      pvpWinRateRanked500: 51.62,
+      pvpWinRateRanked1000: 51.62
     }
 
     expect(pvpStatistics({pvp: {stats, standings}}, {pvp: {currentSeason: 'SOME-SEASON-ID'}})).to.deep.equal(output)
@@ -115,18 +125,22 @@ describe('statistics > pvp', () => {
     ]
 
     const output = {
-      pvpGameCount: 0,
-      pvpGameCountRanked: 0,
       pvpRank: 145,
       pvpLeagueRating: null,
+      pvpGameCount: 0,
+      pvpGameCountRanked: 0,
       pvpWinCount: 0,
       pvpWinCountRanked: 0,
-      pvpWinRate: null,
+
       pvpWinRate50: null,
       pvpWinRate250: null,
       pvpWinRate500: null,
       pvpWinRate1000: null,
-      pvpWinRateRanked: null
+
+      pvpWinRateRanked: null,
+      pvpWinRateRanked250: null,
+      pvpWinRateRanked500: null,
+      pvpWinRateRanked1000: null
     }
 
     expect(pvpStatistics({pvp: {stats, standings}}, {pvp: {currentSeason: 'SOME-SEASON-ID'}})).to.deep.equal(output)
