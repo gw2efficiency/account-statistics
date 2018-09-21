@@ -74,7 +74,8 @@ export default function (accountData) {
       66654, // Ambrite Fossilized Devourer
       66655, // Ambrite Fossilized Bee
       66656, // Ambrite Fossilized Mosquito
-      66657 // Ambrite Fossilized Mantis
+      66657, // Ambrite Fossilized Mantis
+      66766 // Unidentified Fossilized Insect
     ]),
     championBags: countItems(items, championBagIds),
     tripleTroubleChests: countItems(items, 49664),
