@@ -95,6 +95,7 @@ export default function (accountData) {
       49501, // Tarrktun Personal Delivery Portal
       78217, // Endless Repair Canister
       78455, // Endless Repair Contract
+      84440, // Collector's Edition Sandstorm
       86497, // Endless Upgrade Extractor Contract
       86549 // Endless Upgrade Extractor
     ]),
