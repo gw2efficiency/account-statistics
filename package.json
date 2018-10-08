@@ -23,6 +23,6 @@
     "gw2e-account-value": "^3.0.0",
     "gw2e-static-data": "^0.4.1",
     "round-to": "^3.0.0",
-    "sum-by": "^1.0.0"
+    "sum-by": "^1.0.3"
   }
 }
