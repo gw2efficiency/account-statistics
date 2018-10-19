@@ -16,136 +16,32 @@ export default function (accountData) {
   const items = allItems(accountData)
 
   return {
-    legendaryItems: countItems(items, legendaries.map(x => x.id)),
-    legendaryItemsWeapon: countItems(items, legendaries.filter(x => x.type === 'weapon').map(x => x.id)),
-    legendaryItemsArmor: countItems(items, legendaries.filter(x => x.type === 'armor').map(x => x.id)),
-    legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
-    legendaryItemsTrinket: countItems(items, legendaries.filter(x => x.type === 'trinket').map(x => x.id)),
-    fractalTonics: countItems(items, 49277),
-    legendaryInsights: countLegendaryInsights(items),
-    whiteMantlePortalDevices: countItems(items, 78978),
-    brokenSpoons: countItems(items, 74996),
+    // (2) CURRENCIES
     blackLionClaimTickets: weightedCountItems(items, {43992: 1, 43998: 0.1}),
-    instruments: countItems(items, [
-      36174, // Musical Bass Guitar
-      38129, // Unbreakable Choir Bell
-      42888, // Marriner's Horn
-      42973, // Flute
-      43008, // Flute
-      43526, // Musical Frame Drum
-      44883, // Musical Harp
-      46500, // World 1 Super Boom Box
-      46501, // World 1 Super Boom Box
-      46504, // World 2 Super Boom Box
-      66323, // Musical Lute
-      67391, // Haunted Gramophone
-      68361, // Magnanimous Choir Bell
-      80932, // Duskk's World 2 Super Boom Box
-      80972, // Duskk's World 1 Super Boom Box
-      88004, // Musical Minstrel
-      88066, // Musical Verdarach
-      88385 // Unbreakable Choir Bell
-    ]),
-    musicBoxes: countItems(items, [
-      67391, // Haunted Gramophone
-      71747, // Zephyrites Music Box
-      82286, // Hafez's Music Box
-      82432, // Ghiwane's  Music Box
-      83444, // Tinari's Music Box
-      83826, // Khadiri's Music Box
-      84566 // Nightingale's Music Box
-    ]),
-    permanentTools: countItems(items, permanentToolIds),
-    chakEggs: countItems(items, 72205),
-    reclaimedMetalPlates: countItems(items, 74356),
-    fossilizedInsects: countItems(items, [
-      66636, // Ambrite Fossilized Centipede
-      66640, // Ambrite Fossilized Butterfly
-      66642, // Ambrite Fossilized Termite
-      66644, // Ambrite Fossilized Firefly
-      66645, // Ambrite Fossilized Millipede
-      66646, // Ambrite Fossilized Dragonfly
-      66647, // Ambrite Fossilized Grub
-      66648, // Ambrite Fossilized Hornet
-      66649, // Ambrite Fossilized Cricket
-      66651, // Ambrite Fossilized Spider
-      66652, // Ambrite Fossilized Cockroach
-      66653, // Ambrite Fossilized Beetle
-      66654, // Ambrite Fossilized Devourer
-      66655, // Ambrite Fossilized Bee
-      66656, // Ambrite Fossilized Mosquito
-      66657, // Ambrite Fossilized Mantis
-      66766 // Unidentified Fossilized Insect
-    ]),
-    championBags: countItems(items, championBagIds),
-    tripleTroubleChests: countItems(items, 49664),
-    tequatlChests: countItems(items, 47836),
-    uniqueTonics: countItems(items, tonics.filter(x => x.permanent).map(x => x.ids), true),
+    blackLionMiniatureClaimTickets: countItems(items, 78474),
+
+    // (3) MAP CURRENCIES
     bloodRubies: countItems(items, 79280),
     petrifiedWood: countItems(items, 79469),
-    tomesOfKnowledge: countItems(items, [43741, 43766]),
-    permanentContracts: countItems(items, [
-      35976, // Personal Trader Express
-      35977, // Personal Merchant Express
-      35978, // Permanent Bank Access Express
-      35984, // Permanent Bank Access Contract
-      35985, // Permanent Black Lion Merchant Contract
-      35986, // Permanent Trading Post Express Contract
-      38506, // Permanent Self-Style Hair Kit
-      38507, // Permanent Hair Stylist Contract
-      49501, // Tarrktun Personal Delivery Portal
-      78217, // Endless Repair Canister
-      78455, // Endless Repair Contract
-      84440, // Collector's Edition Sandstorm
-      86497, // Endless Upgrade Extractor Contract
-      86549 // Endless Upgrade Extractor
-    ]),
     freshWinterberries: countItems(items, 79899),
-    gemstoreToys: countItems(items, gemstoreToyIds),
-    blackLionMiniatureClaimTickets: countItems(items, 78474),
     jadeShards: countItems(items, 80332),
-    giftsOfExploration: countItems(items, 19677),
-    giftsOfBattle: countItems(items, 19678),
-    dragoniteOre: weightedCountItems(items, {46733: 1, 46732: 100}),
-    bloodstoneDust: weightedCountItems(items, {46731: 1, 46730: 100}),
-    empyrealFragments: weightedCountItems(items, {46735: 1, 46734: 100}),
-    crystallineOre: countItems(items, [46682, 46683]),
-    airshipOil: countItems(items, [69434, 76933]),
-    auricDust: weightedCountItems(items, {69432: 1, 76933: 1, 73537: 30}),
-    leyLineSparks: countItems(items, [69392, 76933, 74042]),
-    legendarySpikes: countItems(items, 81296),
     fireOrchidBlossoms: countItems(items, 81127),
     orrianPearls: countItems(items, 81706),
-    luck: weightedCountItems(items, luckItemIds),
-    unstableCosmicEssences: countItems(items, 81743),
     kralkatiteOre: countItems(items, 86069),
-    potionOfPvpRewards: countItems(items, 68110),
-    potionOfWvwRewards: countItems(items, 78600),
-    skirmishChests: countItems(items, [84966, 81324]),
     difluoriteCrystals: countItems(items, 86977),
-    kites: countItems(items, [
-      42967, // Lightning Kite
-      43076, // Wind Kite
-      43487, // Sun Kite
-      43930, // Guild Kite
-      44638, // Hot Air Balloon Souvenir
-      66897, // Prosperity Mine Kite
-      66898, // Crystal Shard Kite
-      66900, // Ventari Follower Kite
-      68614, // Red Lantern
-      84916, // Sand Shark Kite
-      84950, // Red Choya Kite
-      85100, // Blue Choya Kite
-      85173, // Zebra Skimmer Kite
-      85240, // Skimmer Kite
-      85302, // Green Choya Kite
-      85315, // Watermelon Sand Shark Kite
-      88124, // Embellished Kite
-      88131, // Mark of Peace Kite
-      88216 // Ornamental Kite
-    ]),
 
-    // Aura items
+    // (5) FRACTALS
+    fractalTonics: countItems(items, 49277),
+    unstableCosmicEssences: countItems(items, 81743),
+
+    // (6) RAIDS
+    legendaryInsights: countLegendaryInsights(items),
+
+    // (7) PROGRESSION
+    uniqueTonics: countItems(items, tonics.filter(x => x.permanent).map(x => x.ids), true),
+    luck: weightedCountItems(items, luckItemIds),
+
+    // (8) AURA ITEMS
     chakEggSacks: countItems(items, [
       72021, // Chak Egg Sac
       81616, // Chak Infusion
@@ -169,6 +65,17 @@ export default function (accountData) {
       86055, // Queen Bee Infusion
       86303 // Queen Bee Infusion
     ]),
+    liquidAurillium: countItems(items, [
+      76063, // Vial of Liquid Aurillium
+      81715, // Liquid Aurillium Infusion
+      81875, // Liquid Aurillium Infusion
+      81889, // Liquid Aurillium Infusion
+      81918, // Liquid Aurillium Infusion
+      81975, // Liquid Aurillium Infusion
+      82006, // Liquid Aurillium Infusion
+      86275, // Liquid Aurillium Infusion
+      86291 // Liquid Aurillium Infusion
+    ]),
     ghostlyInfusions: countItems(items, [
       77274, // Ghostly Infusion
       77303, // Ghostly Infusion
@@ -178,6 +85,24 @@ export default function (accountData) {
       77394, // Ghostly Infusion
       85644, // Ghostly Infusion
       85945 // Ghostly Infusion
+    ]),
+    celestialInfusion: countItems(items, [
+      81761, // Celestial Infusion (Blue)
+      81779, // Celestial Infusion (Blue)
+      81783, // Celestial Infusion (Red)
+      81792, // Celestial Infusion (Red)
+      81811, // Celestial Infusion (Blue)
+      81814, // Celestial Infusion (Red)
+      81878, // Celestial Infusion (Blue)
+      81919, // Celestial Infusion (Blue)
+      81927, // Celestial Infusion (Red)
+      81991, // Celestial Infusion (Blue)
+      82062, // Celestial Infusion (Red)
+      82070, // Celestial Infusion (Red)
+      85646, // Celestial Infusion (Red)
+      85833, // Celestial Infusion (Red)
+      85989, // Celestial Infusion (Blue)
+      86347 // Celestial Infusion (Blue)
     ]),
     baubleInfusions: countItems(items, [
       78012, // Moto's Unstable Bauble Infusion: Blue
@@ -235,6 +160,16 @@ export default function (accountData) {
       86310, // Poly-luminescent Undulating Infusion (Orange)
       86312 // Poly-luminescent Undulating Infusion (Teal)
     ]),
+    phospholuminescentInfusions: countItems(items, [
+      79639, // Phospholuminescent Infusion
+      79653, // Phospholuminescent Infusion
+      79661, // Phospholuminescent Infusion
+      79665, // Phospholuminescent Infusion
+      79669, // Phospholuminescent Infusion
+      79674, // Phospholuminescent Infusion
+      85863, // Phospholuminescent Infusion
+      85885 // Phospholuminescent Infusion
+    ]),
     wintersHeartInfusions: countItems(items, [
       79943, // Winter's Heart Infusion
       79957, // Winter's Heart Infusion
@@ -246,45 +181,6 @@ export default function (accountData) {
       85734 // Winter's Heart Infusion
     ]),
     kodasWarmthEnrichment: countItems(items, 79926),
-    phospholuminescentInfusions: countItems(items, [
-      79639, // Phospholuminescent Infusion
-      79653, // Phospholuminescent Infusion
-      79661, // Phospholuminescent Infusion
-      79665, // Phospholuminescent Infusion
-      79669, // Phospholuminescent Infusion
-      79674, // Phospholuminescent Infusion
-      85863, // Phospholuminescent Infusion
-      85885 // Phospholuminescent Infusion
-    ]),
-    liquidAurillium: countItems(items, [
-      76063, // Vial of Liquid Aurillium
-      81715, // Liquid Aurillium Infusion
-      81875, // Liquid Aurillium Infusion
-      81889, // Liquid Aurillium Infusion
-      81918, // Liquid Aurillium Infusion
-      81975, // Liquid Aurillium Infusion
-      82006, // Liquid Aurillium Infusion
-      86275, // Liquid Aurillium Infusion
-      86291 // Liquid Aurillium Infusion
-    ]),
-    celestialInfusion: countItems(items, [
-      81761, // Celestial Infusion (Blue)
-      81779, // Celestial Infusion (Blue)
-      81783, // Celestial Infusion (Red)
-      81792, // Celestial Infusion (Red)
-      81811, // Celestial Infusion (Blue)
-      81814, // Celestial Infusion (Red)
-      81878, // Celestial Infusion (Blue)
-      81919, // Celestial Infusion (Blue)
-      81927, // Celestial Infusion (Red)
-      81991, // Celestial Infusion (Blue)
-      82062, // Celestial Infusion (Red)
-      82070, // Celestial Infusion (Red)
-      85646, // Celestial Infusion (Red)
-      85833, // Celestial Infusion (Red)
-      85989, // Celestial Infusion (Blue)
-      86347 // Celestial Infusion (Blue)
-    ]),
     festiveConfettiInfusions: countItems(items, [
       84871, // Festive Confetti Infusion
       84882, // Festive Confetti Infusion
@@ -303,7 +199,131 @@ export default function (accountData) {
       86665, // Snow Diamond Infusion
       86666, // Snow Diamond Infusion
       86704 // Snow Diamond Infusion
-    ])
+    ]),
+
+    // (9) COLLECTABLES
+    legendaryItems: countItems(items, legendaries.map(x => x.id)),
+    legendaryItemsWeapon: countItems(items, legendaries.filter(x => x.type === 'weapon').map(x => x.id)),
+    legendaryItemsArmor: countItems(items, legendaries.filter(x => x.type === 'armor').map(x => x.id)),
+    legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
+    legendaryItemsTrinket: countItems(items, legendaries.filter(x => x.type === 'trinket').map(x => x.id)),
+    brokenSpoons: countItems(items, 74996),
+    championBags: countItems(items, championBagIds),
+    tripleTroubleChests: countItems(items, 49664),
+    tequatlChests: countItems(items, 47836),
+    giftsOfExploration: countItems(items, 19677),
+    giftsOfBattle: countItems(items, 19678),
+    tomesOfKnowledge: countItems(items, [43741, 43766]),
+    fossilizedInsects: countItems(items, [
+      66636, // Ambrite Fossilized Centipede
+      66640, // Ambrite Fossilized Butterfly
+      66642, // Ambrite Fossilized Termite
+      66644, // Ambrite Fossilized Firefly
+      66645, // Ambrite Fossilized Millipede
+      66646, // Ambrite Fossilized Dragonfly
+      66647, // Ambrite Fossilized Grub
+      66648, // Ambrite Fossilized Hornet
+      66649, // Ambrite Fossilized Cricket
+      66651, // Ambrite Fossilized Spider
+      66652, // Ambrite Fossilized Cockroach
+      66653, // Ambrite Fossilized Beetle
+      66654, // Ambrite Fossilized Devourer
+      66655, // Ambrite Fossilized Bee
+      66656, // Ambrite Fossilized Mosquito
+      66657, // Ambrite Fossilized Mantis
+      66766 // Unidentified Fossilized Insect
+    ]),
+    whiteMantlePortalDevices: countItems(items, 78978),
+    reclaimedMetalPlates: countItems(items, 74356),
+    chakEggs: countItems(items, 72205),
+    legendarySpikes: countItems(items, 81296),
+
+    // (10) ASCENDED MATERIALS
+    dragoniteOre: weightedCountItems(items, {46733: 1, 46732: 100}),
+    bloodstoneDust: weightedCountItems(items, {46731: 1, 46730: 100}),
+    empyrealFragments: weightedCountItems(items, {46735: 1, 46734: 100}),
+    airshipOil: countItems(items, [69434, 76933]),
+    auricDust: weightedCountItems(items, {69432: 1, 76933: 1, 73537: 30}),
+    leyLineSparks: countItems(items, [69392, 76933, 74042]),
+    crystallineOre: countItems(items, [46682, 46683]),
+
+    // (12) WORLD VS WORLD
+    potionOfWvwRewards: countItems(items, 78600),
+    skirmishChests: countItems(items, [84966, 81324]),
+
+    // (13) PLAYER VS PLAYER
+    potionOfPvpRewards: countItems(items, 68110),
+
+    // (15) MISCELLANEOUS
+    musicBoxes: countItems(items, [
+      67391, // Haunted Gramophone
+      71747, // Zephyrites Music Box
+      82286, // Hafez's Music Box
+      82432, // Ghiwane's  Music Box
+      83444, // Tinari's Music Box
+      83826, // Khadiri's Music Box
+      84566 // Nightingale's Music Box
+    ]),
+    kites: countItems(items, [
+      42967, // Lightning Kite
+      43076, // Wind Kite
+      43487, // Sun Kite
+      43930, // Guild Kite
+      44638, // Hot Air Balloon Souvenir
+      66897, // Prosperity Mine Kite
+      66898, // Crystal Shard Kite
+      66900, // Ventari Follower Kite
+      68614, // Red Lantern
+      84916, // Sand Shark Kite
+      84950, // Red Choya Kite
+      85100, // Blue Choya Kite
+      85173, // Zebra Skimmer Kite
+      85240, // Skimmer Kite
+      85302, // Green Choya Kite
+      85315, // Watermelon Sand Shark Kite
+      88124, // Embellished Kite
+      88131, // Mark of Peace Kite
+      88216 // Ornamental Kite
+    ]),
+
+    // (16) GEMSTORE
+    instruments: countItems(items, [
+      36174, // Musical Bass Guitar
+      42888, // Marriner's Horn
+      42973, // Flute
+      43008, // Flute
+      43526, // Musical Frame Drum
+      44883, // Musical Harp
+      46500, // World 1 Super Boom Box
+      46501, // World 1 Super Boom Box
+      46504, // World 2 Super Boom Box
+      66323, // Musical Lute
+      67391, // Haunted Gramophone
+      68361, // Magnanimous Choir Bell
+      80932, // Duskk's World 2 Super Boom Box
+      80972, // Duskk's World 1 Super Boom Box
+      88004, // Musical Minstrel
+      88066, // Musical Verdarach
+      88385 // Unbreakable Choir Bell
+    ]),
+    permanentTools: countItems(items, permanentToolIds),
+    permanentContracts: countItems(items, [
+      35976, // Personal Trader Express
+      35977, // Personal Merchant Express
+      35978, // Permanent Bank Access Express
+      35984, // Permanent Bank Access Contract
+      35985, // Permanent Black Lion Merchant Contract
+      35986, // Permanent Trading Post Express Contract
+      38506, // Permanent Self-Style Hair Kit
+      38507, // Permanent Hair Stylist Contract
+      49501, // Tarrktun Personal Delivery Portal
+      78217, // Endless Repair Canister
+      78455, // Endless Repair Contract
+      84440, // Collector's Edition Sandstorm
+      86497, // Endless Upgrade Extractor Contract
+      86549 // Endless Upgrade Extractor
+    ]),
+    gemstoreToys: countItems(items, gemstoreToyIds)
   }
 }
 

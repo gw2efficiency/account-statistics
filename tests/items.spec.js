@@ -398,9 +398,9 @@ describe('statistics > items', () => {
       {id: 66323, count: 1},
       {id: 30687, count: 1},
       {id: 71383, count: 1},
-      {id: 38129, count: 1},
+      {id: 38129, count: 1}, // This is a container and does not count
       {id: 43526, count: 1}
-    ])).instruments).to.equal(3)
+    ])).instruments).to.equal(2)
   })
 
   it('can calculate music box count', () => {
