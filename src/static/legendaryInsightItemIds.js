@@ -17,7 +17,7 @@ export default {
     80607, // Refined Envoy Jerkin
     80673, // Refined Envoy Gauntlets
     80583, // Refined Envoy Shoes
-    80236  // Refined Envoy Pauldrons
+    80236 // Refined Envoy Pauldrons
   ],
   perfectedIds: [
     80281, // Perfected Envoy Boots
@@ -37,7 +37,7 @@ export default {
     80578, // Perfected Envoy Jerkin
     80205, // Perfected Envoy Gauntlets
     80399, // Perfected Envoy Shoes
-    80435  // Perfected Envoy Pauldrons
+    80435 // Perfected Envoy Pauldrons
   ],
   envoyInsignia: 80516,
   giftOfProwess: 78989,

@@ -74,7 +74,7 @@ describe('statistics > wallet', () => {
       {id: 29, value: 27}, // Provisioner Token
       {id: 30, value: 55}, // PvP League Ticket
       {id: 31, value: 112}, // Proof of Heroics
-      {id: 32, value: 70}, // Unbound Magic
+      // {id: 32, value: 0}, // Unbound Magic (missing for coverage)
       {id: 33, value: 45}, // Ascended Shards of Glory
       {id: 34, value: 465}, // Trade Contract
       {id: 35, value: 98}, // Elegy Mosaic
@@ -99,7 +99,7 @@ describe('statistics > wallet', () => {
       airshipParts: 24,
       lumpsOfAurillium: 139,
       leyLineCrystals: 5,
-      unboundMagic: 70,
+      unboundMagic: 0,
       magnetiteShards: 197,
       wvwClaimTickets: 50,
       proofOfHeroics: 112,

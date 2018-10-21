@@ -77,7 +77,13 @@ describe('statistics > items', () => {
       skirmishChests: null,
       difluoriteCrystals: null,
       kites: null,
-      snowDiamondInfusions: null
+      snowDiamondInfusions: null,
+      inscribedShards: null,
+      lumpsOfMistonium: null,
+      legendaryDivinations: null,
+      crystalInfusions: null,
+      polysaturatingInfusions: null,
+      silverwastesShovels: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -215,7 +221,7 @@ describe('statistics > items', () => {
     expect(itemsStatistics(generateAccount([
       {id: 80516, count: 3}, // Envoy Insignia => 25 each
       {id: 78989, count: 1}, // Gift of Prowess => 25 each
-      {id: 77302, count: 7}  // Legendary Insight => 1 each
+      {id: 77302, count: 7} // Legendary Insight => 1 each
     ])).legendaryInsights, 'basic items').to.equal(3 * 25 + 25 + 7)
 
     // Count the full first ascended set (from the achievement, so no LI spent)
@@ -755,7 +761,7 @@ describe('statistics > items', () => {
       {id: 45178, count: 1}, // 200
       {id: 45178, count: 3}, // 600
       {id: 45179, count: 1}, // 500
-      {id: 45179, count: 7}  // 3500
+      {id: 45179, count: 7} // 3500
     ])).luck).to.equal(5810)
   })
 

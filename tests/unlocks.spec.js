@@ -73,6 +73,12 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({recipes: [1, 2, 7, 9, 10]}).recipeCount).to.equal(5)
   })
 
+  it('can the count of shared inventory slots', () => {
+    expect(unlocksStatistics({}).sharedInventorySlots).to.equal(null)
+    expect(unlocksStatistics({shared: []}).sharedInventorySlots).to.equal(0)
+    expect(unlocksStatistics({shared: [1, 2, 7, 9, 10]}).sharedInventorySlots).to.equal(5)
+  })
+
   it('can calculate legendary skin count', () => {
     expect(unlocksStatistics({}).legendarySkins).to.equal(null)
     expect(unlocksStatistics({skins: []}).legendarySkins).to.equal(0)

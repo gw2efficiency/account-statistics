@@ -29,6 +29,8 @@ export default function (accountData) {
     orrianPearls: countItems(items, 81706),
     kralkatiteOre: countItems(items, 86069),
     difluoriteCrystals: countItems(items, 86977),
+    inscribedShards: countItems(items, 87645),
+    lumpsOfMistonium: countItems(items, 88955),
 
     // (5) FRACTALS
     fractalTonics: countItems(items, 49277),
@@ -36,6 +38,7 @@ export default function (accountData) {
 
     // (6) RAIDS
     legendaryInsights: countLegendaryInsights(items),
+    legendaryDivinations: countItems(items, 88485),
 
     // (7) PROGRESSION
     uniqueTonics: countItems(items, tonics.filter(x => x.permanent).map(x => x.ids), true),
@@ -200,6 +203,36 @@ export default function (accountData) {
       86666, // Snow Diamond Infusion
       86704 // Snow Diamond Infusion
     ]),
+    crystalInfusions: countItems(items, [
+      88770, // Crystal Infusion of Boon Duration
+      88771 // Crystal Infusion of Power
+    ]),
+    polysaturatingInfusions: countItems(items, [
+      89005, // Polysaturating Reverberating Infusion (Purple)
+      89007, // Polysaturating Reverberating Infusion (Gray)
+      89012, // Polysaturating Reverberating Infusion (Gray)
+      89013, // Polysaturating Reverberating Infusion (Gray)
+      89016, // Polysaturating Reverberating Infusion (Gray)
+      89017, // Polysaturating Reverberating Infusion (Purple)
+      89020, // Polysaturating Reverberating Infusion (Gray)
+      89026, // Polysaturating Reverberating Infusion (Red)
+      89028, // Polysaturating Reverberating Infusion (Red)
+      89032, // Polysaturating Reverberating Infusion (Red)
+      89034, // Polysaturating Reverberating Infusion (Red)
+      89037, // Polysaturating Reverberating Infusion (Purple)
+      89039, // Polysaturating Reverberating Infusion (Purple)
+      89042, // Polysaturating Reverberating Infusion (Purple)
+      89049, // Polysaturating Reverberating Infusion (Purple)
+      89052, // Polysaturating Reverberating Infusion (Red)
+      89054, // Polysaturating Reverberating Infusion (Gray)
+      89059, // Polysaturating Reverberating Infusion (Red)
+      89063, // Polysaturating Reverberating Infusion (Purple)
+      89070, // Polysaturating Reverberating Infusion (Purple)
+      89071, // Polysaturating Reverberating Infusion (Red)
+      89074, // Polysaturating Reverberating Infusion (Gray)
+      89075, // Polysaturating Reverberating Infusion (Red)
+      89078 // Polysaturating Reverberating Infusion (Gray)
+    ]),
 
     // (9) COLLECTABLES
     legendaryItems: countItems(items, legendaries.map(x => x.id)),
@@ -285,6 +318,7 @@ export default function (accountData) {
       88131, // Mark of Peace Kite
       88216 // Ornamental Kite
     ]),
+    silverwastesShovels: countItems(items, 67826),
 
     // (16) GEMSTORE
     instruments: countItems(items, [

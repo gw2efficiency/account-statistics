@@ -14,6 +14,7 @@ export default function (accountData) {
     gliderCount: gliderCount(accountData),
     titleCount: titleCount(accountData),
     recipeCount: recipeCount(accountData),
+    sharedInventorySlots: sharedInventorySlots(accountData),
     legendarySkins: legendarySkins(accountData),
     legendarySkinsWeapon: legendarySkins(accountData, 'weapon'),
     legendarySkinsArmor: legendarySkins(accountData, 'armor'),
@@ -117,6 +118,15 @@ function recipeCount (accountData) {
   }
 
   return accountData.recipes.length
+}
+
+// The number of unlocked shared inventory slots on the account
+function sharedInventorySlots (accountData) {
+  if (!accountData.shared) {
+    return null
+  }
+
+  return accountData.shared.length
 }
 
 // The legendary skins unlocked on the account
