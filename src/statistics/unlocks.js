@@ -7,6 +7,7 @@ export default function (accountData) {
     dyeCount: dyeCount(accountData),
     skinCount: skinCount(accountData),
     miniCount: miniCount(accountData),
+    mountCount: mountCount(accountData),
     finisherCount: finisherCount(accountData),
     outfitCount: outfitCount(accountData),
     pvpHeroCount: pvpHeroCount(accountData),
@@ -53,6 +54,15 @@ function miniCount (accountData) {
   }
 
   return accountData.minis.length
+}
+
+// The unlocked mount skins on the account
+function mountCount (accountData) {
+  if (!accountData.mounts || !accountData.mounts.skins) {
+    return null
+  }
+
+  return accountData.mounts.skins.length
 }
 
 // The unlocked finishers on the account

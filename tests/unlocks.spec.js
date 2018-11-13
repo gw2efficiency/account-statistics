@@ -21,6 +21,13 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({minis: [1, 2, 7, 9, 10]}).miniCount).to.equal(5)
   })
 
+  it('can calculate mount count', () => {
+    expect(unlocksStatistics({}).mountCount).to.equal(null)
+    expect(unlocksStatistics({mounts: null}).mountCount).to.equal(null)
+    expect(unlocksStatistics({mounts: {skins: []}}).mountCount).to.equal(0)
+    expect(unlocksStatistics({mounts: {skins: [1, 2, 7, 9, 10]}}).mountCount).to.equal(5)
+  })
+
   it('can calculate finisher count', () => {
     const finishers = [
       {id: 1, permanent: true},
