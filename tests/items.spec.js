@@ -80,6 +80,7 @@ describe('statistics > items', () => {
       snowDiamondInfusions: null,
       inscribedShards: null,
       lumpsOfMistonium: null,
+      brandedMass: null,
       legendaryDivinations: null,
       crystalInfusions: null,
       polysaturatingInfusions: null,
