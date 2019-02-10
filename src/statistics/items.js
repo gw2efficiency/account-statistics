@@ -324,6 +324,32 @@ export default function (accountData) {
       88216 // Ornamental Kite
     ]),
     silverwastesShovels: countItems(items, 67826),
+    thirtyTwoSlotBags: countItems(items, [
+      82277, // 32-Slot Courier's Locker
+      82363, // 32-Slot Marshal's Saddlebag
+      82418, // 32-Slot Orichalcum Locker
+      83109, // 32-Slot Hamaseen Pannier
+      83182, // 32-Slot Hardened Leather Pannier
+      83186, // 32-Slot Cowrie League Saddlebag
+      83205, // 32-Slot Marshal's Locker
+      83209, // 32-Slot Courier's Pannier
+      83286, // 32-Slot Nomad's Locker
+      83435, // 32-Slot Courier's Saddlebag
+      83995, // 32-Slot Gossamer Saddlebag
+      84494, // 32-Slot Marshal's Pannier
+      85365, // 32-Slot Cowrie League Saddlebag
+      85366, // 32-Slot Marshal's Saddlebag
+      85367, // 32-Slot Courier's Locker
+      85368, // 32-Slot Gossamer Saddlebag
+      85369, // 32-Slot Hamaseen Pannier
+      85370, // 32-Slot Courier's Pannier
+      85371, // 32-Slot Orichalcum Locker
+      85372, // 32-Slot Marshal's Pannier
+      85373, // 32-Slot Nomad's Locker
+      85374, // 32-Slot Marshal's Locker
+      85375, // 32-Slot Courier's Saddlebag
+      85376 // 32-Slot Hardened Leather Pannier
+    ]),
 
     // (16) GEMSTORE
     instruments: countItems(items, [
