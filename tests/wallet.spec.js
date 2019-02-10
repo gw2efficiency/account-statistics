@@ -40,7 +40,9 @@ describe('statistics > wallet', () => {
       elegyMosaic: null,
       testimonyOfHeroics: null,
       gaetingCrystals: null,
-      volatileMagic: null
+      volatileMagic: null,
+      pvpTournamentVouchers: null,
+      racingMedallions: null
     })
   })
 
@@ -80,7 +82,9 @@ describe('statistics > wallet', () => {
       {id: 35, value: 98}, // Elegy Mosaic
       {id: 36, value: 645}, // Testimony of Heroics
       {id: 39, value: 561}, // Gaeting Crystals
-      {id: 45, value: 980} // Volatile Magic
+      {id: 45, value: 980}, // Volatile Magic
+      {id: 46, value: 45}, // PvP Tournament Vouchers
+      {id: 47, value: 435} // Racing Medallions
     ]
 
     expect(walletStatistics({wallet})).to.deep.equal({
@@ -119,7 +123,9 @@ describe('statistics > wallet', () => {
       elegyMosaic: 98,
       testimonyOfHeroics: 645,
       gaetingCrystals: 561,
-      volatileMagic: 980
+      volatileMagic: 980,
+      pvpTournamentVouchers: 45,
+      racingMedallions: 435
     })
   })
 })
