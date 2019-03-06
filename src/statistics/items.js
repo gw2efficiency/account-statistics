@@ -348,7 +348,8 @@ export default function (accountData) {
       85373, // 32-Slot Nomad's Locker
       85374, // 32-Slot Marshal's Locker
       85375, // 32-Slot Courier's Saddlebag
-      85376 // 32-Slot Hardened Leather Pannier
+      85376, // 32-Slot Hardened Leather Pannier
+      87225 // Reinforced Olmakhan Bandolier
     ]),
 
     // (16) GEMSTORE
