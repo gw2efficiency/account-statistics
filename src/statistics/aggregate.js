@@ -5,7 +5,8 @@ export default function (accountStatistics) {
     totalAuras: totalAuras(accountStatistics),
     deathCountPerHour: deathCountPerHour(accountStatistics),
     fractalRelics: fractalRelics(accountStatistics),
-    pristineFractalRelics: pristineFractalRelics(accountStatistics)
+    pristineFractalRelics: pristineFractalRelics(accountStatistics),
+    luck: luck(accountStatistics)
   }
 }
 
@@ -83,4 +84,16 @@ function pristineFractalRelics (accountStatistics) {
 
   return accountStatistics._pristineFractalRelicsFromWallet +
     accountStatistics._pristineFractalRelicsFromTitles
+}
+
+// Sum up luck from account and luck items
+function luck (accountStatistics) {
+  if (
+    accountStatistics._luckFromAccount == null ||
+    accountStatistics._luckFromItems == null
+  ) {
+    return null
+  }
+
+  return accountStatistics._luckFromAccount + accountStatistics._luckFromItems
 }

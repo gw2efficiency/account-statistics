@@ -32,4 +32,10 @@ describe('statistics > account', () => {
     expect(accountStatistics({account: newAccount}).playtimePerDay).to.equal(null)
     expect(accountStatistics({account}).playtimePerDay).to.equal(12744.41)
   })
+
+  it('can calculate luck', () => {
+    expect(accountStatistics({})._luckFromAccount).to.equal(null)
+    expect(accountStatistics({luck: null})._luckFromAccount).to.equal(null)
+    expect(accountStatistics({luck: 120})._luckFromAccount).to.equal(120)
+  })
 })

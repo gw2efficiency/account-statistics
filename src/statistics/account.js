@@ -5,7 +5,8 @@ export default function (accountData) {
     guildCount: guildCount(accountData),
     wvwRank: wvwRank(accountData),
     playtime: playtime(accountData),
-    playtimePerDay: playtimePerDay(accountData)
+    playtimePerDay: playtimePerDay(accountData),
+    _luckFromAccount: luckFromAccount(accountData)
   }
 }
 
@@ -64,4 +65,13 @@ function playtimePerDay (accountData) {
   const daysSinceCreation = Math.ceil((now - creation) / (1000 * 60 * 60 * 24))
 
   return daysSinceCreation > 1 ? round(playtime / daysSinceCreation, 2) : null
+}
+
+// The amount of luck unlocked on the account
+function luckFromAccount (accountData) {
+  if (!accountData.luck) {
+    return null
+  }
+
+  return accountData.luck
 }

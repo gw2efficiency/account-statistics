@@ -72,4 +72,23 @@ describe('statistics > aggregate', () => {
       _pristineFractalRelicsFromTitles: 1200
     }).pristineFractalRelics).to.equal(1265)
   })
+
+  it('can calculate luck sum', () => {
+    expect(aggregateStatistics({}).luck).to.equal(null)
+
+    expect(aggregateStatistics({
+      _luckFromAccount: 1,
+      _luckFromItems: null
+    }).luck).to.equal(null)
+
+    expect(aggregateStatistics({
+      _luckFromAccount: null,
+      _luckFromItems: 1
+    }).luck).to.equal(null)
+
+    expect(aggregateStatistics({
+      _luckFromAccount: 65,
+      _luckFromItems: 1200
+    }).luck).to.equal(1265)
+  })
 })

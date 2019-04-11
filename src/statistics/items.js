@@ -43,7 +43,7 @@ export default function (accountData) {
 
     // (7) PROGRESSION
     uniqueTonics: countItems(items, tonics.filter(x => x.permanent).map(x => x.ids), true),
-    luck: weightedCountItems(items, luckItemIds),
+    _luckFromItems: weightedCountItems(items, luckItemIds),
 
     // (8) AURA ITEMS
     chakEggSacks: countItems(items, [

@@ -67,7 +67,7 @@ describe('statistics > items', () => {
       airshipOil: null,
       auricDust: null,
       leyLineSparks: null,
-      luck: null,
+      _luckFromItems: null,
       legendarySpikes: null,
       fireOrchidBlossoms: null,
       orrianPearls: null,
@@ -768,7 +768,7 @@ describe('statistics > items', () => {
       {id: 45178, count: 3}, // 600
       {id: 45179, count: 1}, // 500
       {id: 45179, count: 7} // 3500
-    ])).luck).to.equal(5810)
+    ]))._luckFromItems).to.equal(5810)
   })
 
   it('can calculate unstable cosmic essences', () => {
