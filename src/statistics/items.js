@@ -32,6 +32,7 @@ export default function (accountData) {
     inscribedShards: countItems(items, 87645),
     lumpsOfMistonium: countItems(items, 88955),
     brandedMass: countItems(items, 89537),
+    mistbornMote: countItems(items, 90783),
 
     // (5) FRACTALS
     fractalTonics: countItems(items, 49277),
