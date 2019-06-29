@@ -40,7 +40,11 @@ export default function (accountData) {
 
     // (6) RAIDS
     legendaryInsights: countLegendaryInsights(items),
-    legendaryDivinations: countItems(items, 88485),
+    legendaryDivinations: weightedCountItems(items, {
+      88485: 1, // Legendary Divinations
+      91225: 150, // Gift of Compassion
+      91234: 150 // Coalescence
+    }),
 
     // (7) PROGRESSION
     uniqueTonics: countItems(items, tonics.filter(x => x.permanent).map(x => x.ids), true),
