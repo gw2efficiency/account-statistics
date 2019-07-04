@@ -43,6 +43,12 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({finishers}).finisherCount).to.equal(5)
   })
 
+  it('can calculate novelty count', () => {
+    expect(unlocksStatistics({}).noveltyCount).to.equal(null)
+    expect(unlocksStatistics({novelties: []}).noveltyCount).to.equal(0)
+    expect(unlocksStatistics({novelties: [1, 2, 7, 9, 10]}).noveltyCount).to.equal(5)
+  })
+
   it('can calculate outfit count', () => {
     expect(unlocksStatistics({}).outfitCount).to.equal(null)
     expect(unlocksStatistics({outfits: []}).outfitCount).to.equal(0)

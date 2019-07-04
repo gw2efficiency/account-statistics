@@ -9,6 +9,7 @@ export default function (accountData) {
     miniCount: miniCount(accountData),
     mountCount: mountCount(accountData),
     finisherCount: finisherCount(accountData),
+    noveltyCount: noveltyCount(accountData),
     outfitCount: outfitCount(accountData),
     pvpHeroCount: pvpHeroCount(accountData),
     mailcarrierCount: mailcarrierCount(accountData),
@@ -74,6 +75,15 @@ function finisherCount (accountData) {
   return accountData.finishers
     .filter(x => x.permanent)
     .length
+}
+
+// The unlocked novelties on the account
+function noveltyCount (accountData) {
+  if (!accountData.novelties) {
+    return null
+  }
+
+  return accountData.novelties.length
 }
 
 // The unlocked outfits on the account
