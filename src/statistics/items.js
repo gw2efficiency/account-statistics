@@ -16,11 +16,12 @@ import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
 export default function (accountData) {
   const items = allItems(accountData)
 
-  const auraItems = Object.fromEntries(
-    Object.entries(cosmeticAuraItemMap).map(entry => {
-      return [entry[0], countItems(items, entry[1])]
-    })
-  )
+  const auraItems = Object.entries(cosmeticAuraItemMap).map(entry => {
+    return [entry[0], countItems(items, entry[1])]
+  }).reduce((object, [key, value]) => {
+    object[key] = value
+    return object
+  }, {})
 
   return {
     // (2) CURRENCIES
