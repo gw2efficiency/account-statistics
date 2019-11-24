@@ -33,6 +33,8 @@ export default function (accountData) {
     lumpsOfMistonium: countItems(items, 88955),
     brandedMass: countItems(items, 89537),
     mistbornMote: countItems(items, 90783),
+    hatchedChili: countItems(items, 92072),
+    eternalIceShard: countItems(items, 92272),
 
     // (5) FRACTALS
     fractalTonics: countItems(items, 49277),

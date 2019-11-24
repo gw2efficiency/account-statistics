@@ -86,6 +86,8 @@ describe('statistics > items', () => {
       lumpsOfMistonium: null,
       brandedMass: null,
       mistbornMote: null,
+      hatchedChili: null,
+      eternalIceShard: null,
       legendaryDivinations: null,
       crystalInfusions: null,
       polysaturatingInfusions: null,
