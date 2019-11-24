@@ -22,7 +22,7 @@
     "@gw2efficiency/game-data": "^0.1.6",
     "array-unique": "^0.3.2",
     "gw2e-account-value": "^3.0.0",
-    "gw2e-static-data": "^0.4.1",
+    "gw2e-static-data": "^0.4.55",
     "round-to": "^3.0.0",
     "sum-by": "^1.0.0"
   }
