@@ -11,9 +11,16 @@ import championBagIds from '../static/championBagIds'
 import gemstoreToyIds from '../static/gemstoreToyIds'
 import luckItemIds from '../static/luckIds'
 import legendaryInsightItemIds from '../static/legendaryInsightItemIds'
+import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
 
 export default function (accountData) {
   const items = allItems(accountData)
+
+  const auraItems = Object.fromEntries(
+    Object.entries(cosmeticAuraItemMap).map(entry => {
+      return [entry[0], countItems(items, entry[1])]
+    })
+  )
 
   return {
     // (2) CURRENCIES
@@ -53,194 +60,7 @@ export default function (accountData) {
     _luckFromItems: weightedCountItems(items, luckItemIds),
 
     // (8) AURA ITEMS
-    chakEggSacks: countItems(items, [
-      72021, // Chak Egg Sac
-      81616, // Chak Infusion
-      81677, // Chak Infusion
-      81807, // Chak Infusion
-      81825, // Chak Infusion
-      81840, // Chak Infusion
-      82044, // Chak Infusion
-      85668, // Chak Infusion
-      86251 // Chak Infusion
-    ]),
-    preservedQueenBees: countItems(items, [
-      68440, // Preserved Queen Bee
-      77594, // Preserved Queen Bee
-      81638, // Queen Bee Infusion
-      81663, // Queen Bee Infusion
-      81679, // Queen Bee Infusion
-      81701, // Queen Bee Infusion
-      81818, // Queen Bee Infusion
-      81897, // Queen Bee Infusion
-      86055, // Queen Bee Infusion
-      86303 // Queen Bee Infusion
-    ]),
-    liquidAurillium: countItems(items, [
-      76063, // Vial of Liquid Aurillium
-      81715, // Liquid Aurillium Infusion
-      81875, // Liquid Aurillium Infusion
-      81889, // Liquid Aurillium Infusion
-      81918, // Liquid Aurillium Infusion
-      81975, // Liquid Aurillium Infusion
-      82006, // Liquid Aurillium Infusion
-      86275, // Liquid Aurillium Infusion
-      86291 // Liquid Aurillium Infusion
-    ]),
-    ghostlyInfusions: countItems(items, [
-      77274, // Ghostly Infusion
-      77303, // Ghostly Infusion
-      77310, // Ghostly Infusion
-      77316, // Ghostly Infusion
-      77366, // Ghostly Infusion
-      77394, // Ghostly Infusion
-      85644, // Ghostly Infusion
-      85945 // Ghostly Infusion
-    ]),
-    celestialInfusion: countItems(items, [
-      81761, // Celestial Infusion (Blue)
-      81779, // Celestial Infusion (Blue)
-      81783, // Celestial Infusion (Red)
-      81792, // Celestial Infusion (Red)
-      81811, // Celestial Infusion (Blue)
-      81814, // Celestial Infusion (Red)
-      81878, // Celestial Infusion (Blue)
-      81919, // Celestial Infusion (Blue)
-      81927, // Celestial Infusion (Red)
-      81991, // Celestial Infusion (Blue)
-      82062, // Celestial Infusion (Red)
-      82070, // Celestial Infusion (Red)
-      85646, // Celestial Infusion (Red)
-      85833, // Celestial Infusion (Red)
-      85989, // Celestial Infusion (Blue)
-      86347 // Celestial Infusion (Blue)
-    ]),
-    baubleInfusions: countItems(items, [
-      78012, // Moto's Unstable Bauble Infusion: Blue
-      78016, // Moto's Unstable Bauble Infusion: Red
-      78028, // Moto's Unstable Bauble Infusion: Red
-      78030, // Moto's Unstable Bauble Infusion: Red
-      78031, // Moto's Unstable Bauble Infusion: Red
-      78052, // Moto's Unstable Bauble Infusion: Blue
-      78054, // Moto's Unstable Bauble Infusion: Blue
-      78057, // Moto's Unstable Bauble Infusion: Red
-      78079, // Moto's Unstable Bauble Infusion: Blue
-      78086, // Moto's Unstable Bauble Infusion: Blue
-      78090, // Moto's Unstable Bauble Infusion: Blue
-      78097, // Moto's Unstable Bauble Infusion: Red
-      86446, // Moto's Unstable Bauble Infusion: Red
-      86453, // Moto's Unstable Bauble Infusion: Red
-      86552, // Moto's Unstable Bauble Infusion: Blue
-      86571 // Moto's Unstable Bauble Infusion: Blue
-    ]),
-    luminescentRefractors: countItems(items, [
-      67370, // Poly-luminescent Undulating Refractor (Green)
-      67372, // Poly-luminescent Undulating Refractor (Orange)
-      67375, // Poly-luminescent Undulating Refractor (Black)
-      79647, // Poly-luminescent Undulating Refractor (Teal)
-      81612, // Poly-luminescent Undulating Infusion (Green)
-      81624, // Poly-luminescent Undulating Infusion (Black)
-      81641, // Poly-luminescent Undulating Infusion (Teal)
-      81653, // Poly-luminescent Undulating Infusion (Teal)
-      81655, // Poly-luminescent Undulating Infusion (Teal)
-      81678, // Poly-luminescent Undulating Infusion (Green)
-      81709, // Poly-luminescent Undulating Infusion (Black)
-      81727, // Poly-luminescent Undulating Infusion (Green)
-      81777, // Poly-luminescent Undulating Infusion (Teal)
-      81809, // Poly-luminescent Undulating Infusion (Orange)
-      81810, // Poly-luminescent Undulating Infusion (Black)
-      81847, // Poly-luminescent Undulating Infusion (Orange)
-      81858, // Poly-luminescent Undulating Infusion (Teal)
-      81864, // Poly-luminescent Undulating Infusion (Orange)
-      81877, // Poly-luminescent Undulating Infusion (Black)
-      81881, // Poly-luminescent Undulating Infusion (Orange)
-      81911, // Poly-luminescent Undulating Infusion (Orange)
-      81930, // Poly-luminescent Undulating Infusion (Orange)
-      81948, // Poly-luminescent Undulating Infusion (Green)
-      81959, // Poly-luminescent Undulating Infusion (Teal)
-      81988, // Poly-luminescent Undulating Infusion (Green)
-      82013, // Poly-luminescent Undulating Infusion (Black)
-      82039, // Poly-luminescent Undulating Infusion (Black)
-      82055, // Poly-luminescent Undulating Infusion (Green)
-      85682, // Poly-luminescent Undulating Infusion (Green)
-      85694, // Poly-luminescent Undulating Infusion (Orange)
-      85974, // Poly-luminescent Undulating Infusion (Black)
-      86068, // Poly-luminescent Undulating Infusion (Teal)
-      86183, // Poly-luminescent Undulating Infusion (Green)
-      86248, // Poly-luminescent Undulating Infusion (Black)
-      86310, // Poly-luminescent Undulating Infusion (Orange)
-      86312 // Poly-luminescent Undulating Infusion (Teal)
-    ]),
-    phospholuminescentInfusions: countItems(items, [
-      79639, // Phospholuminescent Infusion
-      79653, // Phospholuminescent Infusion
-      79661, // Phospholuminescent Infusion
-      79665, // Phospholuminescent Infusion
-      79669, // Phospholuminescent Infusion
-      79674, // Phospholuminescent Infusion
-      85863, // Phospholuminescent Infusion
-      85885 // Phospholuminescent Infusion
-    ]),
-    wintersHeartInfusions: countItems(items, [
-      79943, // Winter's Heart Infusion
-      79957, // Winter's Heart Infusion
-      79959, // Winter's Heart Infusion
-      79978, // Winter's Heart Infusion
-      79994, // Winter's Heart Infusion
-      80063, // Winter's Heart Infusion
-      85718, // Winter's Heart Infusion
-      85734 // Winter's Heart Infusion
-    ]),
-    kodasWarmthEnrichment: countItems(items, 79926),
-    festiveConfettiInfusions: countItems(items, [
-      84871, // Festive Confetti Infusion
-      84882, // Festive Confetti Infusion
-      84937, // Festive Confetti Infusion
-      84959, // Festive Confetti Infusion
-      84970, // Festive Confetti Infusion
-      85900, // Festive Confetti Infusion
-      85996 // Festive Confetti Infusion
-    ]),
-    snowDiamondInfusions: countItems(items, [
-      86401, // Snow Diamond Infusion
-      86405, // Snow Diamond Infusion
-      86407, // Snow Diamond Infusion
-      86537, // Snow Diamond Infusion
-      86597, // Snow Diamond Infusion
-      86665, // Snow Diamond Infusion
-      86666, // Snow Diamond Infusion
-      86704 // Snow Diamond Infusion
-    ]),
-    crystalInfusions: countItems(items, [
-      88770, // Crystal Infusion of Boon Duration
-      88771 // Crystal Infusion of Power
-    ]),
-    polysaturatingInfusions: countItems(items, [
-      89005, // Polysaturating Reverberating Infusion (Purple)
-      89007, // Polysaturating Reverberating Infusion (Gray)
-      89012, // Polysaturating Reverberating Infusion (Gray)
-      89013, // Polysaturating Reverberating Infusion (Gray)
-      89016, // Polysaturating Reverberating Infusion (Gray)
-      89017, // Polysaturating Reverberating Infusion (Purple)
-      89020, // Polysaturating Reverberating Infusion (Gray)
-      89026, // Polysaturating Reverberating Infusion (Red)
-      89028, // Polysaturating Reverberating Infusion (Red)
-      89032, // Polysaturating Reverberating Infusion (Red)
-      89034, // Polysaturating Reverberating Infusion (Red)
-      89037, // Polysaturating Reverberating Infusion (Purple)
-      89039, // Polysaturating Reverberating Infusion (Purple)
-      89042, // Polysaturating Reverberating Infusion (Purple)
-      89049, // Polysaturating Reverberating Infusion (Purple)
-      89052, // Polysaturating Reverberating Infusion (Red)
-      89054, // Polysaturating Reverberating Infusion (Gray)
-      89059, // Polysaturating Reverberating Infusion (Red)
-      89063, // Polysaturating Reverberating Infusion (Purple)
-      89070, // Polysaturating Reverberating Infusion (Purple)
-      89071, // Polysaturating Reverberating Infusion (Red)
-      89074, // Polysaturating Reverberating Infusion (Gray)
-      89075, // Polysaturating Reverberating Infusion (Red)
-      89078 // Polysaturating Reverberating Infusion (Gray)
-    ]),
+    ...auraItems,
 
     // (9) COLLECTABLES
     legendaryItems: countItems(items, legendaries.map(x => x.id)),

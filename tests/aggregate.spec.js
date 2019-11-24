@@ -7,22 +7,29 @@ describe('statistics > aggregate', () => {
     expect(aggregateStatistics({}).totalAuras).to.equal(null)
     expect(aggregateStatistics({nightfury: 1}).totalAuras).to.equal(null)
     expect(aggregateStatistics({
-      chakEggSacks: 1,
-      preservedQueenBees: 5,
-      ghostlyInfusions: 2,
-      baubleInfusions: 3,
-      luminescentRefractors: 0,
-      wintersPresence: 1,
       nightfury: 0,
-      wintersHeartInfusions: 3,
-      kodasWarmthEnrichment: 1,
-      phospholuminescentInfusions: 2,
+      wintersPresence: 1,
       legendaryItemsTrinket: 1,
+
+      kodasWarmthEnrichment: 1,
+      chakEggSacks: 1,
       liquidAurillium: 1,
+      preservedQueenBees: 1,
+      ghostlyInfusions: 1,
+      emberInfusions: 3,
+      phospholuminescentInfusions: 1,
+      polysaturatingInfusions: 1,
+      luminescentRefractors: 1,
       celestialInfusion: 2,
+      wintersHeartInfusions: 1,
+      snowDiamondInfusions: 1,
+      toyShellInfusions: 1,
+      baubleInfusions: 1,
       festiveConfettiInfusions: 1,
-      snowDiamondInfusions: 1
-    }).totalAuras).to.equal(24)
+      crystalInfusions: 1,
+      mysticInfusions: 1,
+      peerlessInfusions: 1
+    }).totalAuras).to.equal(23)
   })
 
   it('can calculate death count per hour', () => {

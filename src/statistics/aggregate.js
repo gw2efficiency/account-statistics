@@ -1,4 +1,5 @@
 import round from 'round-to'
+import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
 
 export default function (accountStatistics) {
   return {
@@ -25,22 +26,10 @@ function deathCountPerHour (accountStatistics) {
 // Get the total number of auras
 function totalAuras (accountStatistics) {
   let keys = [
-    'wintersPresence',
     'nightfury',
-
-    'chakEggSacks',
-    'preservedQueenBees',
-    'ghostlyInfusions',
-    'baubleInfusions',
-    'luminescentRefractors',
-    'wintersHeartInfusions',
-    'kodasWarmthEnrichment',
-    'phospholuminescentInfusions',
+    'wintersPresence',
     'legendaryItemsTrinket',
-    'liquidAurillium',
-    'celestialInfusion',
-    'festiveConfettiInfusions',
-    'snowDiamondInfusions'
+    ...Object.keys(cosmeticAuraItemMap)
   ]
 
   // All keys have to be set
