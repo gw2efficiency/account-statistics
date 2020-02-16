@@ -101,7 +101,8 @@ describe('statistics > items', () => {
       crystalInfusions: null,
       polysaturatingInfusions: null,
       silverwastesShovels: null,
-      thirtyTwoSlotBags: null
+      thirtyTwoSlotBags: null,
+      heartOfTheKhanUr: null
     }
 
     const bothPermissions = {bank: null, characters: null}

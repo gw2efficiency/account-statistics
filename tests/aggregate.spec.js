@@ -28,8 +28,9 @@ describe('statistics > aggregate', () => {
       festiveConfettiInfusions: 1,
       crystalInfusions: 1,
       mysticInfusions: 1,
-      peerlessInfusions: 1
-    }).totalAuras).to.equal(23)
+      peerlessInfusions: 1,
+      heartOfTheKhanUr: 1
+    }).totalAuras).to.equal(24)
   })
 
   it('can calculate death count per hour', () => {
