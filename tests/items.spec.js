@@ -84,6 +84,7 @@ describe('statistics > items', () => {
       potionOfWvwRewards: null,
       skirmishChests: null,
       difluoriteCrystals: null,
+      eitriteIngots: null,
       kites: null,
       snowDiamondInfusions: null,
       inscribedShards: null,

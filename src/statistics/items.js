@@ -43,6 +43,7 @@ export default function (accountData) {
     mistbornMote: countItems(items, 90783),
     hatchedChili: countItems(items, 92072),
     eternalIceShard: countItems(items, 92272),
+    eitriteIngots: countItems(items, 92317),
 
     // (5) FRACTALS
     fractalTonics: countItems(items, 49277),
