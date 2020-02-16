@@ -3,6 +3,7 @@ export default function (accountData) {
     achievementCount: achievementCount(accountData),
     fractalLevel: fractalLevel(accountData),
     salvagedItems: achievementCurrent(accountData, 129, 200),
+    newYearNewQuaggan: achievementCurrent(accountData, 4626, 1000),
     completedDungeons: achievementCurrent(accountData, 123, 5),
     kegBrawlRounds: achievementCurrent(accountData, 753, 30),
     sanctumSprintRounds: achievementCurrent(accountData, 728, 15),

@@ -35,6 +35,18 @@ describe('statistics > progression', () => {
     }).salvagedItems).to.equal(158462)
   })
 
+  it('can calculate the donated luck', () => {
+    expect(progressionStatistics({}).newYearNewQuaggan).to.equal(null)
+    expect(progressionStatistics({achievements: []}).newYearNewQuaggan).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 4626, current: 62, max: 200, done: false}]
+    }).newYearNewQuaggan).to.equal(62)
+
+    expect(progressionStatistics({
+      achievements: [{id: 4626, current: 62, max: 200, done: false, repeated: 792}]
+    }).newYearNewQuaggan).to.equal(792062)
+  })
+
   it('can calculate the completed keg brawl rounds', () => {
     expect(progressionStatistics({}).kegBrawlRounds).to.equal(null)
     expect(progressionStatistics({achievements: []}).kegBrawlRounds).to.equal(0)
