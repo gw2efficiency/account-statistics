@@ -6,7 +6,8 @@ export default function (accountData) {
       masteryPoints: null,
       masteryPointsTyria: null,
       masteryPointsMaguuma: null,
-      masteryPointsDesert: null
+      masteryPointsDesert: null,
+      masteryPointsCrystal: null
     }
   }
 
@@ -22,6 +23,7 @@ export default function (accountData) {
     masteryPoints: _sum(Object.values(earnedMasteryPoints)),
     masteryPointsTyria: earnedMasteryPoints['Tyria'] || 0,
     masteryPointsMaguuma: earnedMasteryPoints['Maguuma'] || 0,
-    masteryPointsDesert: earnedMasteryPoints['Desert'] || 0
+    masteryPointsDesert: earnedMasteryPoints['Desert'] || 0,
+    masteryPointsCrystal: earnedMasteryPoints['Crystal'] || 0
   }
 }

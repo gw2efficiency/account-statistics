@@ -8,7 +8,8 @@ describe('statistics > masteries', () => {
       masteryPoints: null,
       masteryPointsTyria: null,
       masteryPointsMaguuma: null,
-      masteryPointsDesert: null
+      masteryPointsDesert: null,
+      masteryPointsCrystal: null
     }
 
     expect(masteriesStatistics({mastery: {points: null}})).to.deep.equal(empty)
@@ -19,15 +20,17 @@ describe('statistics > masteries', () => {
       totals: [
         {region: 'Tyria', spent: 49, earned: 58},
         {region: 'Maguuma', spent: 85, earned: 106},
-        {region: 'Desert', spent: 12, earned: 32}
+        {region: 'Desert', spent: 12, earned: 32},
+        {region: 'Crystal', spent: 3, earned: 12}
       ]
     }
 
     expect(masteriesStatistics({mastery: {points: accountData}})).to.deep.equal({
-      masteryPoints: 58 + 106 + 32,
+      masteryPoints: 58 + 106 + 32 + 12,
       masteryPointsTyria: 58,
       masteryPointsMaguuma: 106,
-      masteryPointsDesert: 32
+      masteryPointsDesert: 32,
+      masteryPointsCrystal: 12
     })
   })
 
@@ -43,7 +46,8 @@ describe('statistics > masteries', () => {
       masteryPoints: 1,
       masteryPointsTyria: 0,
       masteryPointsMaguuma: 1,
-      masteryPointsDesert: 0
+      masteryPointsDesert: 0,
+      masteryPointsCrystal: 0
     })
   })
 
@@ -52,7 +56,8 @@ describe('statistics > masteries', () => {
       masteryPoints: 0,
       masteryPointsTyria: 0,
       masteryPointsMaguuma: 0,
-      masteryPointsDesert: 0
+      masteryPointsDesert: 0,
+      masteryPointsCrystal: 0
     })
   })
 })
