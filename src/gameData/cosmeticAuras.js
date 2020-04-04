@@ -3,11 +3,11 @@ import GAME_DATA_ITEMS_CATEGORIES_COSMETIC_AURAS from '@gw2efficiency/game-data/
 let cosmeticAuraItemMap = {}
 
 for (let auraItem of GAME_DATA_ITEMS_CATEGORIES_COSMETIC_AURAS) {
-  if (!cosmeticAuraItemMap[auraItem.auraKey]) {
-    cosmeticAuraItemMap[auraItem.auraKey] = []
+  if (!cosmeticAuraItemMap[auraItem.aura_key]) {
+    cosmeticAuraItemMap[auraItem.aura_key] = []
   }
 
-  cosmeticAuraItemMap[auraItem.auraKey].push(auraItem.id)
+  cosmeticAuraItemMap[auraItem.aura_key].push(auraItem.id)
 }
 
 export default cosmeticAuraItemMap
