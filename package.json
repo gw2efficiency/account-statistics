@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "abc-environment": "^2.0.0",
-    "mockdate": "^2.0.0"
+    "mockdate": "^3.0.1"
   },
   "dependencies": {
     "@gw2efficiency/game-data": "^0.1.12",
