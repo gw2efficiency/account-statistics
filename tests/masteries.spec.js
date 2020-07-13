@@ -21,7 +21,7 @@ describe('statistics > masteries', () => {
         {region: 'Tyria', spent: 49, earned: 58},
         {region: 'Maguuma', spent: 85, earned: 106},
         {region: 'Desert', spent: 12, earned: 32},
-        {region: 'Crystal', spent: 3, earned: 12}
+        {region: 'Tundra', spent: 3, earned: 12}
       ]
     }
 

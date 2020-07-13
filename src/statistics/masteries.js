@@ -24,6 +24,6 @@ export default function (accountData) {
     masteryPointsTyria: earnedMasteryPoints['Tyria'] || 0,
     masteryPointsMaguuma: earnedMasteryPoints['Maguuma'] || 0,
     masteryPointsDesert: earnedMasteryPoints['Desert'] || 0,
-    masteryPointsCrystal: earnedMasteryPoints['Crystal'] || 0
+    masteryPointsCrystal: earnedMasteryPoints['Tundra'] || 0
   }
 }
