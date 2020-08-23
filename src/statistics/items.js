@@ -223,7 +223,14 @@ export default function (accountData) {
       86497, // Endless Upgrade Extractor Contract
       86549 // Endless Upgrade Extractor
     ]),
-    gemstoreToys: countItems(items, gemstoreToyIds)
+    gemstoreToys: countItems(items, gemstoreToyIds),
+
+    // (17) POINTLESS STATISTICS
+    brokenTwig: countItems(items, 76046),
+    warmStone: countItems(items, 19546),
+    crumblingBone: countItems(items, 19530),
+    mangledTalon: countItems(items, 19576),
+    clumpOfResin: countItems(items, 19537)
   }
 }
 
