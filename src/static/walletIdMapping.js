@@ -42,5 +42,15 @@ export default {
   // tradersKeys: 44, (ignored, key)
   volatileMagic: 45,
   pvpTournamentVouchers: 46,
-  racingMedallions: 47
+  racingMedallions: 47,
+  // mistbornKey: 49, (ignored, key)
+  festivalToken: 50,
+  // cacheKey: 51, (ignored, key)
+  // redProphetShard: 52, (ignored, key)
+  // greenProphetShard: 53, (ignored, key)
+  // blueProphetCrystal: 54, (ignored, key)
+  // greenProphetCrystal: 55, (ignored, key)
+  // redProphetCrystal: 56, (ignored, key)
+  // blueProphetShard: 57, (ignored, key)
+  warSupplies: 58,
 }
