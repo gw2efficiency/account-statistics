@@ -166,6 +166,6 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({})._unstableFractalEssenceFromUnlocks).to.equal(null)
     expect(unlocksStatistics({skins: [], novelties: []})._unstableFractalEssenceFromUnlocks).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2], novelties: [1, 2]})._unstableFractalEssenceFromUnlocks).to.equal(0)
-    expect(unlocksStatistics({skins: [94066, 94016], novelties: [141]})._unstableFractalEssenceFromUnlocks).to.equal(2 * 480 + 450)
+    expect(unlocksStatistics({skins: [9607, 9603], novelties: [141]})._unstableFractalEssenceFromUnlocks).to.equal(2 * 480 + 450)
   })
 })

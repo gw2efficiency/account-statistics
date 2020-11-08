@@ -1,7 +1,7 @@
 import legendaries from 'gw2e-static-data/build/legendaries'
 import fractalSkinIds from '../static/fractalSkinIds'
 import immortalSkinIds from '../static/immortalSkinIds'
-import abyssalSkinIds from '../static/abyssalSkinIds'
+import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 
 export default function (accountData) {
   return {
@@ -250,10 +250,8 @@ function unstableFractalEssenceFromUnlocks (accountData) {
   let sum = 0
 
   // Abyssal Skins
-  const abyssalSkins = accountData.skins
-    .filter(x => abyssalSkinIds.indexOf(x) !== -1)
-    .length
-
+  const abyssalSkinIds = abyssalFractalWeapons.map(x => x.skinId)
+  const abyssalSkins = accountData.skins.filter(x => abyssalSkinIds.indexOf(x) !== -1).length
   sum += abyssalSkins * 480
 
   // Tonics

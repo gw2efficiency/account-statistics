@@ -12,6 +12,7 @@ import gemstoreToyIds from '../static/gemstoreToyIds'
 import luckItemIds from '../static/luckIds'
 import legendaryInsightItemIds from '../static/legendaryInsightItemIds'
 import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
+import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 
 export default function (accountData) {
   const items = allItems(accountData)
@@ -342,6 +343,7 @@ function unstableFractalEssenceFromItems (items) {
 
   const map = {
     94036: 480, // Abyssal Fractal Weapon Box
+    ...idListToWeightMap(abyssalFractalWeapons.map(x => x.id), 480), // Abyssal Fractal Weapons
     94017: 1680, // Abyssal Infusion Chest
     ...idListToWeightMap(cosmeticAuraItemMap.abyssalInfusion, 1680), // Abyssal Infusion
     81790: 450, // Celestial Infusion Chest

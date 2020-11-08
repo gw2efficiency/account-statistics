@@ -879,6 +879,7 @@ describe('statistics > items', () => {
     expect(itemsStatistics(generateAccount([
       {id: 81743, count: 12}, // Unstable Cosmic Essence
       {id: 94036, count: 1}, // Abyssal Fractal Weapon Box
+      {id: 94042, count: 1}, // Abyssal Fractal Axe Skin
       {id: 94017, count: 1}, // Abyssal Infusion Chest
       {id: 94024, count: 1}, // Abyssal Infusion
       {id: 81790, count: 1}, // Celestial Infusion Chest
@@ -887,6 +888,6 @@ describe('statistics > items', () => {
       {id: 94021, count: 1}, // Endless Inner Demon Combat Tonic
 
       {id: 81761, count: 9999999} // Celestial Infusion (Blue) -- (!) Does not count
-    ]))._unstableFractalEssenceFromItems).to.equal(6930)
+    ]))._unstableFractalEssenceFromItems).to.equal(7410)
   })
 })
