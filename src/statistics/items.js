@@ -109,6 +109,10 @@ export default function (accountData) {
     reclaimedMetalPlates: countItems(items, 74356),
     chakEggs: countItems(items, 72205),
     legendarySpikes: countItems(items, 81296),
+    emblemOfTheAvenger: countItems(items, 93075),
+    emblemOfTheConqueror: countItems(items, 93146),
+    emblemOfTournamentVictory: countItems(items, 93012),
+    emblemOfVictory: countItems(items, 93022),
 
     // (10) ASCENDED MATERIALS
     dragoniteOre: weightedCountItems(items, {46733: 1, 46732: 100}),

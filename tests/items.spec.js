@@ -108,7 +108,11 @@ describe('statistics > items', () => {
       warmStone: null,
       crumblingBone: null,
       mangledTalon: null,
-      clumpOfResin: null
+      clumpOfResin: null,
+      emblemOfTheAvenger: null,
+      emblemOfTheConqueror: null,
+      emblemOfTournamentVictory: null,
+      emblemOfVictory: null
     }
 
     const bothPermissions = {bank: null, characters: null}
