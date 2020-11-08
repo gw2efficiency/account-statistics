@@ -7,7 +7,8 @@ export default function (accountStatistics) {
     deathCountPerHour: deathCountPerHour(accountStatistics),
     fractalRelics: fractalRelics(accountStatistics),
     pristineFractalRelics: pristineFractalRelics(accountStatistics),
-    luck: luck(accountStatistics)
+    luck: luck(accountStatistics),
+    raidTokenCount: raidTokenCount(accountStatistics)
   }
 }
 
@@ -85,4 +86,15 @@ function luck (accountStatistics) {
   }
 
   return accountStatistics._luckFromAccount + accountStatistics._luckFromItems
+}
+
+function raidTokenCount (accountStatistics) {
+  if (
+    accountStatistics.legendaryInsights == null ||
+    accountStatistics.legendaryDivinations == null
+  ) {
+    return null
+  }
+
+  return accountStatistics.legendaryInsights + accountStatistics.legendaryDivinations
 }

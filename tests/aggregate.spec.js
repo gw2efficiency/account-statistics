@@ -99,4 +99,23 @@ describe('statistics > aggregate', () => {
       _luckFromItems: 1200
     }).luck).to.equal(1265)
   })
+
+  it('can calculate raid token count', () => {
+    expect(aggregateStatistics({}).raidTokenCount).to.equal(null)
+
+    expect(aggregateStatistics({
+      legendaryInsights: 1,
+      legendaryDivinations: null
+    }).raidTokenCount).to.equal(null)
+
+    expect(aggregateStatistics({
+      legendaryInsights: null,
+      legendaryDivinations: 1
+    }).raidTokenCount).to.equal(null)
+
+    expect(aggregateStatistics({
+      legendaryInsights: 65,
+      legendaryDivinations: 1200
+    }).raidTokenCount).to.equal(1265)
+  })
 })
