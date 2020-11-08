@@ -44,7 +44,8 @@ describe('statistics > wallet', () => {
       pvpTournamentVouchers: null,
       racingMedallions: null,
       festivalToken: null,
-      warSupplies: null
+      warSupplies: null,
+      _unstableFractalEssenceFromWallet: null
     })
   })
 
@@ -129,7 +130,8 @@ describe('statistics > wallet', () => {
       pvpTournamentVouchers: 45,
       racingMedallions: 435,
       festivalToken: 0,
-      warSupplies: 0
+      warSupplies: 0,
+      _unstableFractalEssenceFromWallet: 0
     })
   })
 })

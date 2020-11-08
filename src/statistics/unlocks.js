@@ -1,6 +1,7 @@
 import legendaries from 'gw2e-static-data/build/legendaries'
 import fractalSkinIds from '../static/fractalSkinIds'
 import immortalSkinIds from '../static/immortalSkinIds'
+import abyssalSkinIds from '../static/abyssalSkinIds'
 
 export default function (accountData) {
   return {
@@ -26,7 +27,8 @@ export default function (accountData) {
     wintersPresence: skinExists(accountData, 6577),
     nightfury: skinExists(accountData, 6161),
     _fractalRelicsFromTitles: fractalRelicsFromTitles(accountData),
-    _pristineFractalRelicsFromTitles: pristineFractalRelicsFromTitles(accountData)
+    _pristineFractalRelicsFromTitles: pristineFractalRelicsFromTitles(accountData),
+    _unstableFractalEssenceFromUnlocks: unstableFractalEssenceFromUnlocks(accountData)
   }
 }
 
@@ -237,4 +239,29 @@ function pristineFractalRelicsFromTitles (accountData) {
     .map(id => parseInt(id, 10))
     .filter(id => accountData.titles.includes(id))
     .reduce((sum, id) => sum + titleValueMap[id], 0)
+}
+
+// The unlocks bought with unstable fractal essence
+function unstableFractalEssenceFromUnlocks (accountData) {
+  if (!accountData.skins || !accountData.novelties) {
+    return null
+  }
+
+  let sum = 0
+
+  // Abyssal Skins
+  const abyssalSkins = accountData.skins
+    .filter(x => abyssalSkinIds.indexOf(x) !== -1)
+    .length
+
+  sum += abyssalSkins * 480
+
+  // Tonics
+  if (accountData.novelties.includes(141)) {
+    sum += 450 // Endless Chaos Combat Tonic
+  }
+
+  // TODO The Endless Inner Demon Combat Tonic novelty is not in the API :(
+
+  return sum
 }

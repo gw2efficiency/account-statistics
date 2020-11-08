@@ -126,4 +126,32 @@ describe('statistics > aggregate', () => {
       legendaryDivinations: 1200
     }).raidTokenCount).to.equal(1265)
   })
+
+  it('can calculate unstable fractal essence sum', () => {
+    expect(aggregateStatistics({}).unstableCosmicEssences).to.equal(null)
+
+    expect(aggregateStatistics({
+      _unstableFractalEssenceFromWallet: null,
+      _unstableFractalEssenceFromUnlocks: 1,
+      _unstableFractalEssenceFromItems: 1
+    }).unstableCosmicEssences).to.equal(null)
+
+    expect(aggregateStatistics({
+      _unstableFractalEssenceFromWallet: 1,
+      _unstableFractalEssenceFromUnlocks: null,
+      _unstableFractalEssenceFromItems: 1
+    }).unstableCosmicEssences).to.equal(null)
+
+    expect(aggregateStatistics({
+      _unstableFractalEssenceFromWallet: 1,
+      _unstableFractalEssenceFromUnlocks: 1,
+      _unstableFractalEssenceFromItems: null
+    }).unstableCosmicEssences).to.equal(null)
+
+    expect(aggregateStatistics({
+      _unstableFractalEssenceFromWallet: 1651,
+      _unstableFractalEssenceFromUnlocks: 500,
+      _unstableFractalEssenceFromItems: 1200
+    }).unstableCosmicEssences).to.equal(1651 + 500 + 1200)
+  })
 })

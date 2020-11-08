@@ -84,7 +84,6 @@ describe('statistics > items', () => {
       abyssalInfusion: null,
       ottersBlessingEnrichment: null,
       celebratoryBirthdayEnrichment: null,
-      unstableCosmicEssences: null,
       festiveConfettiInfusions: null,
       emberInfusions: null,
       mysticInfusions: null,
@@ -118,7 +117,8 @@ describe('statistics > items', () => {
       emblemOfTheAvenger: null,
       emblemOfTheConqueror: null,
       emblemOfTournamentVictory: null,
-      emblemOfVictory: null
+      emblemOfVictory: null,
+      _unstableFractalEssenceFromItems: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -800,21 +800,6 @@ describe('statistics > items', () => {
     ]))._luckFromItems).to.equal(5810)
   })
 
-  it('can calculate unstable cosmic essences', () => {
-    expect(itemsStatistics(generateAccount([
-      {id: 45175, count: 1},
-      {id: 45175, count: 5},
-      {id: 81743, count: 3},
-      {id: 45176, count: 8},
-      {id: 45177, count: 1},
-      {id: 45177, count: 4},
-      {id: 81743, count: 9},
-      {id: 45178, count: 3},
-      {id: 45179, count: 1},
-      {id: 45179, count: 7}
-    ])).unstableCosmicEssences).to.equal(12)
-  })
-
   it('can calculate kralkatite ore', () => {
     expect(itemsStatistics(generateAccount([
       {id: 45175, count: 1},
@@ -888,5 +873,20 @@ describe('statistics > items', () => {
       {id: 84882, count: 1},
       {id: 84882, count: 1}
     ])).skirmishChests).to.equal(2)
+  })
+
+  it('can calculate unstable fractal essence', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 81743, count: 12}, // Unstable Cosmic Essence
+      {id: 94036, count: 1}, // Abyssal Fractal Weapon Box
+      {id: 94017, count: 1}, // Abyssal Infusion Chest
+      {id: 94024, count: 1}, // Abyssal Infusion
+      {id: 81790, count: 1}, // Celestial Infusion Chest
+      {id: 82070, count: 1}, // Celestial Infusion (Red)
+      {id: 81632, count: 1}, // Endless Chaos Combat Tonic
+      {id: 94021, count: 1}, // Endless Inner Demon Combat Tonic
+
+      {id: 81761, count: 9999999} // Celestial Infusion (Blue) -- (!) Does not count
+    ]))._unstableFractalEssenceFromItems).to.equal(6930)
   })
 })

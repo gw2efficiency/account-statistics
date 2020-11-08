@@ -47,7 +47,6 @@ export default function (accountData) {
 
     // (5) FRACTALS
     fractalTonics: countItems(items, 49277),
-    unstableCosmicEssences: countItems(items, 81743),
 
     // (6) RAIDS
     legendaryInsights: countLegendaryInsights(items),
@@ -238,7 +237,10 @@ export default function (accountData) {
     warmStone: countItems(items, 19546),
     crumblingBone: countItems(items, 19530),
     mangledTalon: countItems(items, 19576),
-    clumpOfResin: countItems(items, 19537)
+    clumpOfResin: countItems(items, 19537),
+
+    // (XXX) Used for aggregate statistics
+    _unstableFractalEssenceFromItems: unstableFractalEssenceFromItems(items)
   }
 }
 
@@ -326,4 +328,29 @@ function countLegendaryInsights (items) {
   li += countItems(items, [envoyInsignia, giftOfProwess]) * 25
   li += countItems(items, legendaryInsight)
   return li
+}
+
+// The items bought with unstable fractal essence
+function unstableFractalEssenceFromItems (items) {
+  function idListToWeightMap (ids, weight) {
+    let map = {}
+    ids.forEach(id => {
+      map[id] = weight
+    })
+    return map
+  }
+
+  const map = {
+    94036: 480, // Abyssal Fractal Weapon Box
+    94017: 1680, // Abyssal Infusion Chest
+    ...idListToWeightMap(cosmeticAuraItemMap.abyssalInfusion, 1680), // Abyssal Infusion
+    81790: 450, // Celestial Infusion Chest
+    ...idListToWeightMap(cosmeticAuraItemMap.celestialInfusionRed, 450), // Celestial Infusion (Red)
+    81632: 450, // Endless Chaos Combat Tonic
+    94021: 1680, // Endless Inner Demon Combat Tonic
+    94055: 1680, // Endless Inner Demon Combat Tonic
+    81743: 5 // Unstable Cosmic Essence
+  }
+
+  return weightedCountItems(items, map)
 }

@@ -52,5 +52,6 @@ export default {
   // greenProphetCrystal: 55, (ignored, key)
   // redProphetCrystal: 56, (ignored, key)
   // blueProphetShard: 57, (ignored, key)
-  warSupplies: 58
+  warSupplies: 58,
+  _unstableFractalEssenceFromWallet: 59
 }

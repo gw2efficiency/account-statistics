@@ -8,7 +8,10 @@ export default function (accountStatistics) {
     fractalRelics: fractalRelics(accountStatistics),
     pristineFractalRelics: pristineFractalRelics(accountStatistics),
     luck: luck(accountStatistics),
-    raidTokenCount: raidTokenCount(accountStatistics)
+    raidTokenCount: raidTokenCount(accountStatistics),
+
+    // We use the old key here because we want to continue the statistic for the user for the discontinued items
+    unstableCosmicEssences: unstableFractalEssence(accountStatistics)
   }
 }
 
@@ -74,6 +77,21 @@ function pristineFractalRelics (accountStatistics) {
 
   return accountStatistics._pristineFractalRelicsFromWallet +
     accountStatistics._pristineFractalRelicsFromTitles
+}
+
+// Sum up unstable fractal essence from different sources
+function unstableFractalEssence (accountStatistics) {
+  if (
+    accountStatistics._unstableFractalEssenceFromWallet == null ||
+    accountStatistics._unstableFractalEssenceFromUnlocks == null ||
+    accountStatistics._unstableFractalEssenceFromItems == null
+  ) {
+    return null
+  }
+
+  return accountStatistics._unstableFractalEssenceFromWallet +
+    accountStatistics._unstableFractalEssenceFromUnlocks +
+    accountStatistics._unstableFractalEssenceFromItems
 }
 
 // Sum up luck from account and luck items

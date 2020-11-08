@@ -161,4 +161,11 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({titles: [1, 2, 7, 9, 10]})._pristineFractalRelicsFromTitles).to.equal(0)
     expect(unlocksStatistics({titles: [1, 2, 299, 297, 296, 298]})._pristineFractalRelicsFromTitles).to.equal(3200)
   })
+
+  it('can calculate unstable fractal essence used for unlocks', () => {
+    expect(unlocksStatistics({})._unstableFractalEssenceFromUnlocks).to.equal(null)
+    expect(unlocksStatistics({skins: [], novelties: []})._unstableFractalEssenceFromUnlocks).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2], novelties: [1, 2]})._unstableFractalEssenceFromUnlocks).to.equal(0)
+    expect(unlocksStatistics({skins: [94066, 94016], novelties: [141]})._unstableFractalEssenceFromUnlocks).to.equal(2 * 480 + 450)
+  })
 })
