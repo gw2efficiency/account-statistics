@@ -42,7 +42,9 @@ describe('statistics > wallet', () => {
       gaetingCrystals: null,
       volatileMagic: null,
       pvpTournamentVouchers: null,
-      racingMedallions: null
+      racingMedallions: null,
+      festivalToken: null,
+      warSupplies: null
     })
   })
 
@@ -125,7 +127,9 @@ describe('statistics > wallet', () => {
       gaetingCrystals: 561,
       volatileMagic: 980,
       pvpTournamentVouchers: 45,
-      racingMedallions: 435
+      racingMedallions: 435,
+      festivalToken: 0,
+      warSupplies: 0
     })
   })
 })

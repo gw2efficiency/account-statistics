@@ -20,7 +20,8 @@ describe('statistics > aggregate', () => {
       phospholuminescentInfusions: 1,
       polysaturatingInfusions: 1,
       luminescentRefractors: 1,
-      celestialInfusion: 2,
+      celestialInfusionBlue: 1,
+      celestialInfusionRed: 1,
       wintersHeartInfusions: 1,
       snowDiamondInfusions: 1,
       toyShellInfusions: 1,
@@ -29,8 +30,15 @@ describe('statistics > aggregate', () => {
       crystalInfusions: 1,
       mysticInfusions: 1,
       peerlessInfusions: 1,
-      heartOfTheKhanUr: 1
-    }).totalAuras).to.equal(24)
+      heartOfTheKhanUr: 1,
+      frostLegionInfusion: 1,
+      abyssalInfusion: 1,
+      ottersBlessingEnrichment: 1,
+      celebratoryBirthdayEnrichment: 1,
+
+      // (!) Has to be ignored, else it's counting double
+      celestialInfusion: 999
+    }).totalAuras).to.equal(28)
   })
 
   it('can calculate death count per hour', () => {

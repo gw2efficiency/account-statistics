@@ -63,7 +63,7 @@ export default function (accountData) {
 
     // (8) AURA ITEMS
     ...auraItems,
-    celestialInfusion: countItems(items, 
+    celestialInfusion: countItems(items,
       [].concat(cosmeticAuraItemMap.celestialInfusionBlue, cosmeticAuraItemMap.celestialInfusionRed)
     ),
 
