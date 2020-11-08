@@ -63,6 +63,9 @@ export default function (accountData) {
 
     // (8) AURA ITEMS
     ...auraItems,
+    celestialInfusion: countItems(items, 
+      [].concat(cosmeticAuraItemMap.celestialInfusionBlue, cosmeticAuraItemMap.celestialInfusionRed)
+    ),
 
     // (9) COLLECTABLES
     legendaryItems: countItems(items, legendaries.map(x => x.id)),
