@@ -20,6 +20,7 @@ describe('statistics > items', () => {
     const emptyObject = {
       baubleInfusions: null,
       brokenSpoons: null,
+      shinyBaubles: null,
       chakEggSacks: null,
       fractalTonics: null,
       ghostlyInfusions: null,

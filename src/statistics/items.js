@@ -71,6 +71,7 @@ export default function (accountData) {
     legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
     legendaryItemsTrinket: countItems(items, legendaries.filter(x => x.type === 'trinket').map(x => x.id)),
     brokenSpoons: countItems(items, 74996),
+    shinyBaubles: countItems(items, 70093),
     championBags: countItems(items, championBagIds),
     tripleTroubleChests: countItems(items, 49664),
     tequatlChests: countItems(items, 47836),
