@@ -52,7 +52,8 @@ const accountData = {
 
 // Extra information for context-dependent statistics
 const extraInformation = {
-  pvp: {currentSeason: 'SEASON-ID'}
+  pvp: { currentSeason: 'SEASON-ID' },
+  skins: { typeMap: { Armor: [1, 2, 3], Weapon: [1, 2, 3], Back: [1, 2, 3] } }
 }
 
 // Calculate everything!

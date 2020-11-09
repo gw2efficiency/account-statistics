@@ -3,10 +3,13 @@ import fractalSkinIds from '../static/fractalSkinIds'
 import immortalSkinIds from '../static/immortalSkinIds'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 
-export default function (accountData) {
+export default function (accountData, extraInformation) {
   return {
     dyeCount: dyeCount(accountData),
     skinCount: skinCount(accountData),
+    armorSkinCount: typeSkinCount(accountData, extraInformation.skins.typeMap.Armor),
+    weaponSkinCount: typeSkinCount(accountData, extraInformation.skins.typeMap.Weapon),
+    backSkinCount: typeSkinCount(accountData, extraInformation.skins.typeMap.Back),
     miniCount: miniCount(accountData),
     mountCount: mountCount(accountData),
     finisherCount: finisherCount(accountData),
@@ -48,6 +51,14 @@ function skinCount (accountData) {
   }
 
   return accountData.skins.length
+}
+
+function typeSkinCount (accountData, idList) {
+  if (!accountData.skins) {
+    return null
+  }
+
+  return accountData.skins.filter(x => idList.includes(x)).length
 }
 
 // The unlocked minis on the account
