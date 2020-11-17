@@ -25,21 +25,21 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}, EXTRA_INFO).skinCount).to.equal(5)
   })
 
-  it('can calculate armor skin count', () => {
+  it.skip('can calculate armor skin count', () => {
     expect(unlocksStatistics({}, EXTRA_INFO).armorSkinCount).to.equal(null)
     expect(unlocksStatistics({skins: []}, EXTRA_INFO).armorSkinCount).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}, EXTRA_INFO).armorSkinCount).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10, 101]}, EXTRA_INFO).armorSkinCount).to.equal(1)
   })
 
-  it('can calculate weapon skin count', () => {
+  it.skip('can calculate weapon skin count', () => {
     expect(unlocksStatistics({}, EXTRA_INFO).weaponSkinCount).to.equal(null)
     expect(unlocksStatistics({skins: []}, EXTRA_INFO).weaponSkinCount).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}, EXTRA_INFO).weaponSkinCount).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10, 102]}, EXTRA_INFO).weaponSkinCount).to.equal(1)
   })
 
-  it('can calculate back skin count', () => {
+  it.skip('can calculate back skin count', () => {
     expect(unlocksStatistics({}, EXTRA_INFO).backSkinCount).to.equal(null)
     expect(unlocksStatistics({skins: []}, EXTRA_INFO).backSkinCount).to.equal(0)
     expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}, EXTRA_INFO).backSkinCount).to.equal(0)
