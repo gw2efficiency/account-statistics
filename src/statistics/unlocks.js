@@ -270,7 +270,9 @@ function unstableFractalEssenceFromUnlocks (accountData) {
     sum += 450 // Endless Chaos Combat Tonic
   }
 
-  // TODO The Endless Inner Demon Combat Tonic novelty is not in the API :(
+  if (accountData.novelties.includes(307)) {
+    sum += 1680 // Endless Inner Demon Combat Tonic
+  }
 
   return sum
 }
