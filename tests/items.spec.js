@@ -118,7 +118,8 @@ describe('statistics > items', () => {
       emblemOfTheConqueror: null,
       emblemOfTournamentVictory: null,
       emblemOfVictory: null,
-      _unstableFractalEssenceFromItems: null
+      _unstableFractalEssenceFromItems: null,
+      chestOfDungeoneering: null
     }
 
     const bothPermissions = {bank: null, characters: null}

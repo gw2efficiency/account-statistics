@@ -45,7 +45,23 @@ describe('statistics > wallet', () => {
       racingMedallions: null,
       festivalToken: null,
       warSupplies: null,
-      _unstableFractalEssenceFromWallet: null
+      _unstableFractalEssenceFromWallet: null,
+      _blueProphetCrystal: null,
+      _blueProphetShard: null,
+      _greenProphetCrystal: null,
+      _greenProphetShard: null,
+      _redProphetCrystal: null,
+      _redProphetShard: null,
+      banditSkeletonKeys: null,
+      cacheKey: null,
+      exaltedKeys: null,
+      machetes: null,
+      mistbornKey: null,
+      pactCrowbars: null,
+      tradersKeys: null,
+      tyrianDefenseSeals: null,
+      vialsOfChakAcid: null,
+      zephyriteLockpicks: null
     })
   })
 
@@ -131,7 +147,23 @@ describe('statistics > wallet', () => {
       racingMedallions: 435,
       festivalToken: 0,
       warSupplies: 0,
-      _unstableFractalEssenceFromWallet: 0
+      _unstableFractalEssenceFromWallet: 0,
+      _blueProphetCrystal: 0,
+      _blueProphetShard: 0,
+      _greenProphetCrystal: 0,
+      _greenProphetShard: 0,
+      _redProphetCrystal: 0,
+      _redProphetShard: 0,
+      banditSkeletonKeys: 0,
+      cacheKey: 0,
+      exaltedKeys: 0,
+      machetes: 0,
+      mistbornKey: 0,
+      pactCrowbars: 0,
+      tradersKeys: 0,
+      tyrianDefenseSeals: 0,
+      vialsOfChakAcid: 0,
+      zephyriteLockpicks: 0
     })
   })
 })
