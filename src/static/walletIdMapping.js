@@ -32,20 +32,20 @@ export default {
   tradeContract: 34,
   elegyMosaic: 35,
   testimonyOfHeroics: 36,
-  // exaltedKeys: 37, (ignored, key)
-  // machetes: 38, (ignored, key)
+  exaltedKeys: 37,
+  machetes: 38,
   gaetingCrystals: 39,
-  // banditSkeletonKeys: 40, (ignored, key)
-  // pactCrowbars: 41, (ignored, key)
-  // vialsOfChakAcid: 42, (ignored, key)
-  // zephyriteLockpicks: 43, (ignored, key)
-  // tradersKeys: 44, (ignored, key)
+  banditSkeletonKeys: 40,
+  pactCrowbars: 41,
+  vialsOfChakAcid: 42,
+  zephyriteLockpicks: 43,
+  tradersKeys: 44,
   volatileMagic: 45,
   pvpTournamentVouchers: 46,
   racingMedallions: 47,
-  // mistbornKey: 49, (ignored, key)
+  mistbornKey: 49,
   festivalToken: 50,
-  // cacheKey: 51, (ignored, key)
+  cacheKey: 51,
   // redProphetShard: 52, (ignored, key)
   // greenProphetShard: 53, (ignored, key)
   // blueProphetCrystal: 54, (ignored, key)
