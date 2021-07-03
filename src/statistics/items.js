@@ -46,6 +46,9 @@ export default function (accountData) {
     eternalIceShard: countItems(items, 92272),
     eitriteIngots: countItems(items, 92317),
 
+    // (4) DUNGEONS
+    chestOfDungeoneering: countItems(items, 78252),
+
     // (5) FRACTALS
     fractalTonics: countItems(items, 49277),
 
