@@ -53,5 +53,6 @@ export default {
   // redProphetCrystal: 56, (ignored, key)
   // blueProphetShard: 57, (ignored, key)
   warSupplies: 58,
-  _unstableFractalEssenceFromWallet: 59
+  _unstableFractalEssenceFromWallet: 59,
+  tyrianDefenseSeals: 60
 }
