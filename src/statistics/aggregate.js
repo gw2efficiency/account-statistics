@@ -9,6 +9,9 @@ export default function (accountStatistics) {
     pristineFractalRelics: pristineFractalRelics(accountStatistics),
     luck: luck(accountStatistics),
     raidTokenCount: raidTokenCount(accountStatistics),
+    blueProphetCrystal: blueProphetCrystal(accountStatistics),
+    greenProphetCrystal: greenProphetCrystal(accountStatistics),
+    redProphetCrystal: redProphetCrystal(accountStatistics),
 
     // We use the old key here because we want to continue the statistic for the user for the discontinued items
     unstableCosmicEssences: unstableFractalEssence(accountStatistics)
@@ -92,6 +95,42 @@ function unstableFractalEssence (accountStatistics) {
   return accountStatistics._unstableFractalEssenceFromWallet +
     accountStatistics._unstableFractalEssenceFromUnlocks +
     accountStatistics._unstableFractalEssenceFromItems
+}
+
+// Sum up blue prophet crystal from different sources
+function blueProphetCrystal (accountStatistics) {
+  if (
+    accountStatistics._blueProphetCrystal == null ||
+    accountStatistics._blueProphetShard == null
+  ) {
+    return null
+  }
+
+  return accountStatistics._blueProphetCrystal + accountStatistics._blueProphetShard / 20
+}
+
+// Sum up green prophet crystal from different sources
+function greenProphetCrystal (accountStatistics) {
+  if (
+    accountStatistics._greenProphetCrystal == null ||
+    accountStatistics._greenProphetShard == null
+  ) {
+    return null
+  }
+
+  return accountStatistics._greenProphetCrystal + accountStatistics._greenProphetShard / 20
+}
+
+// Sum up red prophet crystal from different sources
+function redProphetCrystal (accountStatistics) {
+  if (
+    accountStatistics._redProphetCrystal == null ||
+    accountStatistics._redProphetShard == null
+  ) {
+    return null
+  }
+
+  return accountStatistics._redProphetCrystal + accountStatistics._redProphetShard / 20
 }
 
 // Sum up luck from account and luck items

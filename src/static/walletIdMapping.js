@@ -46,12 +46,12 @@ export default {
   mistbornKey: 49,
   festivalToken: 50,
   cacheKey: 51,
-  // redProphetShard: 52, (ignored, key)
-  // greenProphetShard: 53, (ignored, key)
-  // blueProphetCrystal: 54, (ignored, key)
-  // greenProphetCrystal: 55, (ignored, key)
-  // redProphetCrystal: 56, (ignored, key)
-  // blueProphetShard: 57, (ignored, key)
+  _redProphetShard: 52,
+  _greenProphetShard: 53,
+  _blueProphetCrystal: 54,
+  _greenProphetCrystal: 55,
+  _redProphetCrystal: 56,
+  _blueProphetShard: 57,
   warSupplies: 58,
   _unstableFractalEssenceFromWallet: 59,
   tyrianDefenseSeals: 60
