@@ -133,14 +133,24 @@ describe('statistics > items', () => {
   })
 
   it('can calculate legendary count', () => {
-    expect(itemsStatistics(generateAccount([
+    const account = generateAccount([
       {id: 123, count: 1},
       {id: 30687, count: 1},
       {id: 71383, count: 1},
       {id: 1, count: 1},
       {id: 80205, count: 1},
       {id: 77474, count: 1}
-    ])).legendaryItems).to.equal(4)
+    ])
+
+    account.characters[0].last_modified = new Date('2021-07-24T12:00:00.000Z')
+    account.characters[0].equipment = [
+      {id: 80205},
+      {id: 71383, location: 'EquippedFromLegendaryArmory'}
+    ]
+
+    account.legendaryarmory = [{id: 80205, count: 2}]
+
+    expect(itemsStatistics(account).legendaryItems).to.equal(6)
   })
 
   it('can calculate legendary weapon count', () => {

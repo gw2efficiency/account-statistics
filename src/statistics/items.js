@@ -4,6 +4,7 @@ import { bankItems } from 'gw2e-account-value/build/bank'
 import { materialsItems } from 'gw2e-account-value/build/materials'
 import { charactersItems } from 'gw2e-account-value/build/characters'
 import { sharedInventoryItems } from 'gw2e-account-value/build/shared'
+import { legendaryarmoryItems } from 'gw2e-account-value/build/legendaryarmory'
 import legendaries from 'gw2e-static-data/build/legendaries'
 import tonics from 'gw2e-static-data/build/legacy/tonics'
 import permanentToolIds from '../static/permanentToolIds'
@@ -254,7 +255,8 @@ export function allItems (accountData) {
     charactersItems(accountData), // Check this first, for permissions!
     bankItems(accountData),
     materialsItems(accountData),
-    sharedInventoryItems(accountData)
+    sharedInventoryItems(accountData),
+    legendaryarmoryItems(accountData)
   ]
 
   // The "characters" permission is probably missing, in which case
@@ -263,7 +265,7 @@ export function allItems (accountData) {
     return []
   }
 
-  return items.reduce((a, b) => a.concat(b), [])
+  return items.reduce((a, b) => a.concat(b), []).filter(x => x.ignoreForValue !== true)
 }
 
 // Count how many of a list of items the user has
