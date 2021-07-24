@@ -251,7 +251,7 @@ export default function (accountData) {
 // Get all the items on the account
 export function allItems (accountData) {
   const items = [
-    charactersItems(accountData),
+    charactersItems(accountData), // Check this first, for permissions!
     bankItems(accountData),
     materialsItems(accountData),
     sharedInventoryItems(accountData)
