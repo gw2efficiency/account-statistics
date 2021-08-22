@@ -117,6 +117,17 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({recipes: [1, 2, 7, 9, 10]}, EXTRA_INFO).recipeCount).to.equal(5)
   })
 
+  it('can calculate legendaryarmory count', () => {
+    expect(unlocksStatistics({}, EXTRA_INFO).legendaryarmoryCount).to.equal(null)
+    expect(unlocksStatistics({legendaryarmory: []}, EXTRA_INFO).legendaryarmoryCount).to.equal(0)
+
+    expect(unlocksStatistics({legendaryarmory: [
+      { id: 30699, count: 1 },
+      { id: 81957, count: 2 },
+      { id: 30687, count: 1 }
+    ]}, EXTRA_INFO).legendaryarmoryCount).to.equal(4)
+  })
+
   it('can the count of shared inventory slots', () => {
     expect(unlocksStatistics({}, EXTRA_INFO).sharedInventorySlots).to.equal(null)
     expect(unlocksStatistics({shared: []}, EXTRA_INFO).sharedInventorySlots).to.equal(0)
