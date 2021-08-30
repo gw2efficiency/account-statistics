@@ -17,7 +17,6 @@ import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 
 export default function (accountData) {
   const items = allItems(accountData)
-  const itemsIncludingIgnored = allItems(accountData, false)
 
   const auraItems = Object.entries(cosmeticAuraItemMap).map(entry => {
     return [entry[0], countItems(items, entry[1])]
@@ -55,8 +54,8 @@ export default function (accountData) {
     fractalTonics: countItems(items, 49277),
 
     // (6) RAIDS
-    legendaryInsights: countLegendaryInsights(itemsIncludingIgnored),
-    legendaryDivinations: weightedCountItems(itemsIncludingIgnored, {
+    legendaryInsights: countLegendaryInsights(items),
+    legendaryDivinations: weightedCountItems(items, {
       88485: 1, // Legendary Divinations
       91225: 150, // Gift of Compassion
       91234: 150 // Coalescence
@@ -251,7 +250,7 @@ export default function (accountData) {
 }
 
 // Get all the items on the account
-export function allItems (accountData, removeIgnored = true) {
+export function allItems (accountData) {
   const items = [
     charactersItems(accountData), // Check this first, for permissions!
     bankItems(accountData),
@@ -266,8 +265,7 @@ export function allItems (accountData, removeIgnored = true) {
     return []
   }
 
-  const itemsList = items.reduce((a, b) => a.concat(b), [])
-  return removeIgnored ? itemsList.filter(x => x.ignoreForValue !== true) : itemsList
+  return items.reduce((a, b) => a.concat(b), []).filter(x => x.ignoreForStatistics !== true)
 }
 
 // Count how many of a list of items the user has
