@@ -119,7 +119,10 @@ describe('statistics > items', () => {
       emblemOfTournamentVictory: null,
       emblemOfVictory: null,
       _unstableFractalEssenceFromItems: null,
-      chestOfDungeoneering: null
+      chestOfDungeoneering: null,
+      deldrimorStoneskinInfusions: null,
+      jormagEyeInfusions: null,
+      primordusEyeInfusions: null
     }
 
     const bothPermissions = {bank: null, characters: null}
