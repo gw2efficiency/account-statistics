@@ -132,7 +132,7 @@ export default function (accountData) {
 
     // (12) WORLD VS WORLD
     potionOfWvwRewards: countItems(items, 78600),
-    skirmishChests: countItems(items, [84966, 81324]),
+    skirmishChests: countItems(items, [84966, 81324, 96536]),
 
     // (13) PLAYER VS PLAYER
     potionOfPvpRewards: countItems(items, 68110),
