@@ -195,7 +195,8 @@ export default function (accountData) {
       85375, // 32-Slot Courier's Saddlebag
       85376, // 32-Slot Hardened Leather Pannier
       87225, // Reinforced Olmakhan Bandolier
-      92292 // Reinforced Boreal Trunk
+      92292, // Reinforced Boreal Trunk
+      95018 // 32-Slot Hero's Trusty Backpack
     ]),
 
     // (16) GEMSTORE
