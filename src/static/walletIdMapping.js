@@ -54,5 +54,13 @@ export default {
   _blueProphetShard: 57,
   warSupplies: 58,
   _unstableFractalEssenceFromWallet: 59,
-  tyrianDefenseSeals: 60
+  tyrianDefenseSeals: 60,
+  researchNotes: 61,
+  unusualCoins: 62,
+  jadeSlivers: 64,
+  testimonyOfJadeHeroics: 65,
+  canachCoins: 67,
+  imperialFavor: 68,
+  talesOfDungeonDelving: 69,
+  _legendaryInsightsFromWallet: 70
 }
