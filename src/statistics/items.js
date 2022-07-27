@@ -54,8 +54,8 @@ export default function (accountData) {
     fractalTonics: countItems(items, 49277),
 
     // (6) RAIDS
-    legendaryInsights: countLegendaryInsights(items),
-    legendaryDivinations: weightedCountItems(items, {
+    _legendaryInsightsFromItems: countLegendaryInsights(items),
+    _legendaryDivinationsFromItems: weightedCountItems(items, {
       88485: 1, // Legendary Divinations
       91225: 150, // Gift of Compassion
       91234: 150 // Coalescence

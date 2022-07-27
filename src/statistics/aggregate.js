@@ -147,11 +147,16 @@ function luck (accountStatistics) {
 
 function raidTokenCount (accountStatistics) {
   if (
-    accountStatistics.legendaryInsights == null ||
-    accountStatistics.legendaryDivinations == null
+    accountStatistics._legendaryInsightsFromItems == null ||
+    accountStatistics._legendaryDivinationsFromItems == null ||
+    accountStatistics._legendaryInsightsFromWallet == null
   ) {
     return null
   }
 
-  return accountStatistics.legendaryInsights + accountStatistics.legendaryDivinations
+  return (
+    accountStatistics._legendaryInsightsFromItems +
+    accountStatistics._legendaryDivinationsFromItems +
+    accountStatistics._legendaryInsightsFromWallet
+  )
 }
