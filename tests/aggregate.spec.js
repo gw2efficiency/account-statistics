@@ -115,19 +115,28 @@ describe('statistics > aggregate', () => {
     expect(aggregateStatistics({}).raidTokenCount).to.equal(null)
 
     expect(aggregateStatistics({
-      legendaryInsights: 1,
-      legendaryDivinations: null
+      _legendaryInsightsFromItems: null,
+      _legendaryDivinationsFromItems: 1,
+      _legendaryInsightsFromWallet: 1
     }).raidTokenCount).to.equal(null)
 
     expect(aggregateStatistics({
-      legendaryInsights: null,
-      legendaryDivinations: 1
+      _legendaryInsightsFromItems: 1,
+      _legendaryDivinationsFromItems: null,
+      _legendaryInsightsFromWallet: 1
     }).raidTokenCount).to.equal(null)
 
     expect(aggregateStatistics({
-      legendaryInsights: 65,
-      legendaryDivinations: 1200
-    }).raidTokenCount).to.equal(1265)
+      _legendaryInsightsFromItems: 1,
+      _legendaryDivinationsFromItems: 1,
+      _legendaryInsightsFromWallet: null
+    }).raidTokenCount).to.equal(null)
+
+    expect(aggregateStatistics({
+      _legendaryInsightsFromItems: 65,
+      _legendaryDivinationsFromItems: 1200,
+      _legendaryInsightsFromWallet: 1
+    }).raidTokenCount).to.equal(1266)
   })
 
   it('can calculate unstable fractal essence sum', () => {

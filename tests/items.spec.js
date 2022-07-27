@@ -24,7 +24,6 @@ describe('statistics > items', () => {
       chakEggSacks: null,
       fractalTonics: null,
       ghostlyInfusions: null,
-      legendaryInsights: null,
       legendaryItems: null,
       legendaryItemsWeapon: null,
       legendaryItemsArmor: null,
@@ -103,7 +102,6 @@ describe('statistics > items', () => {
       mistbornMote: null,
       hatchedChili: null,
       eternalIceShard: null,
-      legendaryDivinations: null,
       crystalInfusions: null,
       polysaturatingInfusions: null,
       silverwastesShovels: null,
@@ -122,7 +120,9 @@ describe('statistics > items', () => {
       chestOfDungeoneering: null,
       deldrimorStoneskinInfusions: null,
       jormagEyeInfusions: null,
-      primordusEyeInfusions: null
+      primordusEyeInfusions: null,
+      _legendaryInsightsFromItems: null,
+      _legendaryDivinationsFromItems: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -263,7 +263,7 @@ describe('statistics > items', () => {
 
     function countFromList (itemList) {
       const account = generateAccount(itemList.map(id => ({id, count: 1})))
-      return itemsStatistics(account).legendaryInsights
+      return itemsStatistics(account)._legendaryInsightsFromItems
     }
 
     // Count the basic items
@@ -271,7 +271,7 @@ describe('statistics > items', () => {
       {id: 80516, count: 3}, // Envoy Insignia => 25 each
       {id: 78989, count: 1}, // Gift of Prowess => 25 each
       {id: 77302, count: 7} // Legendary Insight => 1 each
-    ])).legendaryInsights, 'basic items').to.equal(3 * 25 + 25 + 7)
+    ]))._legendaryInsightsFromItems, 'basic items').to.equal(3 * 25 + 25 + 7)
 
     // Count the full first ascended set (from the achievement, so no LI spent)
     const oneWeightAscendedSet = [

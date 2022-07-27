@@ -1,6 +1,6 @@
 import walletIdMapping from '../static/walletIdMapping'
 
-const EOD_CHANGED_CURRENCIES = [57, 54, 53,  55, 52, 56]
+const EOD_CHANGED_CURRENCIES = [57, 54, 53, 55, 52, 56]
 
 // Create the default values to return when the wallet data is not set
 let defaultValues = {dungeonTokenCount: null}

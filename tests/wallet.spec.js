@@ -61,11 +61,23 @@ describe('statistics > wallet', () => {
       tradersKeys: null,
       tyrianDefenseSeals: null,
       vialsOfChakAcid: null,
-      zephyriteLockpicks: null
+      zephyriteLockpicks: null,
+      researchNotes: null,
+      unusualCoins: null,
+      jadeSlivers: null,
+      testimonyOfJadeHeroics: null,
+      canachCoins: null,
+      imperialFavor: null,
+      talesOfDungeonDelving: null,
+      _legendaryInsightsFromWallet: null
     })
   })
 
   it('can calculate all wallet values', () => {
+    const account = {
+      last_modified: '2022-07-27'
+    }
+
     const wallet = [
       {id: 1, value: 17551485}, // Coin
       {id: 2, value: 207320}, // Karma
@@ -103,10 +115,11 @@ describe('statistics > wallet', () => {
       {id: 39, value: 561}, // Gaeting Crystals
       {id: 45, value: 980}, // Volatile Magic
       {id: 46, value: 45}, // PvP Tournament Vouchers
-      {id: 47, value: 435} // Racing Medallions
+      {id: 47, value: 435}, // Racing Medallions
+      {id: 55, value: 435}
     ]
 
-    expect(walletStatistics({wallet})).to.deep.equal({
+    expect(walletStatistics({account, wallet})).to.deep.equal({
       gems: 499,
       gold: 17551485,
       karma: 207320,
@@ -150,7 +163,7 @@ describe('statistics > wallet', () => {
       _unstableFractalEssenceFromWallet: 0,
       _blueProphetCrystal: 0,
       _blueProphetShard: 0,
-      _greenProphetCrystal: 0,
+      _greenProphetCrystal: 435,
       _greenProphetShard: 0,
       _redProphetCrystal: 0,
       _redProphetShard: 0,
@@ -163,7 +176,28 @@ describe('statistics > wallet', () => {
       tradersKeys: 0,
       tyrianDefenseSeals: 0,
       vialsOfChakAcid: 0,
-      zephyriteLockpicks: 0
+      zephyriteLockpicks: 0,
+      researchNotes: 0,
+      unusualCoins: 0,
+      jadeSlivers: 0,
+      testimonyOfJadeHeroics: 0,
+      canachCoins: 0,
+      imperialFavor: 0,
+      talesOfDungeonDelving: 0,
+      _legendaryInsightsFromWallet: 0
     })
+  })
+
+  it('nulls pre-eod raid tokens', () => {
+    const account = {
+      last_modified: '2021-07-27'
+    }
+
+    const wallet = [
+      {id: 55, value: 435}
+    ]
+
+    const result = walletStatistics({account, wallet})
+    expect(result._greenProphetCrystal).to.equal(0)
   })
 })
