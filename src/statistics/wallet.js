@@ -37,7 +37,15 @@ function convertToMap (array) {
 
 // Add all dungeon tokens together
 function dungeonTokenCount (values) {
-  return values.ascalonianTears + values.sealsOfBeetletun + values.deadlyBlooms +
-    values.manifestosOfTheMoletariate + values.flameLegionCharrCarvings +
-    values.symbolsOfKoda + values.knowledgeCrystals + values.shardsOfZhaitan
+  return (
+    values.ascalonianTears +
+    values.sealsOfBeetletun +
+    values.deadlyBlooms +
+    values.manifestosOfTheMoletariate +
+    values.flameLegionCharrCarvings +
+    values.symbolsOfKoda +
+    values.knowledgeCrystals +
+    values.shardsOfZhaitan +
+    values.talesOfDungeonDelving
+  )
 }
