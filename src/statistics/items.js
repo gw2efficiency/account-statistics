@@ -334,6 +334,13 @@ function countLegendaryInsights (items) {
   li += Math.min(perfectedCount, 6) * 25 + Math.max(perfectedCount - 6, 0) * 50
   li += countItems(items, [envoyInsignia, giftOfProwess]) * 25
   li += countItems(items, legendaryInsight)
+  li += countItems(items, [
+    97269, // Mai Trin's Magnificent Coffer
+    96638, // Ankka's Magnificent Coffer
+    96419, // Minister Li's Magnificent Coffer
+    95986 // Void's Magnificent Coffer
+  ])
+
   return li
 }
 
