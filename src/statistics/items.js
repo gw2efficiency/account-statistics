@@ -362,7 +362,6 @@ function unstableFractalEssenceFromItems (items) {
     81790: 450, // Celestial Infusion Chest
     ...idListToWeightMap(cosmeticAuraItemMap.celestialInfusionRed, 450), // Celestial Infusion (Red)
     81632: 450, // Endless Chaos Combat Tonic
-    94021: 1680, // Endless Inner Demon Combat Tonic
     94055: 1680, // Endless Inner Demon Combat Tonic
     81743: 5 // Unstable Cosmic Essence
   }
