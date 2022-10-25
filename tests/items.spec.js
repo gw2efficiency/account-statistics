@@ -899,7 +899,7 @@ describe('statistics > items', () => {
       {id: 81790, count: 1}, // Celestial Infusion Chest
       {id: 82070, count: 1}, // Celestial Infusion (Red)
       {id: 81632, count: 1}, // Endless Chaos Combat Tonic
-      {id: 94021, count: 1}, // Endless Inner Demon Combat Tonic
+      {id: 94055, count: 1}, // Endless Inner Demon Combat Tonic
 
       {id: 81761, count: 9999999} // Celestial Infusion (Blue) -- (!) Does not count
     ]))._unstableFractalEssenceFromItems).to.equal(7410)
