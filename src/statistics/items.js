@@ -198,6 +198,7 @@ export default function (accountData) {
       92292, // Reinforced Boreal Trunk
       95018 // 32-Slot Hero's Trusty Backpack
     ]),
+    flyingCowTokens: countItems(items, 24214),
 
     // (16) GEMSTORE
     instruments: countItems(items, [

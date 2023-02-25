@@ -106,6 +106,7 @@ describe('statistics > items', () => {
       polysaturatingInfusions: null,
       silverwastesShovels: null,
       thirtyTwoSlotBags: null,
+      flyingCowTokens: null,
       heartOfTheKhanUr: null,
       brokenTwig: null,
       warmStone: null,
