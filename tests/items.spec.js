@@ -35,6 +35,15 @@ describe('statistics > items', () => {
       whiteMantlePortalDevices: null,
       blackLionClaimTickets: null,
       instruments: null,
+      fishItems: null,
+      fishItemsLegendary: null,
+      fishItemsAscended: null,
+      fishItemsExotic: null,
+      fishItemsRare: null,
+      fishItemsMasterwork: null,
+      fishItemsFine: null,
+      fishItemsBasic: null,
+      fishItemsJunk: null,
       musicBoxes: null,
       chakEggs: null,
       fossilizedInsects: null,
@@ -457,6 +466,21 @@ describe('statistics > items', () => {
       {id: 38129, count: 1}, // This is a container and does not count
       {id: 43526, count: 1}
     ])).instruments).to.equal(2)
+  })
+
+  it('can calculate fish items count', () => {
+    const _statistics = itemsStatistics(generateAccount([
+      {id: 66323, count: 1},
+      {id: 97654, count: 2},
+      {id: 82432, count: 1},
+      {id: 97409, count: 1},
+      {id: 83826, count: 1}
+    ]))
+
+    expect(_statistics.fishItems).to.equal(3)
+    expect(_statistics.fishItemsLegendary).to.equal(2)
+    expect(_statistics.fishItemsAscended).to.equal(1)
+    expect(_statistics.fishItemsExotic).to.equal(0)
   })
 
   it('can calculate music box count', () => {

@@ -11,6 +11,7 @@ import permanentToolIds from '../static/permanentToolIds'
 import championBagIds from '../static/championBagIds'
 import gemstoreToyIds from '../static/gemstoreToyIds'
 import luckItemIds from '../static/luckIds'
+import fishItems from '../static/fishItems'
 import legendaryInsightItemIds from '../static/legendaryInsightItemIds'
 import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
@@ -136,6 +137,17 @@ export default function (accountData) {
 
     // (13) PLAYER VS PLAYER
     potionOfPvpRewards: countItems(items, 68110),
+
+    // (14.5) FISHING
+    fishItems: countItems(items, fishItems.map(x => x.id)),
+    fishItemsLegendary: countItems(items, fishItems.filter(x => x.rarity === 'Legendary').map(x => x.id)),
+    fishItemsAscended: countItems(items, fishItems.filter(x => x.rarity === 'Ascended').map(x => x.id)),
+    fishItemsExotic: countItems(items, fishItems.filter(x => x.rarity === 'Exotic').map(x => x.id)),
+    fishItemsRare: countItems(items, fishItems.filter(x => x.rarity === 'Rare').map(x => x.id)),
+    fishItemsMasterwork: countItems(items, fishItems.filter(x => x.rarity === 'Masterwork').map(x => x.id)),
+    fishItemsFine: countItems(items, fishItems.filter(x => x.rarity === 'Fine').map(x => x.id)),
+    fishItemsBasic: countItems(items, fishItems.filter(x => x.rarity === 'Basic').map(x => x.id)),
+    fishItemsJunk: countItems(items, fishItems.filter(x => x.rarity === 'Junk').map(x => x.id)),
 
     // (15) MISCELLANEOUS
     musicBoxes: countItems(items, [
