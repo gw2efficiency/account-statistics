@@ -247,7 +247,9 @@ export default function (accountData) {
       78455, // Endless Repair Contract
       84440, // Collector's Edition Sandstorm
       86497, // Endless Upgrade Extractor Contract
-      86549 // Endless Upgrade Extractor
+      86549, // Endless Upgrade Extractor
+      36182, // Permanent Mobile Crafting Station
+      99989, // Permanent Crafting Station Contract
     ]),
     gemstoreToys: countItems(items, gemstoreToyIds),
 
