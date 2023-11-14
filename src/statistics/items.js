@@ -215,6 +215,7 @@ export default function (accountData) {
     // (16) GEMSTORE
     instruments: countItems(items, [
       36174, // Musical Bass Guitar
+      38128, // Choir Bell
       42888, // Marriner's Horn
       42973, // Flute
       43008, // Flute
@@ -226,12 +227,18 @@ export default function (accountData) {
       66323, // Musical Lute
       67391, // Haunted Gramophone
       68361, // Magnanimous Choir Bell
+      71747, // Zephyrites Music Box
       80932, // Duskk's World 2 Super Boom Box
       80972, // Duskk's World 1 Super Boom Box
+      82286, // Hafez's Music Box
+      82432, // Ghiwane's Music Box
+      83444, // Tinari's Music Box
+      83826, // Khadiri's Music Box
+      84566, // Nightingale's Music Box
       88004, // Musical Minstrel
       88066, // Musical Verdarach
       88385 // Unbreakable Choir Bell
-    ]),
+    ], true),
     permanentTools: countItems(items, permanentToolIds),
     permanentContracts: countItems(items, [
       35976, // Personal Trader Express
