@@ -59,7 +59,6 @@ export default {
   unusualCoins: 62,
   jadeSlivers: 64,
   testimonyOfJadeHeroics: 65,
-  ancientCoins: 66,
   canachCoins: 67,
   imperialFavor: 68,
   talesOfDungeonDelving: 69,
