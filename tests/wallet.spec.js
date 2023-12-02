@@ -64,6 +64,7 @@ describe('statistics > wallet', () => {
       zephyriteLockpicks: null,
       researchNotes: null,
       unusualCoins: null,
+      ancientCoins: null,
       jadeSlivers: null,
       testimonyOfJadeHeroics: null,
       canachCoins: null,
@@ -182,6 +183,7 @@ describe('statistics > wallet', () => {
       jadeSlivers: 0,
       testimonyOfJadeHeroics: 0,
       canachCoins: 0,
+      ancientCoins: 0,
       imperialFavor: 0,
       talesOfDungeonDelving: 0,
       _legendaryInsightsFromWallet: 0
