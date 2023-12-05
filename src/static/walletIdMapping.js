@@ -34,7 +34,6 @@ export default {
   testimonyOfHeroics: 36,
   exaltedKeys: 37,
   machetes: 38,
-  gaetingCrystals: 39,
   banditSkeletonKeys: 40,
   pactCrowbars: 41,
   vialsOfChakAcid: 42,

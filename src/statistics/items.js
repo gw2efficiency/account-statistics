@@ -47,9 +47,12 @@ export default function (accountData) {
     hatchedChili: countItems(items, 92072),
     eternalIceShard: countItems(items, 92272),
     eitriteIngots: countItems(items, 92317),
+    essenceOfDespair: countItems(items, 100078),
+    essenceOfGreed: countItems(items, 100414),
+    essenceOfTriumph: countItems(items, 100055),
 
     // (4) DUNGEONS
-    chestOfDungeoneering: countItems(items, 78252),
+    chestOfDungeoneering: countItems(items, [78252, 98187]),
 
     // (5) FRACTALS
     fractalTonics: countItems(items, 49277),
@@ -259,6 +262,17 @@ export default function (accountData) {
       99989 // Permanent Crafting Station Contract
     ]),
     gemstoreToys: countItems(items, gemstoreToyIds),
+    permanentLoungePasses: countItems(items, [
+      90025, // Armistice Bastion Pass
+      81578, // Champion's Rest Pass
+      50104, // Captain's Airship Pass
+      79500, // Lava Lounge Pass
+      82081, // Invitation to "Lily of the Elon"
+      81664, // Mistlock Sanctuary Passkey
+      79140, // Noble's Folly Pass
+      49149, // Royal Terrace Pass
+      97969 // Thousand Seas Pavilion Pass
+    ], true),
 
     // (17) POINTLESS STATISTICS
     brokenTwig: countItems(items, 76046),
