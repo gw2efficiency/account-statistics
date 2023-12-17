@@ -69,7 +69,12 @@ describe('statistics > wallet', () => {
       canachCoins: null,
       imperialFavor: null,
       talesOfDungeonDelving: null,
-      _legendaryInsightsFromWallet: null
+      _legendaryInsightsFromWallet: null,
+      astralAcclaim: null,
+      calcifiedGasp: null,
+      jadeMinersKeycard: null,
+      pinchOfStardust: null,
+      staticCharge: null
     })
   })
 
@@ -184,7 +189,12 @@ describe('statistics > wallet', () => {
       ancientCoins: 0,
       imperialFavor: 0,
       talesOfDungeonDelving: 0,
-      _legendaryInsightsFromWallet: 0
+      _legendaryInsightsFromWallet: 0,
+      astralAcclaim: 0,
+      calcifiedGasp: 0,
+      jadeMinersKeycard: 0,
+      pinchOfStardust: 0,
+      staticCharge: 0
     })
   })
 
