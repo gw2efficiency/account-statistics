@@ -56,11 +56,16 @@ export default {
   tyrianDefenseSeals: 60,
   researchNotes: 61,
   unusualCoins: 62,
+  astralAcclaim: 63,
   jadeSlivers: 64,
   testimonyOfJadeHeroics: 65,
   ancientCoins: 66,
   canachCoins: 67,
   imperialFavor: 68,
   talesOfDungeonDelving: 69,
-  _legendaryInsightsFromWallet: 70
+  _legendaryInsightsFromWallet: 70,
+  jadeMinersKeycard: 71,
+  staticCharge: 72,
+  pinchOfStardust: 73,
+  calcifiedGasp: 75
 }
