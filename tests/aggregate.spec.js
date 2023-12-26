@@ -38,10 +38,13 @@ describe('statistics > aggregate', () => {
       snowDiamondInfusions: 1,
       toyShellInfusions: 1,
       wintersHeartInfusions: 1,
+      imperialEverbloom: 1,
+      clockworkInfusion: 1,
+      jotunInfusion: 1,
 
       // (!) Has to be ignored, else it's counting double
       celestialInfusion: 999
-    }).totalAuras).to.equal(29)
+    }).totalAuras).to.equal(32)
   })
 
   it('can calculate death count per hour', () => {
