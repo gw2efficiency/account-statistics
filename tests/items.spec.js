@@ -139,6 +139,9 @@ describe('statistics > items', () => {
       imperialEverbloom: null,
       clockworkInfusion: null,
       jotunInfusion: null,
+      _legendaryDivinationsFromItems: null,
+      marshFrog: null,
+      miniProfessorMew: null
     }
 
     const bothPermissions = {bank: null, characters: null}
