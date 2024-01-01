@@ -124,6 +124,7 @@ export default function (accountData) {
     emblemOfTheConqueror: countItems(items, 93146),
     emblemOfTournamentVictory: countItems(items, 93012),
     emblemOfVictory: countItems(items, 93022),
+    miniProfessorMew: countItems(items, 74268),
 
     // (10) ASCENDED MATERIALS
     dragoniteOre: weightedCountItems(items, {46733: 1, 46732: 100}),
@@ -280,6 +281,7 @@ export default function (accountData) {
     crumblingBone: countItems(items, 19530),
     mangledTalon: countItems(items, 19576),
     clumpOfResin: countItems(items, 19537),
+    marshFrog: countItems(items, 24420),
 
     // (XXX) Used for aggregate statistics
     _unstableFractalEssenceFromItems: unstableFractalEssenceFromItems(items)
