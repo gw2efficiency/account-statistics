@@ -106,6 +106,14 @@ describe('statistics > progression', () => {
     }).winterWonderlandCompletions).to.equal(8293)
   })
 
+  it('can calculate the completed mad king\'s clock tower jps', () => {
+    expect(progressionStatistics({}).madKingsClockTowerCompletions).to.equal(null)
+    expect(progressionStatistics({achievements: []}).madKingsClockTowerCompletions).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [{id: 3926, current: 1, max: 3, done: true, repeated: 15}]
+    }).madKingsClockTowerCompletions).to.equal(46)
+  })
+
   it('can calculate the completed dungeons', () => {
     expect(progressionStatistics({}).completedDungeons).to.equal(null)
     expect(progressionStatistics({achievements: []}).completedDungeons).to.equal(0)
