@@ -10,6 +10,7 @@ export default function (accountData) {
     southsunSurvivalRounds: achievementCurrent(accountData, 752, 6),
     crabTossRounds: achievementCurrent(accountData, 757, 12),
     winterWonderlandCompletions: winterWonderlandCompletions(accountData),
+    madKingsClockTowerCompletions: achievementCurrent(accountData, 3926, 3),
     wvwPlayerKills: achievementCurrent(accountData, 283),
     wvwSupplyCaravansKilled: achievementCurrent(accountData, 288),
     wvwSupplyCaravansEscorted: achievementCurrent(accountData, 285),
