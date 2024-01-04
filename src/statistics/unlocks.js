@@ -13,6 +13,9 @@ export default function (accountData, extraInformation) {
     miniCount: miniCount(accountData),
     mountCount: mountCount(accountData),
     finisherCount: finisherCount(accountData),
+    skiffCount: skiffCount(accountData),
+    emoteCount: emoteCount(accountData),
+    jadebotCount: jadebotCount(accountData),
     noveltyCount: noveltyCount(accountData),
     outfitCount: outfitCount(accountData),
     pvpHeroCount: pvpHeroCount(accountData),
@@ -89,6 +92,33 @@ function finisherCount (accountData) {
   return accountData.finishers
     .filter(x => x.permanent)
     .length
+}
+
+// The unlocked skiffs on the account
+function skiffCount (accountData) {
+  if (!accountData.skiffs) {
+    return null
+  }
+
+  return accountData.skiffs.length
+}
+
+// The unlocked emotes on the account
+function emoteCount (accountData) {
+  if (!accountData.emotes) {
+    return null
+  }
+
+  return accountData.emotes.length
+}
+
+// The unlocked jadebots on the account
+function jadebotCount (accountData) {
+  if (!accountData.jadebots) {
+    return null
+  }
+
+  return accountData.jadebots.length
 }
 
 // The unlocked novelties on the account

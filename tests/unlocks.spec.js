@@ -74,6 +74,44 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({finishers}, EXTRA_INFO).finisherCount).to.equal(5)
   })
 
+  it('can calculate skiff count', () => {
+    const skiffs = [
+      410,
+      413,
+      420,
+      428,
+      502
+    ]
+
+    expect(unlocksStatistics({}, EXTRA_INFO).skiffCount).to.equal(null)
+    expect(unlocksStatistics({skiffs: []}, EXTRA_INFO).skiffCount).to.equal(0)
+    expect(unlocksStatistics({skiffs}, EXTRA_INFO).skiffCount).to.equal(5)
+  })
+
+  it('can calculate emote count', () => {
+    const emotes = [
+      'shiver',
+      'shuffle',
+      'step'
+    ]
+
+    expect(unlocksStatistics({}, EXTRA_INFO).emoteCount).to.equal(null)
+    expect(unlocksStatistics({emotes: []}, EXTRA_INFO).emoteCount).to.equal(0)
+    expect(unlocksStatistics({emotes}, EXTRA_INFO).emoteCount).to.equal(3)
+  })
+
+  it('can calculate jadebot count', () => {
+    const jadebots = [
+      3,
+      4,
+      6
+    ]
+
+    expect(unlocksStatistics({}, EXTRA_INFO).jadebotCount).to.equal(null)
+    expect(unlocksStatistics({jadebots: []}, EXTRA_INFO).jadebotCount).to.equal(0)
+    expect(unlocksStatistics({jadebots}, EXTRA_INFO).jadebotCount).to.equal(3)
+  })
+
   it('can calculate novelty count', () => {
     expect(unlocksStatistics({}, EXTRA_INFO).noveltyCount).to.equal(null)
     expect(unlocksStatistics({novelties: []}, EXTRA_INFO).noveltyCount).to.equal(0)
