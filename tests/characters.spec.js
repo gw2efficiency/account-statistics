@@ -7,7 +7,8 @@ describe('statistics > characters', () => {
     expect(charactersStatistics({})).to.deep.equal({
       characterCount: null,
       maxLevelCharacterCount: null,
-      deathCount: null
+      deathCount: null,
+      mostPlayedCharacterPlaytime: null
     })
   })
 
@@ -39,7 +40,8 @@ describe('statistics > characters', () => {
     expect(charactersStatistics({characters: data})).to.deep.equal({
       characterCount: 3,
       deathCount: 3942,
-      maxLevelCharacterCount: 2
+      maxLevelCharacterCount: 2,
+      mostPlayedCharacterPlaytime: 8590624
     })
   })
 
@@ -47,7 +49,8 @@ describe('statistics > characters', () => {
     expect(charactersStatistics({characters: []})).to.deep.equal({
       characterCount: 0,
       deathCount: 0,
-      maxLevelCharacterCount: 0
+      maxLevelCharacterCount: 0,
+      mostPlayedCharacterPlaytime: 0
     })
   })
 })
