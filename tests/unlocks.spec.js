@@ -248,4 +248,11 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({skins: [1, 2], novelties: [1, 2]}, EXTRA_INFO)._unstableFractalEssenceFromUnlocks).to.equal(0)
     expect(unlocksStatistics({skins: [9607, 9603], novelties: [141]}, EXTRA_INFO)._unstableFractalEssenceFromUnlocks).to.equal(2 * 480 + 450)
   })
+
+  it('can calculate aurene legendary variant skin count', () => {
+    expect(unlocksStatistics({}, EXTRA_INFO).aureneLegendaryVariantSkins).to.equal(null)
+    expect(unlocksStatistics({ skins: [] }, EXTRA_INFO).aureneLegendaryVariantSkins).to.equal(0)
+    expect(unlocksStatistics({ skins: [1, 2, 7, 9, 10] }, EXTRA_INFO).aureneLegendaryVariantSkins).to.equal(0)
+    expect(unlocksStatistics({ skins: [1, 2, 10515, 10739] }, EXTRA_INFO).aureneLegendaryVariantSkins).to.equal(2)
+  })
 })

@@ -2,6 +2,7 @@ import legendaries from 'gw2e-static-data/build/legendaries'
 import fractalSkinIds from '../static/fractalSkinIds'
 import immortalSkinIds from '../static/immortalSkinIds'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
+import aureneLegendaryVariantSkinMap from '../gameData/aureneLegendaryVariants'
 
 export default function (accountData, extraInformation) {
   return {
@@ -35,7 +36,8 @@ export default function (accountData, extraInformation) {
     nightfury: skinExists(accountData, 6161),
     _fractalRelicsFromTitles: fractalRelicsFromTitles(accountData),
     _pristineFractalRelicsFromTitles: pristineFractalRelicsFromTitles(accountData),
-    _unstableFractalEssenceFromUnlocks: unstableFractalEssenceFromUnlocks(accountData)
+    _unstableFractalEssenceFromUnlocks: unstableFractalEssenceFromUnlocks(accountData),
+    aureneLegendaryVariantSkins: aureneLegendaryVariantSkins(accountData)
   }
 }
 
@@ -230,7 +232,7 @@ function fractalSkins (accountData) {
     .length
 }
 
-// The immportal weapon skins unlocked on the account
+// The immortal weapon skins unlocked on the account
 function immortalSkins (accountData) {
   if (!accountData.skins) {
     return null
@@ -238,6 +240,17 @@ function immortalSkins (accountData) {
 
   return accountData.skins
     .filter(x => immortalSkinIds.indexOf(x) !== -1)
+    .length
+}
+
+// The aurene legendary variant skins unlocked on the account
+function aureneLegendaryVariantSkins (accountData) {
+  if (!accountData.skins) {
+    return null
+  }
+
+  return accountData.skins
+    .filter(x => aureneLegendaryVariantSkinMap.indexOf(x) !== -1)
     .length
 }
 
