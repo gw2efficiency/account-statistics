@@ -2,7 +2,7 @@ import legendaries from 'gw2e-static-data/build/legendaries'
 import fractalSkinIds from '../static/fractalSkinIds'
 import immortalSkinIds from '../static/immortalSkinIds'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
-import aureneLegendaryVariantSkinMap from '../gameData/aureneLegendaryVariants'
+import aureneLegendaryVariantSkinIds from '../gameData/aureneLegendaryVariants'
 
 export default function (accountData, extraInformation) {
   return {
@@ -250,7 +250,7 @@ function aureneLegendaryVariantSkins (accountData) {
   }
 
   return accountData.skins
-    .filter(x => aureneLegendaryVariantSkinMap.indexOf(x) !== -1)
+    .filter(x => aureneLegendaryVariantSkinIds.indexOf(x) !== -1)
     .length
 }
 
