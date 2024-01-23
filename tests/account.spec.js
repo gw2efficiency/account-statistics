@@ -38,4 +38,11 @@ describe('statistics > account', () => {
     expect(accountStatistics({luck: null})._luckFromAccount).to.equal(null)
     expect(accountStatistics({luck: 120})._luckFromAccount).to.equal(120)
   })
+
+  it('can calculate total storage slots', () => {
+    expect(accountStatistics({}).totalStorageSlots).to.equal(null)
+    expect(accountStatistics({characters: null, bank: null, shared: null}).totalStorageSlots).to.equal(null)
+    expect(accountStatistics({characters: [], bank: null, shared: [1, 2]}).totalStorageSlots).to.equal(null)
+    expect(accountStatistics({characters: [{bags: [{inventory: [1, 2, 3]}]}], bank: [4, 5, 6], shared: [7, 8]}).totalStorageSlots).to.equal(8)
+  })
 })
