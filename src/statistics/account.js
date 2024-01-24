@@ -6,7 +6,8 @@ export default function (accountData) {
     wvwRank: wvwRank(accountData),
     playtime: playtime(accountData),
     playtimePerDay: playtimePerDay(accountData),
-    _luckFromAccount: luckFromAccount(accountData)
+    _luckFromAccount: luckFromAccount(accountData),
+    totalStorageSlots: totalStorageSlots(accountData)
   }
 }
 
@@ -74,4 +75,22 @@ function luckFromAccount (accountData) {
   }
 
   return accountData.luck
+}
+
+// Total Storage Slots on the account
+function totalStorageSlots (accountData) {
+  if (!accountData.characters || !accountData.bank || !accountData.shared) {
+    return null
+  }
+
+  const totalInventorySlots = accountData.characters
+    .reduce((totalInventorySlots, character) => totalInventorySlots + (character.bags || [])
+      .filter(Boolean)
+      .reduce((totalLength, elem) => totalLength + (elem.inventory || []).length, 0), 0)
+
+  const totalBankSlots = accountData.bank.length || 0
+
+  const totalSharedSlots = accountData.shared.length || 0
+
+  return (totalInventorySlots || 0) + (totalBankSlots || 0) + (totalSharedSlots || 0)
 }
