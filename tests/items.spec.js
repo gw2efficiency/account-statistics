@@ -150,7 +150,14 @@ describe('statistics > items', () => {
       jotunInfusion: null,
       _legendaryDivinationsFromItems: null,
       marshFrog: null,
-      miniProfessorMew: null
+      miniProfessorMew: null,
+      wurmsBlessingEnrichment: null,
+      echoOfTheDragonvoid: null,
+      moteOfDarkness: null,
+      possessionInfusion: null,
+      silentSymphony: null,
+      arcaneFlowInfusion: null,
+      mistwalkerInfusion: null
     }
 
     const bothPermissions = {bank: null, characters: null}

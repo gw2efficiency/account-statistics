@@ -41,10 +41,17 @@ describe('statistics > aggregate', () => {
       imperialEverbloom: 1,
       clockworkInfusion: 1,
       jotunInfusion: 1,
+      wurmsBlessingEnrichment: 1,
+      echoOfTheDragonvoid: 1,
+      moteOfDarkness: 1,
+      possessionInfusion: 1,
+      silentSymphony: 1,
+      arcaneFlowInfusion: 1,
+      mistwalkerInfusion: 1,
 
       // (!) Has to be ignored, else it's counting double
       celestialInfusion: 999
-    }).totalAuras).to.equal(32)
+    }).totalAuras).to.equal(39)
   })
 
   it('can calculate death count per hour', () => {
