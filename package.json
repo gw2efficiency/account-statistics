@@ -1,6 +1,6 @@
 {
   "name": "gw2e-account-statistics",
-  "version": "3.14.0",
+  "version": "3.14.1",
   "description": "Calculate statistics of guildwars2 accounts",
   "main": "./build/index.js",
   "scripts": {
