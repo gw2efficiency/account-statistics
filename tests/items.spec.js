@@ -157,7 +157,8 @@ describe('statistics > items', () => {
       possessionInfusion: null,
       silentSymphony: null,
       arcaneFlowInfusion: null,
-      mistwalkerInfusion: null
+      mistwalkerInfusion: null,
+      statInfusions: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -953,5 +954,15 @@ describe('statistics > items', () => {
 
       {id: 81761, count: 9999999} // Celestial Infusion (Blue) -- (!) Does not count
     ]))._unstableFractalEssenceFromItems).to.equal(7410)
+  })
+
+  it('can calculate stat infusion count', () => {
+    expect(itemsStatistics(generateAccount([
+      { id: 101263, count: 2 },
+      { id: 101146, count: 1 },
+      { id: 71383, count: 1 },
+      { id: 38129, count: 1 },
+      { id: 47897, count: 1 }
+    ])).statInfusions).to.equal(3)
   })
 })

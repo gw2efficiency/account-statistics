@@ -15,6 +15,7 @@ import fishItems from '../static/fishItems'
 import legendaryInsightItemIds from '../static/legendaryInsightItemIds'
 import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
+import statInfusionIds from '../gameData/statInfusions'
 
 export default function (accountData) {
   const items = allItems(accountData)
@@ -134,6 +135,7 @@ export default function (accountData) {
     emblemOfTournamentVictory: countItems(items, 93012),
     emblemOfVictory: countItems(items, 93022),
     miniProfessorMew: countItems(items, 74268),
+    statInfusions: countItems(items, statInfusionIds),
 
     // (10) ASCENDED MATERIALS
     dragoniteOre: weightedCountItems(items, {46733: 1, 46732: 100}),
