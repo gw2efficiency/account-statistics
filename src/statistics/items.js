@@ -77,7 +77,7 @@ export default function (accountData) {
     ),
 
     // (9) COLLECTABLES
-    legendaryItems: countItems(items, legendaries.map(x => x.id)),
+    legendaryItems: countItems(items, [...legendaries.map(x => x.id), 91505, 91536, 101582]),
     legendaryItemsWeapon: countItems(items, legendaries.filter(x => x.type === 'weapon').map(x => x.id)),
     legendaryItemsArmor: countItems(items, legendaries.filter(x => x.type === 'armor').map(x => x.id)),
     legendaryItemsBack: countItems(items, legendaries.filter(x => x.type === 'back').map(x => x.id)),
