@@ -19,10 +19,10 @@
     "mockdate": "^2.0.0"
   },
   "dependencies": {
-    "@gw2efficiency/game-data": "^0.1.38",
+    "@gw2efficiency/game-data": "^0.1.43",
     "array-unique": "^0.3.2",
     "gw2e-account-value": "^3.13.1",
-    "gw2e-static-data": "^0.5.7",
+    "gw2e-static-data": "^0.5.32",
     "round-to": "^3.0.0",
     "sum-by": "^1.0.0"
   }

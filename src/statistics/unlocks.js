@@ -3,6 +3,7 @@ import fractalSkinIds from '../static/fractalSkinIds'
 import immortalSkinIds from '../static/immortalSkinIds'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 import aureneLegendaryVariantSkinIds from '../gameData/aureneLegendaryVariants'
+import suffusedObsidianArmorSkinIds from '../gameData/suffusedObsidianArmors'
 
 export default function (accountData, extraInformation) {
   return {
@@ -37,7 +38,8 @@ export default function (accountData, extraInformation) {
     _fractalRelicsFromTitles: fractalRelicsFromTitles(accountData),
     _pristineFractalRelicsFromTitles: pristineFractalRelicsFromTitles(accountData),
     _unstableFractalEssenceFromUnlocks: unstableFractalEssenceFromUnlocks(accountData),
-    aureneLegendaryVariantSkins: aureneLegendaryVariantSkins(accountData)
+    aureneLegendaryVariantSkins: aureneLegendaryVariantSkins(accountData),
+    suffusedObsidianArmorSkins: suffusedObsidianArmorSkins(accountData)
   }
 }
 
@@ -251,6 +253,17 @@ function aureneLegendaryVariantSkins (accountData) {
 
   return accountData.skins
     .filter(x => aureneLegendaryVariantSkinIds.indexOf(x) !== -1)
+    .length
+}
+
+// The suffused obsidian armor skins unlocked on the account ignoring slumbering versions
+function suffusedObsidianArmorSkins (accountData) {
+  if (!accountData.skins) {
+    return null
+  }
+
+  return accountData.skins
+    .filter(x => suffusedObsidianArmorSkinIds.indexOf(x) !== -1)
     .length
 }
 
