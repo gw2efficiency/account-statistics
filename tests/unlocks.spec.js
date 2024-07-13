@@ -255,4 +255,11 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({ skins: [1, 2, 7, 9, 10] }, EXTRA_INFO).aureneLegendaryVariantSkins).to.equal(0)
     expect(unlocksStatistics({ skins: [1, 2, 10515, 10739] }, EXTRA_INFO).aureneLegendaryVariantSkins).to.equal(2)
   })
+
+  it('can calculate suffused obsidian armor skin count', () => {
+    expect(unlocksStatistics({}, EXTRA_INFO).suffusedObsidianArmorSkins).to.equal(null)
+    expect(unlocksStatistics({ skins: [] }, EXTRA_INFO).suffusedObsidianArmorSkins).to.equal(0)
+    expect(unlocksStatistics({ skins: [1, 2, 7, 9, 10] }, EXTRA_INFO).suffusedObsidianArmorSkins).to.equal(0)
+    expect(unlocksStatistics({ skins: [1, 2, 12171, 12136] }, EXTRA_INFO).suffusedObsidianArmorSkins).to.equal(2)
+  })
 })
