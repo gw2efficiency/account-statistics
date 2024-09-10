@@ -67,5 +67,6 @@ export default {
   jadeMinersKeycard: 71,
   staticCharge: 72,
   pinchOfStardust: 73,
-  calcifiedGasp: 75
+  calcifiedGasp: 75,
+  ursusOblige: 76
 }

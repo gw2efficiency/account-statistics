@@ -74,7 +74,8 @@ describe('statistics > wallet', () => {
       calcifiedGasp: null,
       jadeMinersKeycard: null,
       pinchOfStardust: null,
-      staticCharge: null
+      staticCharge: null,
+      ursusOblige: null
     })
   })
 
@@ -194,7 +195,8 @@ describe('statistics > wallet', () => {
       calcifiedGasp: 0,
       jadeMinersKeycard: 0,
       pinchOfStardust: 0,
-      staticCharge: 0
+      staticCharge: 0,
+      ursusOblige: 0
     })
   })
 
