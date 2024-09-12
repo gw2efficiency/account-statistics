@@ -69,7 +69,7 @@ describe('statistics > items', () => {
       innerNayosEndHerosChoice: null,
       convergenceHerosChoice: null,
       citadelOfZakirosHerosChoice: null,
-      janthirWildsHerosChoice: null,
+      janthirSyntriHerosChoice: null,
       uniqueTonics: null,
       bloodRubies: null,
       petrifiedWood: null,

@@ -105,7 +105,7 @@ export default function (accountData) {
     innerNayosEndHerosChoice: countItems(items, 101195),
     convergenceHerosChoice: countItems(items, 101185),
     citadelOfZakirosHerosChoice: countItems(items, 101748),
-    janthirWildsHerosChoice: countItems(items, 102265),
+    janthirSyntriHerosChoice: countItems(items, 102265),
     giftsOfExploration: countItems(items, 19677),
     giftsOfBattle: countItems(items, 19678),
     tomesOfKnowledge: countItems(items, [43741, 43766]),
