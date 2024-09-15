@@ -300,4 +300,20 @@ describe('statistics > progression', () => {
       ]
     }).arenanetEmployeeAchievements).to.equal(4)
   })
+
+  it('can calculate the completed convergence completions', () => {
+    expect(progressionStatistics({}).convergenceCompletions).to.equal(null)
+    expect(progressionStatistics({achievements: []}).convergenceCompletions).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [
+        { id: 7668, current: 15, max: 100, done: false }
+      ]
+    }).convergenceCompletions).to.equal(15)
+    expect(progressionStatistics({
+      achievements: [
+        { id: 7668, current: 100, max: 100, done: true },
+        { id: 7720, current: 18, max: 150, done: false, repeated: 1 }
+      ]
+    }).convergenceCompletions).to.equal(100 + 150 + 18)
+  })
 })

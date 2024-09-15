@@ -30,6 +30,7 @@ export default function (accountData) {
     pvpKilledPlayers: achievementCurrent(accountData, 239),
     pvpKilledPlayersRanked: achievementCurrent(accountData, 240),
     arenanetEmployeeAchievements: arenanetEmployeeAchievements(accountData),
+    convergenceCompletions: convergenceCompletions(accountData),
     homeCats: homeCats(accountData),
     homeNodes: homeNodes(accountData)
   }
@@ -105,6 +106,24 @@ function arenanetEmployeeAchievements (accountData) {
   let sum = 0
   arenanetEmployeeAchievementIds.forEach((achievementId) => {
     sum += achievementCurrent(accountData, achievementId)
+  })
+
+  return sum
+}
+
+function convergenceCompletions (accountData) {
+  if (!accountData.achievements) {
+    return null
+  }
+
+  const achievements = [
+    { id: 7668, perRepeat: 100 }, // Convergence Conquerer
+    { id: 7720, perRepeat: 150 } // Continuous Convergence Conqueror
+  ]
+
+  let sum = 0
+  achievements.forEach((achievement) => {
+    sum += achievementCurrent(accountData, achievement.id, achievement.perRepeat)
   })
 
   return sum
