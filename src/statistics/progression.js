@@ -1,3 +1,5 @@
+import arenanetEmployeeAchievementIds from '../gameData/arenanetEmployeeAchievements'
+
 export default function (accountData) {
   return {
     achievementCount: achievementCount(accountData),
@@ -27,6 +29,7 @@ export default function (accountData) {
     wvwDefendedCastles: achievementCurrent(accountData, 313),
     pvpKilledPlayers: achievementCurrent(accountData, 239),
     pvpKilledPlayersRanked: achievementCurrent(accountData, 240),
+    arenanetEmployeeAchievements: arenanetEmployeeAchievements(accountData),
     homeCats: homeCats(accountData),
     homeNodes: homeNodes(accountData)
   }
@@ -89,6 +92,19 @@ function winterWonderlandCompletions (accountData) {
   let sum = 0
   achievements.forEach((achievement) => {
     sum += achievementCurrent(accountData, achievement.id, achievement.perRepeat)
+  })
+
+  return sum
+}
+
+function arenanetEmployeeAchievements (accountData) {
+  if (!accountData.achievements) {
+    return null
+  }
+
+  let sum = 0
+  arenanetEmployeeAchievementIds.forEach((achievementId) => {
+    sum += achievementCurrent(accountData, achievementId)
   })
 
   return sum

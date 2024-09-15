@@ -283,4 +283,21 @@ describe('statistics > progression', () => {
     expect(progressionStatistics({home: {}}).homeNodes).to.equal(null)
     expect(progressionStatistics({home: {nodes}}).homeNodes).to.equal(8)
   })
+
+  it('can calculate the completed arenanet employee achievements', () => {
+    expect(progressionStatistics({}).arenanetEmployeeAchievements).to.equal(null)
+    expect(progressionStatistics({achievements: []}).arenanetEmployeeAchievements).to.equal(0)
+    expect(progressionStatistics({
+      achievements: [
+        { id: 2037, current: 40, max: 40, done: true },
+        { id: 2150, current: 1, max: 1, done: true },
+        { id: 3067, current: 1, max: 1, done: true },
+        { id: 4501, current: 1, max: 1, done: true },
+        { id: 4537, current: 1, max: 1, done: true },
+        { id: 5457, current: 1, max: 1, done: true },
+        { id: 7779, current: 0, max: 1, done: false },
+        { id: 7853, current: 1, max: 1, done: true }
+      ]
+    }).arenanetEmployeeAchievements).to.equal(4)
+  })
 })
