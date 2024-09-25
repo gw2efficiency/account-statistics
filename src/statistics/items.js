@@ -17,8 +17,15 @@ import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 import statInfusionIds from '../gameData/statInfusions'
 
-export default function (accountData) {
+export default function (accountData, extraInformation) {
   const items = allItems(accountData)
+  const noveltyIdMap = extraInformation.novelties.idMap
+  Object.values(noveltyIdMap)
+    .reduce((acc, arr) => acc.concat(arr), [])
+    .forEach((unlockItemId) => {
+      const existingItem = items.find((item) => item.id === unlockItemId)
+      existingItem ? existingItem.count++ : items.push({id: unlockItemId, count: 1})
+    })
 
   const auraItems = Object.entries(cosmeticAuraItemMap).map(entry => {
     return [entry[0], countItems(items, entry[1])]
