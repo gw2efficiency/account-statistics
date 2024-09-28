@@ -11,7 +11,8 @@ const generateAccount = (items) => {
       bags: [
         {inventory: items.slice(1)}
       ]
-    }]
+    }],
+    novelties: [1]
   }
 }
 
@@ -508,7 +509,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 38129, count: 1}, // This is a container and does not count
       {id: 43526, count: 1}
-    ]), EXTRA_INFO).instruments).to.equal(3) // 1 extra comes from EXTRA_INFO
+    ]), EXTRA_INFO).instruments).to.equal(2)
   })
 
   it('can calculate fish items count', () => {
