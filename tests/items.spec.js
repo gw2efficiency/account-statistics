@@ -11,7 +11,23 @@ const generateAccount = (items) => {
       bags: [
         {inventory: items.slice(1)}
       ]
-    }]
+    }],
+    novelties: [1]
+  }
+}
+
+const EXTRA_INFO = {
+  novelties: {
+    idMap: {
+      1: [88124],
+      2: [36174]
+    }
+  }
+}
+
+const EMPTY_EXTRA_INFO = {
+  novelties: {
+    idMap: {}
   }
 }
 
@@ -164,13 +180,13 @@ describe('statistics > items', () => {
     }
 
     const bothPermissions = {bank: null, characters: null}
-    expect(itemsStatistics(bothPermissions)).to.deep.equal(emptyObject)
+    expect(itemsStatistics(bothPermissions, EMPTY_EXTRA_INFO)).to.deep.equal(emptyObject)
 
     const inventoriesPermission = {bank: null, characters: [{name: 'Yo'}]}
-    expect(itemsStatistics(inventoriesPermission)).to.deep.equal(emptyObject)
+    expect(itemsStatistics(inventoriesPermission, EMPTY_EXTRA_INFO)).to.deep.equal(emptyObject)
 
     const charactersPermission = {bank: [{id: 30687}], characters: null}
-    expect(itemsStatistics(charactersPermission)).to.deep.equal(emptyObject)
+    expect(itemsStatistics(charactersPermission, EMPTY_EXTRA_INFO)).to.deep.equal(emptyObject)
   })
 
   it('can calculate legendary count', () => {
@@ -191,7 +207,7 @@ describe('statistics > items', () => {
 
     account.legendaryarmory = [{id: 80205, count: 2}] // 5 + 6
 
-    expect(itemsStatistics(account).legendaryItems).to.equal(6)
+    expect(itemsStatistics(account, EXTRA_INFO).legendaryItems).to.equal(6)
   })
 
   it('can calculate legendary weapon count', () => {
@@ -202,7 +218,7 @@ describe('statistics > items', () => {
       {id: 1, count: 1},
       {id: 7, count: 1},
       {id: 77474, count: 1}
-    ])).legendaryItemsWeapon).to.equal(2)
+    ]), EXTRA_INFO).legendaryItemsWeapon).to.equal(2)
   })
 
   it('can calculate legendary armor count', () => {
@@ -213,7 +229,7 @@ describe('statistics > items', () => {
       {id: 1, count: 1},
       {id: 7, count: 1},
       {id: 77474, count: 1}
-    ])).legendaryItemsArmor).to.equal(2)
+    ]), EXTRA_INFO).legendaryItemsArmor).to.equal(2)
   })
 
   it('can calculate legendary back count', () => {
@@ -224,7 +240,7 @@ describe('statistics > items', () => {
       {id: 1, count: 1},
       {id: 30704, count: 1},
       {id: 77474, count: 1}
-    ])).legendaryItemsBack).to.equal(2)
+    ]), EXTRA_INFO).legendaryItemsBack).to.equal(2)
   })
 
   it('can calculate legendary trinket count', () => {
@@ -235,7 +251,7 @@ describe('statistics > items', () => {
       {id: 1, count: 1},
       {id: 81908, count: 1},
       {id: 77474, count: 1}
-    ])).legendaryItemsTrinket).to.equal(1)
+    ]), EXTRA_INFO).legendaryItemsTrinket).to.equal(1)
   })
 
   it('can calculate fractal tonic count', () => {
@@ -245,7 +261,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 49277, count: 1},
       {id: 49277, count: 1}
-    ])).fractalTonics).to.equal(3)
+    ]), EXTRA_INFO).fractalTonics).to.equal(3)
   })
 
   it('can calculate legendary insight count', () => {
@@ -301,7 +317,7 @@ describe('statistics > items', () => {
 
     function countFromList (itemList) {
       const account = generateAccount(itemList.map(id => ({id, count: 1})))
-      return itemsStatistics(account)._legendaryInsightsFromItems
+      return itemsStatistics(account, EXTRA_INFO)._legendaryInsightsFromItems
     }
 
     // Count the basic items
@@ -309,7 +325,7 @@ describe('statistics > items', () => {
       {id: 80516, count: 3}, // Envoy Insignia => 25 each
       {id: 78989, count: 1}, // Gift of Prowess => 25 each
       {id: 77302, count: 7} // Legendary Insight => 1 each
-    ]))._legendaryInsightsFromItems, 'basic items').to.equal(3 * 25 + 25 + 7)
+    ]), EXTRA_INFO)._legendaryInsightsFromItems, 'basic items').to.equal(3 * 25 + 25 + 7)
 
     // Count the full first ascended set (from the achievement, so no LI spent)
     const oneWeightAscendedSet = [
@@ -407,7 +423,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 78978, count: 1},
       {id: 78978, count: 1}
-    ])).whiteMantlePortalDevices).to.equal(3)
+    ]), EXTRA_INFO).whiteMantlePortalDevices).to.equal(3)
   })
 
   it('can calculate chak egg sack count', () => {
@@ -417,7 +433,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 72021, count: 1},
       {id: 72021, count: 1}
-    ])).chakEggSacks).to.equal(3)
+    ]), EXTRA_INFO).chakEggSacks).to.equal(3)
   })
 
   it('can calculate preserved queen bee count', () => {
@@ -427,7 +443,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 68440, count: 1},
       {id: 68440, count: 1}
-    ])).preservedQueenBees).to.equal(3)
+    ]), EXTRA_INFO).preservedQueenBees).to.equal(3)
   })
 
   it('can calculate ghostly infusion count', () => {
@@ -437,7 +453,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 77316, count: 1},
       {id: 77394, count: 1}
-    ])).ghostlyInfusions).to.equal(3)
+    ]), EXTRA_INFO).ghostlyInfusions).to.equal(3)
   })
 
   it('can calculate bauble infusion count', () => {
@@ -447,7 +463,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 78028, count: 1},
       {id: 78097, count: 1}
-    ])).baubleInfusions).to.equal(3)
+    ]), EXTRA_INFO).baubleInfusions).to.equal(3)
   })
 
   it('can calculate luminescent refractor count', () => {
@@ -457,7 +473,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 67370, count: 1},
       {id: 67372, count: 1}
-    ])).luminescentRefractors).to.equal(3)
+    ]), EXTRA_INFO).luminescentRefractors).to.equal(3)
   })
 
   it('can calculate broken spoon count', () => {
@@ -467,7 +483,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 74996, count: 1},
       {id: 74996, count: 1}
-    ])).brokenSpoons).to.equal(3)
+    ]), EXTRA_INFO).brokenSpoons).to.equal(3)
   })
 
   it('can calculate black lion claim ticket count', () => {
@@ -477,13 +493,13 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 43998, count: 3},
       {id: 43998, count: 1}
-    ])).blackLionClaimTickets).to.equal(1.4)
+    ]), EXTRA_INFO).blackLionClaimTickets).to.equal(1.4)
 
     expect(itemsStatistics(generateAccount([
       {id: 43992, count: 3},
       {id: 30687, count: 1},
       {id: 43998, count: 164}
-    ])).blackLionClaimTickets).to.equal(19.4)
+    ]), EXTRA_INFO).blackLionClaimTickets).to.equal(19.4)
   })
 
   it('can calculate instrument count', () => {
@@ -493,7 +509,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 38129, count: 1}, // This is a container and does not count
       {id: 43526, count: 1}
-    ])).instruments).to.equal(2)
+    ]), EXTRA_INFO).instruments).to.equal(2)
   })
 
   it('can calculate fish items count', () => {
@@ -503,7 +519,7 @@ describe('statistics > items', () => {
       {id: 82432, count: 1},
       {id: 97409, count: 1},
       {id: 83826, count: 1}
-    ]))
+    ]), EXTRA_INFO)
 
     expect(_statistics.fishItems).to.equal(3)
     expect(_statistics.fishItemsLegendary).to.equal(2)
@@ -518,7 +534,7 @@ describe('statistics > items', () => {
       {id: 82432, count: 1},
       {id: 38129, count: 1},
       {id: 83826, count: 1}
-    ])).musicBoxes).to.equal(2)
+    ]), EXTRA_INFO).musicBoxes).to.equal(2)
   })
 
   it('can calculate permanent tool count', () => {
@@ -528,7 +544,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 38129, count: 1},
       {id: 47897, count: 1}
-    ])).permanentTools).to.equal(2)
+    ]), EXTRA_INFO).permanentTools).to.equal(2)
   })
 
   it('can calculate chak egg count', () => {
@@ -538,7 +554,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 72205, count: 1},
       {id: 72205, count: 1}
-    ])).chakEggs).to.equal(3)
+    ]), EXTRA_INFO).chakEggs).to.equal(3)
   })
 
   it('can calculate reclaimed metal plate count', () => {
@@ -548,7 +564,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 74356, count: 1},
       {id: 74356, count: 1}
-    ])).reclaimedMetalPlates).to.equal(3)
+    ]), EXTRA_INFO).reclaimedMetalPlates).to.equal(3)
   })
 
   it('can calculate fossilized insects count', () => {
@@ -558,7 +574,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 66646, count: 1},
       {id: 66642, count: 1}
-    ])).fossilizedInsects).to.equal(3)
+    ]), EXTRA_INFO).fossilizedInsects).to.equal(3)
   })
 
   it('can calculate champion bag count', () => {
@@ -568,7 +584,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 44226, count: 1},
       {id: 44199, count: 250}
-    ])).championBags).to.equal(252)
+    ]), EXTRA_INFO).championBags).to.equal(252)
   })
 
   it('can calculate triple trouble chest count', () => {
@@ -578,7 +594,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 49664, count: 1},
       {id: 49664, count: 250}
-    ])).tripleTroubleChests).to.equal(252)
+    ]), EXTRA_INFO).tripleTroubleChests).to.equal(252)
   })
 
   it('can calculate tequatl chest count', () => {
@@ -588,7 +604,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 47836, count: 1},
       {id: 47836, count: 250}
-    ])).tequatlChests).to.equal(252)
+    ]), EXTRA_INFO).tequatlChests).to.equal(252)
   })
 
   it('can calculate unique tonic count', () => {
@@ -599,7 +615,7 @@ describe('statistics > items', () => {
       {id: 66926, count: 1},
       {id: 5, count: 250},
       {id: 68046, count: 100}
-    ])).uniqueTonics).to.equal(2)
+    ]), EXTRA_INFO).uniqueTonics).to.equal(2)
   })
 
   it('can calculate blood ruby count', () => {
@@ -609,7 +625,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 79280, count: 1},
       {id: 79280, count: 250}
-    ])).bloodRubies).to.equal(252)
+    ]), EXTRA_INFO).bloodRubies).to.equal(252)
   })
 
   it('can calculate petrified wood count', () => {
@@ -619,7 +635,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 79469, count: 1},
       {id: 79469, count: 250}
-    ])).petrifiedWood).to.equal(252)
+    ]), EXTRA_INFO).petrifiedWood).to.equal(252)
   })
 
   it('can calculate tomes of knowledge count', () => {
@@ -629,7 +645,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 43741, count: 1},
       {id: 43766, count: 250}
-    ])).tomesOfKnowledge).to.equal(252)
+    ]), EXTRA_INFO).tomesOfKnowledge).to.equal(252)
   })
 
   it('can calculate permanent contract count', () => {
@@ -639,7 +655,7 @@ describe('statistics > items', () => {
       {id: 71383, count: 1},
       {id: 35984, count: 1},
       {id: 49501, count: 1}
-    ])).permanentContracts).to.equal(3)
+    ]), EXTRA_INFO).permanentContracts).to.equal(3)
   })
 
   it('can calculate fresh winterberry count', () => {
@@ -649,7 +665,7 @@ describe('statistics > items', () => {
       {id: 79899, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).freshWinterberries).to.equal(4)
+    ]), EXTRA_INFO).freshWinterberries).to.equal(4)
   })
 
   it('can calculate winter\' heart infusion count', () => {
@@ -659,7 +675,7 @@ describe('statistics > items', () => {
       {id: 79959, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).wintersHeartInfusions).to.equal(2)
+    ]), EXTRA_INFO).wintersHeartInfusions).to.equal(2)
   })
 
   it('can calculate kodas warmth enrichment count', () => {
@@ -669,7 +685,7 @@ describe('statistics > items', () => {
       {id: 79926, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).kodasWarmthEnrichment).to.equal(1)
+    ]), EXTRA_INFO).kodasWarmthEnrichment).to.equal(1)
   })
 
   it('can calculate phospholuminescent infusions count', () => {
@@ -679,7 +695,7 @@ describe('statistics > items', () => {
       {id: 79653, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).phospholuminescentInfusions).to.equal(1)
+    ]), EXTRA_INFO).phospholuminescentInfusions).to.equal(1)
   })
 
   it('can calculate liquid aurillium count', () => {
@@ -689,7 +705,7 @@ describe('statistics > items', () => {
       {id: 79653, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).liquidAurillium).to.equal(3)
+    ]), EXTRA_INFO).liquidAurillium).to.equal(3)
   })
 
   it('can calculate celestial infusion count', () => {
@@ -699,7 +715,7 @@ describe('statistics > items', () => {
       {id: 79653, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).celestialInfusion).to.equal(3)
+    ]), EXTRA_INFO).celestialInfusion).to.equal(3)
   })
 
   it('can calculate gemstore toys count', () => {
@@ -709,7 +725,7 @@ describe('statistics > items', () => {
       {id: 49939, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).gemstoreToys).to.equal(1)
+    ]), EXTRA_INFO).gemstoreToys).to.equal(2) // 1 extra comes from EXTRA_INFO
   })
 
   it('can calculate black lion miniature claim tickets count', () => {
@@ -719,7 +735,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 79899, count: 1},
       {id: 49501, count: 1}
-    ])).blackLionMiniatureClaimTickets).to.equal(3)
+    ]), EXTRA_INFO).blackLionMiniatureClaimTickets).to.equal(3)
   })
 
   it('can calculate jade shards count', () => {
@@ -729,7 +745,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 80332, count: 1},
       {id: 49501, count: 1}
-    ])).jadeShards).to.equal(3)
+    ]), EXTRA_INFO).jadeShards).to.equal(3)
   })
 
   it('can calculate gifts of exploration count', () => {
@@ -739,7 +755,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 19677, count: 1},
       {id: 49501, count: 1}
-    ])).giftsOfExploration).to.equal(3)
+    ]), EXTRA_INFO).giftsOfExploration).to.equal(3)
   })
 
   it('can calculate gifts of battle count', () => {
@@ -749,7 +765,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 19678, count: 1},
       {id: 49501, count: 1}
-    ])).giftsOfBattle).to.equal(3)
+    ]), EXTRA_INFO).giftsOfBattle).to.equal(3)
   })
 
   it('can calculate dragonite ore count', () => {
@@ -759,7 +775,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 19677, count: 1},
       {id: 46732, count: 4}
-    ])).dragoniteOre).to.equal(422)
+    ]), EXTRA_INFO).dragoniteOre).to.equal(422)
   })
 
   it('can calculate bloodstone dust count', () => {
@@ -769,7 +785,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 19677, count: 1},
       {id: 46730, count: 4}
-    ])).bloodstoneDust).to.equal(422)
+    ]), EXTRA_INFO).bloodstoneDust).to.equal(422)
   })
 
   it('can calculate empyreal fragments count', () => {
@@ -779,7 +795,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 19677, count: 1},
       {id: 46734, count: 4}
-    ])).empyrealFragments).to.equal(422)
+    ]), EXTRA_INFO).empyrealFragments).to.equal(422)
   })
 
   it('can calculate crystalline ore count', () => {
@@ -789,7 +805,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 19677, count: 1},
       {id: 46683, count: 4}
-    ])).crystallineOre).to.equal(26)
+    ]), EXTRA_INFO).crystallineOre).to.equal(26)
   })
 
   it('can calculate airship oil count', () => {
@@ -799,7 +815,7 @@ describe('statistics > items', () => {
       {id: 78474, count: 1},
       {id: 76933, count: 1},
       {id: 69434, count: 4}
-    ])).airshipOil).to.equal(5)
+    ]), EXTRA_INFO).airshipOil).to.equal(5)
   })
 
   it('can calculate auric dust count', () => {
@@ -809,7 +825,7 @@ describe('statistics > items', () => {
       {id: 73537, count: 1},
       {id: 76933, count: 1},
       {id: 69434, count: 4}
-    ])).auricDust).to.equal(53)
+    ]), EXTRA_INFO).auricDust).to.equal(53)
   })
 
   it('can calculate ley line sparks count', () => {
@@ -819,7 +835,7 @@ describe('statistics > items', () => {
       {id: 76933, count: 1},
       {id: 74042, count: 1},
       {id: 69434, count: 4}
-    ])).leyLineSparks).to.equal(24)
+    ]), EXTRA_INFO).leyLineSparks).to.equal(24)
   })
 
   it('can calculate legendary spikes count', () => {
@@ -829,7 +845,7 @@ describe('statistics > items', () => {
       {id: 76933, count: 1},
       {id: 74042, count: 1},
       {id: 69434, count: 4}
-    ])).legendarySpikes).to.equal(22)
+    ]), EXTRA_INFO).legendarySpikes).to.equal(22)
   })
 
   it('can calculate fire orchid blossoms count', () => {
@@ -839,7 +855,7 @@ describe('statistics > items', () => {
       {id: 81127, count: 1},
       {id: 74042, count: 1},
       {id: 81127, count: 4}
-    ])).fireOrchidBlossoms).to.equal(5)
+    ]), EXTRA_INFO).fireOrchidBlossoms).to.equal(5)
   })
 
   it('can calculate orrian peal count', () => {
@@ -849,7 +865,7 @@ describe('statistics > items', () => {
       {id: 81706, count: 1},
       {id: 74042, count: 1},
       {id: 81706, count: 4}
-    ])).orrianPearls).to.equal(5)
+    ]), EXTRA_INFO).orrianPearls).to.equal(5)
   })
 
   it('can calculate luck', () => {
@@ -864,7 +880,7 @@ describe('statistics > items', () => {
       {id: 45178, count: 3}, // 600
       {id: 45179, count: 1}, // 500
       {id: 45179, count: 7} // 3500
-    ]))._luckFromItems).to.equal(5810)
+    ]), EXTRA_INFO)._luckFromItems).to.equal(5810)
   })
 
   it('can calculate kralkatite ore', () => {
@@ -879,7 +895,7 @@ describe('statistics > items', () => {
       {id: 45178, count: 3},
       {id: 86069, count: 1},
       {id: 45179, count: 7}
-    ])).kralkatiteOre).to.equal(5)
+    ]), EXTRA_INFO).kralkatiteOre).to.equal(5)
   })
 
   it('can calculate festive confetti infusions', () => {
@@ -894,7 +910,7 @@ describe('statistics > items', () => {
       {id: 45178, count: 1},
       {id: 84882, count: 1},
       {id: 84882, count: 1}
-    ])).festiveConfettiInfusions).to.equal(4)
+    ]), EXTRA_INFO).festiveConfettiInfusions).to.equal(4)
   })
 
   it('can calculate potions of pvp reward', () => {
@@ -909,7 +925,7 @@ describe('statistics > items', () => {
       {id: 45178, count: 1},
       {id: 84882, count: 1},
       {id: 84882, count: 1}
-    ])).potionOfPvpRewards).to.equal(2)
+    ]), EXTRA_INFO).potionOfPvpRewards).to.equal(2)
   })
 
   it('can calculate potions of wvw reward', () => {
@@ -924,7 +940,7 @@ describe('statistics > items', () => {
       {id: 78600, count: 1},
       {id: 84882, count: 1},
       {id: 84882, count: 1}
-    ])).potionOfWvwRewards).to.equal(2)
+    ]), EXTRA_INFO).potionOfWvwRewards).to.equal(2)
   })
 
   it('can calculate skirmish chests', () => {
@@ -939,7 +955,7 @@ describe('statistics > items', () => {
       {id: 81324, count: 1},
       {id: 84882, count: 1},
       {id: 84882, count: 1}
-    ])).skirmishChests).to.equal(2)
+    ]), EXTRA_INFO).skirmishChests).to.equal(2)
   })
 
   it('can calculate unstable fractal essence', () => {
@@ -955,7 +971,7 @@ describe('statistics > items', () => {
       {id: 94055, count: 1}, // Endless Inner Demon Combat Tonic
 
       {id: 81761, count: 9999999} // Celestial Infusion (Blue) -- (!) Does not count
-    ]))._unstableFractalEssenceFromItems).to.equal(7410)
+    ]), EXTRA_INFO)._unstableFractalEssenceFromItems).to.equal(7410)
   })
 
   it('can calculate stat infusion count', () => {
@@ -965,6 +981,6 @@ describe('statistics > items', () => {
       { id: 71383, count: 1 },
       { id: 38129, count: 1 },
       { id: 47897, count: 1 }
-    ])).statInfusions).to.equal(3)
+    ]), EXTRA_INFO).statInfusions).to.equal(3)
   })
 })
