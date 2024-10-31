@@ -149,6 +149,13 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({titles: [1, 2, 7, 9, 10]}, EXTRA_INFO).titleCount).to.equal(5)
   })
 
+  it('can calculate colored title coun', () => {
+    expect(unlocksStatistics({}, EXTRA_INFO).coloredTitleCount).to.equal(null)
+    expect(unlocksStatistics({titles: []}, EXTRA_INFO).coloredTitleCount).to.equal(0)
+    expect(unlocksStatistics({titles: [1]}, EXTRA_INFO).coloredTitleCount).to.equal(0)
+    expect(unlocksStatistics({titles: [1, 89]}, EXTRA_INFO).coloredTitleCount).to.equal(1)
+  })
+
   it('can calculate recipe count', () => {
     expect(unlocksStatistics({}, EXTRA_INFO).recipeCount).to.equal(null)
     expect(unlocksStatistics({recipes: []}, EXTRA_INFO).recipeCount).to.equal(0)

@@ -4,6 +4,7 @@ import immortalSkinIds from '../static/immortalSkinIds'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 import aureneLegendaryVariantSkinIds from '../gameData/aureneLegendaryVariants'
 import suffusedObsidianArmorSkinIds from '../gameData/suffusedObsidianArmors'
+import coloredTitleIds from '../gameData/coloredTitles'
 
 export default function (accountData, extraInformation) {
   return {
@@ -39,7 +40,8 @@ export default function (accountData, extraInformation) {
     _pristineFractalRelicsFromTitles: pristineFractalRelicsFromTitles(accountData),
     _unstableFractalEssenceFromUnlocks: unstableFractalEssenceFromUnlocks(accountData),
     aureneLegendaryVariantSkins: aureneLegendaryVariantSkins(accountData),
-    suffusedObsidianArmorSkins: suffusedObsidianArmorSkins(accountData)
+    suffusedObsidianArmorSkins: suffusedObsidianArmorSkins(accountData),
+    coloredTitleCount: coloredTitleCount(accountData)
   }
 }
 
@@ -177,6 +179,16 @@ function titleCount (accountData) {
   }
 
   return accountData.titles.length
+}
+
+function coloredTitleCount (accountData) {
+  if (!accountData.titles) {
+    return null
+  }
+
+  const titleCount = coloredTitleIds.filter(x => accountData.titles.includes(x)).length
+
+  return titleCount
 }
 
 // The unlocked recipes on the account
