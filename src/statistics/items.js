@@ -383,7 +383,7 @@ function countLegendaryInsights (items) {
     return null
   }
 
-  let {refinedIds, perfectedIds, envoyInsignia, giftOfProwess, legendaryInsight} = legendaryInsightItemIds
+  let {refinedIds, perfectedIds, envoyInsignia, giftOfProwess, legendaryInsight, raidCoffers, strikeCmCoffers} = legendaryInsightItemIds
 
   const refinedCount = refinedIds.reduce((sum, id) => sum + countItems(items, id), 0)
   const perfectedCount = perfectedIds.reduce((sum, id) => sum + countItems(items, id), 0)
@@ -393,12 +393,8 @@ function countLegendaryInsights (items) {
   li += Math.min(perfectedCount, 6) * 25 + Math.max(perfectedCount - 6, 0) * 50
   li += countItems(items, [envoyInsignia, giftOfProwess]) * 25
   li += countItems(items, legendaryInsight)
-  li += countItems(items, [
-    97269, // Mai Trin's Magnificent Coffer
-    96638, // Ankka's Magnificent Coffer
-    96419, // Minister Li's Magnificent Coffer
-    95986 // Void's Magnificent Coffer
-  ])
+  li += countItems(items, raidCoffers)
+  li += countItems(items, strikeCmCoffers)
 
   return li
 }
