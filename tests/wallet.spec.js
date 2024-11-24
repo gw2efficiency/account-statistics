@@ -75,7 +75,8 @@ describe('statistics > wallet', () => {
       jadeMinersKeycard: null,
       pinchOfStardust: null,
       staticCharge: null,
-      ursusOblige: null
+      ursusOblige: null,
+      gaetingCrystal: null
     })
   })
 
@@ -196,7 +197,8 @@ describe('statistics > wallet', () => {
       jadeMinersKeycard: 0,
       pinchOfStardust: 0,
       staticCharge: 0,
-      ursusOblige: 0
+      ursusOblige: 0,
+      gaetingCrystal: 0
     })
   })
 
