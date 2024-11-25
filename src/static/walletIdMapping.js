@@ -68,5 +68,6 @@ export default {
   staticCharge: 72,
   pinchOfStardust: 73,
   calcifiedGasp: 75,
-  ursusOblige: 76
+  ursusOblige: 76,
+  gaetingCrystals: 77
 }
