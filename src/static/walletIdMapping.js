@@ -69,5 +69,5 @@ export default {
   pinchOfStardust: 73,
   calcifiedGasp: 75,
   ursusOblige: 76,
-  gaetingCrystal: 77
+  gaetingCrystals: 77
 }

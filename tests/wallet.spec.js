@@ -76,7 +76,7 @@ describe('statistics > wallet', () => {
       pinchOfStardust: null,
       staticCharge: null,
       ursusOblige: null,
-      gaetingCrystal: null
+      gaetingCrystals: null
     })
   })
 
@@ -198,7 +198,7 @@ describe('statistics > wallet', () => {
       pinchOfStardust: 0,
       staticCharge: 0,
       ursusOblige: 0,
-      gaetingCrystal: 0
+      gaetingCrystals: 0
     })
   })
 
