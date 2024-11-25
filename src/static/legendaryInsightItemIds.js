@@ -41,5 +41,42 @@ export default {
   ],
   envoyInsignia: 80516,
   giftOfProwess: 78989,
-  legendaryInsight: 77302
+  legendaryInsight: 77302,
+  raidCoffers: [
+    91203, // Vale Guardian Coffer
+    91215, // Gorseval's Coffer
+    91147, // Sabetha's Coffer
+    91160, // Slothasor's Coffer
+    91184, // Prison-Camp Chest (container)
+    91252, // Matthias's Coffer
+    91262, // McLeod's Coffer
+    91187, // Keep Construct's Coffer
+    91182, // Xera's Coffer
+    91186, // Cairn's Coffer
+    91191, // Mursaat Overseer's Coffer
+    91267, // Samarog's Coffer
+    91233, // Deimos's Coffer
+    91211, // Desmina's Coffer
+    91244, // River of Souls Coffer
+    91138, // Statue of Grenth Coffer
+    91220, // Dhuum's Coffer
+    91157, // Conjured Amalgamate's Coffer
+    91166, // Twin Largos' Coffer
+    91237, // Qadim's Coffer
+    91241, // Cardinal Sabir's Coffer
+    91200, // Cardinal Adina's Coffer
+    91260, // Qadim the Peerless's Coffer
+    103783, // Greer's Coffer
+    103926, // Decima's Coffer
+    103946 // Ura's Coffer
+  ],
+  strikeCmCoffers: [
+    97269, // Mai Trin's Magnificent Coffer
+    96638, // Ankka's Magnificent Coffer
+    96419, // Minister Li's Magnificent Coffer
+    95986, // Void's Magnificent Coffer
+    99204, // Assault Knights' Magnificent Coffer
+    101542, // Cerus's Magnificent Coffer
+    101172 // Dagda's Magnificent Coffer
+  ]
 }
