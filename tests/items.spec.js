@@ -84,6 +84,7 @@ describe('statistics > items', () => {
       amnytasHerosChoice: null,
       innerNayosEndHerosChoice: null,
       convergenceHerosChoice: null,
+      convergenceMountBalriorWayfindersChoice: null,
       citadelOfZakirosHerosChoice: null,
       janthirSyntriHerosChoice: null,
       uniqueTonics: null,

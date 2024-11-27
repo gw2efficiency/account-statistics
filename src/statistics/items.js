@@ -112,6 +112,7 @@ export default function (accountData, extraInformation) {
     amnytasHerosChoice: countItems(items, 100193),
     innerNayosEndHerosChoice: countItems(items, 101195),
     convergenceHerosChoice: countItems(items, 101185),
+    convergenceMountBalriorWayfindersChoice: countItems(items, 103842),
     citadelOfZakirosHerosChoice: countItems(items, 101748),
     janthirSyntriHerosChoice: countItems(items, 102265),
     giftsOfExploration: countItems(items, 19677),
