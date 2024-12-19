@@ -45,6 +45,7 @@ describe('statistics > items', () => {
       legendaryItemsArmor: null,
       legendaryItemsBack: null,
       legendaryItemsTrinket: null,
+      legendaryItemsUpgradeComponent: null,
       luminescentRefractors: null,
       preservedQueenBees: null,
       permanentTools: null,
@@ -253,6 +254,17 @@ describe('statistics > items', () => {
       {id: 81908, count: 1},
       {id: 77474, count: 1}
     ]), EXTRA_INFO).legendaryItemsTrinket).to.equal(1)
+  })
+
+  it('can calculate legendary upgrade component count', () => {
+    expect(itemsStatistics(generateAccount([
+      {id: 123, count: 1},
+      {id: 74155, count: 1},
+      {id: 80277, count: 1},
+      {id: 1, count: 1},
+      {id: 91536, count: 1},
+      {id: 77474, count: 1}
+    ]), EXTRA_INFO).legendaryItemsUpgradeComponent).to.equal(1)
   })
 
   it('can calculate fractal tonic count', () => {
