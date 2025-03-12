@@ -16,6 +16,7 @@ import legendaryInsightItemIds from '../static/legendaryInsightItemIds'
 import cosmeticAuraItemMap from '../gameData/cosmeticAuras'
 import abyssalFractalWeapons from '../static/abyssalFractalWeapons'
 import statInfusionIds from '../gameData/statInfusions'
+import infiniteWvwBlueprints from '../static/infiniteWvwBlueprints'
 
 export default function (accountData, extraInformation) {
   const items = allItems(accountData)
@@ -161,6 +162,7 @@ export default function (accountData, extraInformation) {
     // (12) WORLD VS WORLD
     potionOfWvwRewards: countItems(items, 78600),
     skirmishChests: countItems(items, [84966, 81324, 96536]),
+    infiniteWvwBlueprints: countItems(items, infiniteWvwBlueprints, true),
 
     // (13) PLAYER VS PLAYER
     potionOfPvpRewards: countItems(items, 68110),
