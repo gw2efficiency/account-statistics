@@ -178,7 +178,8 @@ describe('statistics > items', () => {
       silentSymphony: null,
       arcaneFlowInfusion: null,
       mistwalkerInfusion: null,
-      statInfusions: null
+      statInfusions: null,
+      infiniteWvwBlueprints: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -995,5 +996,15 @@ describe('statistics > items', () => {
       { id: 38129, count: 1 },
       { id: 47897, count: 1 }
     ]), EXTRA_INFO).statInfusions).to.equal(3)
+  })
+
+  it('can calculate infinite blueprint count uniquely', () => {
+    expect(itemsStatistics(generateAccount([
+      { id: 103995, count: 2 },
+      { id: 103993, count: 1 },
+      { id: 71383, count: 1 },
+      { id: 38129, count: 1 },
+      { id: 47897, count: 1 }
+    ]), EXTRA_INFO).infiniteWvwBlueprints).to.equal(2)
   })
 })
