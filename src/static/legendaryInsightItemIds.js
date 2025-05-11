@@ -66,9 +66,15 @@ export default {
     91241, // Cardinal Sabir's Coffer
     91200, // Cardinal Adina's Coffer
     91260, // Qadim the Peerless's Coffer
-    103783, // Greer's Coffer
-    103926, // Decima's Coffer
-    103946 // Ura's Coffer
+    103783, // Greer's Coffer (old)
+    104306, // Greer's Coffer
+    104399, // Greer's Magnificent Coffer
+    103926, // Decima's Coffer (old)
+    104410, // Decima's Coffer
+    104246, // Decima's Magnificent Coffer
+    103946, // Ura's Coffer (old)
+    104439, // Ura's Coffer
+    104355 // Ura's Magnificent Coffer
   ],
   strikeCmCoffers: [
     97269, // Mai Trin's Magnificent Coffer
