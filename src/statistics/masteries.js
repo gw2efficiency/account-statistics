@@ -4,10 +4,13 @@ export default function (accountData) {
   if (!accountData.mastery || !accountData.mastery.points) {
     return {
       masteryPoints: null,
-      masteryPointsTyria: null,
-      masteryPointsMaguuma: null,
-      masteryPointsDesert: null,
-      masteryPointsCrystal: null
+      masteryPointsCentralTyria: null,
+      masteryPointsHeartOfThorns: null,
+      masteryPointsPathOfFire: null,
+      masteryPointsIcebroodSaga: null,
+      masteryPointsEndOfDragons: null,
+      masteryPointsSecretsOfTheObscure: null,
+      masteryPointsJanthirWilds: null
     }
   }
 
@@ -21,9 +24,12 @@ export default function (accountData) {
 
   return {
     masteryPoints: _sum(Object.values(earnedMasteryPoints)),
-    masteryPointsTyria: earnedMasteryPoints['Tyria'] || 0,
-    masteryPointsMaguuma: earnedMasteryPoints['Maguuma'] || 0,
-    masteryPointsDesert: earnedMasteryPoints['Desert'] || 0,
-    masteryPointsCrystal: earnedMasteryPoints['Tundra'] || 0
+    masteryPointsCentralTyria: earnedMasteryPoints['Central Tyria'] || 0,
+    masteryPointsHeartOfThorns: earnedMasteryPoints['Heart of Thorns'] || 0,
+    masteryPointsPathOfFire: earnedMasteryPoints['Path of Fire'] || 0,
+    masteryPointsIcebroodSaga: earnedMasteryPoints['Icebrood Saga'] || 0,
+    masteryPointsEndOfDragons: earnedMasteryPoints['End of Dragons'] || 0,
+    masteryPointsSecretsOfTheObscure: earnedMasteryPoints['Secrets of the Obscure'] || 0,
+    masteryPointsJanthirWilds: earnedMasteryPoints['Janthir Wilds'] || 0
   }
 }
