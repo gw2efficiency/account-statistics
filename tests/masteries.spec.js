@@ -9,7 +9,10 @@ describe('statistics > masteries', () => {
       masteryPointsTyria: null,
       masteryPointsMaguuma: null,
       masteryPointsDesert: null,
-      masteryPointsCrystal: null
+      masteryPointsCrystal: null,
+      masteryPointsEndOfDragons: null,
+      masteryPointsSecretsOfTheObscure: null,
+      masteryPointsJanthirWilds: null
     }
 
     expect(masteriesStatistics({mastery: {points: null}})).to.deep.equal(empty)
@@ -18,26 +21,32 @@ describe('statistics > masteries', () => {
   it('can calculate the mastery points', () => {
     const accountData = {
       totals: [
-        {region: 'Tyria', spent: 49, earned: 58},
-        {region: 'Maguuma', spent: 85, earned: 106},
-        {region: 'Desert', spent: 12, earned: 32},
-        {region: 'Tundra', spent: 3, earned: 12}
+        {region: 'Central Tyria', spent: 49, earned: 58},
+        {region: 'Heart of Thorns', spent: 85, earned: 106},
+        {region: 'Path of Fire', spent: 12, earned: 32},
+        {region: 'Icebrood Saga', spent: 3, earned: 12},
+        {region: 'End of Dragons', spent: 7, earned: 9},
+        {region: 'Secrets of the Obscure', spent: 4, earned: 5},
+        {region: 'Janthir Wilds', spent: 15, earned: 22}
       ]
     }
 
     expect(masteriesStatistics({mastery: {points: accountData}})).to.deep.equal({
-      masteryPoints: 58 + 106 + 32 + 12,
+      masteryPoints: 58 + 106 + 32 + 12 + 9 + 5 + 22,
       masteryPointsTyria: 58,
       masteryPointsMaguuma: 106,
       masteryPointsDesert: 32,
-      masteryPointsCrystal: 12
+      masteryPointsCrystal: 12,
+      masteryPointsEndOfDragons: 9,
+      masteryPointsSecretsOfTheObscure: 5,
+      masteryPointsJanthirWilds: 22
     })
   })
 
   it('can calculate the mastery points with missing points', () => {
     const accountData = {
       totals: [
-        {region: 'Maguuma', spent: 0, earned: 1}
+        {region: 'Heart of Thorns', spent: 0, earned: 1}
       ]
     }
 
@@ -47,7 +56,10 @@ describe('statistics > masteries', () => {
       masteryPointsTyria: 0,
       masteryPointsMaguuma: 1,
       masteryPointsDesert: 0,
-      masteryPointsCrystal: 0
+      masteryPointsCrystal: 0,
+      masteryPointsEndOfDragons: 0,
+      masteryPointsSecretsOfTheObscure: 0,
+      masteryPointsJanthirWilds: 0
     })
   })
 
@@ -57,7 +69,10 @@ describe('statistics > masteries', () => {
       masteryPointsTyria: 0,
       masteryPointsMaguuma: 0,
       masteryPointsDesert: 0,
-      masteryPointsCrystal: 0
+      masteryPointsCrystal: 0,
+      masteryPointsEndOfDragons: 0,
+      masteryPointsSecretsOfTheObscure: 0,
+      masteryPointsJanthirWilds: 0
     })
   })
 })
