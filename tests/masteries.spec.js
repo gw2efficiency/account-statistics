@@ -6,10 +6,10 @@ describe('statistics > masteries', () => {
   it('gracefully fails if the data is missing', () => {
     const empty = {
       masteryPoints: null,
-      masteryPointsCentralTyria: null,
-      masteryPointsHeartOfThorns: null,
-      masteryPointsPathOfFire: null,
-      masteryPointsIcebroodSaga: null,
+      masteryPointsTyria: null,
+      masteryPointsMaguuma: null,
+      masteryPointsDesert: null,
+      masteryPointsCrystal: null,
       masteryPointsEndOfDragons: null,
       masteryPointsSecretsOfTheObscure: null,
       masteryPointsJanthirWilds: null
@@ -33,10 +33,10 @@ describe('statistics > masteries', () => {
 
     expect(masteriesStatistics({mastery: {points: accountData}})).to.deep.equal({
       masteryPoints: 58 + 106 + 32 + 12 + 9 + 5 + 22,
-      masteryPointsCentralTyria: 58,
-      masteryPointsHeartOfThorns: 106,
-      masteryPointsPathOfFire: 32,
-      masteryPointsIcebroodSaga: 12,
+      masteryPointsTyria: 58,
+      masteryPointsMaguuma: 106,
+      masteryPointsDesert: 32,
+      masteryPointsCrystal: 12,
       masteryPointsEndOfDragons: 9,
       masteryPointsSecretsOfTheObscure: 5,
       masteryPointsJanthirWilds: 22
@@ -53,10 +53,10 @@ describe('statistics > masteries', () => {
     const levelZeroMastery = masteriesStatistics({mastery: {points: accountData}})
     expect(levelZeroMastery).to.deep.equal({
       masteryPoints: 1,
-      masteryPointsCentralTyria: 0,
-      masteryPointsHeartOfThorns: 1,
-      masteryPointsPathOfFire: 0,
-      masteryPointsIcebroodSaga: 0,
+      masteryPointsTyria: 0,
+      masteryPointsMaguuma: 1,
+      masteryPointsDesert: 0,
+      masteryPointsCrystal: 0,
       masteryPointsEndOfDragons: 0,
       masteryPointsSecretsOfTheObscure: 0,
       masteryPointsJanthirWilds: 0
@@ -66,10 +66,10 @@ describe('statistics > masteries', () => {
   it('can calculate the mastery points without any points', () => {
     expect(masteriesStatistics({mastery: {points: {totals: []}}})).to.deep.equal({
       masteryPoints: 0,
-      masteryPointsCentralTyria: 0,
-      masteryPointsHeartOfThorns: 0,
-      masteryPointsPathOfFire: 0,
-      masteryPointsIcebroodSaga: 0,
+      masteryPointsTyria: 0,
+      masteryPointsMaguuma: 0,
+      masteryPointsDesert: 0,
+      masteryPointsCrystal: 0,
       masteryPointsEndOfDragons: 0,
       masteryPointsSecretsOfTheObscure: 0,
       masteryPointsJanthirWilds: 0
