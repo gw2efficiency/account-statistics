@@ -6,7 +6,7 @@ export default function (accountData) {
     wvwRank: wvwRank(accountData),
     playtime: playtime(accountData),
     playtimePerDay: playtimePerDay(accountData),
-    _luckFromAccount: luckFromAccount(accountData),
+    luckFromAccount: luckFromAccount(accountData),
     totalStorageSlots: totalStorageSlots(accountData)
   }
 }

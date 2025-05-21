@@ -113,7 +113,7 @@ describe('statistics > items', () => {
       airshipOil: null,
       auricDust: null,
       leyLineSparks: null,
-      _luckFromItems: null,
+      luckFromItems: null,
       legendarySpikes: null,
       fireOrchidBlossoms: null,
       orrianPearls: null,
@@ -894,7 +894,7 @@ describe('statistics > items', () => {
       {id: 45178, count: 3}, // 600
       {id: 45179, count: 1}, // 500
       {id: 45179, count: 7} // 3500
-    ]), EXTRA_INFO)._luckFromItems).to.equal(5810)
+    ]), EXTRA_INFO).luckFromItems).to.equal(5810)
   })
 
   it('can calculate kralkatite ore', () => {

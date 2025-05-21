@@ -34,9 +34,9 @@ describe('statistics > account', () => {
   })
 
   it('can calculate luck', () => {
-    expect(accountStatistics({})._luckFromAccount).to.equal(null)
-    expect(accountStatistics({luck: null})._luckFromAccount).to.equal(null)
-    expect(accountStatistics({luck: 120})._luckFromAccount).to.equal(120)
+    expect(accountStatistics({}).luckFromAccount).to.equal(null)
+    expect(accountStatistics({luck: null}).luckFromAccount).to.equal(null)
+    expect(accountStatistics({luck: 120}).luckFromAccount).to.equal(120)
   })
 
   it('can calculate total storage slots', () => {

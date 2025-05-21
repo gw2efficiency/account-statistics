@@ -77,7 +77,7 @@ export default function (accountData, extraInformation) {
 
     // (7) PROGRESSION
     uniqueTonics: countItems(items, tonics.filter(x => x.permanent).map(x => x.ids), true),
-    _luckFromItems: weightedCountItems(items, luckItemIds),
+    luckFromItems: weightedCountItems(items, luckItemIds),
 
     // (8) AURA ITEMS
     ...auraItems,

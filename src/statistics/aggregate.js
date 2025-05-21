@@ -7,7 +7,6 @@ export default function (accountStatistics) {
     deathCountPerHour: deathCountPerHour(accountStatistics),
     fractalRelics: fractalRelics(accountStatistics),
     pristineFractalRelics: pristineFractalRelics(accountStatistics),
-    luck: luck(accountStatistics),
     raidTokenCount: raidTokenCount(accountStatistics),
     blueProphetCrystal: blueProphetCrystal(accountStatistics),
     greenProphetCrystal: greenProphetCrystal(accountStatistics),
@@ -131,18 +130,6 @@ function redProphetCrystal (accountStatistics) {
   }
 
   return accountStatistics._redProphetCrystal + accountStatistics._redProphetShard / 20
-}
-
-// Sum up luck from account and luck items
-function luck (accountStatistics) {
-  if (
-    accountStatistics._luckFromAccount == null ||
-    accountStatistics._luckFromItems == null
-  ) {
-    return null
-  }
-
-  return accountStatistics._luckFromAccount + accountStatistics._luckFromItems
 }
 
 function raidTokenCount (accountStatistics) {
