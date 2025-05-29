@@ -36,6 +36,7 @@ function totalAuras (accountStatistics) {
     'nightfury',
     'wintersPresence',
     'legendaryItemsTrinket',
+    'rimeRimmedRebreather',
     ...Object.keys(cosmeticAuraItemMap)
   ]
 

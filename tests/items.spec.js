@@ -179,7 +179,10 @@ describe('statistics > items', () => {
       arcaneFlowInfusion: null,
       mistwalkerInfusion: null,
       statInfusions: null,
-      infiniteWvwBlueprints: null
+      infiniteWvwBlueprints: null,
+      bloodstoneInfusion: null,
+      heatCoreInfusion: null,
+      forestWispInfusion: null
     }
 
     const bothPermissions = {bank: null, characters: null}
