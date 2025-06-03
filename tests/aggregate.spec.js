@@ -10,6 +10,7 @@ describe('statistics > aggregate', () => {
       nightfury: 0,
       wintersPresence: 1,
       legendaryItemsTrinket: 1,
+      rimeRimmedRebreather: 1,
 
       abyssalInfusion: 1,
       baubleInfusions: 1,
@@ -48,10 +49,13 @@ describe('statistics > aggregate', () => {
       silentSymphony: 1,
       arcaneFlowInfusion: 1,
       mistwalkerInfusion: 1,
+      bloodstoneInfusion: 1,
+      heatCoreInfusion: 1,
+      forestWispInfusion: 1,
 
       // (!) Has to be ignored, else it's counting double
       celestialInfusion: 999
-    }).totalAuras).to.equal(39)
+    }).totalAuras).to.equal(43)
   })
 
   it('can calculate death count per hour', () => {

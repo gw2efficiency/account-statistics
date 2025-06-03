@@ -228,6 +228,13 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({skins: [1, 2, 6577, 6577]}, EXTRA_INFO).wintersPresence).to.equal(1)
   })
 
+  it('can calculate the rime rimmed rebreather unlock', () => {
+    expect(unlocksStatistics({}, EXTRA_INFO).rimeRimmedRebreather).to.equal(null)
+    expect(unlocksStatistics({skins: []}, EXTRA_INFO).rimeRimmedRebreather).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 7, 9, 10]}, EXTRA_INFO).rimeRimmedRebreather).to.equal(0)
+    expect(unlocksStatistics({skins: [1, 2, 6891, 6891]}, EXTRA_INFO).rimeRimmedRebreather).to.equal(1)
+  })
+
   it('can calculate the nightfury unlock', () => {
     expect(unlocksStatistics({}, EXTRA_INFO).nightfury).to.equal(null)
     expect(unlocksStatistics({skins: []}, EXTRA_INFO).nightfury).to.equal(0)

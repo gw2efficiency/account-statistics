@@ -35,6 +35,7 @@ export default function (accountData, extraInformation) {
     fractalSkins: fractalSkins(accountData),
     immortalSkins: immortalSkins(accountData),
     wintersPresence: skinExists(accountData, 6577),
+    rimeRimmedRebreather: skinExists(accountData, 6891),
     nightfury: skinExists(accountData, 6161),
     _fractalRelicsFromTitles: fractalRelicsFromTitles(accountData),
     _pristineFractalRelicsFromTitles: pristineFractalRelicsFromTitles(accountData),
