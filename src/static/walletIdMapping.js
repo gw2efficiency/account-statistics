@@ -71,6 +71,6 @@ export default {
   ursusOblige: 76,
   gaetingCrystals: 77,
   _essenceOfDespairFromWallet: 78,
-  _essenceOfGreedFromWallet: 79,
-  _essenceOfTriumphFromWallet: 80
+  _essenceOfGreedFromWallet: 80,
+  _essenceOfTriumphFromWallet: 79
 }
