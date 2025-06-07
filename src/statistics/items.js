@@ -57,9 +57,9 @@ export default function (accountData, extraInformation) {
     hatchedChili: countItems(items, 92072),
     eternalIceShard: countItems(items, 92272),
     eitriteIngots: countItems(items, 92317),
-    essenceOfDespair: countItems(items, 100078),
-    essenceOfGreed: countItems(items, 100414),
-    essenceOfTriumph: countItems(items, 100055),
+    _essenceOfDespairFromItems: countItems(items, [100078, 104747]),
+    _essenceOfGreedFromItems: countItems(items, [100414, 104773]),
+    _essenceOfTriumphFromItems: countItems(items, [100055, 105009]),
 
     // (4) DUNGEONS
     chestOfDungeoneering: countItems(items, [78252, 98187]),

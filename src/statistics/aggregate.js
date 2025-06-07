@@ -14,7 +14,10 @@ export default function (accountStatistics) {
     redProphetCrystal: redProphetCrystal(accountStatistics),
 
     // We use the old key here because we want to continue the statistic for the user for the discontinued items
-    unstableCosmicEssences: unstableFractalEssence(accountStatistics)
+    unstableCosmicEssences: unstableFractalEssence(accountStatistics),
+    essenceOfDespair: fineRifEssenceCount(accountStatistics),
+    essenceOfGreed: masterworkRifEssenceCount(accountStatistics),
+    essenceOfTriumph: rareRifEssenceCount(accountStatistics)
   }
 }
 
@@ -159,5 +162,47 @@ function raidTokenCount (accountStatistics) {
     accountStatistics._legendaryInsightsFromItems +
     accountStatistics._legendaryDivinationsFromItems +
     accountStatistics._legendaryInsightsFromWallet
+  )
+}
+
+function fineRifEssenceCount (accountStatistics) {
+  if (
+    accountStatistics._essenceOfDespairFromItems == null ||
+    accountStatistics._essenceOfDespairFromWallet == null
+  ) {
+    return null
+  }
+
+  return (
+    accountStatistics._essenceOfDespairFromItems +
+    accountStatistics._essenceOfDespairFromWallet
+  )
+}
+
+function masterworkRifEssenceCount (accountStatistics) {
+  if (
+    accountStatistics._essenceOfGreedFromItems == null ||
+    accountStatistics._essenceOfGreedFromWallet == null
+  ) {
+    return null
+  }
+
+  return (
+    accountStatistics._essenceOfGreedFromItems +
+    accountStatistics._essenceOfGreedFromWallet
+  )
+}
+
+function rareRifEssenceCount (accountStatistics) {
+  if (
+    accountStatistics._essenceOfTriumphFromItems == null ||
+    accountStatistics._essenceOfTriumphFromWallet == null
+  ) {
+    return null
+  }
+
+  return (
+    accountStatistics._essenceOfTriumphFromItems +
+    accountStatistics._essenceOfTriumphFromWallet
   )
 }
