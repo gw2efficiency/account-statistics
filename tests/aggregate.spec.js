@@ -180,4 +180,79 @@ describe('statistics > aggregate', () => {
       _unstableFractalEssenceFromItems: 1200
     }).unstableCosmicEssences).to.equal(1651 + 500 + 1200)
   })
+
+  it('can calculate fine rift essence count', () => {
+    expect(aggregateStatistics({}).essenceOfDespair).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfDespairFromItems: null,
+        _essenceOfDespairFromWallet: 1
+      }).essenceOfDespair
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfDespairFromItems: 1,
+        _essenceOfDespairFromWallet: null
+      }).essenceOfDespair
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfDespairFromItems: 1,
+        _essenceOfDespairFromWallet: 5
+      }).essenceOfDespair
+    ).to.equal(6)
+  })
+
+  it('can calculate masterwork rift essence count', () => {
+    expect(aggregateStatistics({}).essenceOfGreed).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfGreedFromItems: null,
+        _essenceOfGreedFromWallet: 1
+      }).essenceOfGreed
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfGreedFromItems: 1,
+        _essenceOfGreedFromWallet: null
+      }).essenceOfGreed
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfGreedFromItems: 1,
+        _essenceOfGreedFromWallet: 5
+      }).essenceOfGreed
+    ).to.equal(6)
+  })
+
+  it('can calculate fine rift essence count', () => {
+    expect(aggregateStatistics({}).essenceOfTriumph).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfTriumphFromItems: null,
+        _essenceOfTriumphFromWallet: 1
+      }).essenceOfTriumph
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfTriumphFromItems: 1,
+        _essenceOfTriumphFromWallet: null
+      }).essenceOfTriumph
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        _essenceOfTriumphFromItems: 1,
+        _essenceOfTriumphFromWallet: 5
+      }).essenceOfTriumph
+    ).to.equal(6)
+  })
 })

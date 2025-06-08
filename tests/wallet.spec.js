@@ -76,7 +76,10 @@ describe('statistics > wallet', () => {
       pinchOfStardust: null,
       staticCharge: null,
       ursusOblige: null,
-      gaetingCrystals: null
+      gaetingCrystals: null,
+      _essenceOfDespairFromWallet: null,
+      _essenceOfGreedFromWallet: null,
+      _essenceOfTriumphFromWallet: null
     })
   })
 
@@ -198,7 +201,10 @@ describe('statistics > wallet', () => {
       pinchOfStardust: 0,
       staticCharge: 0,
       ursusOblige: 0,
-      gaetingCrystals: 0
+      gaetingCrystals: 0,
+      _essenceOfDespairFromWallet: 0,
+      _essenceOfGreedFromWallet: 0,
+      _essenceOfTriumphFromWallet: 0
     })
   })
 

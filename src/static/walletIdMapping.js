@@ -69,5 +69,8 @@ export default {
   pinchOfStardust: 73,
   calcifiedGasp: 75,
   ursusOblige: 76,
-  gaetingCrystals: 77
+  gaetingCrystals: 77,
+  _essenceOfDespairFromWallet: 78,
+  _essenceOfGreedFromWallet: 80,
+  _essenceOfTriumphFromWallet: 79
 }
