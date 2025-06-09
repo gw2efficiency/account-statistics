@@ -12,6 +12,7 @@ export default function (accountStatistics) {
     blueProphetCrystal: blueProphetCrystal(accountStatistics),
     greenProphetCrystal: greenProphetCrystal(accountStatistics),
     redProphetCrystal: redProphetCrystal(accountStatistics),
+    commandersChoiceChestsCount: commandersChoiceChestsCount(accountStatistics),
 
     // We use the old key here because we want to continue the statistic for the user for the discontinued items
     unstableCosmicEssences: unstableFractalEssence(accountStatistics),
@@ -204,5 +205,55 @@ function rareRifEssenceCount (accountStatistics) {
   return (
     accountStatistics._essenceOfTriumphFromItems +
     accountStatistics._essenceOfTriumphFromWallet
+  )
+}
+
+function commandersChoiceChestsCount (accountStatistics) {
+  if (
+    accountStatistics.vbHerosChoice == null ||
+    accountStatistics.tdHerosChoice == null ||
+    accountStatistics.abHerosChoice == null ||
+    accountStatistics.dsHerosChoice == null ||
+    accountStatistics.crystalOasisHerosChoice == null ||
+    accountStatistics.elonRiverlandsHerosChoice == null ||
+    accountStatistics.theDesolationHerosChoice == null ||
+    accountStatistics.domainOfVabbiHerosChoice == null ||
+    accountStatistics.seitungProvinceHerosChoice == null ||
+    accountStatistics.newKainengCityHerosChoice == null ||
+    accountStatistics.echovaldWildsHerosChoice == null ||
+    accountStatistics.dragonsEndHerosChoice == null ||
+    accountStatistics.gyalaDelveHerosChoice == null ||
+    accountStatistics.skywatchArchipelagoHerosChoice == null ||
+    accountStatistics.amnytasHerosChoice == null ||
+    accountStatistics.innerNayosEndHerosChoice == null ||
+    accountStatistics.convergenceHerosChoice == null ||
+    accountStatistics.convergenceMountBalriorWayfindersChoice == null ||
+    accountStatistics.citadelOfZakirosHerosChoice == null ||
+    accountStatistics.janthirSyntriHerosChoice == null
+  ) {
+    return null
+  }
+
+  return (
+    accountStatistics.vbHerosChoice +
+    accountStatistics.tdHerosChoice +
+    accountStatistics.abHerosChoice +
+    accountStatistics.dsHerosChoice +
+    accountStatistics.crystalOasisHerosChoice +
+    accountStatistics.elonRiverlandsHerosChoice +
+    accountStatistics.theDesolationHerosChoice +
+    accountStatistics.domainOfVabbiHerosChoice +
+    accountStatistics.seitungProvinceHerosChoice +
+    accountStatistics.newKainengCityHerosChoice +
+    accountStatistics.echovaldWildsHerosChoice +
+    accountStatistics.dragonsEndHerosChoice +
+    accountStatistics.gyalaDelveHerosChoice +
+    accountStatistics.skywatchArchipelagoHerosChoice +
+    accountStatistics.amnytasHerosChoice +
+    accountStatistics.innerNayosEndHerosChoice +
+    accountStatistics.convergenceHerosChoice +
+    accountStatistics.convergenceMountBalriorWayfindersChoice +
+    accountStatistics.citadelOfZakirosHerosChoice +
+    accountStatistics.janthirSyntriHerosChoice
   )
 }
