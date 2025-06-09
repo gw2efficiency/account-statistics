@@ -255,4 +255,606 @@ describe('statistics > aggregate', () => {
       }).essenceOfTriumph
     ).to.equal(6)
   })
+
+  it('can calculate commanders choice chests count', () => {
+    expect(aggregateStatistics({}).commandersChoiceChestsCount).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: 1,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: 1,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: 1,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: 1,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: 1,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: 1,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: 1,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: 1,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: 1,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: 1,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: 1,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: 1,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: 1,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: 1,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: 1,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: 1,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: 1,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: 1,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: 1,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: 1,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: 1
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: 1,
+        tdHerosChoice: 1,
+        abHerosChoice: 1,
+        dsHerosChoice: 1,
+        crystalOasisHerosChoice: 1,
+        elonRiverlandsHerosChoice: 1,
+        theDesolationHerosChoice: 1,
+        domainOfVabbiHerosChoice: 1,
+        seitungProvinceHerosChoice: 1,
+        newKainengCityHerosChoice: 1,
+        echovaldWildsHerosChoice: 2,
+        dragonsEndHerosChoice: 5,
+        gyalaDelveHerosChoice: 6,
+        skywatchArchipelagoHerosChoice: 4,
+        amnytasHerosChoice: 3,
+        innerNayosEndHerosChoice: 1,
+        convergenceHerosChoice: 1,
+        convergenceMountBalriorWayfindersChoice: 5,
+        citadelOfZakirosHerosChoice: 3,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: 1
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: 1,
+        tdHerosChoice: 1,
+        abHerosChoice: 1,
+        dsHerosChoice: 1,
+        crystalOasisHerosChoice: 1,
+        elonRiverlandsHerosChoice: 1,
+        theDesolationHerosChoice: 1,
+        domainOfVabbiHerosChoice: 1,
+        seitungProvinceHerosChoice: 1,
+        newKainengCityHerosChoice: 1,
+        echovaldWildsHerosChoice: 2,
+        dragonsEndHerosChoice: 5,
+        gyalaDelveHerosChoice: 6,
+        skywatchArchipelagoHerosChoice: 4,
+        amnytasHerosChoice: 3,
+        innerNayosEndHerosChoice: 1,
+        convergenceHerosChoice: 1,
+        convergenceMountBalriorWayfindersChoice: 5,
+        citadelOfZakirosHerosChoice: 3,
+        janthirSyntriHerosChoice: 1,
+        bavaNisosCommandersChoice: 1
+      }).commandersChoiceChestsCount
+    ).to.equal(42)
+  })
 })
