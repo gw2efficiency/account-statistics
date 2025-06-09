@@ -117,6 +117,7 @@ export default function (accountData, extraInformation) {
     convergenceMountBalriorWayfindersChoice: countItems(items, 103842),
     citadelOfZakirosHerosChoice: countItems(items, [101748, 104728]),
     janthirSyntriHerosChoice: countItems(items, [102265, 104832, 104942]),
+    bavaNisosCommandersChoice: countItems(items, 104714),
     giftsOfExploration: countItems(items, 19677),
     giftsOfBattle: countItems(items, 19678),
     tomesOfKnowledge: countItems(items, [43741, 43766]),
