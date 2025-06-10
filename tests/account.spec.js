@@ -13,7 +13,7 @@ describe('statistics > account', () => {
   it('can calculate the wvw rank', () => {
     expect(accountStatistics({}).wvwRank).to.equal(null)
     expect(accountStatistics({account: {}}).wvwRank).to.equal(null)
-    expect(accountStatistics({account: {wvw_rank: 123}}).wvwRank).to.equal(123)
+    expect(accountStatistics({account: {wvw: {rank: 123}}}).wvwRank).to.equal(123)
   })
 
   it('can calculate the playtime', () => {
