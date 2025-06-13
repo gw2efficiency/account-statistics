@@ -26,15 +26,15 @@ function guildCount (accountData) {
 
 // The wvw rank
 function wvwRank (accountData) {
-  if (!accountData.account) {
+  if (!accountData.account || !accountData.account.wvw) {
     return null
   }
 
-  if (typeof accountData.account.wvw_rank === 'undefined') {
+  if (typeof accountData.account.wvw.rank === 'undefined') {
     return null
   }
 
-  return accountData.account.wvw_rank
+  return accountData.account.wvw.rank
 }
 
 // The amount of seconds played on this account
