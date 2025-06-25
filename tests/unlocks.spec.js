@@ -276,4 +276,10 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({ skins: [1, 2, 7, 9, 10] }, EXTRA_INFO).suffusedObsidianArmorSkins).to.equal(0)
     expect(unlocksStatistics({ skins: [1, 2, 12171, 12136] }, EXTRA_INFO).suffusedObsidianArmorSkins).to.equal(2)
   })
+
+  it('can calculate homestead decoration count', () => {
+    expect(unlocksStatistics({}, EXTRA_INFO).homesteadDecorationCount).to.equal(null)
+    expect(unlocksStatistics({ homestead: { decorations: [] } }, EXTRA_INFO).homesteadDecorationCount).to.equal(0)
+    expect(unlocksStatistics({ homestead: { decorations: [{ id: 1, count: 1 }, { id: 2, count: 2 }] } }, EXTRA_INFO).homesteadDecorationCount).to.equal(3)
+  })
 })

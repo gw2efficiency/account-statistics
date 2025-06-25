@@ -42,7 +42,8 @@ export default function (accountData, extraInformation) {
     _unstableFractalEssenceFromUnlocks: unstableFractalEssenceFromUnlocks(accountData),
     aureneLegendaryVariantSkins: aureneLegendaryVariantSkins(accountData),
     suffusedObsidianArmorSkins: suffusedObsidianArmorSkins(accountData),
-    coloredTitleCount: coloredTitleCount(accountData)
+    coloredTitleCount: coloredTitleCount(accountData),
+    homesteadDecorationCount: homesteadDecorationCount(accountData)
   }
 }
 
@@ -354,4 +355,13 @@ function unstableFractalEssenceFromUnlocks (accountData) {
   }
 
   return sum
+}
+
+// The amount of homestead decorations on the account
+function homesteadDecorationCount (accountData) {
+  if (!accountData.homestead || !accountData.homestead.decorations) {
+    return null
+  }
+
+  return accountData.homestead.decorations.reduce((sum, decoration) => sum + decoration.count, 0)
 }
