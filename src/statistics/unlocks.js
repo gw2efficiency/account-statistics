@@ -43,7 +43,8 @@ export default function (accountData, extraInformation) {
     aureneLegendaryVariantSkins: aureneLegendaryVariantSkins(accountData),
     suffusedObsidianArmorSkins: suffusedObsidianArmorSkins(accountData),
     coloredTitleCount: coloredTitleCount(accountData),
-    homesteadDecorationCount: homesteadDecorationCount(accountData)
+    homesteadDecorationCount: homesteadDecorationCount(accountData),
+    homesteadDecorationCountUnique: homesteadDecorationCountUnique(accountData)
   }
 }
 
@@ -364,4 +365,12 @@ function homesteadDecorationCount (accountData) {
   }
 
   return accountData.homestead.decorations.reduce((sum, decoration) => sum + decoration.count, 0)
+}
+
+function homesteadDecorationCountUnique (accountData) {
+  if (!accountData.homestead || !accountData.homestead.decorations) {
+    return null
+  }
+
+  return accountData.homestead.decorations.filter((d) => d.count > 0).length
 }

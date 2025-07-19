@@ -282,4 +282,10 @@ describe('statistics > unlocks', () => {
     expect(unlocksStatistics({ homestead: { decorations: [] } }, EXTRA_INFO).homesteadDecorationCount).to.equal(0)
     expect(unlocksStatistics({ homestead: { decorations: [{ id: 1, count: 1 }, { id: 2, count: 2 }] } }, EXTRA_INFO).homesteadDecorationCount).to.equal(3)
   })
+
+  it('can calculate homestead decoration count uniquely', () => {
+    expect(unlocksStatistics({}, EXTRA_INFO).homesteadDecorationCountUnique).to.equal(null)
+    expect(unlocksStatistics({ homestead: { decorations: [] } }, EXTRA_INFO).homesteadDecorationCountUnique).to.equal(0)
+    expect(unlocksStatistics({ homestead: { decorations: [{ id: 1, count: 1 }, { id: 2, count: 2 }] } }, EXTRA_INFO).homesteadDecorationCountUnique).to.equal(2)
+  })
 })
