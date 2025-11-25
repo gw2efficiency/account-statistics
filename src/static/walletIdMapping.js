@@ -72,5 +72,8 @@ export default {
   gaetingCrystals: 77,
   _essenceOfDespairFromWallet: 78,
   _essenceOfGreedFromWallet: 80,
-  _essenceOfTriumphFromWallet: 79
+  _essenceOfTriumphFromWallet: 79,
+  antiquatedDucat: 81,
+  testimonyOfCastoranHeroics: 82,
+  aetherRichSap: 83
 }

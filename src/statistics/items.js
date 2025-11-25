@@ -118,6 +118,7 @@ export default function (accountData, extraInformation) {
     citadelOfZakirosHerosChoice: countItems(items, [101748, 104728]),
     janthirSyntriHerosChoice: countItems(items, [102265, 104832, 104942]),
     bavaNisosCommandersChoice: countItems(items, 104714),
+    castoraHeroesChoiceChest: countItems(items, 105822),
     giftsOfExploration: countItems(items, 19677),
     giftsOfBattle: countItems(items, 19678),
     tomesOfKnowledge: countItems(items, [43741, 43766]),

@@ -79,7 +79,10 @@ describe('statistics > wallet', () => {
       gaetingCrystals: null,
       _essenceOfDespairFromWallet: null,
       _essenceOfGreedFromWallet: null,
-      _essenceOfTriumphFromWallet: null
+      _essenceOfTriumphFromWallet: null,
+      antiquatedDucat: null,
+      testimonyOfCastoranHeroics: null,
+      aetherRichSap: null
     })
   })
 
@@ -204,7 +207,10 @@ describe('statistics > wallet', () => {
       gaetingCrystals: 0,
       _essenceOfDespairFromWallet: 0,
       _essenceOfGreedFromWallet: 0,
-      _essenceOfTriumphFromWallet: 0
+      _essenceOfTriumphFromWallet: 0,
+      antiquatedDucat: 0,
+      testimonyOfCastoranHeroics: 0,
+      aetherRichSap: 0
     })
   })
 
