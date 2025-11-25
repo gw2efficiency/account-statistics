@@ -118,7 +118,9 @@ function convergenceCompletions (accountData) {
 
   const achievements = [
     { id: 7668, perRepeat: 100 }, // Convergence Conquerer
-    { id: 7720, perRepeat: 150 } // Continuous Convergence Conqueror
+    { id: 7720, perRepeat: 150 }, // Continuous Convergence Conqueror
+    { id: 8456, perRepeat: 50 }, // Mount Balrior: Convergence Conqueror
+    { id: 8440, perRepeat: 50 } // Mount Balrior: Continuous Convergence Conqueror
   ]
 
   let sum = 0
