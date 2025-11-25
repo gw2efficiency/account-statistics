@@ -230,7 +230,8 @@ function commandersChoiceChestsCount (accountStatistics) {
     accountStatistics.convergenceMountBalriorWayfindersChoice == null ||
     accountStatistics.citadelOfZakirosHerosChoice == null ||
     accountStatistics.janthirSyntriHerosChoice == null ||
-    accountStatistics.bavaNisosCommandersChoice == null
+    accountStatistics.bavaNisosCommandersChoice == null ||
+    accountStatistics.castoraHeroesChoiceChest == null
   ) {
     return null
   }
@@ -256,6 +257,7 @@ function commandersChoiceChestsCount (accountStatistics) {
     accountStatistics.convergenceMountBalriorWayfindersChoice +
     accountStatistics.citadelOfZakirosHerosChoice +
     accountStatistics.janthirSyntriHerosChoice +
-    accountStatistics.bavaNisosCommandersChoice
+    accountStatistics.bavaNisosCommandersChoice +
+    accountStatistics.castoraHeroesChoiceChest
   )
 }

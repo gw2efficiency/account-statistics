@@ -27,19 +27,21 @@ describe('statistics > masteries', () => {
         {region: 'Icebrood Saga', spent: 3, earned: 12},
         {region: 'End of Dragons', spent: 7, earned: 9},
         {region: 'Secrets of the Obscure', spent: 4, earned: 5},
-        {region: 'Janthir Wilds', spent: 15, earned: 22}
+        {region: 'Janthir Wilds', spent: 15, earned: 22},
+        {region: 'Visions of Eternity', spent: 8, earned: 12}
       ]
     }
 
     expect(masteriesStatistics({mastery: {points: accountData}})).to.deep.equal({
-      masteryPoints: 58 + 106 + 32 + 12 + 9 + 5 + 22,
+      masteryPoints: 58 + 106 + 32 + 12 + 9 + 5 + 22 + 12,
       masteryPointsTyria: 58,
       masteryPointsMaguuma: 106,
       masteryPointsDesert: 32,
       masteryPointsCrystal: 12,
       masteryPointsEndOfDragons: 9,
       masteryPointsSecretsOfTheObscure: 5,
-      masteryPointsJanthirWilds: 22
+      masteryPointsJanthirWilds: 22,
+      masteryPointsVisionsOfEternity: 12
     })
   })
 
@@ -59,7 +61,8 @@ describe('statistics > masteries', () => {
       masteryPointsCrystal: 0,
       masteryPointsEndOfDragons: 0,
       masteryPointsSecretsOfTheObscure: 0,
-      masteryPointsJanthirWilds: 0
+      masteryPointsJanthirWilds: 0,
+      masteryPointsVisionsOfEternity: 0
     })
   })
 
@@ -72,7 +75,8 @@ describe('statistics > masteries', () => {
       masteryPointsCrystal: 0,
       masteryPointsEndOfDragons: 0,
       masteryPointsSecretsOfTheObscure: 0,
-      masteryPointsJanthirWilds: 0
+      masteryPointsJanthirWilds: 0,
+      masteryPointsVisionsOfEternity: 0
     })
   })
 })

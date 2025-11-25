@@ -89,6 +89,7 @@ describe('statistics > items', () => {
       citadelOfZakirosHerosChoice: null,
       janthirSyntriHerosChoice: null,
       bavaNisosCommandersChoice: null,
+      castoraHeroesChoiceChest: null,
       uniqueTonics: null,
       bloodRubies: null,
       petrifiedWood: null,
@@ -183,7 +184,10 @@ describe('statistics > items', () => {
       infiniteWvwBlueprints: null,
       bloodstoneInfusion: null,
       heatCoreInfusion: null,
-      forestWispInfusion: null
+      forestWispInfusion: null,
+      chromaticBubbles: null,
+      etherealSeaLifeInfusion: null,
+      agonyLens: null
     }
 
     const bothPermissions = {bank: null, characters: null}

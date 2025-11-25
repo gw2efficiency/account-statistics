@@ -52,10 +52,13 @@ describe('statistics > aggregate', () => {
       bloodstoneInfusion: 1,
       heatCoreInfusion: 1,
       forestWispInfusion: 1,
+      chromaticBubbles: 1,
+      etherealSeaLifeInfusion: 1,
+      agonyLens: 1,
 
       // (!) Has to be ignored, else it's counting double
       celestialInfusion: 999
-    }).totalAuras).to.equal(43)
+    }).totalAuras).to.equal(46)
   })
 
   it('can calculate death count per hour', () => {
@@ -281,7 +284,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: 1,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -307,7 +311,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: 1,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -333,7 +338,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: 1,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -359,7 +365,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -385,7 +392,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -411,7 +419,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -437,7 +446,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -463,7 +473,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -489,7 +500,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -515,7 +527,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -541,7 +554,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -567,7 +581,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -593,7 +608,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -619,7 +635,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -645,7 +662,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -671,7 +689,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -697,7 +716,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -723,7 +743,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -749,7 +770,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -775,7 +797,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: null
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: null
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -801,7 +824,35 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: null,
         citadelOfZakirosHerosChoice: null,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: 1
+        bavaNisosCommandersChoice: 1,
+        castoraHeroesChoiceChest: null
+      }).commandersChoiceChestsCount
+    ).to.equal(null)
+
+    expect(
+      aggregateStatistics({
+        vbHerosChoice: null,
+        tdHerosChoice: null,
+        abHerosChoice: null,
+        dsHerosChoice: null,
+        crystalOasisHerosChoice: null,
+        elonRiverlandsHerosChoice: null,
+        theDesolationHerosChoice: null,
+        domainOfVabbiHerosChoice: null,
+        seitungProvinceHerosChoice: null,
+        newKainengCityHerosChoice: null,
+        echovaldWildsHerosChoice: null,
+        dragonsEndHerosChoice: null,
+        gyalaDelveHerosChoice: null,
+        skywatchArchipelagoHerosChoice: null,
+        amnytasHerosChoice: null,
+        innerNayosEndHerosChoice: null,
+        convergenceHerosChoice: null,
+        convergenceMountBalriorWayfindersChoice: null,
+        citadelOfZakirosHerosChoice: null,
+        janthirSyntriHerosChoice: null,
+        bavaNisosCommandersChoice: null,
+        castoraHeroesChoiceChest: 1
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -827,7 +878,8 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: 5,
         citadelOfZakirosHerosChoice: 3,
         janthirSyntriHerosChoice: null,
-        bavaNisosCommandersChoice: 1
+        bavaNisosCommandersChoice: 1,
+        castoraHeroesChoiceChest: 5
       }).commandersChoiceChestsCount
     ).to.equal(null)
 
@@ -853,8 +905,9 @@ describe('statistics > aggregate', () => {
         convergenceMountBalriorWayfindersChoice: 5,
         citadelOfZakirosHerosChoice: 3,
         janthirSyntriHerosChoice: 1,
-        bavaNisosCommandersChoice: 1
+        bavaNisosCommandersChoice: 1,
+        castoraHeroesChoiceChest: 5
       }).commandersChoiceChestsCount
-    ).to.equal(42)
+    ).to.equal(47)
   })
 })

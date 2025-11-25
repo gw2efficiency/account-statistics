@@ -30,6 +30,7 @@ export default function (accountData) {
     masteryPointsCrystal: earnedMasteryPoints['Icebrood Saga'] || 0,
     masteryPointsEndOfDragons: earnedMasteryPoints['End of Dragons'] || 0,
     masteryPointsSecretsOfTheObscure: earnedMasteryPoints['Secrets of the Obscure'] || 0,
-    masteryPointsJanthirWilds: earnedMasteryPoints['Janthir Wilds'] || 0
+    masteryPointsJanthirWilds: earnedMasteryPoints['Janthir Wilds'] || 0,
+    masteryPointsVisionsOfEternity: earnedMasteryPoints['Visions of Eternity'] || 0
   }
 }
