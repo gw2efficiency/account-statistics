@@ -309,6 +309,7 @@ export default function (accountData, extraInformation) {
     mangledTalon: countItems(items, 19576),
     clumpOfResin: countItems(items, 19537),
     marshFrog: countItems(items, 24420),
+    millingStones: countItems(items, 77256),
 
     // (XXX) Used for aggregate statistics
     _unstableFractalEssenceFromItems: unstableFractalEssenceFromItems(items)

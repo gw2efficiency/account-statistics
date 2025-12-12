@@ -187,7 +187,8 @@ describe('statistics > items', () => {
       forestWispInfusion: null,
       chromaticBubbles: null,
       etherealSeaLifeInfusion: null,
-      agonyLens: null
+      agonyLens: null,
+      millingStones: null
     }
 
     const bothPermissions = {bank: null, characters: null}
@@ -1014,5 +1015,15 @@ describe('statistics > items', () => {
       { id: 38129, count: 1 },
       { id: 47897, count: 1 }
     ]), EXTRA_INFO).infiniteWvwBlueprints).to.equal(2)
+  })
+
+  it('can calculate milling stones count', () => {
+    expect(itemsStatistics(generateAccount([
+      { id: 103995, count: 2 },
+      { id: 103993, count: 1 },
+      { id: 77256, count: 102 },
+      { id: 38129, count: 1 },
+      { id: 47897, count: 1 }
+    ]), EXTRA_INFO).millingStones).to.equal(102)
   })
 })
