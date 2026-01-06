@@ -10,7 +10,8 @@ export default function (accountData) {
       masteryPointsCrystal: null,
       masteryPointsEndOfDragons: null,
       masteryPointsSecretsOfTheObscure: null,
-      masteryPointsJanthirWilds: null
+      masteryPointsJanthirWilds: null,
+      masteryPointsVisionsOfEternity: null
     }
   }
 

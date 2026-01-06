@@ -12,7 +12,8 @@ describe('statistics > masteries', () => {
       masteryPointsCrystal: null,
       masteryPointsEndOfDragons: null,
       masteryPointsSecretsOfTheObscure: null,
-      masteryPointsJanthirWilds: null
+      masteryPointsJanthirWilds: null,
+      masteryPointsVisionsOfEternity: null
     }
 
     expect(masteriesStatistics({mastery: {points: null}})).to.deep.equal(empty)
